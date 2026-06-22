@@ -40,7 +40,6 @@
         .product-title { font-size: 1.8em; font-weight: 800; color: #ff1493; margin-bottom: 10px; text-align: center; }
         .product-subtitle { font-size: 1em; color: #666; text-align: center; margin-bottom: 30px; }
         
-        /* Tabla con esquinas redondeadas impecables */
         .comparison-table { 
             width: 100%; 
             border-collapse: separate; 
@@ -118,8 +117,16 @@
         .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box; }
         .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
         
-        /* Ocultar inglés por defecto al cargar */
-        [lang="en"] { display: none; }
+        /* =======================================================
+           SISTEMA AUTOMÁTICO DE IDIOMAS POR CSS (RESTAURA EL ERROR)
+           ======================================================= */
+        /* Por defecto: se muestra Español, se oculta Inglés */
+        [lang="es"] { display: inline-block; }
+        [lang="en"] { display: none !important; }
+
+        /* Cuando la página tiene la clase "english-mode": se muestra Inglés, se oculta Español */
+        body.english-mode [lang="es"] { display: none !important; }
+        body.english-mode [lang="en"] { display: inline-block; }
     </style>
 </head>
 <body>
@@ -251,19 +258,14 @@
     function toggleLanguage() {
         const body = document.body;
         const btn = document.getElementById('langToggle');
-        const esElements = document.querySelectorAll('[lang="es"]');
-        const enElements = document.querySelectorAll('[lang="en"]');
         
-        // El estado se gestiona con una clase CSS temporal en el body
-        const isEnglish = body.classList.toggle('lang-en');
+        // El CSS hace todo el trabajo pesado al alternar esta clase
+        body.classList.toggle('english-mode');
 
-        if (isEnglish) {
-            esElements.forEach(el => el.style.display = 'none');
-            enElements.forEach(el => el.style.display = 'inline-block');
+        // Solo cambiamos el texto del botón superior
+        if (body.classList.contains('english-mode')) {
             btn.innerHTML = "💖 Cambiar a Español";
         } else {
-            esElements.forEach(el => el.style.display = 'inline-block');
-            enElements.forEach(el => el.style.display = 'none');
             btn.innerHTML = "💖 Switch to English";
         }
     }
