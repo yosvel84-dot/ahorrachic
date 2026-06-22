@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiqueta de verificación de Admitad agregada correctamente -->
     <meta name="verify-admitad" content="aacdd45797" />
     <title>AhorraTodo Chic | Accesos Directos</title>
     <style>
@@ -117,14 +118,10 @@
         .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box; }
         .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
         
-        /* =======================================================
-           SISTEMA AUTOMÁTICO DE IDIOMAS POR CSS (RESTAURA EL ERROR)
-           ======================================================= */
-        /* Por defecto: se muestra Español, se oculta Inglés */
+        /* SISTEMA AUTOMÁTICO DE IDIOMAS POR CSS */
         [lang="es"] { display: inline-block; }
         [lang="en"] { display: none !important; }
 
-        /* Cuando la página tiene la clase "english-mode": se muestra Inglés, se oculta Español */
         body.english-mode [lang="es"] { display: none !important; }
         body.english-mode [lang="en"] { display: inline-block; }
     </style>
@@ -169,10 +166,11 @@
                     </a>
                 </td>
             </tr>
+            <!-- ENLACE DE AMAZON AFILIADOS CONFIGURADO CON TU ID DE TIENDA -->
             <tr>
                 <td><span class="badge bg-amazon">AMAZON</span></td>
                 <td>
-                    <a href="https://amazon.es" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                    <a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
                         <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
                     </a>
                 </td>
@@ -245,6 +243,7 @@
     </table>
 </div>
 
+<!-- Recuerda cambiar "tu_usuario" por tu perfil real de Instagram -->
 <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="instagram-float">
     📸 Instagram
 </a>
@@ -259,10 +258,8 @@
         const body = document.body;
         const btn = document.getElementById('langToggle');
         
-        // El CSS hace todo el trabajo pesado al alternar esta clase
         body.classList.toggle('english-mode');
 
-        // Solo cambiamos el texto del botón superior
         if (body.classList.contains('english-mode')) {
             btn.innerHTML = "💖 Cambiar a Español";
         } else {
