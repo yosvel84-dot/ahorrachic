@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Etiqueta de verificación de Admitad agregada correctamente -->
     <meta name="verify-admitad" content="aacdd45797" />
     <title>AhorraTodo Chic | Accesos Directos</title>
     <style>
@@ -118,12 +117,9 @@
         .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box; }
         .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
         
-        /* SISTEMA AUTOMÁTICO DE IDIOMAS POR CSS */
-        [lang="es"] { display: inline-block; }
-        [lang="en"] { display: none !important; }
-
-        body.english-mode [lang="es"] { display: none !important; }
-        body.english-mode [lang="en"] { display: inline-block; }
+        /* Ocultamos el inglés inicialmente usando estilos directos */
+        .en-text { display: none; }
+        .es-text { display: inline-block; }
     </style>
 </head>
 <body>
@@ -134,19 +130,25 @@
 
 <div class="product-container">
     <h1 class="product-title">
-        <span lang="es">🛍️ ¡AhorraTodo Chic!</span>
-        <span lang="en">🛍️ SaveEverything Chic!</span>
+        <span class="es-text">🛍️ ¡AhorraTodo Chic!</span>
+        <span class="en-text">🛍️ SaveEverything Chic!</span>
     </h1>
     <p class="product-subtitle">
-        <span lang="es">Tus tiendas favoritas en un solo lugar</span>
-        <span lang="en">Your favorite stores in one single place</span>
+        <span class="es-text">Tus tiendas favoritas en un solo lugar</span>
+        <span class="en-text">Your favorite stores in one single place</span>
     </p>
     
     <table class="comparison-table">
         <thead>
             <tr>
-                <th><span lang="es">Plataforma</span><span lang="en">Platform</span></th>
-                <th><span lang="es">Acceso</span><span lang="en">Access</span></th>
+                <th>
+                    <span class="es-text">Plataforma</span>
+                    <span class="en-text">Platform</span>
+                </th>
+                <th>
+                    <span class="es-text">Acceso</span>
+                    <span class="en-text">Access</span>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -154,7 +156,8 @@
                 <td><span class="badge bg-shein">SHEIN</span></td>
                 <td>
                     <a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -162,16 +165,17 @@
                 <td><span class="badge bg-temu">TEMU</span></td>
                 <td>
                     <a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
-            <!-- ENLACE DE AMAZON AFILIADOS CONFIGURADO CON TU ID DE TIENDA -->
             <tr>
                 <td><span class="badge bg-amazon">AMAZON</span></td>
                 <td>
                     <a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -179,7 +183,8 @@
                 <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
                 <td>
                     <a href="https://mercadolibre.es" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -187,7 +192,8 @@
                 <td><span class="badge bg-walmart">WALMART</span></td>
                 <td>
                     <a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -195,7 +201,8 @@
                 <td><span class="badge bg-ebay">EBAY</span></td>
                 <td>
                     <a href="https://ebay.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -203,7 +210,8 @@
                 <td><span class="badge bg-uber">UBER</span></td>
                 <td>
                     <a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -211,7 +219,8 @@
                 <td><span class="badge bg-doordash">DOORDASH</span></td>
                 <td>
                     <a href="https://doordash.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -219,7 +228,8 @@
                 <td><span class="badge bg-ubereats">UBER EATS</span></td>
                 <td>
                     <a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -227,7 +237,8 @@
                 <td><span class="badge bg-tiktok">TIKTOK</span></td>
                 <td>
                     <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -235,7 +246,8 @@
                 <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
                 <td>
                     <a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
                     </a>
                 </td>
             </tr>
@@ -243,27 +255,36 @@
     </table>
 </div>
 
-<!-- Recuerda cambiar "tu_usuario" por tu perfil real de Instagram -->
 <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="instagram-float">
     📸 Instagram
 </a>
 
 <footer class="footer">
-    <span lang="es">© 2026 <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
-    <span lang="en">© 2026 <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
+    <span class="es-text">© 2026 <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
+    <span class="en-text">© 2026 <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
 </footer>
 
 <script>
-    function toggleLanguage() {
-        const body = document.body;
-        const btn = document.getElementById('langToggle');
-        
-        body.classList.toggle('english-mode');
+    // Usamos una variable global sencilla para controlar el idioma actual
+    let currentLang = 'es'; 
 
-        if (body.classList.contains('english-mode')) {
+    function toggleLanguage() {
+        const btn = document.getElementById('langToggle');
+        const esElements = document.querySelectorAll('.es-text');
+        const enElements = document.querySelectorAll('.en-text');
+        
+        if (currentLang === 'es') {
+            // PASAR A INGLÉS: Apagamos español, encendemos inglés
+            esElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'inline-block');
             btn.innerHTML = "💖 Cambiar a Español";
+            currentLang = 'en';
         } else {
+            // PASAR A ESPAÑOL: Apagamos inglés, encendemos español
+            esElements.forEach(el => el.style.display = 'inline-block');
+            enElements.forEach(el => el.style.display = 'none');
             btn.innerHTML = "💖 Switch to English";
+            currentLang = 'es';
         }
     }
 </script>
