@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiqueta de verificación de Admitad agregada correctamente -->
     <meta name="verify-admitad" content="aacdd45797" />
     <title>AhorraTodo Chic | Accesos Directos</title>
     <style>
@@ -71,6 +72,7 @@
         .bg-shein { background-color: #000000; letter-spacing: 1px; }
         .bg-temu { background-color: #ff5000; }
         .bg-amazon { background-color: #ff9900; }
+        .bg-aliexpress { background: linear-gradient(45deg, #FF471A, #E61919); } /* Estilo para AliExpress */
         .bg-mercadolibre { background-color: #fff159; color: #333 !important; }
         .bg-walmart { background-color: #0071dc; }
         .bg-ebay { background: linear-gradient(45deg, #e53238, #0064d2, #f5af02, #86b817); }
@@ -117,7 +119,7 @@
         .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box; }
         .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
         
-        /* Ocultamos el inglés inicialmente usando estilos directos */
+        /* Ocultamos el inglés inicialmente */
         .en-text { display: none; }
         .es-text { display: inline-block; }
     </style>
@@ -170,10 +172,22 @@
                     </a>
                 </td>
             </tr>
+            <!-- ENLACE DE AMAZON AFILIADOS CONFIGURADO CON TU ID DE TIENDA -->
             <tr>
                 <td><span class="badge bg-amazon">AMAZON</span></td>
                 <td>
                     <a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                        <span class="es-text">Ir a la Tienda ✨</span>
+                        <span class="en-text">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
+            <!-- NUEVA FILA: ALIEXPRESS AGREGADA -->
+            <tr>
+                <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
+                <td>
+                    <!-- Recuerda cambiar por tu link de afiliado de Admitad cuando lo tengas -->
+                    <a href="https://aliexpress.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
                         <span class="es-text">Ir a la Tienda ✨</span>
                         <span class="en-text">Open Store ✨</span>
                     </a>
@@ -255,6 +269,7 @@
     </table>
 </div>
 
+<!-- Recuerda cambiar "tu_usuario" por tu perfil real de Instagram -->
 <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="instagram-float">
     📸 Instagram
 </a>
@@ -265,7 +280,6 @@
 </footer>
 
 <script>
-    // Usamos una variable global sencilla para controlar el idioma actual
     let currentLang = 'es'; 
 
     function toggleLanguage() {
@@ -274,13 +288,11 @@
         const enElements = document.querySelectorAll('.en-text');
         
         if (currentLang === 'es') {
-            // PASAR A INGLÉS: Apagamos español, encendemos inglés
             esElements.forEach(el => el.style.display = 'none');
             enElements.forEach(el => el.style.display = 'inline-block');
             btn.innerHTML = "💖 Cambiar a Español";
             currentLang = 'en';
         } else {
-            // PASAR A ESPAÑOL: Apagamos inglés, encendemos español
             esElements.forEach(el => el.style.display = 'inline-block');
             enElements.forEach(el => el.style.display = 'none');
             btn.innerHTML = "💖 Switch to English";
