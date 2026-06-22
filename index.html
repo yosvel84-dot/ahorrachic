@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Etiqueta de verificación de Admitad agregada correctamente -->
     <meta name="verify-admitad" content="aacdd45797" />
-    <title>AhorraTodo Chic | Accesos Directos</title>
+    <title>AhorraTodo Chic | Portal Dinámico</title>
     <style>
         body { 
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; 
@@ -29,10 +29,12 @@
             transition: 0.3s;
         }
         .lang-btn:hover { background: #ff1493; transform: scale(1.05); }
+        
+        /* Contenedor Principal */
         .product-container { 
             max-width: 600px; 
             background: white; 
-            margin: 40px auto; 
+            margin: 20px auto; 
             padding: 30px; 
             border-radius: 24px; 
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15); 
@@ -41,6 +43,19 @@
         .product-title { font-size: 1.8em; font-weight: 800; color: #ff1493; margin-bottom: 10px; text-align: center; }
         .product-subtitle { font-size: 1em; color: #666; text-align: center; margin-bottom: 30px; }
         
+        /* Reloj y Saludo */
+        .widgets-box {
+            text-align: center;
+            background: #fff0f5;
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px dashed #ff69b4;
+        }
+        .live-clock { font-size: 1.5em; font-weight: bold; color: #ff1493; margin: 5px 0; }
+        .live-greeting { font-size: 1em; color: #555; font-weight: 500; }
+
+        /* Tabla de Tiendas */
         .comparison-table { 
             width: 100%; 
             border-collapse: separate; 
@@ -100,6 +115,38 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
         }
+
+        /* Zona de Promociones Cobradas (Anuncios) */
+        .promo-section { margin-top: 35px; }
+        .promo-title { font-size: 1.3em; font-weight: 700; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+        .promo-card {
+            background: linear-gradient(135deg, #fffafb 0%, #fff0f3 100%);
+            border: 2px solid #ffb6c1;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+        }
+        .promo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff1493;
+            color: white;
+            font-size: 0.75em;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+        .promo-card h3 { margin: 0 0 8px 0; color: #ff1493; font-size: 1.15em; padding-right: 70px; }
+        .promo-card p { margin: 0 0 15px 0; color: #666; font-size: 0.9em; line-height: 1.4; }
+        
+        /* Sección de Noticias Automáticas */
+        .news-section { margin-top: 35px; border-top: 2px solid #fff0f5; padding-top: 25px; }
+        .news-title { font-size: 1.3em; font-weight: 700; color: #333; margin-bottom: 15px; }
+        
         .instagram-float {
             position: fixed;
             bottom: 20px;
@@ -135,10 +182,17 @@
         <span class="en-text">🛍️ SaveEverything Chic!</span>
     </h1>
     <p class="product-subtitle">
-        <span class="es-text">Tus tiendas favoritas en un solo lugar</span>
-        <span class="en-text">Your favorite stores in one single place</span>
+        <span class="es-text">Tus tiendas favoritas y destacados del día</span>
+        <span class="en-text">Your favorite stores and daily highlights</span>
     </p>
+
+    <!-- WIDGET: RELOJ Y SALUDO DINÁMICO -->
+    <div class="widgets-box">
+        <div id="liveGreeting" class="live-greeting">¡Hola, Chic!</div>
+        <div id="liveClock" class="live-clock">00:00:00</div>
+    </div>
     
+    <!-- TABLA DE TIENDAS PRINCIPALES -->
     <table class="comparison-table">
         <thead>
             <tr>
@@ -265,9 +319,43 @@
             </tr>
         </tbody>
     </table>
+
+    <!-- SECCIÓN DE PROMOCIONES / ENLACES COBRADOS -->
+    <div class="promo-section">
+        <h2 class="promo-title">
+            <span class="es-text">🔥 Promociones Especiales</span>
+            <span class="en-text">🔥 Premium Promos</span>
+        </h2>
+        
+        <!-- Tarjeta de Anuncio 1 (Puedes cambiar los textos y el enlace para cobrar por este espacio) -->
+        <div class="promo-card">
+            <div class="promo-badge">Chic Pick</div>
+            <h3>Outfit Viral de Temporada</h3>
+            <p>Consigue el look completo que está rompiendo tendencias en TikTok con un 15% de descuento usando nuestro enlace exclusivo.</p>
+            <a href="AQUÍ_TU_ENLACE_COBRADO_O_DE_AFILIADO" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo ✨</a>
+        </div>
+
+        <!-- Tarjeta de Anuncio 2 (Espacio publicitario disponible) -->
+        <div class="promo-card" style="border: 2px dashed #ff69b4; background: #fff0f5;">
+            <div class="promo-badge" style="background: #666;">Promo</div>
+            <h3>¿Quieres anunciar tu tienda aquí?</h3>
+            <p>Promociona tus productos o tu cuenta de Instagram ante miles de compradoras diarias. Haz clic para contactarnos por privado.</p>
+            <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #666;">Contactar 📩</a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE NOTICIAS AUTOMÁTICAS -->
+    <div class="news-section">
+        <h2 class="news-title">
+            <span class="es-text">📰 Tendencias y Noticias</span>
+            <span class="en-text">📰 Trends & News</span>
+        </h2>
+        <!-- Widget seguro que carga noticias de actualidad mundial de forma automática -->
+        <iframe src="https://rss.app/embed/v1/magazine/uYV46fK89zD7f8V5" frameborder="0" width="100%" height="400" style="border-radius:16px; border:1px solid #ffe4e1;"></iframe>
+    </div>
+
 </div>
 
-<!-- Recuerda cambiar "tu_usuario" por tu perfil real de Instagram -->
 <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="instagram-float">
     📸 Instagram
 </a>
@@ -280,6 +368,7 @@
 <script>
     let currentLang = 'es'; 
 
+    // Función del Traductor
     function toggleLanguage() {
         const btn = document.getElementById('langToggle');
         const esElements = document.querySelectorAll('.es-text');
@@ -296,7 +385,39 @@
             btn.innerHTML = "💖 Switch to English";
             currentLang = 'es';
         }
+        updateClock(); // Refresca el saludo al cambiar idioma
     }
+
+    // Función del Reloj y Saludo en Tiempo Real
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        // Muestra la hora exacta
+        document.getElementById('liveClock').innerText = `${hours}:${minutes}:${seconds}`;
+        
+        // Cambia el saludo según la hora e idioma seleccionado
+        const currentHour = now.getHours();
+        let greeting = "";
+        
+        if (currentLang === 'es') {
+            if (currentHour >= 6 && currentHour < 12) greeting = "🌅 ¡Buenos días, Chic!";
+            else if (currentHour >= 12 && currentHour < 19) greeting = "☀️ ¡Buenas tardes, Chic!";
+            else greeting = "🌙 ¡Buenas noches, Chic!";
+        } else {
+            if (currentHour >= 6 && currentHour < 12) greeting = "🌅 Good morning, Chic!";
+            else if (currentHour >= 12 && currentHour < 19) greeting = "☀️ Good afternoon, Chic!";
+            else greeting = "🌙 Good evening, Chic!";
+        }
+        
+        document.getElementById('liveGreeting').innerText = greeting;
+    }
+
+    // Actualiza el reloj cada segundo automáticamente
+    setInterval(updateClock, 1000);
+    updateClock(); // Carga inicial
 </script>
 
 </body>
