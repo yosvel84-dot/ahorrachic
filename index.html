@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,6 +30,49 @@
             transition: 0.3s;
         }
         .lang-btn:hover { background: #ff1493; transform: scale(1.05); }
+        
+        /* ESTILOS NUEVOS: SECCIÓN DE ANUNCIOS Y NOTICIAS */
+        .ad-container {
+            max-width: 600px;
+            margin: 15px auto;
+            padding: 15px;
+            background: #fff;
+            border: 2px dashed #ff69b4;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .ad-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transition: 0.3s;
+        }
+        .ad-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5); }
+        .ad-label { font-size: 0.75em; color: #aaa; text-transform: uppercase; margin-top: 5px; display: block; }
+        
+        .news-container {
+            max-width: 600px;
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 2px solid #fff;
+        }
+        .news-title { font-size: 1.4em; font-weight: 800; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+        .news-list { list-style: none; padding: 0; margin: 0; }
+        .news-item { padding: 12px 0; border-bottom: 1px dashed #ffe4e1; font-size: 0.95em; color: #444; line-height: 1.4; }
+        .news-item:last-child { border-bottom: none; }
+        .news-tag { background: #ff1493; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: bold; margin-right: 6px; }
+        /* ------------------------------------------- */
+
         .product-container { 
             max-width: 600px; 
             background: white; 
@@ -70,7 +114,6 @@
         .bg-doordash { background-color: #FF3008; }
         .bg-ubereats { background-color: #06C167; }
         .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
-        /* Nuevo estilo agregado para Home Depot */
         .bg-homedepot { background-color: #F96302; }
         
         .btn-buy { 
@@ -116,6 +159,29 @@
 
 <div class="lang-switcher">
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">💖 Switch to English</button>
+</div>
+
+<!-- NUEVA SECCIÓN: BLOQUE DE ANUNCIOS -->
+<div class="ad-container">
+    <button class="ad-btn" onclick="alert('¡Gracias por tu apoyo! Aquí se abriría tu campaña publicitaria.')">
+        <span lang="es">🎁 Ver Oferta Especial del Día</span>
+        <span lang="en">🎁 View Today's Special Offer</span>
+    </button>
+    <span class="ad-label">Anuncio publicitario</span>
+</div>
+
+<!-- NUEVA SECCIÓN: NOTICIAS DEL DÍA -->
+<div class="news-container">
+    <div class="news-title">
+        <span>📢</span>
+        <span lang="es">Noticias más importantes de hoy</span>
+        <span lang="en">Today's top headlines</span>
+    </div>
+    <ul class="news-list">
+        <li class="news-item"><span class="news-tag">MUNDO</span> Cumbre internacional evalúa nuevas regulaciones de Inteligencia Artificial para el segundo semestre de 2026.</li>
+        <li class="news-item"><span class="news-tag">TECNOLOGÍA</span> Importantes plataformas de comercio electrónico anuncian funciones de realidad aumentada avanzada para probadores virtuales.</li>
+        <li class="news-item"><span class="news-tag">TENDENCIAS</span> La moda sostenible y circular domina las colecciones de verano este mes.</li>
+    </ul>
 </div>
 
 <div class="product-container">
@@ -167,71 +233,6 @@
                         <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
                     </a>
                 </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-walmart">WALMART</span></td>
-                <td>
-                    <a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-ebay">EBAY</span></td>
-                <td>
-                    <a href="https://ebay.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-uber">UBER</span></td>
-                <td>
-                    <a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-doordash">DOORDASH</span></td>
-                <td>
-                    <a href="https://doordash.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-ubereats">UBER EATS</span></td>
-                <td>
-                    <a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td><span class="badge bg-tiktok">TIKTOK</span></td>
-                <td>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-            <!-- Fila agregada para HOME DEPOT -->
-            <tr>
-                <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
-                <td>
-                    <a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-float">
-    📸 Instagram
-</a>
 
 
 <!-- 📢 TEXTO DE DIVULGACIÓN LEGAL DE AFILIADOS REQUERIDO -->
