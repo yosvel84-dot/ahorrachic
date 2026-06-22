@@ -14,7 +14,7 @@
             padding: 20px; 
             min-height: 100vh;
             position: relative;
-            padding-bottom: 80px; /* Espacio para el pie de página */
+            padding-bottom: 80px; 
         }
         .lang-switcher { text-align: right; max-width: 600px; margin: 0 auto 15px auto; }
         .lang-btn { 
@@ -70,6 +70,8 @@
         .bg-doordash { background-color: #FF3008; }
         .bg-ubereats { background-color: #06C167; }
         .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
+        /* Nuevo estilo agregado para Home Depot */
+        .bg-homedepot { background-color: #F96302; }
         
         .btn-buy { 
             display: inline-block; 
@@ -89,8 +91,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
         }
-
-        /* DISEÑO NUEVO: Botón e info de Instagram */
         .instagram-float {
             position: fixed;
             bottom: 20px;
@@ -107,18 +107,10 @@
             font-size: 0.9em;
         }
         .instagram-float:hover { transform: scale(1.05); }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #666;
-            width: 100%;
-        }
+        .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; }
         .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
-
         [lang="en"] { display: none; }
     </style>
-    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
@@ -224,23 +216,23 @@
                     </a>
                 </td>
             </tr>
+            <!-- Fila agregada para HOME DEPOT -->
+            <tr>
+                <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
+                <td>
+                    <a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
 
-<!-- Botón Flotante de Instagram -->
-<a href="https://www.instagram.com/yosvel_reina?igsh=MW1oNHBmN3NtbWxh&utm_source=qr" target="_blank" rel="noopener noreferrer" class="instagram-float">
+<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-float">
     📸 Instagram
 </a>
 
-<!-- Pie de Página -->
-<div class="footer">
-    <p>© 2026 AhorraTodo Chic. Creado por <a href="https://www.instagram.com/yosvel_reina?igsh=MW1oNHBmN3NtbWxh&utm_source=qr" target="_blank" rel="noopener noreferrer">@yosvel_reina</a></p>
-</div>
-
-<script>
-    let currentLang = 'es';
-    function toggleLanguage() {
 
 <!-- 📢 TEXTO DE DIVULGACIÓN LEGAL DE AFILIADOS REQUERIDO -->
 <div style="text-align:center; color:#999; font-size:0.8em; margin-top:30px; padding:10px;">
