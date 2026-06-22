@@ -90,27 +90,6 @@
             box-shadow: 0 0 8px rgba(255, 105, 180, 0.2);
         }
 
-        /* Bloque de Cupones */
-        .coupon-container {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .coupon-card {
-            flex: 1;
-            min-width: 130px;
-            background: #fff0f5;
-            border: 1px dashed #ff69b4;
-            border-radius: 12px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .coupon-card:hover { transform: translateY(-2px); background: #ffe4e1; }
-        .coupon-card small { font-size: 0.75em; color: #666; font-weight: bold; text-transform: uppercase; }
-        .coupon-code { font-size: 1.1em; font-weight: bold; color: #ff1493; margin-top: 2px; letter-spacing: 1px; }
-
         /* Galería Visual de Tendencias */
         .trends-title, .promo-title, .news-title { font-size: 1.25em; font-weight: 700; color: #333; margin: 0 0 15px 0; }
         .trends-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -186,22 +165,6 @@
             transform: translateY(-2px);
         }
 
-        /* Notificaciones flotantes */
-        .toast-notification {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 20, 147, 0.95);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            display: none;
-            z-index: 1000;
-        }
-
         /* Zona de Promociones de Pago */
         .promo-card {
             background: linear-gradient(135deg, #fffafb 0%, #fff0f3 100%);
@@ -257,18 +220,6 @@
         <div class="left-column">
             <!-- Buscador -->
             <input type="text" id="storeSearch" class="search-box" placeholder="🔍 ¿Qué tienda o producto buscas hoy?..." onkeyup="filterTable()">
-
-            <!-- Zona de Cupones -->
-            <div class="coupon-container">
-                <div class="coupon-card" onclick="copyCoupon('CHIC10')">
-                    <small>Cupón SHEIN 👗</small>
-                    <div class="coupon-code">CHIC10</div>
-                </div>
-                <div class="coupon-card" onclick="copyCoupon('CHIC30')">
-                    <small>Cupón TEMU 🧡</small>
-                    <div class="coupon-code">CHIC30</div>
-                </div>
-            </div>
 
             <!-- Tabla de Tiendas -->
             <table class="comparison-table" id="dataTable">
@@ -407,9 +358,6 @@
 
 </div>
 
-<!-- Notificación flotante -->
-<div id="toast" class="toast-notification">¡Cupón copiado! ✂️</div>
-
 <footer class="footer">
     <span class="es-text">© 2026 <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
     <span class="en-text">© 2026 <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
@@ -476,17 +424,6 @@
             } else {
                 row.style.display = "none";
             }
-        });
-    }
-
-    function copyCoupon(code) {
-        navigator.clipboard.writeText(code).then(() => {
-            const toast = document.getElementById('toast');
-            toast.innerText = currentLang === 'es' ? `¡Cupón ${code} copiado! ✂️` : `Coupon ${code} copied! ✂️`;
-            toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 2500);
         });
     }
 </script>
