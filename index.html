@@ -68,6 +68,7 @@
         .news-title { font-size: 1.4em; font-weight: 800; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
         .news-list { list-style: none; padding: 0; margin: 0; }
         .news-item { padding: 12px 0; border-bottom: 1px dashed #ffe4e1; font-size: 0.95em; color: #444; line-height: 1.4; }
+        .news-item a { color: #ff1493; text-decoration: none; font-weight: 600; }
         .news-item:last-child { border-bottom: none; }
         .news-tag { background: #ff1493; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: bold; margin-right: 6px; }
 
@@ -93,6 +94,8 @@
             border-radius: 12px 12px 0 0;
         }
         .comparison-table td { padding: 16px 15px; text-align: left; border-bottom: 1px solid #ffe4e1; }
+        
+        /* ESTILOS DE LOS BADGES RECUPERADOS */
         .badge {
             padding: 8px 16px;
             border-radius: 30px;
@@ -169,17 +172,15 @@
     <span class="ad-label">Anuncio publicitario</span>
 </div>
 
-<!-- COMPONENTE: NOTICIAS DEL DÍA -->
+<!-- COMPONENTE: NOTICIAS DINÁMICAS -->
 <div class="news-container">
     <div class="news-title">
         <span>📢</span>
         <span lang="es">Noticias más importantes de hoy</span>
         <span lang="en">Today's top headlines</span>
     </div>
-    <ul class="news-list">
-        <li class="news-item"><span class="news-tag">MUNDO</span> Las principales corporaciones logísticas globales optimizan rutas ante variaciones climáticas estacionales.</li>
-        <li class="news-item"><span class="news-tag">TECNOLOGÍA</span> Se registran picos de adopción en billeteras digitales y pasarelas de pago cifradas este mes.</li>
-        <li class="news-item"><span class="news-tag">TENDENCIAS</span> Plataformas de e-commerce lanzan catálogos interactivos optimizados para dispositivos móviles.</li>
+    <ul class="news-list" id="dynamicNews">
+        <li class="news-item"><span class="news-tag">CARGANDO</span> Buscando las últimas novedades...</li>
     </ul>
 </div>
 
@@ -234,6 +235,10 @@
                 </td>
             </tr>
             <tr>
+                <td><span class="badge bg-walmart">WALMART</span></td>
+                <td>
+                    <a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy">
+
 
 <!-- 📢 TEXTO DE DIVULGACIÓN LEGAL DE AFILIADOS REQUERIDO -->
 <div style="text-align:center; color:#999; font-size:0.8em; margin-top:30px; padding:10px;">
