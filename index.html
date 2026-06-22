@@ -13,6 +13,8 @@
             margin: 0; 
             padding: 20px; 
             min-height: 100vh;
+            position: relative;
+            padding-bottom: 80px; /* Espacio para el pie de página */
         }
         .lang-switcher { text-align: right; max-width: 600px; margin: 0 auto 15px auto; }
         .lang-btn { 
@@ -87,6 +89,33 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
         }
+
+        /* DISEÑO NUEVO: Botón e info de Instagram */
+        .instagram-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+            transition: 0.3s;
+            z-index: 999;
+            font-size: 0.9em;
+        }
+        .instagram-float:hover { transform: scale(1.05); }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #666;
+            width: 100%;
+        }
+        .footer a { color: #ff1493; text-decoration: none; font-weight: bold; }
+
         [lang="en"] { display: none; }
     </style>
     <link href="https://googleapis.com" rel="stylesheet">
@@ -134,7 +163,6 @@
             <tr>
                 <td><span class="badge bg-amazon">AMAZON</span></td>
                 <td>
-                    <!-- Enlace oficial de Afiliado configurado con tu ID yosvelreina-21 -->
                     <a href="https://amazon.es" target="_blank" rel="noopener noreferrer" class="btn-buy">
                         <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
                     </a>
@@ -200,34 +228,19 @@
     </table>
 </div>
 
+<!-- Botón Flotante de Instagram -->
+<a href="https://www.instagram.com/yosvel_reina?igsh=MW1oNHBmN3NtbWxh&utm_source=qr" target="_blank" rel="noopener noreferrer" class="instagram-float">
+    📸 Instagram
+</a>
+
+<!-- Pie de Página -->
+<div class="footer">
+    <p>© 2026 AhorraTodo Chic. Creado por <a href="https://www.instagram.com/yosvel_reina?igsh=MW1oNHBmN3NtbWxh&utm_source=qr" target="_blank" rel="noopener noreferrer">@yosvel_reina</a></p>
+</div>
+
 <script>
     let currentLang = 'es';
     function toggleLanguage() {
-        const esElements = document.querySelectorAll('[lang="es"]');
-        const enElements = document.querySelectorAll('[lang="en"]');
-        const btn = document.getElementById('langToggle');
-        
-        if (currentLang === 'es') {
-            esElements.forEach(el => el.style.display = 'none');
-            enElements.forEach(el => el.style.display = 'inline');
-            btn.innerText = '💖 Cambiar a Español';
-            currentLang = 'en';
-        } else {
-            esElements.forEach(el => el.style.display = 'inline');
-            enElements.forEach(el => el.style.display = 'none');
-            btn.innerText = '💖 Switch to English';
-            currentLang = 'es';
-        }
-    }
-</script>
-
-</body>
-</html>
-
-
-
-
-
 
 <!-- 📢 TEXTO DE DIVULGACIÓN LEGAL DE AFILIADOS REQUERIDO -->
 <div style="text-align:center; color:#999; font-size:0.8em; margin-top:30px; padding:10px;">
