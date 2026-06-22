@@ -1,13 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AhorraTodo Chic | Premium Hub</title>
-    
-    <!-- 🔑 ETIQUETA CORREGIDA PARA VERIFICACIÓN DE ADMITAD -->
-    <meta name="admitad-verification" content="aacdd45797" />
-
+    <title>AhorraTodo Chic | Accesos Directos</title>
     <style>
         body { 
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; 
@@ -16,7 +13,7 @@
             padding: 20px; 
             min-height: 100vh;
         }
-        .lang-switcher { text-align: right; max-width: 650px; margin: 0 auto 15px auto; }
+        .lang-switcher { text-align: right; max-width: 600px; margin: 0 auto 15px auto; }
         .lang-btn { 
             background: #ff69b4; 
             color: white; 
@@ -29,45 +26,36 @@
             transition: 0.3s;
         }
         .lang-btn:hover { background: #ff1493; transform: scale(1.05); }
-        
-        /* Contenedor Principal Estilizado */
         .product-container { 
-            max-width: 650px; 
+            max-width: 600px; 
             background: white; 
-            margin: 20px auto; 
-            padding: 35px; 
-            border-radius: 28px; 
-            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.18); 
-            border: 3px solid #fff;
+            margin: 40px auto; 
+            padding: 30px; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15); 
+            border: 2px solid #fff;
         }
-        
-        .product-title { font-size: 2em; font-weight: 800; color: #ff1493; margin-bottom: 5px; text-align: center; }
-        .product-subtitle { font-size: 1.05em; color: #666; text-align: center; margin-bottom: 35px; }
-        
-        /* Tabla de Accesos Directos */
+        .product-title { font-size: 1.8em; font-weight: 800; color: #ff1493; margin-bottom: 10px; text-align: center; }
+        .product-subtitle { font-size: 1em; color: #666; text-align: center; margin-bottom: 30px; }
         .comparison-table { width: 100%; border-collapse: collapse; }
         .comparison-table th { 
-            padding: 18px; 
+            padding: 15px; 
             text-align: left; 
             background-color: #fff0f5; 
             color: #ff69b4; 
             font-weight: 700;
-            border-radius: 14px 14px 0 0;
-            font-size: 1.05em;
+            border-radius: 12px 12px 0 0;
         }
-        .comparison-table td { padding: 18px 15px; text-align: left; border-bottom: 1px solid #ffe4e1; }
-        
-        /* Etiquetas de las Tiendas */
+        .comparison-table td { padding: 16px 15px; text-align: left; border-bottom: 1px solid #ffe4e1; }
         .badge {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 30px;
             font-weight: bold;
             font-size: 0.95em;
             color: white;
             display: inline-block;
             text-align: center;
-            min-width: 130px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            min-width: 120px;
         }
         .bg-shein { background-color: #000000; letter-spacing: 1px; }
         .bg-temu { background-color: #ff5000; }
@@ -75,18 +63,9 @@
         .bg-mercadolibre { background-color: #fff159; color: #333 !important; }
         .bg-walmart { background-color: #0071dc; }
         .bg-ebay { background: linear-gradient(45deg, #e53238, #0064d2, #f5af02, #86b817); }
-        
-        /* Fila Especial para Tienda Patrocinada / Espacio VIP */
-        .bg-vip { 
-            background: linear-gradient(45deg, #ffd700, #ffa500); 
-            color: white;
-            animation: pulse 2s infinite;
-        }
-
-        /* Botones de Entrada Directa con Efecto Premium */
         .btn-buy { 
             display: inline-block; 
-            padding: 12px 26px; 
+            padding: 10px 24px; 
             background: linear-gradient(45deg, #ff69b4, #ff1493); 
             color: white; 
             text-decoration: none; 
@@ -94,79 +73,22 @@
             font-weight: bold; 
             font-size: 0.95em; 
             text-align: center; 
-            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            transition: 0.3s ease;
         }
         .btn-buy:hover { 
             background: linear-gradient(45deg, #ff1493, #ff69b4); 
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
         }
-        
-        /* Botón de Tienda Patrocinada */
-        .btn-vip {
-            background: linear-gradient(45deg, #b8860b, #d4af37);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
-        .btn-vip:hover {
-            background: linear-gradient(45deg, #d4af37, #b8860b);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-        }
-
-        /* Bloques de Publicidad Estilizados */
-        .adsense-placeholder {
-            background-color: #fdf6f6;
-            border: 2px dashed #ffb6c1;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            color: #db7093;
-            font-size: 0.9em;
-            font-weight: bold;
-            margin: 20px auto;
-            max-width: 650px;
-            box-shadow: inset 0 0 10px rgba(255,182,193,0.2);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-        
         [lang="en"] { display: none; }
     </style>
-    <script>
-        function toggleLanguage() {
-            const currentLang = document.documentElement.lang;
-            const newLang = currentLang === 'es' ? 'en' : 'es';
-            document.documentElement.lang = newLang;
-            
-            const esElements = document.querySelectorAll('[lang="es"]');
-            const enElements = document.querySelectorAll('[lang="en"]');
-            const btn = document.getElementById('langToggle');
-
-            if (newLang === 'en') {
-                esElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline-block');
-                btn.innerText = "💖 Cambiar a Español";
-            } else {
-                esElements.forEach(el => el.style.display = 'inline-block');
-                enElements.forEach(el => el.style.display = 'none');
-                btn.innerText = "💖 Switch to English";
-            }
-        }
-    </script>
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
 <div class="lang-switcher">
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">💖 Switch to English</button>
-</div>
-
-<!-- 📢 BANNER DE PUBLICIDAD SUPERIOR (Para Google AdSense) -->
-<div class="adsense-placeholder">
-    <span>✨ PUBLICIDAD ENLACE / GOOGLE ADSENSE BANNER ✨</span>
 </div>
 
 <div class="product-container">
@@ -175,28 +97,18 @@
         <span lang="en">🛍️ SaveEverything Chic!</span>
     </h1>
     <p class="product-subtitle">
-        <span lang="es">Tus tiendas favoritas a un solo clic</span>
-        <span lang="en">Your favorite stores in just one click</span>
+        <span lang="es">Tus tiendas favoritas en un solo lugar</span>
+        <span lang="en">Your favorite stores in one single place</span>
     </p>
     
     <table class="comparison-table">
         <thead>
             <tr>
                 <th><span lang="es">Plataforma</span><span lang="en">Platform</span></th>
-                <th><span lang="es">Acceso Directo</span><span lang="en">Direct Access</span></th>
+                <th><span lang="es">Acceso</span><span lang="en">Access</span></th>
             </tr>
         </thead>
         <tbody>
-            <!-- ⭐ ESPACIO PATROCINADO VIP -->
-            <tr>
-                <td><span class="badge bg-vip">✨ TIENDA VIP ✨</span></td>
-                <td>
-                    <a href="https://instagram.com" target="_blank" class="btn-buy btn-vip">
-                        <span lang="es">Visitar Showroom 👑</span><span lang="en">Visit Showroom 👑</span>
-                    </a>
-                </td>
-            </tr>
-            <!-- TIENDAS CON ENLACES OFICIALES DIRECTOS -->
             <tr>
                 <td><span class="badge bg-shein">SHEIN</span></td>
                 <td>
@@ -213,9 +125,62 @@
                     </a>
                 </td>
             </tr>
+            <tr>
+                <td><span class="badge bg-amazon">AMAZON</span></td>
+                <td>
+                    <a href="https://amazon.com" target="_blank" class="btn-buy">
+                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
+                <td>
+                    <a href="https://mercadolibre.com" target="_blank" class="btn-buy">
+                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="badge bg-walmart">WALMART</span></td>
+                <td>
+                    <a href="https://walmart.com" target="_blank" class="btn-buy">
+                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="badge bg-ebay">EBAY</span></td>
+                <td>
+                    <a href="https://ebay.com" target="_blank" class="btn-buy">
+                        <span lang="es">Ir a la Tienda ✨</span><span lang="en">Open Store ✨</span>
+                    </a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
+
+<script>
+    let currentLang = 'es';
+    function toggleLanguage() {
+        const esElements = document.querySelectorAll('[lang="es"]');
+        const enElements = document.querySelectorAll('[lang="en"]');
+        const btn = document.getElementById('langToggle');
+        
+        if (currentLang === 'es') {
+            esElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'inline');
+            btn.innerText = '💖 Cambiar a Español';
+            currentLang = 'en';
+        } else {
+            esElements.forEach(el => el.style.display = 'inline');
+            enElements.forEach(el => el.style.display = 'none');
+            btn.innerText = '💖 Switch to English';
+            currentLang = 'es';
+        }
+    }
+</script>
 
 </body>
 </html>
