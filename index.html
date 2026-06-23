@@ -2,46 +2,84 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="verify-admitad" content="aacdd45797" />
     <title>AhorraTodo Chic | Portal de Afiliado</title>
     <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
         body {
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
             background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
-            margin: 0; padding: 20px; min-height: 100vh;
-            position: relative; padding-bottom: 120px; color: #fff;
+            margin: 0;
+            padding: 15px;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 100px;
+            color: #fff;
         }
-     .lang-switcher { text-align: right; max-width: 1000px; margin: 0 auto 15px auto; }
+     .lang-switcher {
+            text-align: right;
+            max-width: 1000px;
+            margin: 0 auto 15px auto;
+            padding: 0 10px;
+        }
      .lang-btn {
-            background: #D4AF37; color: #000; border: none;
-            padding: 10px 20px; cursor: pointer; border-radius: 50px;
-            font-weight: bold; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            background: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
             transition: 0.3s;
         }
      .lang-btn:hover { background: #FFD700; transform: scale(1.05); }
 
      .product-container {
-            max-width: 1000px; background: #1E1E1E; margin: 20px auto;
-            padding: 30px; border-radius: 24px;
+            max-width: 1000px;
+            background: #1E1E1E;
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border: 1px solid #333;
         }
-     .product-title { font-size: 2.2em; font-weight: 800; color: #D4AF37; margin-bottom: 5px; text-align: center; }
-     .product-subtitle { font-size: 1.1em; color: #aaa; text-align: center; margin-bottom: 30px; }
+     .product-title {
+            font-size: clamp(1.5em, 5vw, 2.2em);
+            font-weight: 800;
+            color: #D4AF37;
+            margin-bottom: 8px;
+            text-align: center;
+            line-height: 1.2;
+        }
+     .product-subtitle {
+            font-size: clamp(0.9em, 3vw, 1.1em);
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
 
      .main-layout {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
-        @media(max-width: 820px) {
-         .main-layout { grid-template-columns: 1fr; }
+        @media(min-width: 821px) {
+         .main-layout {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 30px;
+            }
         }
      .left-column,.right-column {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
      .widgets-box {
             text-align: center;
@@ -50,11 +88,20 @@
             border-radius: 16px;
             border: 1px dashed #D4AF37;
         }
-     .live-clock { font-size: 1.5em; font-weight: bold; color: #D4AF37; margin-top: 2px; }
-     .live-greeting { font-size: 1em; color: #ccc; font-weight: 500; }
+     .live-clock {
+            font-size: clamp(1.3em, 4vw, 1.5em);
+            font-weight: bold;
+            color: #D4AF37;
+            margin-top: 2px;
+        }
+     .live-greeting {
+            font-size: clamp(0.9em, 3vw, 1em);
+            color: #ccc;
+            font-weight: 500;
+        }
 
      .viewers-counter {
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: #D4AF37;
             margin-top: 10px;
             font-weight: 600;
@@ -68,19 +115,19 @@
             background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%);
             border: 2px solid #D4AF37;
             border-radius: 16px;
-            padding: 18px;
+            padding: 16px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
      .dollar-title {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #D4AF37;
             font-weight: 600;
             margin: 0 0 8px 0;
             text-transform: uppercase;
         }
      .dollar-price {
-            font-size: 2.2em;
+            font-size: clamp(1.8em, 6vw, 2.2em);
             font-weight: 800;
             color: #fff;
             margin: 5px 0;
@@ -91,12 +138,12 @@
             margin-left: 5px;
         }
      .dollar-update {
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #888;
             margin-top: 8px;
         }
      .dollar-source {
-            font-size: 0.7em;
+            font-size: 0.65em;
             color: #666;
             margin-top: 4px;
         }
@@ -107,10 +154,11 @@
 
      .category-tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
             overflow-x: auto;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
         }
      .category-tabs::-webkit-scrollbar {
             height: 4px;
@@ -127,13 +175,14 @@
             background: #2A2A2A;
             color: #aaa;
             border: 1px solid #333;
-            padding: 8px 18px;
+            padding: 7px 15px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9em;
+            font-size: 0.85em;
             transition: 0.3s;
             white-space: nowrap;
+            flex-shrink: 0;
         }
      .category-btn:hover {
             border-color: #D4AF37;
@@ -145,35 +194,67 @@
             border-color: #D4AF37;
         }
 
-     .promo-title,.news-title { font-size: 1.25em; font-weight: 700; color: #fff; margin: 0 0 15px 0; }
+     .promo-title,.news-title {
+            font-size: clamp(1.1em, 4vw, 1.25em);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 15px 0;
+        }
+
+        /* Tabla responsive con scroll horizontal */
+     .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 16px;
+            border: 1px solid #333;
+        }
+     .table-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+     .table-wrapper::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+     .table-wrapper::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 10px;
+        }
      .comparison-table {
             width: 100%;
+            min-width: 400px;
             border-collapse: separate;
             border-spacing: 0;
-            border: 1px solid #333;
-            border-radius: 16px;
-            overflow: hidden;
         }
      .comparison-table th {
-            padding: 15px;
+            padding: 12px 15px;
             text-align: left;
             background-color: #2A2A2A;
             color: #D4AF37;
             font-weight: 700;
+            font-size: 0.9em;
+            position: sticky;
+            top: 0;
         }
-     .comparison-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; vertical-align: middle; color: #ddd; }
+     .comparison-table td {
+            padding: 10px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+            vertical-align: middle;
+            color: #ddd;
+            font-size: 0.9em;
+        }
      .comparison-table tr:last-child td { border-bottom: none; }
      .comparison-table tr:hover td { background: #2A2A2A; }
      .comparison-table tr.hide { display: none; }
      .badge {
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 30px;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: white;
             display: inline-block;
             text-align: center;
-            min-width: 110px;
+            min-width: 90px;
         }
      .bg-temu { background-color: #ff5000; }
      .bg-amazon { background-color: #ff9900; }
@@ -187,12 +268,18 @@
      .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
 
      .btn-buy {
-            display: inline-block; padding: 9px 18px;
+            display: inline-block;
+            padding: 8px 16px;
             background: linear-gradient(45deg, #D4AF37, #FFD700);
-            color: #000; text-decoration: none; border-radius: 50px;
-            font-weight: bold; font-size: 0.85em; text-align: center;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8em;
+            text-align: center;
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
             transition: 0.3s ease;
+            white-space: nowrap;
         }
      .btn-buy:hover {
             background: linear-gradient(45deg, #FFD700, #D4AF37);
@@ -203,7 +290,7 @@
             background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%);
             border: 1px solid #444;
             border-radius: 16px;
-            padding: 20px;
+            padding: 18px;
             margin-bottom: 15px;
             position: relative;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -214,21 +301,31 @@
             right: 10px;
             background: #D4AF37;
             color: #000;
-            font-size: 0.75em;
+            font-size: 0.7em;
             font-weight: bold;
             padding: 4px 10px;
             border-radius: 10px;
             text-transform: uppercase;
         }
-     .promo-card h3 { margin: 0 0 8px 0; color: #fff; font-size: 1.1em; padding-right: 70px; }
-     .promo-card p { margin: 0 0 15px 0; color: #aaa; font-size: 0.85em; line-height: 1.4; }
+     .promo-card h3 {
+            margin: 0 0 8px 0;
+            color: #fff;
+            font-size: clamp(1em, 3.5vw, 1.1em);
+            padding-right: 70px;
+            line-height: 1.3;
+        }
+     .promo-card p {
+            margin: 0 0 15px 0;
+            color: #aaa;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
 
-        /* NUEVO: Estilo especial para tu empresa */
      .promo-card-premium {
             background: linear-gradient(135deg, #2A2A2A 0%, #1E1E1E 100%);
             border: 2px solid #D4AF37;
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
             margin-bottom: 15px;
             position: relative;
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
@@ -239,7 +336,7 @@
             right: 10px;
             background: linear-gradient(45deg, #D4AF37, #FFD700);
             color: #000;
-            font-size: 0.75em;
+            font-size: 0.7em;
             font-weight: bold;
             padding: 5px 12px;
             border-radius: 10px;
@@ -249,14 +346,15 @@
      .promo-card-premium h3 {
             margin: 0 0 10px 0;
             color: #D4AF37;
-            font-size: 1.2em;
+            font-size: clamp(1.1em, 4vw, 1.2em);
             padding-right: 90px;
             font-weight: 800;
+            line-height: 1.3;
         }
      .promo-card-premium p {
             margin: 0 0 12px 0;
             color: #ccc;
-            font-size: 0.9em;
+            font-size: 0.88em;
             line-height: 1.5;
         }
      .contact-info {
@@ -271,25 +369,28 @@
         }
      .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 8px;
-            font-size: 0.85em;
+            font-size: 0.82em;
             color: #ddd;
+            flex-wrap: wrap;
         }
      .contact-item strong {
             color: #D4AF37;
-            min-width: 70px;
+            min-width: 65px;
+            flex-shrink: 0;
         }
      .contact-item a {
             color: #fff;
             text-decoration: none;
+            word-break: break-word;
         }
      .contact-item a:hover {
             color: #D4AF37;
         }
 
      .news-container {
-            max-height: 420px;
+            max-height: 380px;
             overflow-y: auto;
             padding-right: 8px;
         }
@@ -320,7 +421,7 @@
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9em;
+            font-size: 0.88em;
             line-height: 1.3;
             display: block;
             margin-bottom: 6px;
@@ -329,20 +430,47 @@
             color: #D4AF37;
         }
      .news-meta {
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #888;
         }
      .news-loading {
             text-align: center;
             padding: 40px 20px;
             color: #888;
+            font-size: 0.9em;
         }
 
-     .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box; }
+     .footer {
+            text-align: center;
+            padding: 20px 15px;
+            font-size: 0.85em;
+            color: #666;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            box-sizing: border-box;
+        }
      .footer a { color: #D4AF37; text-decoration: none; font-weight: bold; }
 
      .en-text { display: none; }
      .es-text { display: inline-block; }
+
+        /* Mejoras específicas para móvil */
+        @media(max-width: 480px) {
+         body { padding: 10px; padding-bottom: 90px; }
+         .product-container { padding: 15px; border-radius: 16px; }
+         .lang-btn { padding: 7px 14px; font-size: 0.85em; }
+         .category-btn { padding: 6px 14px; font-size: 0.8em; }
+         .badge { min-width: 80px; padding: 5px 10px; font-size: 0.75em; }
+         .btn-buy { padding: 7px 14px; font-size: 0.75em; }
+         .promo-card, .promo-card-premium { padding: 15px; }
+         .promo-badge, .promo-badge-gold { font-size: 0.65em; padding: 4px 8px; }
+         .contact-item { font-size: 0.78em; }
+         .contact-item strong { min-width: 60px; }
+         .dollar-widget { padding: 14px; }
+         .news-container { max-height: 350px; }
+        }
     </style>
 </head>
 <body>
@@ -387,56 +515,58 @@
                 </button>
             </div>
 
-            <table class="comparison-table" id="dataTable">
-                <thead>
-                    <tr>
-                        <th><span class="es-text">Plataforma</span><span class="en-text">Platform</span></th>
-                        <th><span class="es-text">Acceso</span><span class="en-text">Access</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-category="moda tech hogar">
-                        <td><span class="badge bg-temu">TEMU</span></td>
-                        <td><a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="moda tech hogar">
-                        <td><span class="badge bg-amazon">AMAZON</span></td>
-                        <td><a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="moda tech hogar">
-                        <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
-                        <td><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="moda tech hogar">
-                        <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
-                        <td><a href="https://mercadolibre.es" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="hogar tech">
-                        <td><span class="badge bg-walmart">WALMART</span></td>
-                        <td><a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="moda tech hogar">
-                        <td><span class="badge bg-ebay">EBAY</span></td>
-                        <td><a href="https://ebay.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="comida">
-                        <td><span class="badge bg-uber">UBER</span></td>
-                        <td><a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="tech hogar">
-                        <td><span class="badge bg-alibaba">ALIBABA</span></td>
-                        <td><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="comida">
-                        <td><span class="badge bg-ubereats">UBER EATS</span></td>
-                        <td><a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr data-category="moda">
-                        <td><span class="badge bg-tiktok">TIKTOK</span></td>
-                        <td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="comparison-table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th><span class="es-text">Plataforma</span><span class="en-text">Platform</span></th>
+                            <th><span class="es-text">Acceso</span><span class="en-text">Access</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-category="moda tech hogar">
+                            <td><span class="badge bg-temu">TEMU</span></td>
+                            <td><a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="moda tech hogar">
+                            <td><span class="badge bg-amazon">AMAZON</span></td>
+                            <td><a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="moda tech hogar">
+                            <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
+                            <td><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="moda tech hogar">
+                            <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
+                            <td><a href="https://mercadolibre.es" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="hogar tech">
+                            <td><span class="badge bg-walmart">WALMART</span></td>
+                            <td><a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="moda tech hogar">
+                            <td><span class="badge bg-ebay">EBAY</span></td>
+                            <td><a href="https://ebay.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="comida">
+                            <td><span class="badge bg-uber">UBER</span></td>
+                            <td><a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="tech hogar">
+                            <td><span class="badge bg-alibaba">ALIBABA</span></td>
+                            <td><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="comida">
+                            <td><span class="badge bg-ubereats">UBER EATS</span></td>
+                            <td><a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                        <tr data-category="moda">
+                            <td><span class="badge bg-tiktok">TIKTOK</span></td>
+                            <td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="right-column">
@@ -472,7 +602,6 @@
                     <span class="en-text">🔥 Premium Promos</span>
                 </h3>
 
-                <!-- NUEVA TARJETA: Yrt Solutions LLC -->
                 <div class="promo-card-premium">
                     <div class="promo-badge-gold">
                         <span class="es-text">Partner Oficial</span>
@@ -646,7 +775,7 @@
                 const now = new Date();
                 const timeStr = now.toLocaleTimeString(currentLang === 'es'? 'es-ES' : 'en-US', { hour: '2-digit', minute: '2-digit' });
                 updateEl.innerHTML = currentLang === 'es'
-                 ? `Actualizado: Hoy ${timeStr}`
+                ? `Actualizado: Hoy ${timeStr}`
                     : `Updated: Today ${timeStr}`;
             } else {
                 throw new Error('No data');
@@ -654,7 +783,7 @@
         } catch (error) {
             priceEl.innerHTML = `695<span>CUP</span>`;
             updateEl.innerHTML = currentLang === 'es'
-             ? `Precio ref: 23 junio 2026`
+            ? `Precio ref: 23 junio 2026`
                 : `Ref price: June 23, 2026`;
         }
     }
@@ -677,53 +806,4 @@
             if (data.status === 'ok' && data.items) {
                 container.innerHTML = '';
                 data.items.slice(0, 8).forEach(item => {
-                    const date = new Date(item.pubDate);
-                    const timeAgo = getTimeAgo(date, lang);
-
-                    const newsItem = document.createElement('div');
-                    newsItem.className = 'news-item';
-                    newsItem.innerHTML = `
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-                        <div class="news-meta">${item.source?.title || 'Google News'} • ${timeAgo}</div>
-                    `;
-                    container.appendChild(newsItem);
-                });
-            } else {
-                throw new Error('No news');
-            }
-        } catch (error) {
-            container.innerHTML = `<div class="news-loading">
-                <span class="es-text">No se pudieron cargar las noticias. Intenta más tarde.</span>
-                <span class="en-text">Could not load news. Try again later.</span>
-            </div>`;
-        }
-    }
-
-    function getTimeAgo(date, lang) {
-        const seconds = Math.floor((new Date() - date) / 1000);
-        const intervals = {
-            es: { year: 'año', month: 'mes', day: 'día', hour: 'hora', minute: 'min', second: 'seg' },
-            en: { year: 'year', month: 'month', day: 'day', hour: 'hour', minute: 'min', second: 'sec' }
-        };
-        const i = intervals[lang];
-
-        if (seconds < 60) return lang === 'es'? 'ahora' : 'now';
-        if (seconds < 3600) return `${Math.floor(seconds/60)} ${i.minute}`;
-        if (seconds < 86400) return `${Math.floor(seconds/3600)} ${i.hour}`;
-        return `${Math.floor(seconds/86400)} ${i.day}`;
-    }
-
-    document.getElementById('currentYear').innerText = new Date().getFullYear();
-    document.getElementById('currentYearEn').innerText = new Date().getFullYear();
-
-    setInterval(updateClock, 1000);
-    setInterval(updateViewers, 4000);
-    updateClock();
-    updateViewers();
-    loadNews('es');
-    loadDollarPrice();
-    setInterval(loadDollarPrice, 3600000);
-</script>
-
-</body>
-</html>
+                    const date =
