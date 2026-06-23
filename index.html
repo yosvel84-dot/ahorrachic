@@ -17,14 +17,6 @@
      .product-container {max-width: 1000px; background: #1E1E1E; margin: 15px auto; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border: 1px solid #333; overflow: hidden;}
      .product-title {font-size: clamp(1.5em, 5vw, 2.2em); font-weight: 800; color: #D4AF37; margin-bottom: 8px; text-align: center; line-height: 1.2;}
      .product-subtitle {font-size: clamp(0.9em, 3vw, 1.1em); color: #aaa; text-align: center; margin-bottom: 25px; padding: 0 10px; line-height: 1.4;}
-     .app-download-banner {background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%); border-radius: 16px; padding: 18px; margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between; gap: 15px; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); flex-wrap: wrap;}
-     .app-download-left {display: flex; align-items: center; gap: 15px; flex: 1; min-width: 200px;}
-     .app-icon {width: 60px; height: 60px; background: #000; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2em; box-shadow: 0 4px 12px rgba(0,0,0,0.3); flex-shrink: 0;}
-     .app-info h3 {margin: 0 0 4px 0; color: #000; font-size: 1.1em; font-weight: 800;}
-     .app-info p {margin: 0; color: #333; font-size: 0.85em; font-weight: 500;}
-     .btn-download {background: #000; color: #D4AF37; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9em; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;}
-     .btn-download:active {transform: scale(0.95);}
-        @media(max-width: 600px) {.app-download-banner {flex-direction: column; text-align: center;} .app-download-left {flex-direction: column;}}
      .main-layout {display: grid; grid-template-columns: 1fr; gap: 25px;}
         @media(min-width: 768px) {.main-layout {grid-template-columns: 1.2fr 1fr; gap: 30px;} .product-container {padding: 30px; border-radius: 24px;}}
      .left-column,.right-column {display: flex; flex-direction: column; gap: 20px; min-width: 0;}
@@ -129,21 +121,6 @@
         <span class="es-text">Tu portal inteligente de compras, ofertas y tendencias mundiales</span>
         <span class="en-text">Your smart hub for shopping, deals and worldwide trends</span>
     </p>
-
-    <div class="app-download-banner">
-        <div class="app-download-left">
-            <div class="app-icon">📱</div>
-            <div class="app-info">
-                <h3><span class="es-text">¡Descarga la App!</span><span class="en-text">Download the App!</span></h3>
-                <p><span class="es-text">Acceso rápido + Notificaciones de ofertas</span><span class="en-text">Fast access + Deal notifications</span></p>
-            </div>
-        </div>
-        <a href="TU_LINK_APK_AQUI" target="_blank" rel="noopener noreferrer" class="btn-download">
-            <span>⬇️</span>
-            <span class="es-text">Descargar APK</span>
-            <span class="en-text">Download APK</span>
-        </a>
-    </div>
 
     <div class="main-layout">
         <div class="left-column">
@@ -340,4 +317,41 @@
         container.innerHTML = `<div class="news-loading"><span class="es-text">Cargando noticias del día...</span><span class="en-text">Loading today's news...</span></div>`;
         const langCode = lang === 'es' ? 'es' : 'en-US';
         const rssUrl = `https://news.google.com/rss?hl=${langCode}&gl=${lang === 'es' ? 'ES' : 'US'}&ceid=${lang === 'es' ? 'ES:es' : 'US:en'}`;
-        const apiUrl = `https://
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=8`;
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            if (data.status === 'ok' && data.items) {
+                container.innerHTML = '';
+                data.items.slice(0, 8).forEach(item => {
+                    const date = new Date(item.pubDate);
+                    const dateStr = date.toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', {day: 'numeric', month: 'short'});
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a><div class="news-meta">📰 ${item.author || 'Google News'} • ${dateStr}</div>`;
+                    container.appendChild(newsItem);
+                });
+            } else {
+                throw new Error('No news');
+            }
+        } catch (error) {
+            container.innerHTML = `<div class="news-loading"><span class="es-text">No se pudieron cargar las noticias</span><span class="en-text">Could not load news</span></div>`;
+        }
+    }
+
+    // INICIALIZAR TODO
+    document.addEventListener('DOMContentLoaded', function() {
+        updateClock();
+        setInterval(updateClock, 1000);
+        updateViewers();
+        setInterval(updateViewers, 45000);
+        loadDollarPrice();
+        setInterval(loadDollarPrice, 300000);
+        loadNews('es');
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+        document.getElementById('currentYearEn').innerText = new Date().getFullYear();
+    });
+</script>
+
+</body>
+</html>
