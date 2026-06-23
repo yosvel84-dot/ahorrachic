@@ -90,6 +90,27 @@
             box-shadow: 0 0 8px rgba(255, 105, 180, 0.2);
         }
 
+        /* Bloque de Cupones */
+        .coupon-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .coupon-card {
+            flex: 1;
+            min-width: 130px;
+            background: #fff0f5;
+            border: 1px dashed #ff69b4;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .coupon-card:hover { transform: translateY(-2px); background: #ffe4e1; }
+        .coupon-card small { font-size: 0.75em; color: #666; font-weight: bold; text-transform: uppercase; }
+        .coupon-code { font-size: 1.1em; font-weight: bold; color: #ff1493; margin-top: 2px; letter-spacing: 1px; }
+
         /* Galería Visual de Tendencias */
         .trends-title, .promo-title, .news-title { font-size: 1.25em; font-weight: 700; color: #333; margin: 0 0 15px 0; }
         .trends-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -134,15 +155,18 @@
             text-align: center;
             min-width: 110px;
         }
+        .bg-shein { background-color: #000000; letter-spacing: 1px; }
         .bg-temu { background-color: #ff5000; }
         .bg-amazon { background-color: #ff9900; }
         .bg-aliexpress { background: linear-gradient(45deg, #FF471A, #E61919); }
         .bg-mercadolibre { background-color: #fff159; color: #333 !important; }
         .bg-walmart { background-color: #0071dc; }
-        .bg-alibaba { background: linear-gradient(45deg, #e53238, #0064d2, #f5af02, #86b817); }
+        .bg-ebay { background: linear-gradient(45deg, #e53238, #0064d2, #f5af02, #86b817); }
         .bg-uber { background-color: #000000; border: 1px solid #333; }
+        .bg-doordash { background-color: #FF3008; }
         .bg-ubereats { background-color: #06C167; }
         .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
+        .bg-homedepot { background-color: #F96302; }
         
         .btn-buy { 
             display: inline-block; 
@@ -160,6 +184,22 @@
         .btn-buy:hover { 
             background: linear-gradient(45deg, #ff1493, #ff69b4); 
             transform: translateY(-2px);
+        }
+
+        /* Notificaciones flotantes */
+        .toast-notification {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 20, 147, 0.95);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
         }
 
         /* Zona de Promociones de Pago */
@@ -215,8 +255,22 @@
         
         <!-- ================= COLUMNA IZQUIERDA ================= -->
         <div class="left-column">
+            <!-- Buscador -->
             <input type="text" id="storeSearch" class="search-box" placeholder="🔍 ¿Qué tienda o producto buscas hoy?..." onkeyup="filterTable()">
 
+            <!-- Zona de Cupones -->
+            <div class="coupon-container">
+                <div class="coupon-card" onclick="copyCoupon('CHIC10')">
+                    <small>Cupón SHEIN 👗</small>
+                    <div class="coupon-code">CHIC10</div>
+                </div>
+                <div class="coupon-card" onclick="copyCoupon('CHIC30')">
+                    <small>Cupón TEMU 🧡</small>
+                    <div class="coupon-code">CHIC30</div>
+                </div>
+            </div>
+
+            <!-- Tabla de Tiendas -->
             <table class="comparison-table" id="dataTable">
                 <thead>
                     <tr>
@@ -225,6 +279,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="searchable-row">
+                        <td><span class="badge bg-shein">SHEIN Ropa Vestido</span></td>
+                        <td><a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                    </tr>
                     <tr class="searchable-row">
                         <td><span class="badge bg-temu">TEMU Hogar Moda</span></td>
                         <td><a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
@@ -236,10 +294,6 @@
                     <tr class="searchable-row">
                         <td><span class="badge bg-aliexpress">ALIEXPRESS Virales</span></td>
                         <td><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                  <tr class="searchable-row">
-    <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
-    <td><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-buy">Ir ✨</a></td>
-</tr>
                     </tr>
                     <tr class="searchable-row">
                         <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
@@ -258,6 +312,10 @@
                         <td><a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
+                        <td><span class="badge bg-doordash">DOORDASH</span></td>
+                        <td><a href="https://doordash.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                    </tr>
+                    <tr class="searchable-row">
                         <td><span class="badge bg-ubereats">UBER EATS</span></td>
                         <td><a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
@@ -265,17 +323,23 @@
                         <td><span class="badge bg-tiktok">TIKTOK Escaparate Shop</span></td>
                         <td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
+                    <tr class="searchable-row">
+                        <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
+                        <td><a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
         <!-- ================= COLUMNA DERECHA ================= -->
         <div class="right-column">
+            <!-- Widget: Reloj y Saludo -->
             <div class="widgets-box">
                 <div id="liveGreeting" class="live-greeting">¡Hola, Chic!</div>
                 <div id="liveClock" class="live-clock">00:00:00</div>
             </div>
 
+            <!-- Favoritos de la Semana -->
             <div class="trends-section">
                 <h3 class="trends-title">
                     <span class="es-text">✨ Top Semanal Virales</span>
@@ -290,15 +354,16 @@
                         </div>
                     </div>
                     <div class="trend-card">
-                        <div class="trend-img">🎁</div>
+                        <div class="trend-img">👗</div>
                         <div class="trend-info">
-                            <h4>Ofertas Flash</h4>
-                            <a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
+                            <h4>Vestido Chic</h4>
+                            <a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Zona de Promociones Cobradas -->
             <div class="promo-section">
                 <h3 class="promo-title">
                     <span class="es-text">🔥 Promociones Especiales</span>
@@ -312,15 +377,23 @@
                     <a href="AQUÍ_TU_ENLACE_COBRADO" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Ahora ✨</a>
                 </div>
 
+                <!-- TARJETA DE ANUNCIO CON TUS DATOS INTEGRADOS -->
                 <div class="promo-card" style="border: 2px dashed #ff69b4; background: #fff0f5;">
                     <div class="promo-badge" style="background: #666;">Promo</div>
                     <h3>¿Anunciar tu tienda aquí?</h3>
                     <p>Promociona tus productos ante miles de visitas. Escríbenos directamente para consultar tarifas.</p>
-                    <a href="https://wa.me/13054911906?text=Hola,%20me%20interesa%20el%20espacio%20publicitario%20en%20AhorraTodo%20Chic" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); margin-right: 5px; margin-bottom: 8px;">WhatsApp 💬</a>
-                    <a href="mailto:yosvelreina@gmail.com?subject=Publicidad%20en%20AhorraTodo%20Chic" class="btn-buy" style="background: #666; margin-bottom: 8px;">Correo 📩</a>
+                    
+                    <a href="https://wa.me/13054911906?text=Hola,%20me%20interesa%20el%20espacio%20publicitario%20en%20AhorraTodo%20Chic" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); margin-right: 5px; margin-bottom: 8px;">
+                        WhatsApp 💬
+                    </a>
+                    
+                    <a href="mailto:yosvelreina@gmail.com?subject=Publicidad%20en%20AhorraTodo%20Chic" class="btn-buy" style="background: #666; margin-bottom: 8px;">
+                        Correo 📩
+                    </a>
                 </div>
             </div>
 
+            <!-- Noticias Automáticas -->
             <div class="news-section">
                 <h3 class="news-title">
                     <span class="es-text">📰 Tendencias Mundiales</span>
@@ -329,8 +402,13 @@
                 <iframe src="https://rss.app/embed/v1/magazine/uYV46fK89zD7f8V5" frameborder="0" width="100%" height="380" style="border-radius:16px; border:1px solid #ffe4e1;"></iframe>
             </div>
         </div>
-    </div>
+
+    </div> <!-- FIN DE LA MALLA -->
+
 </div>
+
+<!-- Notificación flotante -->
+<div id="toast" class="toast-notification">¡Cupón copiado! ✂️</div>
 
 <footer class="footer">
     <span class="es-text">© 2026 <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
@@ -339,6 +417,7 @@
 
 <script>
     let currentLang = 'es'; 
+
     function toggleLanguage() {
         const btn = document.getElementById('langToggle');
         const esElements = document.querySelectorAll('.es-text');
@@ -392,9 +471,25 @@
         
         rows.forEach(row => {
             const badgeText = row.querySelector('.badge').innerText.toLowerCase();
-            row.style.display = badgeText.includes(input) ? "" : "none";
+            if (badgeText.includes(input)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    }
+
+    function copyCoupon(code) {
+        navigator.clipboard.writeText(code).then(() => {
+            const toast = document.getElementById('toast');
+            toast.innerText = currentLang === 'es' ? `¡Cupón ${code} copiado! ✂️` : `Coupon ${code} copied! ✂️`;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2500);
         });
     }
 </script>
+
 </body>
 </html>
