@@ -317,4 +317,9 @@
             }
         } catch (error) {
             priceEl.innerHTML = `695<span>CUP</span>`;
-            updateEl.innerHTML = currentLang === 'es' ? `
+            updateEl.innerHTML = currentLang === 'es' ? `Precio ref: 23 junio 2026` : `Ref price: June 23, 2026`;
+        }
+    }
+
+    async function loadNews(lang = 'es') {
+        const container = document.getElementById('news
