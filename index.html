@@ -1,11 +1,11 @@
+[index.html.html](https://github.com/user-attachments/files/29261344/index.html.html)
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Etiqueta de verificación de Admitad -->
     <meta name="verify-admitad" content="aacdd45797" />
-    <title>AhorraTodo Chic | Portal Premium Grid</title>
+    <title>AhorraTodo Chic | Portal de Afiliado</title>
     <style>
         body { 
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; 
@@ -30,7 +30,6 @@
         }
         .lang-btn:hover { background: #ff1493; transform: scale(1.05); }
         
-        /* Contenedor Principal Adaptable */
         .product-container { 
             max-width: 1000px; 
             background: white; 
@@ -43,27 +42,19 @@
         .product-title { font-size: 2.2em; font-weight: 800; color: #ff1493; margin-bottom: 5px; text-align: center; }
         .product-subtitle { font-size: 1.1em; color: #666; text-align: center; margin-bottom: 30px; }
         
-        /* ESTRUCTURA EN MALLA (GRID) */
         .main-layout {
             display: grid;
             grid-template-columns: 1.2fr 1fr; 
             gap: 30px;
         }
-
-        /* Responsive para Móviles */
         @media(max-width: 820px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
+            .main-layout { grid-template-columns: 1fr; }
         }
-
         .left-column, .right-column {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
-
-        /* Reloj y Saludo */
         .widgets-box {
             text-align: center;
             background: #fff0f5;
@@ -73,8 +64,6 @@
         }
         .live-clock { font-size: 1.5em; font-weight: bold; color: #ff1493; margin-top: 2px; }
         .live-greeting { font-size: 1em; color: #555; font-weight: 500; }
-
-        /* Barra de Búsqueda Inteligente */
         .search-box {
             width: 100%;
             padding: 12px 20px;
@@ -89,44 +78,7 @@
             border-color: #ff69b4;
             box-shadow: 0 0 8px rgba(255, 105, 180, 0.2);
         }
-
-        /* Bloque de Cupones */
-        .coupon-container {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .coupon-card {
-            flex: 1;
-            min-width: 130px;
-            background: #fff0f5;
-            border: 1px dashed #ff69b4;
-            border-radius: 12px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .coupon-card:hover { transform: translateY(-2px); background: #ffe4e1; }
-        .coupon-card small { font-size: 0.75em; color: #666; font-weight: bold; text-transform: uppercase; }
-        .coupon-code { font-size: 1.1em; font-weight: bold; color: #ff1493; margin-top: 2px; letter-spacing: 1px; }
-
-        /* Galería Visual de Tendencias */
-        .trends-title, .promo-title, .news-title { font-size: 1.25em; font-weight: 700; color: #333; margin: 0 0 15px 0; }
-        .trends-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .trend-card {
-            background: #fafafa;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #ffe4e1;
-            transition: 0.3s;
-        }
-        .trend-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
-        .trend-img { width: 100%; height: 110px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 2.2em; }
-        .trend-info { padding: 10px; text-align: center; }
-        .trend-info h4 { margin: 0 0 8px 0; font-size: 0.9em; color: #333; }
-
-        /* Tabla de Tiendas */
+        .promo-title, .news-title { font-size: 1.25em; font-weight: 700; color: #333; margin: 0 0 15px 0; }
         .comparison-table { 
             width: 100%; 
             border-collapse: separate; 
@@ -144,7 +96,6 @@
         }
         .comparison-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ffe4e1; vertical-align: middle; }
         .comparison-table tr:last-child td { border-bottom: none; }
-
         .badge {
             padding: 8px 16px;
             border-radius: 30px;
@@ -163,7 +114,7 @@
         .bg-walmart { background-color: #0071dc; }
         .bg-ebay { background: linear-gradient(45deg, #e53238, #0064d2, #f5af02, #86b817); }
         .bg-uber { background-color: #000000; border: 1px solid #333; }
-        .bg-doordash { background-color: #FF3008; }
+        .bg-alibaba { background-color: #FF6A00; }
         .bg-ubereats { background-color: #06C167; }
         .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
         .bg-homedepot { background-color: #F96302; }
@@ -185,24 +136,6 @@
             background: linear-gradient(45deg, #ff1493, #ff69b4); 
             transform: translateY(-2px);
         }
-
-        /* Notificaciones flotantes */
-        .toast-notification {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 20, 147, 0.95);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            display: none;
-            z-index: 1000;
-        }
-
-        /* Zona de Promociones de Pago */
         .promo-card {
             background: linear-gradient(135deg, #fffafb 0%, #fff0f3 100%);
             border: 2px solid #ffb6c1;
@@ -237,40 +170,24 @@
 <body>
 
 <div class="lang-switcher">
-    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">💖 Switch to English</button>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()" aria-label="Cambiar idioma">💖 Switch to English</button>
 </div>
 
 <div class="product-container">
     <h1 class="product-title">
-        <span class="es-text">🛍️ ¡AhorraTodo Chic!</span>
-        <span class="en-text">🛍️ SaveEverything Chic!</span>
+        <span class="es-text">🛍 ¡AhorraTodo Chic!</span>
+        <span class="en-text">🛍 SaveEverything Chic!</span>
     </h1>
     <p class="product-subtitle">
-        <span class="es-text">Tu portal inteligente de compras y tendencias</span>
-        <span class="en-text">Your smart hub for shopping and trends</span>
+        <span class="es-text">Tu portal inteligente de compras, ofertas y tendencias mundiales</span>
+        <span class="en-text">Your smart hub for shopping, deals and worldwide trends</span>
     </p>
 
-    <!-- DISTRIBUCIÓN EN COLUMNAS -->
     <div class="main-layout">
         
-        <!-- ================= COLUMNA IZQUIERDA ================= -->
         <div class="left-column">
-            <!-- Buscador -->
-            <input type="text" id="storeSearch" class="search-box" placeholder="🔍 ¿Qué tienda o producto buscas hoy?..." onkeyup="filterTable()">
+            <input type="text" id="storeSearch" class="search-box" placeholder="🔍 ¿Qué tienda o producto buscas hoy?..." onkeyup="filterTable()" aria-label="Buscar tienda">
 
-            <!-- Zona de Cupones -->
-            <div class="coupon-container">
-                <div class="coupon-card" onclick="copyCoupon('CHIC10')">
-                    <small>Cupón SHEIN 👗</small>
-                    <div class="coupon-code">CHIC10</div>
-                </div>
-                <div class="coupon-card" onclick="copyCoupon('CHIC30')">
-                    <small>Cupón TEMU 🧡</small>
-                    <div class="coupon-code">CHIC30</div>
-                </div>
-            </div>
-
-            <!-- Tabla de Tiendas -->
             <table class="comparison-table" id="dataTable">
                 <thead>
                     <tr>
@@ -280,19 +197,15 @@
                 </thead>
                 <tbody>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-shein">SHEIN Ropa Vestido</span></td>
-                        <td><a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr class="searchable-row">
-                        <td><span class="badge bg-temu">TEMU Hogar Moda</span></td>
+                        <td><span class="badge bg-temu">TEMU</span></td>
                         <td><a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-amazon">AMAZON Maquillaje</span></td>
+                        <td><span class="badge bg-amazon">AMAZON</span></td>
                         <td><a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-aliexpress">ALIEXPRESS Virales</span></td>
+                        <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
                         <td><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
@@ -300,70 +213,39 @@
                         <td><a href="https://mercadolibre.es" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-walmart">WALMART Super</span></td>
+                        <td><span class="badge bg-walmart">WALMART</span></td>
                         <td><a href="https://walmart.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-ebay">EBAY Subastas</span></td>
+                        <td><span class="badge bg-ebay">EBAY</span></td>
                         <td><a href="https://ebay.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-uber">UBER Viajes</span></td>
+                        <td><span class="badge bg-uber">UBER</span></td>
                         <td><a href="https://uber.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-doordash">DOORDASH</span></td>
-                        <td><a href="https://doordash.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                        <td><span class="badge bg-alibaba">ALIBABA</span></td>
+                        <td><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
                         <td><span class="badge bg-ubereats">UBER EATS</span></td>
                         <td><a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                     <tr class="searchable-row">
-                        <td><span class="badge bg-tiktok">TIKTOK Escaparate Shop</span></td>
+                        <td><span class="badge bg-tiktok">TIKTOK</span></td>
                         <td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
-                    <tr class="searchable-row">
-                        <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
-                        <td><a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- ================= COLUMNA DERECHA ================= -->
         <div class="right-column">
-            <!-- Widget: Reloj y Saludo -->
             <div class="widgets-box">
                 <div id="liveGreeting" class="live-greeting">¡Hola, Chic!</div>
                 <div id="liveClock" class="live-clock">00:00:00</div>
             </div>
 
-            <!-- Favoritos de la Semana -->
-            <div class="trends-section">
-                <h3 class="trends-title">
-                    <span class="es-text">✨ Top Semanal Virales</span>
-                    <span class="en-text">✨ Weekly Top Viral</span>
-                </h3>
-                <div class="trends-grid">
-                    <div class="trend-card">
-                        <div class="trend-img">💄</div>
-                        <div class="trend-info">
-                            <h4>Organizador MakeUp</h4>
-                            <a href="https://www.amazon.es?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
-                        </div>
-                    </div>
-                    <div class="trend-card">
-                        <div class="trend-img">👗</div>
-                        <div class="trend-info">
-                            <h4>Vestido Chic</h4>
-                            <a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Zona de Promociones Cobradas -->
             <div class="promo-section">
                 <h3 class="promo-title">
                     <span class="es-text">🔥 Promociones Especiales</span>
@@ -374,10 +256,10 @@
                     <div class="promo-badge">Chic Pick</div>
                     <h3>Outfit Viral de Temporada</h3>
                     <p>Consigue el look de TikTok con 15% de descuento usando nuestro enlace.</p>
-                    <a href="AQUÍ_TU_ENLACE_COBRADO" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Ahora ✨</a>
+                    <!-- REEMPLAZA ESTE LINK con tu URL de afiliado -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Ahora ✨</a>
                 </div>
 
-                <!-- TARJETA DE ANUNCIO CON TUS DATOS INTEGRADOS -->
                 <div class="promo-card" style="border: 2px dashed #ff69b4; background: #fff0f5;">
                     <div class="promo-badge" style="background: #666;">Promo</div>
                     <h3>¿Anunciar tu tienda aquí?</h3>
@@ -393,26 +275,22 @@
                 </div>
             </div>
 
-            <!-- Noticias Automáticas -->
             <div class="news-section">
                 <h3 class="news-title">
                     <span class="es-text">📰 Tendencias Mundiales</span>
                     <span class="en-text">📰 World Trends</span>
                 </h3>
-                <iframe src="https://rss.app/embed/v1/magazine/uYV46fK89zD7f8V5" frameborder="0" width="100%" height="380" style="border-radius:16px; border:1px solid #ffe4e1;"></iframe>
+                <iframe src="https://rss.app/embed/v1/magazine/uYV46fK89zD7f8V5" frameborder="0" width="100%" height="380" style="border-radius:16px; border:1px solid #ffe4e1;" title="Tendencias mundiales"></iframe>
             </div>
         </div>
 
-    </div> <!-- FIN DE LA MALLA -->
+    </div>
 
 </div>
 
-<!-- Notificación flotante -->
-<div id="toast" class="toast-notification">¡Cupón copiado! ✂️</div>
-
 <footer class="footer">
-    <span class="es-text">© 2026 <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
-    <span class="en-text">© 2026 <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
+    <span class="es-text">© <span id="currentYear"></span> <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
+    <span class="en-text">© <span id="currentYearEn"></span> <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
 </footer>
 
 <script>
@@ -423,18 +301,21 @@
         const esElements = document.querySelectorAll('.es-text');
         const enElements = document.querySelectorAll('.en-text');
         const searchInput = document.getElementById('storeSearch');
+        const htmlTag = document.documentElement;
         
         if (currentLang === 'es') {
             esElements.forEach(el => el.style.display = 'none');
             enElements.forEach(el => el.style.display = 'inline-block');
             btn.innerHTML = "💖 Cambiar a Español";
             searchInput.placeholder = "🔍 Search for stores or items...";
+            htmlTag.setAttribute('lang', 'en');
             currentLang = 'en';
         } else {
             esElements.forEach(el => el.style.display = 'inline-block');
             enElements.forEach(el => el.style.display = 'none');
             btn.innerHTML = "💖 Switch to English";
             searchInput.placeholder = "🔍 ¿Qué tienda o producto buscas hoy?...";
+            htmlTag.setAttribute('lang', 'es');
             currentLang = 'es';
         }
         updateClock();
@@ -453,18 +334,16 @@
         
         if (currentLang === 'es') {
             if (currentHour >= 6 && currentHour < 12) greeting = "🌅 ¡Buenos días, Chic!";
-            else if (currentHour >= 12 && currentHour < 19) greeting = "☀️ ¡Buenas tardes, Chic!";
+            else if (currentHour >= 12 && currentHour < 19) greeting = "☀ ¡Buenas tardes, Chic!";
             else greeting = "🌙 ¡Buenas noches, Chic!";
         } else {
             if (currentHour >= 6 && currentHour < 12) greeting = "🌅 Good morning, Chic!";
-            else if (currentHour >= 12 && currentHour < 19) greeting = "☀️ Good afternoon, Chic!";
+            else if (currentHour >= 12 && currentHour < 19) greeting = "☀ Good afternoon, Chic!";
             else greeting = "🌙 Good evening, Chic!";
         }
         document.getElementById('liveGreeting').innerText = greeting;
     }
-    setInterval(updateClock, 1000);
-    updateClock();
-
+    
     function filterTable() {
         const input = document.getElementById('storeSearch').value.toLowerCase();
         const rows = document.querySelectorAll('.searchable-row');
@@ -479,16 +358,11 @@
         });
     }
 
-    function copyCoupon(code) {
-        navigator.clipboard.writeText(code).then(() => {
-            const toast = document.getElementById('toast');
-            toast.innerText = currentLang === 'es' ? `¡Cupón ${code} copiado! ✂️` : `Coupon ${code} copied! ✂️`;
-            toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 2500);
-        });
-    }
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+    document.getElementById('currentYearEn').innerText = new Date().getFullYear();
+    
+    setInterval(updateClock, 1000);
+    updateClock();
 </script>
 
 </body>
