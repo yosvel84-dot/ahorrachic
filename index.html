@@ -134,7 +134,6 @@
             text-align: center;
             min-width: 110px;
         }
-        .bg-shein { background-color: #000000; letter-spacing: 1px; }
         .bg-temu { background-color: #ff5000; }
         .bg-amazon { background-color: #ff9900; }
         .bg-aliexpress { background: linear-gradient(45deg, #FF471A, #E61919); }
@@ -145,7 +144,6 @@
         .bg-doordash { background-color: #FF3008; }
         .bg-ubereats { background-color: #06C167; }
         .bg-tiktok { background-color: #000000; box-shadow: inset 2px 0 0 #00f2fe, inset -2px 0 0 #fe0979; }
-        .bg-homedepot { background-color: #F96302; }
         
         .btn-buy { 
             display: inline-block; 
@@ -218,10 +216,8 @@
         
         <!-- ================= COLUMNA IZQUIERDA ================= -->
         <div class="left-column">
-            <!-- Buscador -->
             <input type="text" id="storeSearch" class="search-box" placeholder="🔍 ¿Qué tienda o producto buscas hoy?..." onkeyup="filterTable()">
 
-            <!-- Tabla de Tiendas -->
             <table class="comparison-table" id="dataTable">
                 <thead>
                     <tr>
@@ -230,10 +226,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="searchable-row">
-                        <td><span class="badge bg-shein">SHEIN Ropa Vestido</span></td>
-                        <td><a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
                     <tr class="searchable-row">
                         <td><span class="badge bg-temu">TEMU Hogar Moda</span></td>
                         <td><a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
@@ -274,23 +266,17 @@
                         <td><span class="badge bg-tiktok">TIKTOK Escaparate Shop</span></td>
                         <td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                     </tr>
-                    <tr class="searchable-row">
-                        <td><span class="badge bg-homedepot">HOME DEPOT</span></td>
-                        <td><a href="https://homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
 
         <!-- ================= COLUMNA DERECHA ================= -->
         <div class="right-column">
-            <!-- Widget: Reloj y Saludo -->
             <div class="widgets-box">
                 <div id="liveGreeting" class="live-greeting">¡Hola, Chic!</div>
                 <div id="liveClock" class="live-clock">00:00:00</div>
             </div>
 
-            <!-- Favoritos de la Semana -->
             <div class="trends-section">
                 <h3 class="trends-title">
                     <span class="es-text">✨ Top Semanal Virales</span>
@@ -305,16 +291,15 @@
                         </div>
                     </div>
                     <div class="trend-card">
-                        <div class="trend-img">👗</div>
+                        <div class="trend-img">🎁</div>
                         <div class="trend-info">
-                            <h4>Vestido Chic</h4>
-                            <a href="https://shein.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
+                            <h4>Ofertas Flash</h4>
+                            <a href="https://temu.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Promo</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Zona de Promociones Cobradas -->
             <div class="promo-section">
                 <h3 class="promo-title">
                     <span class="es-text">🔥 Promociones Especiales</span>
@@ -328,23 +313,15 @@
                     <a href="AQUÍ_TU_ENLACE_COBRADO" target="_blank" rel="noopener noreferrer" class="btn-buy">Ver Ahora ✨</a>
                 </div>
 
-                <!-- TARJETA DE ANUNCIO CON TUS DATOS INTEGRADOS -->
                 <div class="promo-card" style="border: 2px dashed #ff69b4; background: #fff0f5;">
                     <div class="promo-badge" style="background: #666;">Promo</div>
                     <h3>¿Anunciar tu tienda aquí?</h3>
                     <p>Promociona tus productos ante miles de visitas. Escríbenos directamente para consultar tarifas.</p>
-                    
-                    <a href="https://wa.me/13054911906?text=Hola,%20me%20interesa%20el%20espacio%20publicitario%20en%20AhorraTodo%20Chic" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); margin-right: 5px; margin-bottom: 8px;">
-                        WhatsApp 💬
-                    </a>
-                    
-                    <a href="mailto:yosvelreina@gmail.com?subject=Publicidad%20en%20AhorraTodo%20Chic" class="btn-buy" style="background: #666; margin-bottom: 8px;">
-                        Correo 📩
-                    </a>
+                    <a href="https://wa.me/13054911906?text=Hola,%20me%20interesa%20el%20espacio%20publicitario%20en%20AhorraTodo%20Chic" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #25D366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); margin-right: 5px; margin-bottom: 8px;">WhatsApp 💬</a>
+                    <a href="mailto:yosvelreina@gmail.com?subject=Publicidad%20en%20AhorraTodo%20Chic" class="btn-buy" style="background: #666; margin-bottom: 8px;">Correo 📩</a>
                 </div>
             </div>
 
-            <!-- Noticias Automáticas -->
             <div class="news-section">
                 <h3 class="news-title">
                     <span class="es-text">📰 Tendencias Mundiales</span>
@@ -353,9 +330,7 @@
                 <iframe src="https://rss.app/embed/v1/magazine/uYV46fK89zD7f8V5" frameborder="0" width="100%" height="380" style="border-radius:16px; border:1px solid #ffe4e1;"></iframe>
             </div>
         </div>
-
-    </div> <!-- FIN DE LA MALLA -->
-
+    </div>
 </div>
 
 <footer class="footer">
@@ -365,7 +340,6 @@
 
 <script>
     let currentLang = 'es'; 
-
     function toggleLanguage() {
         const btn = document.getElementById('langToggle');
         const esElements = document.querySelectorAll('.es-text');
@@ -419,14 +393,9 @@
         
         rows.forEach(row => {
             const badgeText = row.querySelector('.badge').innerText.toLowerCase();
-            if (badgeText.includes(input)) {
-                row.style.display = "";
-            } else {
-                row.style.display = "none";
-            }
+            row.style.display = badgeText.includes(input) ? "" : "none";
         });
     }
 </script>
-
 </body>
 </html>
