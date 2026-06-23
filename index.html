@@ -450,7 +450,7 @@
             gap: 8px;
             margin: 15px 0;
             padding: 12px;
-            background: #1A1A1A;
+            background: #1A1A;
             border-radius: 10px;
             border-left: 3px solid #D4AF37;
         }
@@ -588,7 +588,6 @@
                     <span class="en-text">Fast access + Deal notifications</span>
                 </p>
             </div>
-        </div>
         <a href="TU_LINK_APK_AQUI" target="_blank" rel="noopener noreferrer" class="btn-download">
             <span>⬇️</span>
             <span class="es-text">Descargar APK</span>
@@ -600,23 +599,23 @@
 
         <div class="left-column">
             <div class="category-tabs">
-                <button class="category-btn active" onclick="filterCategory('all')">
+                <button class="category-btn active" onclick="filterCategory('all', this)">
                     <span class="es-text">🔥 Todos</span>
                     <span class="en-text">🔥 All</span>
                 </button>
-                <button class="category-btn" onclick="filterCategory('moda')">
+                <button class="category-btn" onclick="filterCategory('moda', this)">
                     <span class="es-text">👗 Moda</span>
                     <span class="en-text">👗 Fashion</span>
                 </button>
-                <button class="category-btn" onclick="filterCategory('tech')">
+                <button class="category-btn" onclick="filterCategory('tech', this)">
                     <span class="es-text">📱 Tech</span>
                     <span class="en-text">📱 Tech</span>
                 </button>
-                <button class="category-btn" onclick="filterCategory('hogar')">
+                <button class="category-btn" onclick="filterCategory('hogar', this)">
                     <span class="es-text">🏠 Hogar</span>
                     <span class="en-text">🏠 Home</span>
                 </button>
-                <button class="category-btn" onclick="filterCategory('comida')">
+                <button class="category-btn" onclick="filterCategory('comida', this)">
                     <span class="es-text">🍔 Comida</span>
                     <span class="en-text">🍔 Food</span>
                 </button>
@@ -831,7 +830,4 @@
         const currentHour = now.getHours();
         let greeting = "";
 
-        if (currentLang === 'es') {
-            if (currentHour >= 6 && currentHour < 12) greeting = "🌅 ¡Buenos días, Chic!";
-            else if (currentHour >= 12 && currentHour < 19) greeting = "☀ ¡Buenas tardes, Chic!";
-            else greeting = "🌙 ¡Buenas
+        if (currentLang
