@@ -151,6 +151,15 @@
                         <tr data-category="tech hogar"><td><span class="badge bg-alibaba">ALIBABA</span></td><td><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
                         <tr data-category="comida"><td><span class="badge bg-ubereats">UBER EATS</span></td><td><a href="https://ubereats.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
                         <tr data-category="moda"><td><span class="badge bg-tiktok">TIKTOK</span></td><td><a href="https://www.tiktok.com/t/ZT961w6NEFVQm-yNz0h/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="moda"><td><span class="badge" style="background-color: #FF6B6B;">SHEIN</span></td><td><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="tech hogar"><td><span class="badge" style="background-color: #FFB800; color: #000;">DHGATE</span></td><td><a href="https://www.dhgate.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="moda tech hogar"><td><span class="badge" style="background-color: #0070E0;">WISH</span></td><td><a href="https://www.wish.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="tech"><td><span class="badge" style="background-color: #FF5A00;">BANGGOOD</span></td><td><a href="https://www.banggood.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="moda hogar"><td><span class="badge" style="background-color: #F1641E;">ETSY</span></td><td><a href="https://www.etsy.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="tech"><td><span class="badge" style="background-color: #0046BE;">BEST BUY</span></td><td><a href="https://www.bestbuy.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="hogar comida"><td><span class="badge" style="background-color: #E31837;">COSTCO</span></td><td><a href="https://www.costco.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="hogar"><td><span class="badge" style="background-color: #00A651;">DOLLAR TREE</span></td><td><a href="https://www.dollartree.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
+                        <tr data-category="hogar"><td><span class="badge" style="background-color: #F96302;">HOME DEPOT</span></td><td><a href="https://www.homedepot.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -308,50 +317,4 @@
             }
         } catch (error) {
             priceEl.innerHTML = `695<span>CUP</span>`;
-            updateEl.innerHTML = currentLang === 'es' ? `Precio ref: 23 junio 2026` : `Ref price: June 23, 2026`;
-        }
-    }
-
-    async function loadNews(lang = 'es') {
-        const container = document.getElementById('newsContainer');
-        container.innerHTML = `<div class="news-loading"><span class="es-text">Cargando noticias del día...</span><span class="en-text">Loading today's news...</span></div>`;
-        const langCode = lang === 'es' ? 'es' : 'en-US';
-        const rssUrl = `https://news.google.com/rss?hl=${langCode}&gl=${lang === 'es' ? 'ES' : 'US'}&ceid=${lang === 'es' ? 'ES:es' : 'US:en'}`;
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=8`;
-        try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-            if (data.status === 'ok' && data.items) {
-                container.innerHTML = '';
-                data.items.slice(0, 8).forEach(item => {
-                    const date = new Date(item.pubDate);
-                    const dateStr = date.toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', {day: 'numeric', month: 'short'});
-                    const newsItem = document.createElement('div');
-                    newsItem.className = 'news-item';
-                    newsItem.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a><div class="news-meta">📰 ${item.author || 'Google News'} • ${dateStr}</div>`;
-                    container.appendChild(newsItem);
-                });
-            } else {
-                throw new Error('No news');
-            }
-        } catch (error) {
-            container.innerHTML = `<div class="news-loading"><span class="es-text">No se pudieron cargar las noticias</span><span class="en-text">Could not load news</span></div>`;
-        }
-    }
-
-    // INICIALIZAR TODO
-    document.addEventListener('DOMContentLoaded', function() {
-        updateClock();
-        setInterval(updateClock, 1000);
-        updateViewers();
-        setInterval(updateViewers, 45000);
-        loadDollarPrice();
-        setInterval(loadDollarPrice, 300000);
-        loadNews('es');
-        document.getElementById('currentYear').innerText = new Date().getFullYear();
-        document.getElementById('currentYearEn').innerText = new Date().getFullYear();
-    });
-</script>
-
-</body>
-</html>
+            updateEl.innerHTML = currentLang === 'es' ? `
