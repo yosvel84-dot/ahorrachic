@@ -86,6 +86,10 @@
      .news-item a:active {color: #D4AF37;}
      .news-meta {font-size: 0.7em; color: #888;}
      .news-loading {text-align: center; padding: 40px 20px; color: #888; font-size: 0.9em;}
+     .legal-footer {max-width: 1000px; margin: 25px auto 10px auto; padding: 20px; background: #1A1A1A; border-radius: 16px; border: 1px solid #333; font-size: 0.75em; line-height: 1.5; color: #888;}
+     .legal-footer h4 {color: #D4AF37; font-size: 0.85em; margin: 12px 0 4px 0; font-weight: 700;}
+     .legal-footer h4:first-child {margin-top: 0;}
+     .legal-footer p {margin: 0 0 8px 0;}
      .footer {text-align: center; padding: 20px 15px; font-size: 0.85em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box;}
      .footer a {color: #D4AF37; text-decoration: none; font-weight: bold;}
      .en-text {display: none;}
@@ -103,6 +107,7 @@
          .contact-item strong {min-width: 60px;}
          .dollar-widget {padding: 14px;}
          .news-container {max-height: 350px;}
+         .legal-footer {padding: 15px; font-size: 0.7em;}
         }
     </style>
 </head>
@@ -210,6 +215,30 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="legal-footer">
+    <h4>Privacidad</h4>
+    <p>No pedimos ni guardamos datos tuyos. No hay registro ni login.<br>
+    No usamos cookies de rastreo. Solo técnicas para que la web funcione.<br>
+    Compras directo en las tiendas. Ellas tienen sus propias políticas.<br>
+    Contacto: yosvel84@gmail.com</p>
+    
+    <h4>Términos de Uso</h4>
+    <p>Somos un directorio. Te mostramos enlaces a tiendas oficiales. No vendemos, no fijamos precios.<br>
+    Compras directo en las tiendas. Precios, envíos y devoluciones son 100% de ellas.</p>
+    
+    <h4>Cookies</h4>
+    <p>Solo usamos cookies técnicas para que el sitio cargue.<br>
+    No rastreamos, no analytics, no anuncios.</p>
+    
+    <h4>Aviso Legal</h4>
+    <p>No somos tienda. Solo facilitamos enlaces a tiendas oficiales.<br>
+    No intervenimos en compras, pagos ni garantías.<br>
+    Compras directo en las tiendas.<br>
+    Algunos enlaces son de afiliado: no pagas más y nos ayudas a mantener la web gratis.</p>
+    
+    <p style="margin-top:12px;color:#666;">AhorraTodo Chic LLC, Miami, FL</p>
 </div>
 
 <footer class="footer">
@@ -329,29 +358,4 @@
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
                     newsItem.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a><div class="news-meta">📰 ${item.author || 'Google News'} • ${dateStr}</div>`;
-                    container.appendChild(newsItem);
-                });
-            } else {
-                throw new Error('No news');
-            }
-        } catch (error) {
-            container.innerHTML = `<div class="news-loading"><span class="es-text">No se pudieron cargar las noticias</span><span class="en-text">Could not load news</span></div>`;
-        }
-    }
-
-    // INICIALIZAR TODO
-    document.addEventListener('DOMContentLoaded', function() {
-        updateClock();
-        setInterval(updateClock, 1000);
-        updateViewers();
-        setInterval(updateViewers, 45000);
-        loadDollarPrice();
-        setInterval(loadDollarPrice, 300000);
-        loadNews('es');
-        document.getElementById('currentYear').innerText = new Date().getFullYear();
-        document.getElementById('currentYearEn').innerText = new Date().getFullYear();
-    });
-</script>
-
-</body>
-</html>
+                   
