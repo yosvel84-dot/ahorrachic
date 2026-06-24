@@ -34,7 +34,7 @@
      .dollar-source a {color: #D4AF37; text-decoration: none;}
      .category-tabs {display: flex; gap: 8px; margin-bottom: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: thin;}
      .category-tabs::-webkit-scrollbar {height: 4px;}
-     .category-tabs::-webkit-scrollbar-track {background: #1A1A1A; border-radius: 10px;}
+     .category-tabs::-webkit-scrollbar-track {background: #1A1A; border-radius: 10px;}
      .category-tabs::-webkit-scrollbar-thumb {background: #D4AF37; border-radius: 10px;}
      .category-btn {background: #2A2A2A; color: #aaa; border: 1px solid #333; padding: 7px 15px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.85em; transition: 0.3s; white-space: nowrap; flex-shrink: 0; min-height: 36px;}
      .category-btn:active {transform: scale(0.95);}
@@ -91,18 +91,18 @@
      .es-text {display: inline-block;}
         @media(max-width: 480px) {
             body {padding: 10px; padding-bottom: 90px;}
-         .product-container {padding: 15px; border-radius: 16px;}
-         .lang-btn {padding: 7px 14px; font-size: 0.85em;}
-         .category-btn {padding: 6px 14px; font-size: 0.8em;}
-         .badge {min-width: 80px; padding: 5px 10px; font-size: 0.75em;}
-         .btn-buy {padding: 7px 14px; font-size: 0.75em;}
-         .promo-card,.promo-card-premium {padding: 15px;}
-         .promo-badge,.promo-badge-gold {font-size: 0.65em; padding: 4px 8px;}
-         .contact-item {font-size: 0.78em;}
-         .contact-item strong {min-width: 60px;}
-         .dollar-widget {padding: 14px;}
-         .legal-item summary {padding: 12px 15px; font-size: 0.8em;}
-         .legal-content {padding: 0 15px 12px 15px; font-size: 0.7em;}
+        .product-container {padding: 15px; border-radius: 16px;}
+        .lang-btn {padding: 7px 14px; font-size: 0.85em;}
+        .category-btn {padding: 6px 14px; font-size: 0.8em;}
+        .badge {min-width: 80px; padding: 5px 10px; font-size: 0.75em;}
+        .btn-buy {padding: 7px 14px; font-size: 0.75em;}
+        .promo-card,.promo-card-premium {padding: 15px;}
+        .promo-badge,.promo-badge-gold {font-size: 0.65em; padding: 4px 8px;}
+        .contact-item {font-size: 0.78em;}
+        .contact-item strong {min-width: 60px;}
+        .dollar-widget {padding: 14px;}
+        .legal-item summary {padding: 12px 15px; font-size: 0.8em;}
+        .legal-content {padding: 0 15px 12px 15px; font-size: 0.7em;}
         }
     </style>
 </head>
@@ -339,4 +339,7 @@
         updateClock();
         setInterval(updateClock, 1000);
         updateViewers();
-        set
+        setInterval(updateViewers, 45000);
+        loadDollarPrice();
+        setInterval(loadDollarPrice, 300000);
+        document.getElementById('currentYear').innerText = new Date().
