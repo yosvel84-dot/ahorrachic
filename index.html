@@ -11,48 +11,70 @@
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
     <style>
         * {box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0;}
-        body {font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%); margin: 0; padding: 15px; min-height: 100vh; position: relative; padding-bottom: 100px; color: #fff; overflow-x: hidden;}
-        .affiliate-banner {background: linear-gradient(135deg, #1a472a 0%, #2a5c3d 100%); border: 2px solid #4CAF50; padding: 12px 15px; margin: 0 auto 15px auto; max-width: 1000px; border-radius: 12px; font-size: 0.85em; color: #fff; text-align: center; line-height: 1.5;}
-        .affiliate-banner strong {color: #4CAF50; font-weight: 700;}
+        body {font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%); margin: 0; padding: 15px; min-height: 100vh; position: relative; color: #fff; overflow-x: hidden;}
+        
+        /* ⚖️ LEGAL COMPLIANCE BANNER */
+        .compliance-banner {background: linear-gradient(135deg, #1a472a 0%, #2a5c3d 100%); border: 2px solid #4CAF50; padding: 12px 15px; margin: 0 auto 15px auto; max-width: 1000px; border-radius: 12px; font-size: 0.85em; color: #fff; text-align: center; line-height: 1.6;}
+        .compliance-banner strong {color: #4CAF50; font-weight: 700;}
+        .compliance-banner a {color: #90EE90; text-decoration: underline;}
+        
+        /* LANG SWITCHER */
         .lang-switcher {text-align: right; max-width: 1000px; margin: 0 auto 15px auto; padding: 0 10px;}
-        .lang-btn {background: #D4AF37; color: #000; border: none; padding: 8px 16px; cursor: pointer; border-radius: 50px; font-weight: bold; font-size: clamp(0.8em, 2.5vw, 0.9em); box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); transition: 0.3s;}
+        .lang-btn {background: #D4AF37; color: #000; border: none; padding: 8px 16px; cursor: pointer; border-radius: 50px; font-weight: bold; font-size: clamp(0.8em, 2.5vw, 0.9em); box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); transition: 0.3s; user-select: none;}
         .lang-btn:active {transform: scale(0.95);}
-        .product-container {max-width: 1000px; background: #1E1E1E; margin: 15px auto; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border: 1px solid #333; overflow: hidden;}
+        
+        /* HEADER HERO */
+        .product-container {max-width: 1000px; background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%); margin: 15px auto; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border: 1px solid #333; overflow: hidden; animation: fadeIn 0.6s ease-in;}
+        
+        @keyframes fadeIn {from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);}}\n        
         .product-title {font-size: clamp(1.5em, 5vw, 2.2em); font-weight: 800; color: #D4AF37; margin-bottom: 8px; text-align: center; line-height: 1.2;}
-        .product-subtitle {font-size: clamp(0.9em, 3vw, 1.1em); color: #aaa; text-align: center; margin-bottom: 25px; padding: 0 10px; line-height: 1.4;}
+        .product-subtitle {font-size: clamp(0.9em, 3vw, 1.1em); color: #aaa; text-align: center; margin-bottom: 15px; padding: 0 10px; line-height: 1.4;}
+        
+        /* TRUST BADGES */
+        .trust-section {display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; padding: 15px; background: #2A2A2A; border-radius: 12px;}
+        .trust-badge {display: flex; align-items: center; gap: 5px; font-size: 0.8em; color: #aaa;}
+        .trust-badge strong {color: #D4AF37;}
+        
         .main-layout {display: grid; grid-template-columns: 1fr; gap: 25px;}
         @media(min-width: 768px) {.main-layout {grid-template-columns: 1.2fr 1fr; gap: 30px;}.product-container {padding: 30px; border-radius: 24px;}}
+        
         .left-column,.right-column {display: flex; flex-direction: column; gap: 20px; min-width: 0;}
-        .widgets-box {text-align: center; background: #2A2A2A; padding: 15px; border-radius: 16px; border: 1px dashed #D4AF37;}
-        .live-clock {font-size: clamp(1.3em, 4vw, 1.5em); font-weight: bold; color: #D4AF37; margin-top: 2px;}
-        .live-greeting {font-size: clamp(0.9em, 3vw, 1em); color: #ccc; font-weight: 500;}
-        .viewers-counter {font-size: 0.8em; color: #D4AF37; margin-top: 10px; font-weight: 600;}
-        .viewers-counter span {color: #fff; font-weight: 800;}
-        .dollar-widget {background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%); border: 2px solid #D4AF37; border-radius: 16px; padding: 16px; text-align: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);}
-        .dollar-title {font-size: 0.85em; color: #D4AF37; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase;}
-        .dollar-price {font-size: clamp(1.8em, 6vw, 2.2em); font-weight: 800; color: #fff; margin: 5px 0;}
-        .dollar-price span {color: #D4AF37; font-size: 0.5em; margin-left: 5px;}
-        .dollar-update {font-size: 0.7em; color: #888; margin-top: 8px;}
-        .dollar-source {font-size: 0.65em; color: #666; margin-top: 4px;}
-        .dollar-source a {color: #D4AF37; text-decoration: none;}
-        .category-tabs {display: flex; gap: 8px; margin-bottom: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: thin;}
+        
+        /* SEARCH BAR */
+        .search-bar {width: 100%; padding: 12px 15px; background: #2A2A2A; border: 2px solid #D4AF37; border-radius: 10px; color: #fff; font-size: 0.9em; font-family: inherit;}
+        .search-bar::placeholder {color: #888;}
+        .search-bar:focus {outline: none; box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);}
+        
+        /* CATEGORY TABS */
+        .category-tabs {display: flex; gap: 8px; margin: 15px 0; overflow-x: auto; overflow-y: hidden; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: thin;}
         .category-tabs::-webkit-scrollbar {height: 4px;}
         .category-tabs::-webkit-scrollbar-track {background: #1A1A1A; border-radius: 10px;}
         .category-tabs::-webkit-scrollbar-thumb {background: #D4AF37; border-radius: 10px;}
-        .category-btn {background: #2A2A2A; color: #aaa; border: 1px solid #333; padding: 7px 15px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.85em; transition: 0.3s; white-space: nowrap; flex-shrink: 0; min-height: 36px;}
+        .category-btn {background: #2A2A2A; color: #aaa; border: 1px solid #333; padding: 7px 15px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.85em; transition: 0.3s; white-space: nowrap; flex-shrink: 0; min-height: 36px; user-select: none;}
         .category-btn:active {transform: scale(0.95);}
-        .category-btn.active {background: #D4AF37; color: #000; border-color: #D4AF37;}
-        .promo-title {font-size: clamp(1.1em, 4vw, 1.25em); font-weight: 700; color: #fff; margin: 0 0 15px 0;}
+        .category-btn.active {background: #D4AF37; color: #000; border-color: #D4AF37; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);}
+        
+        /* TABLE */
         .table-wrapper {width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; border: 1px solid #333; background: #1E1E1E;}
         .table-wrapper::-webkit-scrollbar {height: 6px;}
         .table-wrapper::-webkit-scrollbar-track {background: #1A1A1A;}
         .table-wrapper::-webkit-scrollbar-thumb {background: #D4AF37; border-radius: 10px;}
+        
+        /* AFFILIATE NOTICE */
+        .affiliate-notice {background: #2A2A2A; padding: 10px 15px; border-bottom: 1px solid #333; font-size: 0.75em; color: #D4AF37; font-weight: 600; text-align: center;}
+        
         .comparison-table {width: 100%; min-width: 350px; border-collapse: separate; border-spacing: 0;}
         .comparison-table th {padding: 12px 15px; text-align: left; background-color: #2A2A2A; color: #D4AF37; font-weight: 700; font-size: 0.9em; position: sticky; top: 0; white-space: nowrap;}
-        .comparison-table td {padding: 10px 15px; text-align: left; border-bottom: 1px solid #333; vertical-align: middle; color: #ddd; font-size: 0.9em;}
+        .comparison-table td {padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; vertical-align: middle; color: #ddd; font-size: 0.9em;}
         .comparison-table tr:last-child td {border-bottom: none;}
-        .comparison-table tr:hover td {background: #2A2A2A;}
+        .comparison-table tr:hover td {background: #2A2A2A; transition: 0.2s;}
         .comparison-table tr.hide {display: none;}
+        
+        .store-info {display: flex; flex-direction: column; gap: 3px;}
+        .store-name {font-weight: 700; color: #fff;}
+        .store-desc {font-size: 0.75em; color: #aaa;}
+        .affiliate-tag {display: inline-block; background: #D4AF37; color: #000; font-size: 0.65em; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-top: 4px; width: fit-content;}
+        
         .badge {padding: 6px 12px; border-radius: 30px; font-weight: bold; font-size: 0.8em; color: white; display: inline-block; text-align: center; min-width: 90px;}
         .bg-temu {background-color: #ff5000;}
         .bg-amazon {background-color: #FF9900;}
@@ -68,60 +90,84 @@
         .bg-expedia {background-color: #FFCC00; color: #000!important;}
         .bg-shein {background-color: #000000;}
         .bg-fashionnova {background-color: #FF1493;}
-        .btn-buy {display: inline-block; padding: 8px 16px; background: linear-gradient(45deg, #D4AF37, #FFD700); color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 0.8em; text-align: center; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35); transition: 0.3s ease; white-space: nowrap; min-height: 32px; line-height: 1.2;}
+        
+        .btn-buy {display: inline-block; padding: 8px 16px; background: linear-gradient(45deg, #D4AF37, #FFD700); color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 0.8em; text-align: center; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35); transition: 0.3s ease; white-space: nowrap; min-height: 32px; line-height: 1.2; user-select: none;}
         .btn-buy:active {transform: scale(0.95);}
-        .promo-card {background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%); border: 1px solid #444; border-radius: 16px; padding: 18px; margin-bottom: 15px; position: relative; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);}
-        .promo-badge {position: absolute; top: 10px; right: 10px; background: #D4AF37; color: #000; font-size: 0.7em; font-weight: bold; padding: 4px 10px; border-radius: 10px; text-transform: uppercase;}
-        .promo-card h3 {margin: 0 0 8px 0; color: #fff; font-size: clamp(1em, 3.5vw, 1.1em); padding-right: 70px; line-height: 1.3;}
-        .promo-card p {margin: 0 0 15px 0; color: #aaa; font-size: 0.85em; line-height: 1.4;}
-        .promo-card-premium {background: linear-gradient(135deg, #2A2A2A 0%, #1E1E1E 100%); border: 2px solid #D4AF37; border-radius: 16px; padding: 20px; margin-bottom: 15px; position: relative; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);}
+        .btn-buy:hover {box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5); transform: translateY(-2px);}
+        
+        /* SIDEBAR */
+        .widgets-box {text-align: center; background: #2A2A2A; padding: 15px; border-radius: 16px; border: 1px dashed #D4AF37;}
+        .live-clock {font-size: clamp(1.3em, 4vw, 1.5em); font-weight: bold; color: #D4AF37; margin-top: 2px;}
+        .live-greeting {font-size: clamp(0.9em, 3vw, 1em); color: #ccc; font-weight: 500;}
+        
+        .dollar-widget {background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%); border: 2px solid #D4AF37; border-radius: 16px; padding: 16px; text-align: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);}
+        .dollar-title {font-size: 0.85em; color: #D4AF37; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase;}
+        .dollar-price {font-size: clamp(1.8em, 6vw, 2.2em); font-weight: 800; color: #fff; margin: 5px 0;}
+        .dollar-price span {color: #D4AF37; font-size: 0.5em; margin-left: 5px;}
+        .dollar-update {font-size: 0.7em; color: #888; margin-top: 8px;}
+        .dollar-source {font-size: 0.65em; color: #666; margin-top: 4px;}
+        .dollar-source a {color: #D4AF37; text-decoration: none;}
+        
+        /* PROMO */
+        .promo-title {font-size: clamp(1.1em, 4vw, 1.25em); font-weight: 700; color: #fff; margin: 0 0 15px 0;}
+        .promo-card-premium {background: linear-gradient(135deg, #2A2A2A 0%, #1E1E1E 100%); border: 2px solid #D4AF37; border-radius: 16px; padding: 20px; margin-bottom: 15px; position: relative; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3); animation: slideUp 0.6s ease-in;}
+        @keyframes slideUp {from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}}
+        
         .promo-badge-gold {position: absolute; top: 10px; right: 10px; background: linear-gradient(45deg, #D4AF37, #FFD700); color: #000; font-size: 0.7em; font-weight: bold; padding: 5px 12px; border-radius: 10px; text-transform: uppercase; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);}
         .promo-card-premium h3 {margin: 0 0 10px 0; color: #D4AF37; font-size: clamp(1.1em, 4vw, 1.2em); padding-right: 90px; font-weight: 800; line-height: 1.3;}
         .promo-card-premium p {margin: 0 0 12px 0; color: #ccc; font-size: 0.88em; line-height: 1.5;}
+        
         .contact-info {display: flex; flex-direction: column; gap: 8px; margin: 15px 0; padding: 12px; background: #1A1A1A; border-radius: 10px; border-left: 3px solid #D4AF37;}
         .contact-item {display: flex; align-items: flex-start; gap: 8px; font-size: 0.82em; color: #ddd; flex-wrap: wrap;}
         .contact-item strong {color: #D4AF37; min-width: 65px; flex-shrink: 0;}
         .contact-item a {color: #fff; text-decoration: none; word-break: break-word;}
         .contact-item a:active {color: #D4AF37;}
-        .legal-footer {max-width: 1000px; margin: 25px auto 10px auto; padding: 0; background: #1A1A1A; border-radius: 16px; border: 1px solid #333;}
+        
+        /* LEGAL */
+        .legal-footer {max-width: 1000px; margin: 40px auto 10px auto; padding: 0; background: #1A1A1A; border-radius: 16px; border: 1px solid #333;}
         .legal-item {border-bottom: 1px solid #333;}
         .legal-item:last-child {border-bottom: none;}
         .legal-item summary {padding: 14px 18px; cursor: pointer; color: #D4AF37; font-weight: 700; font-size: 0.85em; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none;}
         .legal-item summary::-webkit-details-marker {display: none;}
         .legal-item summary::after {content: '+'; font-size: 1.2em; color: #D4AF37; transition: transform 0.2s;}
-        .legal-item[open] summary::after {content: '−'; transform: rotate(180deg);}
+        .legal-item[open] summary::after {content: '−';}
         .legal-content {padding: 0 18px 14px 18px; font-size: 0.75em; line-height: 1.6; color: #aaa;}
         .legal-content p {margin: 0 0 6px 0;}
         .legal-content ul {margin: 0 0 6px 0; padding-left: 20px;}
         .legal-content li {margin: 3px 0;}
-        .footer {text-align: center; padding: 20px 15px; font-size: 0.85em; color: #666; width: 100%; position: absolute; bottom: 0; left: 0; box-sizing: border-box;}
+        
+        .footer {text-align: center; padding: 20px 15px; font-size: 0.85em; color: #666; width: 100%; box-sizing: border-box; margin-top: 40px;}
         .footer a {color: #D4AF37; text-decoration: none; font-weight: bold;}
+        
         .en-text {display: none;}
         .es-text {display: inline-block;}
+        
         @media(max-width: 480px) {
-            body {padding: 10px; padding-bottom: 90px;}
-            .affiliate-banner {font-size: 0.75em; padding: 10px 12px;}
+            body {padding: 10px; padding-bottom: 20px;}
+            .compliance-banner {font-size: 0.7em; padding: 10px 12px;}
             .product-container {padding: 15px; border-radius: 16px;}
             .lang-btn {padding: 7px 14px; font-size: 0.85em;}
             .category-btn {padding: 6px 14px; font-size: 0.8em;}
             .badge {min-width: 80px; padding: 5px 10px; font-size: 0.75em;}
             .btn-buy {padding: 7px 14px; font-size: 0.75em;}
-            .promo-card,.promo-card-premium {padding: 15px;}
-            .promo-badge,.promo-badge-gold {font-size: 0.65em; padding: 4px 8px;}
+            .promo-card-premium {padding: 15px;}
+            .promo-badge-gold {font-size: 0.65em; padding: 4px 8px;}
             .contact-item {font-size: 0.78em;}
             .contact-item strong {min-width: 60px;}
             .dollar-widget {padding: 14px;}
             .legal-item summary {padding: 12px 15px; font-size: 0.8em;}
             .legal-content {padding: 0 15px 12px 15px; font-size: 0.7em;}
+            .trust-section {gap: 8px; padding: 12px;}
+            .trust-badge {font-size: 0.75em;}
         }
     </style>
 </head>
 <body>
 
-<div class="affiliate-banner">
-    <strong><span class="es-text">⚠ TRANSPARENCIA LEGAL:</span><span class="en-text">⚠ LEGAL TRANSPARENCY:</span></strong> 
-    <span class="es-text">Algunos enlaces incluyen comisiones de afiliado. <strong>No pagas más</strong>, nos ayudas a mantener este sitio GRATIS.</span>
-    <span class="en-text">Some links include affiliate commissions. <strong>You don't pay more</strong>, you help us keep this site FREE.</span>
+<div class="compliance-banner">
+    <strong><span class="es-text">⚠ TRANSPARENCIA LEGAL VERIFICADA:</span><span class="en-text">⚠ VERIFIED LEGAL TRANSPARENCY:</span></strong><br>
+    <span class="es-text">Este sitio es un <strong>directorio de enlaces afiliados</strong>. No eres cliente nuestro. Algunos enlaces generan comisión (no pagas más). <a href="#legal-section">Ver términos legales →</a></span>
+    <span class="en-text">This site is an <strong>affiliate link directory</strong>. You are not our customer. Some links generate commissions (you don't pay more). <a href="#legal-section">See legal terms →</a></span>
 </div>
 
 <div class="lang-switcher">
@@ -137,9 +183,18 @@
         <span class="es-text">Tu portal inteligente de compras, ofertas y tendencias mundiales</span>
         <span class="en-text">Your smart hub for shopping, deals and worldwide trends</span>
     </p>
+    
+    <div class="trust-section">
+        <div class="trust-badge">✅ <strong>100% Directorios Oficiales</strong></div>
+        <div class="trust-badge">✅ <strong>Sin Datos Recopilados</strong></div>
+        <div class="trust-badge">✅ <strong>Afiliados Transparentes</strong></div>
+        <div class="trust-badge">✅ <strong>GDPR/FTC Cumplimiento</strong></div>
+    </div>
 
     <div class="main-layout">
         <div class="left-column">
+            <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Busca una tienda..." onkeyup="searchStores()">
+            
             <div class="category-tabs">
                 <button class="category-btn active" onclick="filterCategory('all', this)"><span class="es-text">🔥 Todos</span><span class="en-text">🔥 All</span></button>
                 <button class="category-btn" onclick="filterCategory('moda', this)"><span class="es-text">👗 Moda</span><span class="en-text">👗 Fashion</span></button>
@@ -150,77 +205,87 @@
             </div>
 
             <div class="table-wrapper">
+                <div class="affiliate-notice">
+                    <span class="es-text">⚖️ Algunos enlaces son afiliados (tú pagas lo mismo)</span>
+                    <span class="en-text">⚖️ Some links are affiliate (you pay the same)</span>
+                </div>
                 <table class="comparison-table" id="dataTable">
                     <thead>
                         <tr>
                             <th><span class="es-text">Plataforma</span><span class="en-text">Platform</span></th>
+                            <th><span class="es-text">Descripción</span><span class="en-text">Description</span></th>
                             <th><span class="es-text">Acceso</span><span class="en-text">Access</span></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- MODA Y GENERAL -->
-                        <tr data-category="moda tech hogar">
+                        <tr data-category="moda tech hogar" data-search="temu">
                             <td><span class="badge bg-temu">TEMU</span></td>
+                            <td><div class="store-info"><span class="store-name">Temu Marketplace</span><span class="store-desc">Moda, electrónica y más desde China</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://temu.com/invite?invite_code=AHORRATODOCHIC&channel=web" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda tech hogar">
+                        <tr data-category="moda tech hogar" data-search="amazon">
                             <td><span class="badge bg-amazon">AMAZON</span></td>
-                            <td><a href="https://www.amazon.com/ref=as_li_ss_tl?ie=UTF8&linkCode=ll2&tag=yosvelreina-21&linkId=OFFICIAL_AMAZON_ASSOCIATES" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
+                            <td><div class="store-info"><span class="store-name">Amazon.com</span><span class="store-desc">Productos oficiales con envío rápido</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
+                            <td><a href="https://www.amazon.com/?tag=yosvelreina-21" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda tech hogar">
+                        <tr data-category="moda tech hogar" data-search="aliexpress">
                             <td><span class="badge bg-aliexpress">ALIEXPRESS</span></td>
+                            <td><div class="store-info"><span class="store-name">AliExpress Official</span><span class="store-desc">Tienda oficial - Envío desde China</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
                             <td><a href="https://s.click.aliexpress.com/e/_DmU8Qqv" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda tech hogar">
+                        <tr data-category="moda tech hogar" data-search="mercado">
                             <td><span class="badge bg-mercadolibre">MERCADO LIBRE</span></td>
+                            <td><div class="store-info"><span class="store-name">Mercado Libre</span><span class="store-desc">Marketplace latinoamericano</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://mercadolibre.com" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-
-                        <!-- TECNOLOGÍA Y HOGAR -->
-                        <tr data-category="hogar tech">
+                        <tr data-category="hogar tech" data-search="walmart">
                             <td><span class="badge bg-walmart">WALMART</span></td>
+                            <td><div class="store-info"><span class="store-name">Walmart.com</span><span class="store-desc">Electrónica, hogar y más</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://www.walmart.com/ip/electronics" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda tech hogar">
+                        <tr data-category="moda tech hogar" data-search="ebay">
                             <td><span class="badge bg-ebay">EBAY</span></td>
+                            <td><div class="store-info"><span class="store-name">eBay Marketplace</span><span class="store-desc">Subastas y tienda - Productos diversos</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://www.ebay.com/?_rdc=1" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="tech hogar">
+                        <tr data-category="tech hogar" data-search="alibaba">
                             <td><span class="badge bg-alibaba">ALIBABA</span></td>
+                            <td><div class="store-info"><span class="store-name">Alibaba Global</span><span class="store-desc">Mayorista - Compra directa del productor</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
                             <td><a href="https://www.alibaba.com/?AFF=ahorratodochic" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-
-                        <!-- COMIDA Y ENTREGAS -->
-                        <tr data-category="comida">
+                        <tr data-category="comida" data-search="uber">
                             <td><span class="badge bg-uber">UBER</span></td>
+                            <td><div class="store-info"><span class="store-name">Uber - Viajes</span><span class="store-desc">Transporte y logística</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://uber.com/global/en/uber-for-business/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="comida">
+                        <tr data-category="comida" data-search="ubereats">
                             <td><span class="badge bg-ubereats">UBER EATS</span></td>
+                            <td><div class="store-info"><span class="store-name">Uber Eats</span><span class="store-desc">Entregas de comida y supermercado</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://www.ubereats.com/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda">
+                        <tr data-category="moda" data-search="tiktok">
                             <td><span class="badge bg-tiktok">TIKTOK SHOP</span></td>
+                            <td><div class="store-info"><span class="store-name">TikTok Shop</span><span class="store-desc">Tienda oficial de TikTok</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
                             <td><a href="https://www.tiktok.com/t/OFFICIAL_TIKTOK_SHOP/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-
-                        <!-- VIAJES Y HOTELES -->
-                        <tr data-category="viajes">
+                        <tr data-category="viajes" data-search="booking">
                             <td><span class="badge bg-booking">BOOKING.COM</span></td>
+                            <td><div class="store-info"><span class="store-name">Booking.com</span><span class="store-desc">Reserva hoteles y hospedajes</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
                             <td><a href="https://www.booking.com/?label=ahorratodochic" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="viajes">
+                        <tr data-category="viajes" data-search="expedia">
                             <td><span class="badge bg-expedia">EXPEDIA</span></td>
+                            <td><div class="store-info"><span class="store-name">Expedia</span><span class="store-desc">Viajes, hoteles y vuelos</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://www.expedia.com/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-
-                        <!-- MODA PREMIUM -->
-                        <tr data-category="moda">
+                        <tr data-category="moda" data-search="shein">
                             <td><span class="badge bg-shein">SHEIN</span></td>
+                            <td><div class="store-info"><span class="store-name">Shein</span><span class="store-desc">Moda rápida y accesorios</span><span class="affiliate-tag">💰 Comisión (no afecta precio)</span></div></td>
                             <td><a href="https://www.shein.com/?ref=yosvelreina" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
-                        <tr data-category="moda">
+                        <tr data-category="moda" data-search="fashion">
                             <td><span class="badge bg-fashionnova">FASHION NOVA</span></td>
+                            <td><div class="store-info"><span class="store-name">Fashion Nova</span><span class="store-desc">Moda femenina premium</span><span class="affiliate-tag">🔗 Enlace Directo</span></div></td>
                             <td><a href="https://www.fashionnova.com/" target="_blank" rel="noopener noreferrer" class="btn-buy"><span class="es-text">Ir ✨</span><span class="en-text">Open ✨</span></a></td>
                         </tr>
                     </tbody>
@@ -232,7 +297,6 @@
             <div class="widgets-box">
                 <div id="liveGreeting" class="live-greeting">¡Hola, Chic!</div>
                 <div id="liveClock" class="live-clock">00:00:00</div>
-                <div class="viewers-counter">🔥 <span id="viewers">47</span> <span class="es-text">personas viendo ahora</span><span class="en-text">people viewing now</span></div>
             </div>
 
             <div class="dollar-widget">
@@ -258,22 +322,20 @@
                     <a href="tel:+13054911906" class="btn-buy" style="background: #666; margin-bottom: 8px;"><span class="es-text">Llamar Ahora</span><span class="en-text">Call Now</span></a>
                 </div>
 
-                <div class="promo-card" style="border: 2px dashed #D4AF37; background: #2A2A2A;">
-                    <div class="promo-badge" style="background: #666;">Promo</div>
-                    <h3><span class="es-text">¿Anunciar tu tienda aquí?</span><span class="en-text">Want to advertise here?</span></h3>
-                    <p><span class="es-text">Promociona tus productos ante miles de visitas. Escríbenos directamente para consultar tarifas.</span><span class="en-text">Promote your products to thousands of visitors. Write to us directly for rates.</span></p>
+                <div class="promo-card-premium" style="border: 2px dashed #D4AF37; background: #2A2A2A; border-color: #666;">
+                    <h3 style="color: #D4AF37;">✉ <span class="es-text">¿Anunciar tu tienda aquí?</span><span class="en-text">Want to advertise here?</span></h3>
+                    <p><span class="es-text">Promociona tus productos ante miles de visitas. Escríbenos directamente para consultar tarifas. <strong>Verificamos legitimidad de todos los anuncios.</strong></span><span class="en-text">Promote your products to thousands of visitors. Write to us directly for rates. <strong>We verify the legitimacy of all ads.</strong></span></p>
                     <a href="https://wa.me/13054911906?text=Hola,%20me%20interesa%20el%20espacio%20publicitario%20en%20AhorraTodo%20Chic" target="_blank" rel="noopener noreferrer" class="btn-buy" style="background: #25D366; color: #fff; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35); margin-right: 5px; margin-bottom: 8px;">WhatsApp 💬</a>
                     <a href="mailto:ahorratodochic@gmail.com?subject=Publicidad%20en%20AhorraTodo%20Chic" class="btn-buy" style="background: #666; margin-bottom: 8px;">Correo 📩</a>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
-<div class="legal-footer">
+<div class="legal-footer" id="legal-section">
     <details class="legal-item">
-        <summary><span class="es-text">🔒 Divulgación de Afiliados (FTC/AEPD Cumplimiento)</span><span class="en-text">🔒 Affiliate Disclosure (FTC/GDPR Compliance)</span></summary>
+        <summary><span class="es-text">🔒 Divulgación de Afiliados (FTC Cumplimiento)</span><span class="en-text">🔒 Affiliate Disclosure (FTC Compliance)</span></summary>
         <div class="legal-content">
             <p><strong><span class="es-text">¿Qué es un enlace de afiliado?</span><span class="en-text">What is an affiliate link?</span></strong></p>
             <p><span class="es-text">Un enlace de afiliado es un URL especial que permite a AhorraTodo Chic recibir una comisión cuando compras a través de él. <strong>Tú no pagas nada adicional</strong> - pagas exactamente lo mismo que si compraras directamente.</span><span class="en-text">An affiliate link is a special URL that allows AhorraTodo Chic to receive a commission when you buy through it. <strong>You don't pay anything extra</strong> - you pay exactly the same as if you bought directly.</span></p>
@@ -281,15 +343,16 @@
             <p><strong><span class="es-text">¿Por qué lo hacemos?</span><span class="en-text">Why do we do this?</span></strong></p>
             <p><span class="es-text">Las comisiones de afiliado nos ayudan a mantener este sitio GRATIS para ti. Sin publicidad invasiva, sin datos vendidos. Solo enlaces útiles y directos a tiendas que nos gustan.</span><span class="en-text">Affiliate commissions help us keep this site FREE for you. No invasive ads, no sold data. Just useful links to stores we like.</span></p>
 
-            <p><strong><span class="es-text">Transparencia total:</span><span class="en-text">Full transparency:</span></strong></p>
+            <p><strong><span class="es-text">Transparencia Total (FTC 16 CFR 255):</span><span class="en-text">Full Transparency (FTC 16 CFR 255):</span></strong></p>
             <ul>
                 <li><span class="es-text">✅ Divulgamos públicamente que usamos enlaces de afiliado</span><span class="en-text">✅ We publicly disclose we use affiliate links</span></li>
+                <li><span class="es-text">✅ Visible en cada tabla: "Comisión (no afecta precio)" o "Enlace Directo"</span><span class="en-text">✅ Visible in each table: "Commission (doesn't affect price)" or "Direct Link"</span></li>
                 <li><span class="es-text">✅ No ganamos más si compras un producto u otro</span><span class="en-text">✅ We don't earn more if you buy one product or another</span></li>
-                <li><span class="es-text">✅ Solo recomendamos tiendas que usamos y en las que confiamos</span><span class="en-text">✅ We only recommend stores we use and trust</span></li>
+                <li><span class="es-text">✅ Solo recomendamos tiendas OFICIALES que usamos</span><span class="en-text">✅ We only recommend OFFICIAL stores we use</span></li>
                 <li><span class="es-text">✅ Tu precio es exactamente igual - sin aumentos</span><span class="en-text">✅ Your price is exactly the same - no markups</span></li>
             </ul>
 
-            <p style="margin-top: 10px; color: #4CAF50; font-weight: bold;"><span class="es-text">💚 Cumplimiento legal: FTC (USA), AEPD (España), GDPR (UE)</span><span class="en-text">💚 Legal compliance: FTC (USA), AEPD (Spain), GDPR (EU)</span></p>
+            <p style="margin-top: 10px; color: #4CAF50; font-weight: bold;"><span class="es-text">💚 Cumplimiento legal: FTC (USA), GDPR (UE), AEPD (España)</span><span class="en-text">💚 Legal compliance: FTC (USA), GDPR (EU), AEPD (Spain)</span></p>
         </div>
     </details>
 
@@ -300,12 +363,12 @@
             <ul>
                 <li><span class="es-text">❌ <strong>NO</strong> pedimos ni guardamos tus datos personales</span><span class="en-text">❌ We do <strong>NOT</strong> ask for or store your personal data</span></li>
                 <li><span class="es-text">❌ <strong>NO</strong> hay registro ni login requerido</span><span class="en-text">❌ <strong>NO</strong> registration or login required</span></li>
-                <li><span class="es-text">❌ <strong>NO</strong> usamos cookies de rastreo o Google Analytics</span><span class="en-text">❌ <strong>NO</strong> tracking cookies or Google Analytics</span></li>
-                <li><span class="es-text">✅ Solo cookies técnicas para que la web funcione correctamente</span><span class="en-text">✅ Only technical cookies for the site to work properly</span></li>
-                <li><span class="es-text">✅ Compras 100% directas en las tiendas - ellas tienen sus propias políticas</span><span class="en-text">✅ 100% direct purchases from stores - they have their own policies</span></li>
+                <li><span class="es-text">❌ <strong>NO</strong> usamos Google Analytics ni Facebook Pixel</span><span class="en-text">❌ <strong>NO</strong> Google Analytics or Facebook Pixel</span></li>
+                <li><span class="es-text">✅ Solo cookies técnicas para que la web funcione</span><span class="en-text">✅ Only technical cookies for the site to work</span></li>
+                <li><span class="es-text">✅ Compras 100% directas con tiendas oficiales</span><span class="en-text">✅ 100% direct purchases with official stores</span></li>
             </ul>
             
-            <p><span class="es-text"><strong>Contacto para privacidad:</strong> ahorratodochic@gmail.com</span><span class="en-text"><strong>Privacy contact:</strong> ahorratodochic@gmail.com</span></p>
+            <p style="margin-top: 10px;"><span class="es-text"><strong>Contacto:</strong> ahorratodochic@gmail.com</span><span class="en-text"><strong>Contact:</strong> ahorratodochic@gmail.com</span></p>
         </div>
     </details>
 
@@ -321,15 +384,15 @@
                 <li><span class="es-text">❌ NO manejamos envíos ni devoluciones</span><span class="en-text">❌ We do NOT handle shipping or returns</span></li>
             </ul>
 
-            <p><strong><span class="es-text">Tu relación comercial es directamente con las tiendas:</span><span class="en-text">Your business relationship is directly with the stores:</span></strong></p>
+            <p style="margin-top: 10px;"><strong><span class="es-text">Tu relación comercial es directamente con las tiendas:</span><span class="en-text">Your business relationship is directly with the stores:</span></strong></p>
             <ul>
                 <li><span class="es-text">💳 Pagos: 100% con la tienda</span><span class="en-text">💳 Payments: 100% with the store</span></li>
-                <li><span class="es-text">📦 Envíos: 100% responsabilidad de la tienda</span><span class="en-text">📦 Shipping: 100% store responsibility</span></li>
+                <li><span class="es-text">📦 Envíos: Responsabilidad de la tienda</span><span class="en-text">📦 Shipping: Store responsibility</span></li>
                 <li><span class="es-text">♻️ Devoluciones: Según políticas de la tienda</span><span class="en-text">♻️ Returns: According to store policies</span></li>
                 <li><span class="es-text">🛡️ Garantías: Directamente con la tienda</span><span class="en-text">🛡️ Warranties: Directly with the store</span></li>
             </ul>
 
-            <p><strong><span class="es-text">AhorraTodo Chic NO es responsable de:</span><span class="en-text">AhorraTodo Chic is NOT responsible for:</span></strong></p>
+            <p style="margin-top: 10px;"><strong><span class="es-text">AhorraTodo Chic NO es responsable de:</span><span class="en-text">AhorraTodo Chic is NOT responsible for:</span></strong></p>
             <ul>
                 <li><span class="es-text">Problemas de calidad, envío o atención al cliente</span><span class="en-text">Quality, shipping or customer service issues</span></li>
                 <li><span class="es-text">Discrepancias de precios o disponibilidad</span><span class="en-text">Price discrepancies or availability</span></li>
@@ -360,28 +423,26 @@
             <p><strong><span class="es-text">Operador del sitio:</span><span class="en-text">Site operator:</span></strong></p>
             <p>AhorraTodo Chic<br>
             Miami, FL, United States<br>
-            <span class="es-text">Email:</span><span class="en-text">Email:</span> ahorratodochic@gmail.com</p>
+            Email: ahorratodochic@gmail.com<br>
+            <span class="es-text">Teléfono de contacto:</span><span class="en-text">Contact phone:</span> <a href="tel:+13054911906">+1 (305) 491-1906</a></p>
 
-            <p><strong><span class="es-text">Propiedad intelectual:</span><span class="en-text">Intellectual property:</span></strong></p>
-            <p><span class="es-text">Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción, distribución o uso sin permiso explícito.</span><span class="en-text">All rights to the design, content and code of AhorraTodo Chic are owned by AhorraTodo Chic. Reproduction, distribution or use without explicit permission is not allowed.</span></p>
+            <p style="margin-top: 10px;"><strong><span class="es-text">Propiedad intelectual:</span><span class="en-text">Intellectual property:</span></strong></p>
+            <p><span class="es-text">Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción sin permiso explícito.</span><span class="en-text">All rights to the design, content and code of AhorraTodo Chic are owned by AhorraTodo Chic. No reproduction without explicit permission.</span></p>
 
-            <p><strong><span class="es-text">Marcas registradas:</span><span class="en-text">Trademarks:</span></strong></p>
-            <p><span class="es-text">Todos los logos, nombres y marcas de terceros que aparecen en este sitio son propiedad de sus respectivos dueños. Usamos las marcas solo como referencia identificativa.</span><span class="en-text">All logos, names and third-party brands appearing on this site are owned by their respective owners. We use brands only for identification purposes.</span></p>
+            <p style="margin-top: 10px;"><strong><span class="es-text">Marcas registradas:</span><span class="en-text">Trademarks:</span></strong></p>
+            <p><span class="es-text">Todos los logos y marcas de terceros son propiedad de sus respectivos dueños.</span><span class="en-text">All third-party logos and brands are owned by their respective owners.</span></p>
 
-            <p><strong><span class="es-text">Modificaciones:</span><span class="en-text">Modifications:</span></strong></p>
-            <p><span class="es-text">AhorraTodo Chic se reserva el derecho de modificar este sitio, sus términos y políticas sin previo aviso. El uso continuado implica aceptación de cambios.</span><span class="en-text">AhorraTodo Chic reserves the right to modify this site, its terms and policies without notice. Continued use implies acceptance of changes.</span></p>
+            <p style="margin-top: 10px;"><strong><span class="es-text">Jurisdicción:</span><span class="en-text">Jurisdiction:</span></strong></p>
+            <p><span class="es-text">Este sitio está sujeto a las leyes de Florida, USA.</span><span class="en-text">This site is subject to the laws of Florida, USA.</span></p>
 
-            <p><strong><span class="es-text">Jurisdicción y Ley aplicable:</span><span class="en-text">Jurisdiction and Applicable Law:</span></strong></p>
-            <p><span class="es-text">Este sitio está sujeto a las leyes de Florida, USA. Cualquier disputa se resolverá bajo jurisdicción de los tribunales de Miami-Dade County.</span><span class="en-text">This site is subject to the laws of Florida, USA. Any disputes will be resolved under the jurisdiction of Miami-Dade County courts.</span></p>
-
-            <p style="margin-top: 10px; color: #4CAF50;"><span class="es-text">✅ <strong>Última actualización:</strong> 24 de junio de 2026</span><span class="en-text">✅ <strong>Last updated:</strong> June 24, 2026</span></p>
+            <p style="margin-top: 15px; color: #4CAF50;"><span class="es-text">✅ <strong>Última actualización:</strong> 24 de junio de 2026</span><span class="en-text">✅ <strong>Last updated:</strong> June 24, 2026</span></p>
         </div>
     </details>
 </div>
 
 <footer class="footer">
-    <span class="es-text">© <span id="currentYear"></span> <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados. | <a href="#" onclick="document.querySelector('[class*=legal-item]').scrollIntoView()">Avisos Legales</a></span>
-    <span class="en-text">© <span id="currentYearEn"></span> <a href="#">SaveEverything Chic</a>. All rights reserved. | <a href="#" onclick="document.querySelector('[class*=legal-item]').scrollIntoView()">Legal Notices</a></span>
+    <span class="es-text">© <span id="currentYear"></span> <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados. | <a href="#legal-section">Avisos Legales</a></span>
+    <span class="en-text">© <span id="currentYearEn"></span> <a href="#">SaveEverything Chic</a>. All rights reserved. | <a href="#legal-section">Legal Notices</a></span>
 </footer>
 
 <script>
@@ -432,11 +493,6 @@
         document.getElementById('liveGreeting').innerText = greeting;
     }
 
-    function updateViewers() {
-        const viewers = Math.floor(Math.random() * 30) + 35;
-        document.getElementById('viewers').innerText = viewers;
-    }
-
     function filterCategory(category, btn) {
         const rows = document.querySelectorAll('#dataTable tbody tr');
         const buttons = document.querySelectorAll('.category-btn');
@@ -453,6 +509,23 @@
                 } else {
                     row.classList.add('hide');
                 }
+            }
+        });
+    }
+
+    function searchStores() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+
+        rows.forEach(row => {
+            const storeText = row.getAttribute('data-search') || '';
+            const storeName = row.querySelector('.store-name')?.innerText.toLowerCase() || '';
+            const storeDesc = row.querySelector('.store-desc')?.innerText.toLowerCase() || '';
+
+            if (storeText.includes(searchInput) || storeName.includes(searchInput) || storeDesc.includes(searchInput) || searchInput === '') {
+                row.classList.remove('hide');
+            } else {
+                row.classList.add('hide');
             }
         });
     }
@@ -480,8 +553,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         updateClock();
         setInterval(updateClock, 1000);
-        updateViewers();
-        setInterval(updateViewers, 45000);
         loadDollarPrice();
         setInterval(loadDollarPrice, 300000);
         document.getElementById('currentYear').innerText = new Date().getFullYear();
