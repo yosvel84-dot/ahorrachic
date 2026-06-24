@@ -14,18 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0;}
+        html, body {width: 100%; margin: 0; padding: 0; overflow-x: hidden;}
         html {scroll-behavior: smooth;}
-        body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0A0A0A; margin: 0; padding: 0; min-height: 100vh; position: relative; color: #FFFFFF; overflow-x: hidden; width: 100%;}
-        .compliance-banner {background: linear-gradient(135deg, #064E3B 0%, #047857 100%); border-bottom: 2px solid #10B981; padding: 16px 20px; font-size: 0.9em; color: #E0F2FE; text-align: center; line-height: 1.6; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3); width: 100%;}
+        body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0A0A0A; min-height: 100vh; position: relative; color: #FFFFFF;}
+        .compliance-banner {background: linear-gradient(135deg, #064E3B 0%, #047857 100%); border-bottom: 2px solid #10B981; padding: 16px 20px; font-size: 0.9em; color: #E0F2FE; text-align: center; line-height: 1.6; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3); width: 100%; display: block;}
         .compliance-banner strong {color: #10B981; font-weight: 600;}
         .compliance-banner a {color: #86EFAC; text-decoration: none; font-weight: 500;}
         .compliance-banner a:hover {text-decoration: underline;}
-        .lang-switcher {max-width: 1200px; margin: 0 auto; padding: 20px 15px 0; text-align: right;}
+        .lang-switcher {max-width: 1200px; margin: 0 auto; padding: 20px 15px 0; text-align: right; display: block;}
         .lang-btn {background: #10B981; color: #FFFFFF; border: none; padding: 10px 20px; cursor: pointer; border-radius: 8px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); font-family: inherit;}
         .lang-btn:hover {background: #059669; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);}
         .lang-btn:active {transform: translateY(0);}
-        .main-wrapper {max-width: 1200px; margin: 0 auto; padding: 40px 15px; width: 100%;}
-        .hero-section {text-align: center; margin-bottom: 50px; padding: 60px 20px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.02) 100%); border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.1);}
+        .main-wrapper {max-width: 1200px; margin: 0 auto; padding: 40px 15px; display: block; width: calc(100% - 30px);}
+        .hero-section {text-align: center; margin-bottom: 50px; padding: 60px 20px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.02) 100%); border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.1); display: block;}
         .hero-title {font-size: clamp(2em, 6vw, 3.5em); font-weight: 700; color: #FFFFFF; margin-bottom: 12px; line-height: 1.1; letter-spacing: -0.5px;}
         .hero-subtitle {font-size: clamp(1em, 3vw, 1.2em); color: #B0B0B0; margin-bottom: 20px; font-weight: 400; line-height: 1.5;}
         .trust-section {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 40px; padding: 0;}
@@ -34,10 +35,10 @@
         .trust-badge strong {color: #10B981; font-weight: 600;}
         .content-wrapper {display: grid; grid-template-columns: 1fr 320px; gap: 30px; margin-bottom: 50px;}
         @media(max-width: 1024px) {.content-wrapper {grid-template-columns: 1fr; gap: 40px;}}
-        .search-bar {width: 100%; padding: 14px 18px; background: #1A1A1A; border: 2px solid #2A2A2A; border-radius: 10px; color: #FFFFFF; font-size: 0.95em; font-family: inherit; margin-bottom: 25px; transition: all 0.3s ease;}
+        .search-bar {width: 100%; padding: 14px 18px; background: #1A1A1A; border: 2px solid #2A2A2A; border-radius: 10px; color: #FFFFFF; font-size: 0.95em; font-family: inherit; margin-bottom: 25px; transition: all 0.3s ease; display: block;}
         .search-bar:focus {outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); background: #242424;}
         .search-bar::placeholder {color: #666;}
-        .category-tabs {display: flex; gap: 10px; margin-bottom: 25px; overflow-x: auto; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: thin;}
+        .category-tabs {display: flex; gap: 10px; margin-bottom: 25px; overflow-x: auto; overflow-y: hidden; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; padding-right: 0; padding-left: 0;}
         .category-tabs::-webkit-scrollbar {height: 4px;}
         .category-tabs::-webkit-scrollbar-track {background: transparent;}
         .category-tabs::-webkit-scrollbar-thumb {background: #10B981; border-radius: 2px;}
@@ -54,7 +55,7 @@
         .store-name {font-weight: 700; color: #FFFFFF; font-size: 1.05em; flex: 1;}
         .store-description {font-size: 0.85em; color: #B0B0B0; line-height: 1.4; flex: 1;}
         .affiliate-tag {display: inline-block; background: rgba(16, 185, 129, 0.2); color: #86EFAC; font-size: 0.75em; padding: 4px 8px; border-radius: 4px; font-weight: 500; border: 1px solid rgba(16, 185, 129, 0.3);}
-        .btn-store {display: inline-block; padding: 12px 20px; background: #10B981; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; text-align: center; transition: all 0.3s ease; border: none; cursor: pointer; font-family: inherit; width: 100%; margin-top: 8px;}
+        .btn-store {display: block; padding: 12px 20px; background: #10B981; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9em; text-align: center; transition: all 0.3s ease; border: none; cursor: pointer; font-family: inherit; width: 100%; margin-top: 8px;}
         .btn-store:hover {background: #059669; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);}
         .btn-store:active {transform: translateY(0);}
         .sidebar {display: flex; flex-direction: column; gap: 20px;}
@@ -83,11 +84,11 @@
         .contact-item a {color: #FFFFFF; text-decoration: none; font-weight: 500;}
         .contact-item a:hover {color: #10B981;}
         .promo-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;}
-        .btn-promo {padding: 10px 14px; background: #10B981; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.85em; text-align: center; border: none; cursor: pointer; font-family: inherit; transition: all 0.3s ease;}
+        .btn-promo {padding: 10px 14px; background: #10B981; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.85em; text-align: center; border: none; cursor: pointer; font-family: inherit; transition: all 0.3s ease; display: block;}
         .btn-promo:hover {background: #059669; transform: translateY(-2px);}
         .btn-promo.secondary {background: #606060; color: #FFFFFF;}
         .btn-promo.secondary:hover {background: #707070;}
-        .legal-section {background: #0F0F0F; margin-top: 60px; padding: 40px 20px; border-top: 1px solid #2A2A2A; width: 100%;}
+        .legal-section {background: #0F0F0F; margin-top: 60px; padding: 40px 20px; border-top: 1px solid #2A2A2A; width: 100%; display: block;}
         .legal-container {max-width: 1200px; margin: 0 auto;}
         .legal-title {font-size: 1.4em; font-weight: 700; color: #FFFFFF; margin-bottom: 30px; text-align: center;}
         .legal-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 30px;}
@@ -102,7 +103,7 @@
         .legal-content p {margin: 0 0 10px 0;}
         .legal-content ul {margin: 0 0 10px 0; padding-left: 20px;}
         .legal-content li {margin: 6px 0;}
-        .footer {text-align: center; padding: 30px 20px; font-size: 0.85em; color: #808080; border-top: 1px solid #2A2A2A; margin-top: 40px; width: 100%;}
+        .footer {text-align: center; padding: 30px 20px; font-size: 0.85em; color: #808080; border-top: 1px solid #2A2A2A; margin-top: 40px; width: 100%; display: block;}
         .footer a {color: #10B981; text-decoration: none; font-weight: 600;}
         .footer a:hover {text-decoration: underline;}
         .en-text {display: none;}
@@ -165,77 +166,36 @@
             </div>
             
             <div class="stores-grid" id="storesGrid">
-                <!-- MODA -->
                 <div class="store-card" data-category="moda deporte" data-search="nike"><div class="store-header"><span class="store-badge bg-nike">NIKE</span><div><div class="store-name">Nike</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Ropa deportiva y zapatillas premium</div><a href="https://www.nike.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda deporte" data-search="adidas"><div class="store-header"><span class="store-badge bg-adidas">ADIDAS</span><div><div class="store-name">Adidas</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Moda deportiva y performance</div><a href="https://www.adidas.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
                 <div class="store-card" data-category="moda" data-search="temu"><div class="store-header"><span class="store-badge bg-temu">TEMU</span><div><div class="store-name">Temu</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Moda, electrónica y más desde China</div><a href="https://temu.com/invite?invite_code=AHORRATODOCHIC&channel=web" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda" data-search="shein"><div class="store-header"><span class="store-badge bg-shein">SHEIN</span><div><div class="store-name">Shein</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Moda rápida y accesorios</div><a href="https://www.shein.com/?ref=yosvelreina" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda" data-search="fashion nova"><div class="store-header"><span class="store-badge bg-fashionnova">FASHION</span><div><div class="store-name">Fashion Nova</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Moda femenina premium</div><a href="https://www.fashionnova.com/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda" data-search="aliexpress"><div class="store-header"><span class="store-badge bg-aliexpress">ALIEXPRESS</span><div><div class="store-name">AliExpress</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Tienda oficial desde China</div><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda" data-search="hm h&m"><div class="store-header"><span class="store-badge bg-hm">H&M</span><div><div class="store-name">H&M</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Moda moderna global</div><a href="https://www.hm.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="moda" data-search="forever"><div class="store-header"><span class="store-badge bg-forever21">FOREVER</span><div><div class="store-name">Forever 21</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Moda joven y accesorios</div><a href="https://www.forever21.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- TECH -->
                 <div class="store-card" data-category="tech" data-search="amazon"><div class="store-header"><span class="store-badge bg-amazon">AMAZON</span><div><div class="store-name">Amazon</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Productos oficiales envío rápido</div><a href="https://www.amazon.com/?tag=yosvelreina-21" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="tech" data-search="walmart"><div class="store-header"><span class="store-badge bg-walmart">WALMART</span><div><div class="store-name">Walmart</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Electrónica, hogar y más</div><a href="https://www.walmart.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="tech" data-search="ebay"><div class="store-header"><span class="store-badge bg-ebay">EBAY</span><div><div class="store-name">eBay</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Subastas y tienda de productos</div><a href="https://www.ebay.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="tech" data-search="best buy"><div class="store-header"><span class="store-badge bg-bestbuy">BEST BUY</span><div><div class="store-name">Best Buy</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Electrónica de marca confiable</div><a href="https://www.bestbuy.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="tech" data-search="alibaba"><div class="store-header"><span class="store-badge bg-alibaba">ALIBABA</span><div><div class="store-name">Alibaba</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Mayorista desde China</div><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- HOGAR -->
                 <div class="store-card" data-category="hogar" data-search="wayfair"><div class="store-header"><span class="store-badge bg-wayfair">WAYFAIR</span><div><div class="store-name">Wayfair</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Muebles y decoración hogar</div><a href="https://www.wayfair.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="hogar" data-search="ikea"><div class="store-header"><span class="store-badge bg-ikea">IKEA</span><div><div class="store-name">IKEA</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Muebles y decoración moderna</div><a href="https://www.ikea.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- COMIDA -->
                 <div class="store-card" data-category="comida" data-search="uber eats"><div class="store-header"><span class="store-badge bg-ubereats">UBER EATS</span><div><div class="store-name">Uber Eats</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Comida y supermercado online</div><a href="https://www.ubereats.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="comida" data-search="uber"><div class="store-header"><span class="store-badge bg-uber">UBER</span><div><div class="store-name">Uber</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Transporte y entregas</div><a href="https://uber.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="comida" data-search="tiktok shop"><div class="store-header"><span class="store-badge bg-tiktok">TIKTOK</span><div><div class="store-name">TikTok Shop</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Tienda oficial de TikTok</div><a href="https://www.tiktok.com/t/OFFICIAL_TIKTOK_SHOP/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- VIAJES -->
                 <div class="store-card" data-category="viajes" data-search="airbnb"><div class="store-header"><span class="store-badge bg-airbnb">AIRBNB</span><div><div class="store-name">Airbnb</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Hospedaje y experiencias global</div><a href="https://www.airbnb.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="viajes" data-search="booking"><div class="store-header"><span class="store-badge bg-booking">BOOKING</span><div><div class="store-name">Booking.com</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Hoteles worldwide</div><a href="https://www.booking.com/?label=ahorratodochic" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="viajes" data-search="trivago"><div class="store-header"><span class="store-badge bg-trivago">TRIVAGO</span><div><div class="store-name">Trivago</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Comparador de hoteles global</div><a href="https://www.trivago.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="viajes" data-search="expedia"><div class="store-header"><span class="store-badge bg-expedia">EXPEDIA</span><div><div class="store-name">Expedia</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Viajes completos vuelos hoteles</div><a href="https://www.expedia.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- BELLEZA -->
                 <div class="store-card" data-category="belleza" data-search="sephora"><div class="store-header"><span class="store-badge bg-sephora">SEPHORA</span><div><div class="store-name">Sephora</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Cosmética y skincare premium</div><a href="https://www.sephora.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- DEPORTES -->
                 <div class="store-card" data-category="deporte" data-search="decathlon"><div class="store-header"><span class="store-badge bg-decathlon">DECATHLON</span><div><div class="store-name">Decathlon</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Deportes y actividades outdoor</div><a href="https://www.decathlon.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- EDUCACIÓN -->
                 <div class="store-card" data-category="educacion" data-search="canva"><div class="store-header"><span class="store-badge bg-canva">CANVA</span><div><div class="store-name">Canva</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Diseño gráfico fácil online</div><a href="https://www.canva.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="educacion" data-search="skillshare"><div class="store-header"><span class="store-badge bg-skillshare">SKILLSHARE</span><div><div class="store-name">Skillshare</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Cursos online creatividad</div><a href="https://www.skillshare.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="educacion" data-search="coursera"><div class="store-header"><span class="store-badge bg-coursera">COURSERA</span><div><div class="store-name">Coursera</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Cursos online profesionales</div><a href="https://www.coursera.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- DINERO/REMESAS -->
                 <div class="store-card" data-category="dinero" data-search="wise"><div class="store-header"><span class="store-badge bg-wise">WISE</span><div><div class="store-name">Wise</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Dinero y remesas internacionales</div><a href="https://wise.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- SOFTWARE -->
                 <div class="store-card" data-category="software" data-search="grammarly"><div class="store-header"><span class="store-badge bg-grammarly">GRAMMARLY</span><div><div class="store-name">Grammarly</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Corrector de escritura AI</div><a href="https://www.grammarly.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-
-                <!-- RETAIL GENERAL -->
                 <div class="store-card" data-category="moda tech hogar" data-search="mercado libre"><div class="store-header"><span class="store-badge bg-mercadolibre">MERCADO</span><div><div class="store-name">Mercado Libre</div><div class="affiliate-tag">🔗 Directo</div></div></div><div class="store-description">Marketplace latinoamericano</div><a href="https://mercadolibre.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
-                
                 <div class="store-card" data-category="tech hogar" data-search="target"><div class="store-header"><span class="store-badge bg-target">TARGET</span><div><div class="store-name">Target</div><div class="affiliate-tag">💰 Comisión</div></div></div><div class="store-description">Retail general USA</div><a href="https://www.target.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Access →</span></a></div>
             </div>
         </div>
