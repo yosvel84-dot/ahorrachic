@@ -4,30 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="verify-admitad" content="aacdd45797" />
-    <meta name="description" content="AhorraTodo Chic: Portal de ofertas y comparador de precios en TEMU, Amazon, AliExpress, Mercado Libre. Ahorra en moda, tech y hogar.">
-    <title>AhorraTodo Chic | Portal de Afiliado</title>
-
-    <!-- Performance -->
-    <link rel="preconnect" href="https://cdn-icons-png.flaticon.com">
-    <link rel="dns-prefetch" href="https://eltoque.com">
-    <link rel="dns-prefetch" href="https://api.allorigins.win">
-
-    <!-- PWA -->
+    <meta name="description" content="AhorraTodo Chic - Tu portal de ofertas de TEMU, Amazon, AliExpress, MercadoLibre. Compara precios y ahorra en moda, tech y hogar.">
+    <meta name="keywords" content="ofertas, descuentos, TEMU, Amazon, AliExpress, cupones, Cuba, Miami">
+    <title>AhorraTodo Chic | Portal de Afiliado - Ofertas TEMU Amazon AliExpress</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#D4AF37">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+    <link rel="preconnect" href="https://cdn-icons-png.flaticon.com">
+    <link rel="preconnect" href="https://api.allorigins.win">
 
-    <!-- Schema.org para Google -->
+    <!-- Schema para Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "AhorraTodo Chic",
       "url": "https://ahorratodochic.com",
-      "description": "Tu portal inteligente de compras, ofertas y tendencias mundiales",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://ahorratodochic.com/?q={search_term_string}"
+      "description": "Portal de ofertas y comparador de precios de tiendas online",
+      "publisher": {
+        "@type": "Organization",
+        "name": "AhorraTodo Chic",
+        "logo": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
       }
     }
     </script>
@@ -280,4 +277,15 @@
 
 <footer class="footer">
     <span class="es-text">© <span id="currentYear"></span> <a href="#">AhorraTodo Chic</a>. Todos los derechos reservados.</span>
-    <span class="en-text">© <span id="currentYearEn"></span> <a href="#">SaveEverything Chic</a>. All rights
+    <span class="en-text">© <span id="currentYearEn"></span> <a href="#">SaveEverything Chic</a>. All rights reserved.</span>
+</footer>
+
+<script>
+    let currentLang = 'es';
+
+    // 1. Toggle Idioma
+    function toggleLanguage() {
+        const btn = document.getElementById('langToggle');
+        const esElements = document.querySelectorAll('.es-text');
+        const enElements = document.querySelectorAll('.en-text');
+        const htmlTag = document.documentElement
