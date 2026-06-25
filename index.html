@@ -44,7 +44,7 @@
         .store-card.hide {display: none;}
         .store-header {display: flex; align-items: center; gap: 10px;}
         .store-badge {padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.7em; color: white; min-width: 65px; text-align: center; flex-shrink: 0;}
-        .bg-temu {background-color: #ff5000;} .bg-amazon {background-color: #FF9900;} .bg-aliexpress {background: linear-gradient(135deg, #FF471A, #E61919);} .bg-mercadolibre {background-color: #fff159; color: #000;} .bg-walmart {background-color: #0071dc;} .bg-ebay {background: linear-gradient(135deg, #e53238, #0064d2);} .bg-uber {background-color: #000000;} .bg-alibaba {background-color: #FF6A00;} .bg-ubereats {background-color: #06C167;} .bg-tiktok {background: linear-gradient(135deg, #000000, #ff0050);} .bg-booking {background-color: #003580;} .bg-expedia {background-color: #FFCC00; color: #000;} .bg-shein {background-color: #000000;} .bg-fashionnova {background-color: #FF1493;} .bg-wise {background: linear-gradient(135deg, #6366f1, #4f46e5);} .bg-airbnb {background-color: #FF5A5F;} .bg-canva {background-color: #00D9FF;} .bg-hm {background-color: #1a1a1a; border: 2px solid #FFB81C;} .bg-forever21 {background-color: #FF1493;} .bg-bestbuy {background-color: #FFED00; color: #000;} .bg-wayfair {background-color: #2E2C2C;} .bg-ikea {background-color: #0051BA;} .bg-skillshare {background: linear-gradient(135deg, #001f3f, #0074D9);} .bg-trivago {background-color: #003580;} .bg-sephora {background-color: #000000;} .bg-decathlon {background-color: #003366;} .bg-grammarly {background-color: #15C784;} .bg-target {background-color: #CC0000;} .bg-coursera {background-color: #0056D2;} .bg-nike {background: linear-gradient(135deg, #000000, #111111);} .bg-adidas {background: linear-gradient(135deg, #000000, #1a1a1a);}
+        .bg-amazon {background-color: #FF9900;} .bg-aliexpress {background: linear-gradient(135deg, #FF471A, #E61919);} .bg-alibaba {background-color: #FF6A00;} .bg-tiktok {background: linear-gradient(135deg, #000000, #ff0050);}
         .store-name {font-weight: 700; color: #FFFFFF; font-size: clamp(0.9em, 2vw, 1em); flex: 1;}
         .store-description {font-size: clamp(0.75em, 1.4vw, 0.85em); color: #B0B0B0; line-height: 1.3; flex: 1;}
         .affiliate-tag {display: inline-block; background: rgba(16, 185, 129, 0.2); color: #86EFAC; font-size: 0.65em; padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.3);}
@@ -190,8 +190,11 @@
         .es-text {display: inline-block;}
         @media(max-width: 768px) {.stores-grid {grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));}}
         @media(max-width: 480px) {.stores-grid {grid-template-columns: 1fr;} .store-card {padding: 12px;} .hero-section {padding: 20px 12px;} .main-wrapper {padding: 15px 10px;}}
+    
     </style>
+
 </head>
+
 <body>
 
 <div class="compliance-banner">
@@ -212,7 +215,7 @@
         <h1 class="hero-title"><span class="es-text">AhorraTodo Chic</span><span class="en-text">SaveEverything Chic</span></h1>
         <p class="hero-subtitle"><span class="es-text">Tu portal inteligente de compras, ofertas y tendencias</span><span class="en-text">Your smart shopping hub for deals</span></p>
         <div class="trust-section">
-            <div class="trust-badge">✅ <strong><span class="es-text">32+ Tiendas</span><span class="en-text">32+ Stores</span></strong></div>
+            <div class="trust-badge">✅ <strong><span class="es-text">4 Tiendas</span><span class="en-text">4 Stores</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">Sin Datos</span><span class="en-text">No Data</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">Transparente</span><span class="en-text">Transparent</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">FTC/GDPR</span><span class="en-text">FTC/GDPR</span></strong></div>
@@ -226,40 +229,56 @@
                 <button class="category-btn active" onclick="filterCategory('all', this)"><span class="es-text">🔥 Todos</span><span class="en-text">🔥 All</span></button>
                 <button class="category-btn" onclick="filterCategory('moda', this)"><span class="es-text">👗 Moda</span><span class="en-text">👗 Fashion</span></button>
                 <button class="category-btn" onclick="filterCategory('tech', this)"><span class="es-text">📱 Tech</span><span class="en-text">📱 Tech</span></button>
-                <button class="category-btn" onclick="filterCategory('hogar', this)"><span class="es-text">🏠 Hogar</span><span class="en-text">🏠 Home</span></button>
-                <button class="category-btn" onclick="filterCategory('comida', this)"><span class="es-text">🍔 Comida</span><span class="en-text">🍔 Food</span></button>
-                <button class="category-btn" onclick="filterCategory('viajes', this)"><span class="es-text">✈️ Viajes</span><span class="en-text">✈️ Travel</span></button>
-                <button class="category-btn" onclick="filterCategory('belleza', this)"><span class="es-text">💄 Belleza</span><span class="en-text">💄 Beauty</span></button>
-                <button class="category-btn" onclick="filterCategory('educacion', this)"><span class="es-text">🎓 Edu</span><span class="en-text">🎓 Edu</span></button>
-                <button class="category-btn" onclick="filterCategory('dinero', this)"><span class="es-text">💰 Dinero</span><span class="en-text">💰 Money</span></button>
             </div>
             
             <div class="stores-grid" id="storesGrid">
-                <div class="store-card" data-category="moda deporte" data-search="nike"><div class="store-header"><span class="store-badge bg-nike">NIKE</span><div><div class="store-name">Nike</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Ropa deportiva</span><span class="en-text">Sports apparel</span></div><a href="https://www.nike.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda deporte" data-search="adidas"><div class="store-header"><span class="store-badge bg-adidas">ADIDAS</span><div><div class="store-name">Adidas</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Moda deportiva</span><span class="en-text">Athletic fashion</span></div><a href="https://www.adidas.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="temu"><div class="store-header"><span class="store-badge bg-temu">TEMU</span><div><div class="store-name">Temu</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Moda y electrónica</span><span class="en-text">Fashion & tech</span></div><a href="https://temu.com/invite?invite_code=AHORRATODOCHIC&channel=web" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="shein"><div class="store-header"><span class="store-badge bg-shein">SHEIN</span><div><div class="store-name">Shein</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Moda rápida</span><span class="en-text">Fast fashion</span></div><a href="https://www.shein.com/?ref=yosvelreina" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="fashion nova"><div class="store-header"><span class="store-badge bg-fashionnova">FASHION</span><div><div class="store-name">Fashion Nova</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Moda premium</span><span class="en-text">Premium fashion</span></div><a href="https://www.fashionnova.com/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="aliexpress"><div class="store-header"><span class="store-badge bg-aliexpress">ALIEXPRESS</span><div><div class="store-name">AliExpress</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Tienda China</span><span class="en-text">Chinese store</span></div><a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="hm"><div class="store-header"><span class="store-badge bg-hm">H&M</span><div><div class="store-name">H&M</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Moda global</span><span class="en-text">Global fashion</span></div><a href="https://www.hm.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda" data-search="forever"><div class="store-header"><span class="store-badge bg-forever21">FOREVER</span><div><div class="store-name">Forever 21</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Moda joven</span><span class="en-text">Youth fashion</span></div><a href="https://www.forever21.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech" data-search="amazon"><div class="store-header"><span class="store-badge bg-amazon">AMAZON</span><div><div class="store-name">Amazon</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Productos variados</span><span class="en-text">Varied products</span></div><a href="https://www.amazon.com/?tag=yosvelreina-21" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech" data-search="walmart"><div class="store-header"><span class="store-badge bg-walmart">WALMART</span><div><div class="store-name">Walmart</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Electrónica</span><span class="en-text">Electronics</span></div><a href="https://www.walmart.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech" data-search="ebay"><div class="store-header"><span class="store-badge bg-ebay">EBAY</span><div><div class="store-name">eBay</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Subastas</span><span class="en-text">Auctions</span></div><a href="https://www.ebay.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech" data-search="bestbuy"><div class="store-header"><span class="store-badge bg-bestbuy">BESTBUY</span><div><div class="store-name">Best Buy</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Electrónica marca</span><span class="en-text">Brand electronics</span></div><a href="https://www.bestbuy.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech" data-search="alibaba"><div class="store-header"><span class="store-badge bg-alibaba">ALIBABA</span><div><div class="store-name">Alibaba</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Mayorista</span><span class="en-text">Wholesale</span></div><a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="hogar" data-search="wayfair"><div class="store-header"><span class="store-badge bg-wayfair">WAYFAIR</span><div><div class="store-name">Wayfair</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Muebles</span><span class="en-text">Furniture</span></div><a href="https://www.wayfair.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="hogar" data-search="ikea"><div class="store-header"><span class="store-badge bg-ikea">IKEA</span><div><div class="store-name">IKEA</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Muebles moderna</span><span class="en-text">Modern furniture</span></div><a href="https://www.ikea.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="comida" data-search="ubereats"><div class="store-header"><span class="store-badge bg-ubereats">UBEREATS</span><div><div class="store-name">Uber Eats</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Comida</span><span class="en-text">Food</span></div><a href="https://www.ubereats.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="comida" data-search="uber"><div class="store-header"><span class="store-badge bg-uber">UBER</span><div><div class="store-name">Uber</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Transporte</span><span class="en-text">Transport</span></div><a href="https://uber.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="comida" data-search="tiktok"><div class="store-header"><span class="store-badge bg-tiktok">TIKTOK</span><div><div class="store-name">TikTok Shop</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Tienda oficial</span><span class="en-text">Official store</span></div><a href="https://www.tiktok.com/t/OFFICIAL_TIKTOK_SHOP/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="viajes" data-search="airbnb"><div class="store-header"><span class="store-badge bg-airbnb">AIRBNB</span><div><div class="store-name">Airbnb</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Hospedaje</span><span class="en-text">Lodging</span></div><a href="https://www.airbnb.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="viajes" data-search="booking"><div class="store-header"><span class="store-badge bg-booking">BOOKING</span><div><div class="store-name">Booking.com</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Hoteles</span><span class="en-text">Hotels</span></div><a href="https://www.booking.com/?label=ahorratodochic" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="viajes" data-search="trivago"><div class="store-header"><span class="store-badge bg-trivago">TRIVAGO</span><div><div class="store-name">Trivago</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Hoteles compare</span><span class="en-text">Compare hotels</span></div><a href="https://www.trivago.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="viajes" data-search="expedia"><div class="store-header"><span class="store-badge bg-expedia">EXPEDIA</span><div><div class="store-name">Expedia</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Viajes</span><span class="en-text">Travel</span></div><a href="https://www.expedia.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="belleza" data-search="sephora"><div class="store-header"><span class="store-badge bg-sephora">SEPHORA</span><div><div class="store-name">Sephora</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Cosmética</span><span class="en-text">Cosmetics</span></div><a href="https://www.sephora.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="moda tech hogar" data-search="mercadolibre"><div class="store-header"><span class="store-badge bg-mercadolibre">MERCADO</span><div><div class="store-name">Mercado Libre</div><div class="affiliate-tag"><span class="es-text">🔗 Directo</span><span class="en-text">🔗 Direct</span></div></div></div><div class="store-description"><span class="es-text">Marketplace</span><span class="en-text">Marketplace</span></div><a href="https://mercadolibre.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
-                <div class="store-card" data-category="tech hogar" data-search="target"><div class="store-header"><span class="store-badge bg-target">TARGET</span><div><div class="store-name">Target</div><div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div></div></div><div class="store-description"><span class="es-text">Retail USA</span><span class="en-text">USA retail</span></div><a href="https://www.target.com" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a></div>
+                <div class="store-card" data-category="tech" data-search="amazon">
+                    <div class="store-header">
+                        <span class="store-badge bg-amazon">AMAZON</span>
+                        <div>
+                            <div class="store-name">Amazon</div>
+                            <div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div>
+                        </div>
+                    </div>
+                    <div class="store-description"><span class="es-text">Productos variados</span><span class="en-text">Varied products</span></div>
+                    <a href="https://www.amazon.com/?tag=yosvelreina-21" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                </div>
+                
+                <div class="store-card" data-category="moda" data-search="aliexpress">
+                    <div class="store-header">
+                        <span class="store-badge bg-aliexpress">ALIEXPRESS</span>
+                        <div>
+                            <div class="store-name">AliExpress</div>
+                            <div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div>
+                        </div>
+                    </div>
+                    <div class="store-description"><span class="es-text">Tienda China</span><span class="en-text">Chinese store</span></div>
+                    <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                </div>
+                
+                <div class="store-card" data-category="tech" data-search="alibaba">
+                    <div class="store-header">
+                        <span class="store-badge bg-alibaba">ALIBABA</span>
+                        <div>
+                            <div class="store-name">Alibaba</div>
+                            <div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div>
+                        </div>
+                    </div>
+                    <div class="store-description"><span class="es-text">Mayorista</span><span class="en-text">Wholesale</span></div>
+                    <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                </div>
+                
+                <div class="store-card" data-category="moda" data-search="tiktok">
+                    <div class="store-header">
+                        <span class="store-badge bg-tiktok">TIKTOK</span>
+                        <div>
+                            <div class="store-name">TikTok Shop</div>
+                            <div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div>
+                        </div>
+                    </div>
+                    <div class="store-description"><span class="es-text">Tienda oficial</span><span class="en-text">Official store</span></div>
+                    <a href="https://www.tiktok.com/t/OFFICIAL_TIKTOK_SHOP/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                </div>
             </div>
         </div>
         
@@ -304,19 +323,61 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <div class="legal-section" id="legal-section">
     <div class="legal-container">
         <h2 class="legal-title">⚖️ Legal</h2>
         <div class="legal-grid">
-            <details class="legal-item"><summary><span class="es-text">🔗 Afiliados</span><span class="en-text">🔗 Affiliates</span></summary><div class="legal-content"><p><strong>Transparencia:</strong> Algunos enlaces generan comisión sin costo extra para ti.</p><ul><li>✅ FTC 16 CFR 255</li></ul></div></details>
-            <details class="legal-item"><summary><span class="es-text">🔒 Privacidad</span><span class="en-text">🔒 Privacy</span></summary><div class="legal-content"><p><strong>Datos:</strong></p><ul><li>❌ NO recopilamos datos</li><li>✅ GDPR Compliant</li></ul></div></details>
-            <details class="legal-item"><summary><span class="es-text">⚖️ Responsabilidad</span><span class="en-text">⚖️ Liability</span></summary><div class="legal-content"><p><strong>Somos un directorio:</strong></p><ul><li>🔗 NO somos tienda</li><li>💳 NO procesamos pagos</li></ul></div></details>
-            <details class="legal-item"><summary><span class="es-text">📋 Cookies</span><span class="en-text">📋 Cookies</span></summary><div class="legal-content"><p><strong>Solo técnicas:</strong></p><ul><li>✅ Idioma (es/en)</li><li>❌ NO tracking</li></ul></div></details>
-            <details class="legal-item"><summary><span class="es-text">📌 Contacto</span><span class="en-text">📌 Contact</span></summary><div class="legal-content"><p><strong>AhorraTodo Chic</strong><br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com">Email</a></p></div></details>
+            <details class="legal-item">
+                <summary><span class="es-text">🔗 Afiliados</span><span class="en-text">🔗 Affiliates</span></summary>
+                <div class="legal-content">
+                    <p><strong>Transparencia:</strong> Algunos enlaces generan comisión sin costo extra para ti.</p>
+                    <ul>
+                        <li>✅ FTC 16 CFR 255</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">🔒 Privacidad</span><span class="en-text">🔒 Privacy</span></summary>
+                <div class="legal-content">
+                    <p><strong>Datos:</strong></p>
+                    <ul>
+                        <li>❌ NO recopilamos datos</li>
+                        <li>✅ GDPR Compliant</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">⚖️ Responsabilidad</span><span class="en-text">⚖️ Liability</span></summary>
+                <div class="legal-content">
+                    <p><strong>Somos un directorio:</strong></p>
+                    <ul>
+                        <li>🔗 NO somos tienda</li>
+                        <li>💳 NO procesamos pagos</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">📋 Cookies</span><span class="en-text">📋 Cookies</span></summary>
+                <div class="legal-content">
+                    <p><strong>Solo técnicas:</strong></p>
+                    <ul>
+                        <li>✅ Idioma (es/en)</li>
+                        <li>❌ NO tracking</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">📌 Contacto</span><span class="en-text">📌 Contact</span></summary>
+                <div class="legal-content">
+                    <p><strong>AhorraTodo Chic</strong><br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com">Email</a></p>
+                </div>
+            </details>
         </div>
     </div>
+
 </div>
 
 <div class="footer">
@@ -383,7 +444,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('currentYear').innerText = new Date().getFullYear();
     document.getElementById('currentYearEn').innerText = new Date().getFullYear();
 });
+
 </script>
 
 </body>
+
 </html>
