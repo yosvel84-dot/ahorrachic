@@ -44,7 +44,12 @@
         .store-card.hide {display: none;}
         .store-header {display: flex; align-items: center; gap: 10px;}
         .store-badge {padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.7em; color: white; min-width: 65px; text-align: center; flex-shrink: 0;}
-        .bg-amazon {background-color: #FF9900;} .bg-aliexpress {background: linear-gradient(135deg, #FF471A, #E61919);} .bg-alibaba {background-color: #FF6A00;} .bg-tiktok {background: linear-gradient(135deg, #000000, #ff0050);} .bg-fitory {background: linear-gradient(135deg, #FF6B6B, #FF4757);}
+        .bg-amazon {background-color: #FF9900;} 
+        .bg-aliexpress {background: linear-gradient(135deg, #FF471A, #E61919);} 
+        .bg-alibaba {background-color: #FF6A00;} 
+        .bg-tiktok {background: linear-gradient(135deg, #000000, #ff0050);} 
+        .bg-fitory {background: linear-gradient(135deg, #FF6B6B, #FF4757);}
+        .bg-ebay {background: linear-gradient(135deg, #E53238, #C3122E);}
         .store-name {font-weight: 700; color: #FFFFFF; font-size: clamp(0.9em, 2vw, 1em); flex: 1;}
         .store-description {font-size: clamp(0.75em, 1.4vw, 0.85em); color: #B0B0B0; line-height: 1.3; flex: 1;}
         .affiliate-tag {display: inline-block; background: rgba(16, 185, 129, 0.2); color: #86EFAC; font-size: 0.65em; padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.3);}
@@ -189,6 +194,7 @@
         @media(max-width: 768px) {.stores-grid {grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));}}
         @media(max-width: 480px) {.stores-grid {grid-template-columns: 1fr;} .store-card {padding: 12px;} .hero-section {padding: 20px 12px;} .main-wrapper {padding: 15px 10px;}}
     
+    
     </style>
 
 </head>
@@ -213,7 +219,7 @@
         <h1 class="hero-title"><span class="es-text">AhorraTodo Chic</span><span class="en-text">SaveEverything Chic</span></h1>
         <p class="hero-subtitle"><span class="es-text">Tu portal inteligente de compras, ofertas y tendencias</span><span class="en-text">Your smart shopping hub for deals</span></p>
         <div class="trust-section">
-            <div class="trust-badge">✅ <strong><span class="es-text">5 Tiendas</span><span class="en-text">5 Stores</span></strong></div>
+            <div class="trust-badge">✅ <strong><span class="es-text">6 Tiendas</span><span class="en-text">6 Stores</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">Sin Datos</span><span class="en-text">No Data</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">Transparente</span><span class="en-text">Transparent</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">FTC/GDPR</span><span class="en-text">FTC/GDPR</span></strong></div>
@@ -230,6 +236,18 @@
             </div>
             
             <div class="stores-grid" id="storesGrid">
+                <div class="store-card" data-category="moda tech" data-search="ebay auction marketplace">
+                    <div class="store-header">
+                        <span class="store-badge bg-ebay">EBAY</span>
+                        <div>
+                            <div class="store-name">eBay</div>
+                            <div class="affiliate-tag"><span class="es-text">💰 Comisión</span><span class="en-text">💰 Commission</span></div>
+                        </div>
+                    </div>
+                    <div class="store-description"><span class="es-text">Subastas y compras verificadas</span><span class="en-text">Auctions & verified purchases</span></div>
+                    <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                </div>
+
                 <div class="store-card" data-category="moda" data-search="fitory footwear ropa zapatos">
                     <div class="store-header">
                         <span class="store-badge bg-fitory">FITORY</span>
@@ -321,6 +339,7 @@
                         <a href="tel:+13054911906" class="btn-promo secondary"><span class="es-text">Llamar</span><span class="en-text">Call</span></a>
                     </div>
                 </div>
+                
                 <div class="promo-card">
                     <div class="promo-badge"><span class="es-text">Ads</span><span class="en-text">Ads</span></div>
                     <h3>📢 <span class="es-text">¿Tu tienda?</span><span class="en-text">Your store?</span></h3>
