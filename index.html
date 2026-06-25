@@ -417,42 +417,61 @@
 <script>
 let currentLang = 'es';
 
-// Sistema de contador de visitantes REAL
+// CONTADOR REAL Y HONESTO - Solo sesiones activas, sin manipulación
 function initLiveUsers() {
-    const sessionId = sessionStorage.getItem('sessionId');
+    // Crear ID único para esta sesión
+    const sessionId = sessionStorage.getItem('ahorratodo_session');
     if (!sessionId) {
         const newSessionId = 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-        sessionStorage.setItem('sessionId', newSessionId);
-        sessionStorage.setItem('sessionStart', Date.now());
+        sessionStorage.setItem('ahorratodo_session', newSessionId);
     }
     
+    // Registrar actividad
     updateLiveUsersCount();
-    setInterval(updateLiveUsersCount, 5000);
+    
+    // Actualizar cada 3 segundos
+    setInterval(updateLiveUsersCount, 3000);
+    
+    // Limpiar sesión inactiva cuando se cierra la pestaña
+    window.addEventListener('beforeunload', () => {
+        removeInactiveSession();
+    });
 }
 
 function updateLiveUsersCount() {
-    let activeUsers = localStorage.getItem('activeUsers') || '1';
-    activeUsers = Math.max(1, Math.min(parseInt(activeUsers) + Math.floor(Math.random() * 3 - 1), 50));
+    const sessionId = sessionStorage.getItem('ahorratodo_session');
+    const now = Date.now();
     
-    localStorage.setItem('activeUsers', activeUsers);
-    localStorage.setItem('lastActivity', Date.now());
+    // Obtener todas las sesiones del localStorage
+    let activeSessions = JSON.parse(localStorage.getItem('ahorratodo_sessions')) || {};
     
-    document.getElementById('liveUsersCount').textContent = activeUsers;
-    document.getElementById('sidebarLiveUsers').textContent = activeUsers;
+    // Registrar/actualizar la sesión actual
+    activeSessions[sessionId] = now;
     
-    cleanupInactiveUsers();
+    // Eliminar sesiones inactivas (más de 5 minutos sin actividad)
+    const timeoutMs = 5 * 60 * 1000; // 5 minutos
+    Object.keys(activeSessions).forEach(id => {
+        if (now - activeSessions[id] > timeoutMs) {
+            delete activeSessions[id];
+        }
+    });
+    
+    // Guardar sesiones activas
+    localStorage.setItem('ahorratodo_sessions', JSON.stringify(activeSessions));
+    
+    // Contar sesiones activas
+    const activeCount = Object.keys(activeSessions).length;
+    
+    // Mostrar el número REAL
+    document.getElementById('liveUsersCount').textContent = activeCount;
+    document.getElementById('sidebarLiveUsers').textContent = activeCount;
 }
 
-function cleanupInactiveUsers() {
-    const lastActivity = localStorage.getItem('lastActivity');
-    const now = Date.now();
-    const timeoutMinutes = 5;
-    
-    if (lastActivity && (now - parseInt(lastActivity)) > (timeoutMinutes * 60 * 1000)) {
-        let activeUsers = parseInt(localStorage.getItem('activeUsers') || '1');
-        activeUsers = Math.max(1, activeUsers - 1);
-        localStorage.setItem('activeUsers', activeUsers);
-    }
+function removeInactiveSession() {
+    const sessionId = sessionStorage.getItem('ahorratodo_session');
+    let activeSessions = JSON.parse(localStorage.getItem('ahorratodo_sessions')) || {};
+    delete activeSessions[sessionId];
+    localStorage.setItem('ahorratodo_sessions', JSON.stringify(activeSessions));
 }
 
 function toggleLanguage() {
