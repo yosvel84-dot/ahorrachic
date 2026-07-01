@@ -783,7 +783,7 @@
     
     <div class="content-wrapper">
         <div>
-            <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Busca..." onkeyup="searchStores()">
+            <input type="text" class="search-bar" id="searchInput" onkeyup="searchStores()">
             <div class="category-tabs">
                 <button class="category-btn active" onclick="filterCategory('all', this)"><span class="es-text">🔥 Todos</span><span class="en-text">🔥 All</span></button>
                 <button class="category-btn" onclick="filterCategory('moda', this)"><span class="es-text">👗 Moda</span><span class="en-text">👗 Fashion</span></button>
@@ -972,7 +972,10 @@
                 <div class="legal-content">
                     <p><strong>Propiedad intelectual:</strong><br>
                     Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción, distribución o uso sin permiso explícito.<br><br>
-                    <strong>Ubicación:</strong><br>AhorraTodo Chic<br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com">Email</a></p>
+                    <strong>Ubicación:</strong><br>
+                    AhorraTodo Chic<br>
+                    Miami, FL<br>
+                    <a href="mailto:ahorratodochic@gmail.com">Email</a></p>
                 </div>
             </details>
         </div>
@@ -1033,11 +1036,35 @@ function removeInactiveSession() {
     localStorage.setItem('ahorratodo_sessions', JSON.stringify(activeSessions));
 }
 
+function updateSearchPlaceholder() {
+    const searchInput = document.getElementById('searchInput');
+    if (currentLang === 'es') {
+        searchInput.placeholder = '🔍 Busca...';
+    } else {
+        searchInput.placeholder = '🔍 Search...';
+    }
+}
+
 function toggleLanguage() {
-    document.querySelectorAll('.es-text').forEach(el => el.style.display = currentLang === 'es' ? 'none' : 'inline-block');
-    document.querySelectorAll('.en-text').forEach(el => el.style.display = currentLang === 'es' ? 'inline-block' : 'none');
+    document.querySelectorAll('.es-text').forEach(el => {
+        if (currentLang === 'es') {
+            el.style.display = 'none';
+        } else {
+            el.style.display = el.tagName === 'SPAN' ? 'inline-block' : 'block';
+        }
+    });
+    
+    document.querySelectorAll('.en-text').forEach(el => {
+        if (currentLang === 'es') {
+            el.style.display = el.tagName === 'SPAN' ? 'inline-block' : 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
+    
     currentLang = currentLang === 'es' ? 'en' : 'es';
     updateClock();
+    updateSearchPlaceholder();
 }
 
 function updateClock() {
@@ -1072,6 +1099,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateClock, 1000);
     document.getElementById('currentYear').innerText = new Date().getFullYear();
     document.getElementById('currentYearEn').innerText = new Date().getFullYear();
+    updateSearchPlaceholder();
     initLiveUsers();
 });
 
