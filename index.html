@@ -34,11 +34,6 @@
             100% {background-position: 0% 50%;}
         }
         
-        @keyframes shine {
-            0% {left: -100%;}
-            100% {left: 100%;}
-        }
-        
         @keyframes glow {
             0%, 100% {box-shadow: 0 0 12px rgba(16, 185, 129, 0.3), 0 8px 24px rgba(16, 185, 129, 0.1);}
             50% {box-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 8px 32px rgba(16, 185, 129, 0.2);}
@@ -105,7 +100,6 @@
             padding: 20px 12px;
         }
         
-        /* HERO ANIMADO CON GLASSMORPHISM */
         .hero-section {
             text-align: center; 
             margin-bottom: 30px; 
@@ -116,9 +110,7 @@
             border-radius: 16px; 
             border: 1px solid rgba(16, 185, 129, 0.25);
             backdrop-filter: blur(10px);
-            box-shadow: 
-                0 8px 32px rgba(31, 38, 135, 0.37),
-                0 0 20px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37), 0 0 20px rgba(16, 185, 129, 0.2);
         }
         
         .hero-title {
@@ -193,7 +185,6 @@
         }
         @keyframes pulse {0%, 100% {opacity: 1;} 50% {opacity: 0.5;}}
         
-        /* SEPARADOR VISUAL */
         .separator-line {
             height: 2px;
             background: linear-gradient(90deg, transparent 0%, #10B981 20%, #10B981 80%, transparent 100%);
@@ -278,7 +269,6 @@
             margin-bottom: 30px;
         }
         
-        /* CARDS MEJORADAS */
         .store-card {
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid #2A2A2A; 
@@ -319,9 +309,7 @@
         .store-card:hover {
             border-color: #10B981; 
             background: rgba(36, 36, 36, 0.9);
-            box-shadow: 
-                0 8px 24px rgba(16, 185, 129, 0.25),
-                0 0 20px rgba(16, 185, 129, 0.15);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25), 0 0 20px rgba(16, 185, 129, 0.15);
             transform: translateY(-6px);
             border-left-color: #10B981;
             animation: borderGradient 2s ease infinite;
@@ -378,7 +366,6 @@
             border: 1px solid rgba(16, 185, 129, 0.4);
         }
         
-        /* BOTONES CON SHINE */
         .btn-store {
             display: block;
             padding: 12px 16px;
@@ -396,11 +383,7 @@
             transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             overflow: hidden;
-            box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.2),
-                0 4px 8px rgba(0, 0, 0, 0.15),
-                0 8px 16px rgba(16, 185, 129, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transform: translateY(0) perspective(800px);
             z-index: 1;
         }
@@ -417,24 +400,10 @@
         }
         
         .btn-store:hover::after {left: 100%;}
-        
         .btn-store:hover {
             background: linear-gradient(135deg, #059669, #047857);
-            box-shadow: 
-                0 4px 8px rgba(0, 0, 0, 0.25),
-                0 8px 16px rgba(0, 0, 0, 0.2),
-                0 12px 24px rgba(16, 185, 129, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
             transform: translateY(-4px) perspective(800px) rotateX(2deg);
-        }
-        
-        .btn-store:active {
-            box-shadow: 
-                0 1px 2px rgba(0, 0, 0, 0.3),
-                0 2px 4px rgba(0, 0, 0, 0.2),
-                0 4px 8px rgba(16, 185, 129, 0.15),
-                inset 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateY(-1px) perspective(800px) rotateX(1deg);
         }
         
         .sidebar {
@@ -445,7 +414,6 @@
         }
         @media(max-width: 1024px) {.sidebar {flex-direction: row;}}
         
-        /* WIDGETS CON GLOW */
         .widget-box {
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid rgba(16, 185, 129, 0.3);
@@ -517,9 +485,7 @@
             padding: 14px; 
             position: relative; 
             margin-bottom: 10px; 
-            box-shadow: 
-                0 4px 16px rgba(16, 185, 129, 0.2),
-                0 0 12px rgba(16, 185, 129, 0.1);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2), 0 0 12px rgba(16, 185, 129, 0.1);
             backdrop-filter: blur(5px);
             animation: fadeInUp 0.8s ease;
             transition: all 0.3s ease;
@@ -605,11 +571,7 @@
             cursor: pointer;
             display: block;
             transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.2),
-                0 4px 8px rgba(0, 0, 0, 0.15),
-                0 6px 12px rgba(16, 185, 129, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transform: translateY(0) perspective(800px);
             position: relative;
             overflow: hidden;
@@ -630,21 +592,8 @@
         
         .btn-promo:hover {
             background: linear-gradient(135deg, #059669, #047857);
-            box-shadow: 
-                0 3px 6px rgba(0, 0, 0, 0.25),
-                0 6px 12px rgba(0, 0, 0, 0.2),
-                0 10px 20px rgba(16, 185, 129, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
             transform: translateY(-3px) perspective(800px) rotateX(2deg);
-        }
-        
-        .btn-promo:active {
-            box-shadow: 
-                0 1px 2px rgba(0, 0, 0, 0.3),
-                0 2px 4px rgba(0, 0, 0, 0.2),
-                0 4px 8px rgba(16, 185, 129, 0.15),
-                inset 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateY(-1px) perspective(800px) rotateX(1deg);
         }
         
         .btn-promo.secondary {
@@ -653,11 +602,6 @@
         
         .btn-promo.secondary:hover {
             background: linear-gradient(135deg, #707070, #606060);
-            box-shadow: 
-                0 3px 6px rgba(0, 0, 0, 0.25),
-                0 6px 12px rgba(0, 0, 0, 0.2),
-                0 10px 20px rgba(80, 80, 80, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transform: translateY(-3px) perspective(800px) rotateX(2deg);
         }
         
@@ -746,7 +690,6 @@
         .es-text {display: inline-block;}
         @media(max-width: 768px) {.stores-grid {grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));}}
         @media(max-width: 480px) {.stores-grid {grid-template-columns: 1fr;} .store-card {padding: 12px;} .hero-section {padding: 20px 12px;} .main-wrapper {padding: 15px 10px;}}
-    
     </style>
 
 </head>
@@ -926,12 +869,12 @@
 
 <div class="legal-section" id="legal-section">
     <div class="legal-container">
-        <h2 class="legal-title">⚖️ Legal</h2>
+        <h2 class="legal-title">⚖️ <span class="es-text">Legal</span><span class="en-text">Legal</span></h2>
         <div class="legal-grid">
             <details class="legal-item">
                 <summary><span class="es-text">🔗 Afiliados</span><span class="en-text">🔗 Affiliates</span></summary>
                 <div class="legal-content">
-                    <p><strong>Transparencia:</strong> Algunos enlaces generan comisión sin costo extra para ti.</p>
+                    <p><strong><span class="es-text">Transparencia:</span><span class="en-text">Transparency:</span></strong> <span class="es-text">Algunos enlaces generan comisión sin costo extra para ti.</span><span class="en-text">Some links generate commission at no extra cost to you.</span></p>
                     <ul>
                         <li>✅ FTC 16 CFR 255</li>
                     </ul>
@@ -940,9 +883,9 @@
             <details class="legal-item">
                 <summary><span class="es-text">🔒 Privacidad</span><span class="en-text">🔒 Privacy</span></summary>
                 <div class="legal-content">
-                    <p><strong>Datos:</strong></p>
+                    <p><strong><span class="es-text">Datos:</span><span class="en-text">Data:</span></strong></p>
                     <ul>
-                        <li>❌ NO recopilamos datos</li>
+                        <li>❌ <span class="es-text">NO recopilamos datos</span><span class="en-text">NO data collection</span></li>
                         <li>✅ GDPR Compliant</li>
                     </ul>
                 </div>
@@ -950,31 +893,32 @@
             <details class="legal-item">
                 <summary><span class="es-text">⚖️ Responsabilidad</span><span class="en-text">⚖️ Liability</span></summary>
                 <div class="legal-content">
-                    <p><strong>Somos un directorio:</strong></p>
+                    <p><strong><span class="es-text">Somos un directorio:</span><span class="en-text">We are a directory:</span></strong></p>
                     <ul>
-                        <li>🔗 NO somos tienda</li>
-                        <li>💳 NO procesamos pagos</li>
+                        <li>🔗 <span class="es-text">NO somos tienda</span><span class="en-text">NOT a store</span></li>
+                        <li>💳 <span class="es-text">NO procesamos pagos</span><span class="en-text">NO payment processing</span></li>
                     </ul>
                 </div>
             </details>
             <details class="legal-item">
                 <summary><span class="es-text">📋 Cookies</span><span class="en-text">📋 Cookies</span></summary>
                 <div class="legal-content">
-                    <p><strong>Solo técnicas:</strong></p>
+                    <p><strong><span class="es-text">Solo técnicas:</span><span class="en-text">Technical only:</span></strong></p>
                     <ul>
-                        <li>✅ Idioma (es/en)</li>
-                        <li>❌ NO tracking</li>
+                        <li>✅ <span class="es-text">Idioma (es/en)</span><span class="en-text">Language (es/en)</span></li>
+                        <li>❌ <span class="es-text">NO tracking</span><span class="en-text">NO tracking</span></li>
                     </ul>
                 </div>
             </details>
             <details class="legal-item">
                 <summary><span class="es-text">📌 Contacto</span><span class="en-text">📌 Contact</span></summary>
                 <div class="legal-content">
-                    <p><strong>Propiedad intelectual:</strong><br>
-                    Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción, distribución o uso sin permiso explícito.<br><br>
-                    <strong>Ubicación:</strong><br>
-                    AhorraTodo Chic<br>
-                    Miami, FL<br>
+                    <p><strong><span class="es-text">Propiedad intelectual:</span><span class="en-text">Intellectual property:</span></strong><br>
+                    <span class="es-text">Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción, distribución o uso sin permiso explícito.</span><span class="en-text">All rights over the design, content and code of SaveEverything Chic are owned by SaveEverything Chic. Reproduction, distribution or use is not permitted without explicit permission.</span><br><br>
+                    <strong><span class="es-text">Ubicación:</span><span class="en-text">Location:</span></strong><br>
+                    <span class="es-text">AhorraTodo Chic<br>
+                    Miami, FL<br></span><span class="en-text">SaveEverything Chic<br>
+                    Miami, FL<br></span>
                     <a href="mailto:ahorratodochic@gmail.com">Email</a></p>
                 </div>
             </details>
@@ -991,7 +935,6 @@
 <script>
 let currentLang = 'es';
 
-// CONTADOR REAL Y HONESTO - Solo sesiones activas, sin manipulación
 function initLiveUsers() {
     const sessionId = sessionStorage.getItem('ahorratodo_session');
     if (!sessionId) {
