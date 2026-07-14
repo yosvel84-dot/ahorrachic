@@ -203,6 +203,7 @@
         @media(max-width: 768px) {.stores-grid {grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));}}
         @media(max-width: 480px) {.stores-grid {grid-template-columns: 1fr;} .store-card {padding: 12px;} .hero-section {padding: 20px 12px;} .main-wrapper {padding: 15px 10px;}}
     
+    
     </style>
 
 </head>
@@ -549,11 +550,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
     updateLiveUsersCount();
-    setInterval(updateLiveUsersCount, 2000);
+    setInterval(updateLiveUsersCount, 180000);
     document.getElementById('currentYear').innerText = new Date().getFullYear();
     document.getElementById('currentYearEn').innerText = new Date().getFullYear();
     updateSearchPlaceholder();
 });
+
 </script>
 
 </body>
