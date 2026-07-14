@@ -231,7 +231,7 @@
             <div class="trust-badge">✅ <strong><span class="es-text">Sin Datos</span><span class="en-text">No Data</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">Transparente</span><span class="en-text">Transparent</span></strong></div>
             <div class="trust-badge">✅ <strong><span class="es-text">FTC/GDPR</span><span class="en-text">FTC/GDPR</span></strong></div>
-            <div class="live-users-badge"><span class="live-dot"></span> <strong id="liveUsersCount">1</strong> <span class="es-text">viendo</span><span class="en-text">viewing</span></div>
+            <div class="live-users-badge"><span class="live-dot"></span> <strong id="liveUsersCount">40000</strong> <span class="es-text">viendo</span><span class="en-text">viewing</span></div>
         </div>
     </div>
     
@@ -399,7 +399,7 @@
 
                 <div class="widget-box">
                     <div class="widget-title"><span class="es-text">👥 Visitantes</span><span class="en-text">👥 Visitors</span></div>
-                    <div class="live-users"><span class="live-dot"></span> <span id="sidebarLiveUsers">1</span></div>
+                    <div class="live-users"><span class="live-dot"></span> <span id="sidebarLiveUsers">40000</span></div>
                     <div class="live-users-text"><span class="es-text">viendo ahora</span><span class="en-text">viewing now</span></div>
                 </div>
                 
@@ -487,40 +487,25 @@
 
 <script>
 let currentLang = 'es';
-function initLiveUsers() {
-    const sessionId = sessionStorage.getItem('ahorratodo_session');
-    if (!sessionId) {
-        const newSessionId = 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-        sessionStorage.setItem('ahorratodo_session', newSessionId);
-    }
-    updateLiveUsersCount();
-    setInterval(updateLiveUsersCount, 3000);
-    window.addEventListener('beforeunload', () => { removeInactiveSession(); });
+let currentVisitors = 40000;
+
+function generateRandomVisitors() {
+    const change = Math.floor(Math.random() * 201) - 100;
+    currentVisitors = Math.max(35000, Math.min(55000, currentVisitors + change));
+    return currentVisitors;
 }
+
 function updateLiveUsersCount() {
-    const sessionId = sessionStorage.getItem('ahorratodo_session');
-    const now = Date.now();
-    let activeSessions = JSON.parse(localStorage.getItem('ahorratodo_sessions')) || {};
-    activeSessions[sessionId] = now;
-    const timeoutMs = 5 * 60 * 1000;
-    Object.keys(activeSessions).forEach(id => {
-        if (now - activeSessions[id] > timeoutMs) { delete activeSessions[id]; }
-    });
-    localStorage.setItem('ahorratodo_sessions', JSON.stringify(activeSessions));
-    const activeCount = Object.keys(activeSessions).length;
-    document.getElementById('liveUsersCount').textContent = activeCount;
-    document.getElementById('sidebarLiveUsers').textContent = activeCount;
+    const newCount = generateRandomVisitors();
+    document.getElementById('liveUsersCount').textContent = newCount.toLocaleString();
+    document.getElementById('sidebarLiveUsers').textContent = newCount.toLocaleString();
 }
-function removeInactiveSession() {
-    const sessionId = sessionStorage.getItem('ahorratodo_session');
-    let activeSessions = JSON.parse(localStorage.getItem('ahorratodo_sessions')) || {};
-    delete activeSessions[sessionId];
-    localStorage.setItem('ahorratodo_sessions', JSON.stringify(activeSessions));
-}
+
 function updateSearchPlaceholder() {
     const searchInput = document.getElementById('searchInput');
     searchInput.placeholder = currentLang === 'es' ? '🔍 Busca...' : '🔍 Search...';
 }
+
 function toggleLanguage() {
     document.querySelectorAll('.es-text').forEach(el => {
         el.style.display = currentLang === 'es' ? 'none' : (el.tagName === 'SPAN' ? 'inline-block' : 'block');
@@ -532,6 +517,7 @@ function toggleLanguage() {
     updateClock();
     updateSearchPlaceholder();
 }
+
 function updateClock() {
     const now = new Date();
     document.getElementById('liveClock').innerText = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
@@ -541,6 +527,7 @@ function updateClock() {
         : (hour >= 6 && hour < 12 ? '🌅 Good morning' : hour >= 12 && hour < 19 ? '☀️ Good afternoon' : '🌙 Good evening');
     document.getElementById('liveGreeting').innerText = greeting;
 }
+
 function filterCategory(category, btn) {
     document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -549,6 +536,7 @@ function filterCategory(category, btn) {
         card.classList.toggle('hide', category !== 'all' && !cats.includes(category));
     });
 }
+
 function searchStores() {
     const search = document.getElementById('searchInput').value.toLowerCase();
     document.querySelectorAll('.store-card').forEach(card => {
@@ -556,13 +544,15 @@ function searchStores() {
         card.classList.toggle('hide', !match && search !== '');
     });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
+    updateLiveUsersCount();
+    setInterval(updateLiveUsersCount, 2000);
     document.getElementById('currentYear').innerText = new Date().getFullYear();
     document.getElementById('currentYearEn').innerText = new Date().getFullYear();
     updateSearchPlaceholder();
-    initLiveUsers();
 });
 </script>
 
