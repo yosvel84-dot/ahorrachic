@@ -3,778 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal de compras con enlaces a tiendas oficiales. Transparencia total: ganamos comisión sin costo extra para ti.">
+    <meta name="description" content="Portal de compras con enlaces a tiendas oficiales. Algunos enlaces incluyen comisiones de afiliado que no afectan tu precio.">
     <meta name="verify-admitad" content="aacdd45797" />
-    <title>AhorraTodo Chic | Portal Oficial de Compras Premium</title>
-    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0A0A0A&quot;,&quot;theme_color&quot;:&quot;#10B981&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
-    <meta name="theme-color" content="#10B981">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>AhorraTodo Chic | Portal de Compras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; width: 100%; }
-        body { 
-            width: 100%; 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-            background: #0A0A0A; 
-            min-height: 100vh; 
-            color: #FFFFFF; 
-            font-size: clamp(13px, 2vw, 16px); 
-            overflow-x: hidden;
-        }
+        body { width: 100%; font-family: 'Inter', system-ui; background: #0a0a0a; min-height: 100vh; color: #fff; font-size: 16px; overflow-x: hidden; }
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        .top-banner {
-            width: 100%;
-            border-bottom: 1px solid #1f1f1f;
-            background: rgba(17, 17, 17, 0.8);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 40;
-            animation: slideInDown 0.6s ease;
-        }
-        
-        .top-banner-content {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 12px;
-            gap: 16px;
-        }
-        
-        .banner-message {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #a0aec0;
-        }
-        
-        .live-indicator {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background: #10B981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        .banner-message strong { color: #10B981; }
-        
-        .lang-btn {
-            background: #10B981;
-            color: #000;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
+
+        .header-top { width: 100%; border-bottom: 1px solid #1f1f1f; background: rgba(17,17,17,0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 40; animation: slideInDown 0.6s ease; }
+        .header-content { max-width: 1120px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+        .banner-message { display: flex; align-items: center; gap: 8px; color: #a0aec0; }
+        .live-dot { display: inline-block; width: 6px; height: 6px; background: #10B981; border-radius: 50%; animation: pulse 2s infinite; }
+        .lang-btn { background: #10B981; color: #000; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 12px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
         .lang-btn:hover { background: #059669; transform: translateY(-2px); }
+
+        .main-wrapper { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
         
-        .main-wrapper {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 32px 16px 64px;
-        }
+        .hero-section { animation: fadeInUp 0.8s ease; margin-bottom: 32px; }
+        .hero-title { font-size: clamp(28px, 6vw, 48px); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.03em; margin-bottom: 12px; }
+        .hero-highlight { display: inline-block; background: #10B981; color: #000; padding: 8px 16px; border-radius: 999px; font-size: 0.9em; transform: rotate(-2deg); margin-left: 12px; vertical-align: middle; }
+        .hero-subtitle { font-size: clamp(14px, 2.5vw, 16px); color: #a0aec0; font-weight: 400; line-height: 1.6; max-width: 520px; margin-top: 12px; }
+
+        .trust-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 1px solid #262626; background: rgba(17,17,17,0.6); color: #e0e7ff; }
+        .badge.primary { border-color: #10B981; background: rgba(16,185,129,0.15); color: #10B981; }
+
+        .search-section { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-radius: 28px; padding: 20px; margin-bottom: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
+        .search-title { font-size: clamp(18px, 3vw, 26px); font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .search-subtitle { font-size: 13px; color: #a0aec0; }
         
-        .hero-section { animation: fadeInUp 0.8s ease; }
-        .hero-title {
-            font-size: clamp(28px, 6vw, 48px);
-            font-weight: 800;
-            color: #FFFFFF;
-            line-height: 1;
-            letter-spacing: -0.03em;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        
-        .hero-title .highlight {
-            display: inline-block;
-            background: #10B981;
-            color: #000;
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-size: 0.9em;
-            transform: rotate(-2deg);
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(14px, 2.5vw, 16px);
-            color: #a0aec0;
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 520px;
-            margin-top: 12px;
-        }
-        
-        .trust-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 16px;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-        
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 500;
-            border: 1px solid #262626;
-            background: rgba(17, 17, 17, 0.6);
-            backdrop-filter: blur(5px);
-            color: #e0e7ff;
-        }
-        
-        .badge.primary {
-            border-color: #10B981;
-            background: rgba(16, 185, 129, 0.15);
-            color: #10B981;
-        }
-        
-        .search-section { margin-top: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
-        
-        .search-input-wrapper { position: relative; width: 100%; }
-        
-        .search-input {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(26, 26, 26, 0.8);
-            border: 2px solid #2A2A2A;
-            border-radius: 12px;
-            color: #FFFFFF;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: #10B981;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-            background: rgba(26, 26, 26, 0.95);
-        }
-        .search-input::placeholder { color: #64748b; }
-        
-        .category-tabs {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 8px;
-            padding-top: 16px;
-            animation: fadeInUp 0.8s ease 0.35s both;
-        }
-        
-        .category-btn {
-            background: #1A1A1A;
-            color: #a0aec0;
-            border: 2px solid #2A2A2A;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: clamp(12px, 2vw, 13px);
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
+        .search-input { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.8); border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 14px; transition: all 0.3s ease; font-family: inherit; margin: 16px 0; }
+        .search-input:focus { outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
+
+        .category-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-top: 16px; }
+        .category-btn { background: #1A1A1A; color: #a0aec0; border: 2px solid #2a2a2a; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
         .category-btn:hover { border-color: #404040; }
-        .category-btn.active {
-            background: #10B981;
-            color: #000;
-            border-color: #10B981;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
-        }
+        .category-btn.active { background: #10B981; color: #000; border-color: #10B981; box-shadow: 0 0 20px rgba(16,185,129,0.25); }
+
+        .stores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+
+        .store-card { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-left: 4px solid rgba(16,185,129,0.4); border-radius: 20px; padding: 20px; transition: all 0.3s ease; display: flex; flex-direction: column; backdrop-filter: blur(5px); position: relative; animation: fadeInUp 0.6s ease; }
+        .store-card:hover { border-color: #10B981; background: linear-gradient(to bottom, rgba(36,36,36,0.95), rgba(30,30,30,0.8)); box-shadow: 0 8px 32px rgba(16,185,129,0.25); transform: translateY(-6px); border-left-color: #10B981; }
+
+        .store-logo { width: 72px; height: 72px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05); position: relative; overflow: hidden; text-align: center; padding: 8px; color: white; }
+
+        .store-emoji-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px; flex: 1; }
+        .emoji-box { aspect-ratio: 1; border-radius: 12px; border: 1px solid #2a2a2a; background: #0f0f0f; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+
+        .store-name { font-weight: 700; color: #fff; font-size: 16px; margin-top: 12px; }
+        .store-description { font-size: 13px; color: #a0aec0; line-height: 1.4; margin: 8px 0; }
         
-        .stores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-        
-        .store-card {
-            background: linear-gradient(to bottom, rgba(23, 23, 23, 0.8), rgba(20, 20, 20, 0.6));
-            border: 1px solid #262626;
-            border-left: 4px solid rgba(16, 185, 129, 0.4);
-            border-radius: 20px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            backdrop-filter: blur(5px);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 0.6s ease;
-        }
-        
-        .store-card::before {
-            content: '';
-            position: absolute;
-            top: -24px;
-            right: -24px;
-            width: 192px;
-            height: 192px;
-            border-radius: 50%;
-            background: rgba(16, 185, 129, 0.1);
-            filter: blur(40px);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .store-card:hover {
-            border-color: #10B981;
-            background: linear-gradient(to bottom, rgba(36, 36, 36, 0.95), rgba(30, 30, 30, 0.8));
-            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.25), 0 0 20px rgba(16, 185, 129, 0.15);
-            transform: translateY(-6px);
-            border-left-color: #10B981;
-        }
-        
-        .store-card:hover::before { opacity: 1; }
-        
-        .store-logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 14px;
-            flex-shrink: 0;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding: 8px;
-        }
-        
-        .store-emoji-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            flex: 1;
-        }
-        
-        .emoji-box {
-            aspect-ratio: 1;
-            border-radius: 12px;
-            border: 1px solid #2a2a2a;
-            background: #0f0f0f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .emoji-badge {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            background: #10B981;
-            color: #000;
-            font-size: 7px;
-            font-weight: 700;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-        
-        .store-name {
-            font-weight: 700;
-            color: #FFFFFF;
-            font-size: 16px;
-        }
-        
-        .store-description {
-            font-size: 13px;
-            color: #a0aec0;
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .affiliate-tag {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.25);
-            color: #86EFAC;
-            font-size: 10px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            font-weight: 600;
-            margin-top: 4px;
-        }
-        
-        .store-footer {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid rgba(26, 26, 26, 0.5);
-        }
-        
-        .store-rating {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            background: #0a0a0a;
-            border: 1px solid #262626;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-weight: 600;
-            color: #e0e7ff;
-        }
-        
-        .btn-store {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 16px;
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 12px;
-            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-            z-index: 1;
-        }
-        
-        .btn-store::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-        
-        .btn-store:hover::after { left: 100%; }
-        .btn-store:hover {
-            background: linear-gradient(135deg, #059669, #047857);
-            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .legal-section {
-            background: #0F0F0F;
-            margin-top: 40px;
-            padding: 32px 16px;
-            border-top: 2px solid rgba(16, 185, 129, 0.4);
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .legal-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            text-align: center;
-            max-width: 1120px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .legal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        
-        .legal-item {
-            background: rgba(26, 26, 26, 0.7);
-            border: 1px solid #2A2A2A;
-            border-radius: 12px;
-            overflow: hidden;
-            animation: fadeInUp 0.8s ease;
-            backdrop-filter: blur(5px);
-        }
-        
-        .legal-item summary {
-            padding: 12px;
-            cursor: pointer;
-            color: #10B981;
-            font-weight: 600;
-            font-size: 13px;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background: #242424;
-            transition: all 0.3s ease;
-        }
-        
-        .legal-item summary::after {
-            content: '+';
-            font-size: 18px;
-            color: #10B981;
-            font-weight: 700;
-        }
-        .legal-item[open] summary::after { content: '−'; }
-        .legal-item summary:hover { background: rgba(16, 185, 129, 0.1); }
-        
-        .legal-content {
-            padding: 12px;
-            font-size: 12px;
-            line-height: 1.5;
-            color: #a0aec0;
-            background: #1A1A1A;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 20px 16px;
-            font-size: 12px;
-            color: #64748b;
-            border-top: 1px solid #2A2A2A;
-            margin-top: 32px;
-            animation: fadeInUp 0.8s ease 1.3s both;
-        }
-        
+        .affiliate-tag { display: inline-block; background: rgba(16,185,129,0.25); color: #86EFAC; font-size: 10px; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.4); font-weight: 600; margin-top: 8px; }
+
+        .btn-store { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; background: linear-gradient(135deg, #10B981, #059669); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
+        .btn-store:hover { background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 8px 24px rgba(16,185,129,0.3); transform: translateY(-2px); }
+
+        .footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #64748b; border-top: 1px solid #2a2a2a; margin-top: 32px; }
         .footer a { color: #10B981; text-decoration: none; font-weight: 600; }
-        
-        @media(max-width: 768px) {
-            .stores-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-            .store-card { padding: 16px; }
-            .store-logo { width: 60px; height: 60px; font-size: 12px; }
-            .store-name { font-size: 14px; }
-            .hero-title { font-size: 28px; }
-        }
-        
-        @media(max-width: 480px) {
+
+        @media (max-width: 768px) {
             .stores-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 22px; }
-            .main-wrapper { padding: 16px 12px 40px; }
+            .hero-title { font-size: 28px; }
         }
     </style>
 </head>
-
 <body>
 
-<!-- TOP BANNER -->
-<div class="top-banner">
-    <div class="top-banner-content">
+<div class="header-top">
+    <div class="header-content">
         <div class="banner-message">
-            <span class="live-indicator"></span>
-            <span><strong>✓ Legal:</strong> Ganamos comisión sin costo extra para ti.</span>
+            <span class="live-dot"></span>
+            <span><strong style="color:#10B981">✓ Legal:</strong> Directorio de tiendas oficiales. Links transparentes sin costo extra.</span>
         </div>
         <button class="lang-btn">🇬🇧 English</button>
     </div>
 </div>
 
-<!-- MAIN -->
 <div class="main-wrapper">
-    
-    <!-- HERO -->
     <section class="hero-section">
-        <h1 class="hero-title">
-            AhorraTodo
-            <span class="highlight">Chic</span>
-        </h1>
-        <p class="hero-subtitle">
-            Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas premium.
-        </p>
+        <div>
+            <h1 class="hero-title">
+                AhorraTodo<span class="hero-highlight">Chic</span>
+            </h1>
+            <p class="hero-subtitle">
+                Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas oficiales.
+            </p>
+        </div>
         
-        <!-- TRUST BADGES -->
         <div class="trust-badges">
-            <div class="badge">✅ <strong>10 Tiendas verificadas</strong></div>
-            <div class="badge">✅ <strong>Sin rastreo</strong></div>
-            <div class="badge">✅ <strong>Transparente</strong></div>
-            <div class="badge primary">✅ <strong>FTC / GDPR</strong></div>
-            <div class="badge" style="margin-left: auto;">
-                <span class="live-indicator"></span>
+            <div class="badge">✅ 10 Tiendas verificadas</div>
+            <div class="badge">✅ Sin rastreo de datos</div>
+            <div class="badge">✅ Transparente</div>
+            <div class="badge primary">✅ FTC / GDPR</div>
+            <div class="badge" style="margin-left:auto;">
+                <span class="live-dot"></span>
                 <strong>40,569 viendo ahora</strong>
             </div>
         </div>
     </section>
     
-    <!-- BÚSQUEDA Y FILTROS -->
     <section class="search-section">
-        <div class="search-input-wrapper">
-            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Busca eBay, sneakers, belleza...">
+        <div style="margin-bottom:16px;">
+            <h2 class="search-title">Busca tu tienda favorita</h2>
+            <p class="search-subtitle">Encuentra lo que buscas y accede directamente</p>
         </div>
+        
+        <input type="text" id="search" class="search-input" placeholder="Buscar eBay, Amazon, TikTok...">
+        
         <div class="category-tabs">
-            <button class="category-btn active" onclick="filterCategory('all')">🔥 Todos</button>
-            <button class="category-btn" onclick="filterCategory('moda')">👗 Moda</button>
-            <button class="category-btn" onclick="filterCategory('tech')">📱 Tech</button>
-            <button class="category-btn" onclick="filterCategory('belleza')">✨ Belleza</button>
-            <button class="category-btn" onclick="filterCategory('viajes')">✈️ Viajes</button>
+            <button class="category-btn active" onclick="filterCategory('Todos')">🔥 Todos</button>
+            <button class="category-btn" onclick="filterCategory('Moda')">👗 Moda</button>
+            <button class="category-btn" onclick="filterCategory('Tech')">📱 Tech</button>
+            <button class="category-btn" onclick="filterCategory('Belleza')">✨ Belleza</button>
+            <button class="category-btn" onclick="filterCategory('Viajes')">✈️ Viajes</button>
         </div>
     </section>
     
-    <!-- STORES GRID -->
-    <div class="stores-grid" id="storesGrid"></div>
-
+    <div class="stores-grid" id="stores"></div>
 </div>
 
-<!-- LEGAL SECTION -->
-<div class="legal-section" id="legal-section">
-    <h2 class="legal-title">⚖️ Legal</h2>
-    <div class="legal-grid">
-        <details class="legal-item">
-            <summary>🔗 Afiliados</summary>
-            <div class="legal-content">
-                <p><strong>Transparencia:</strong> Algunos enlaces generan comisión sin costo extra para ti.</p>
-                <ul><li>✅ FTC 16 CFR 255</li></ul>
-            </div>
-        </details>
-        <details class="legal-item">
-            <summary>🔒 Privacidad</summary>
-            <div class="legal-content">
-                <p><strong>Datos:</strong></p>
-                <ul><li>❌ NO recopilamos datos</li><li>✅ GDPR Compliant</li></ul>
-            </div>
-        </details>
-        <details class="legal-item">
-            <summary>📦 Garantía</summary>
-            <div class="legal-content">
-                <p><strong>No somos tienda:</strong> Enlaces directos a tiendas oficiales.</p>
-                <ul><li>🔗 NO procesamos pagos</li></ul>
-            </div>
-        </details>
-        <details class="legal-item">
-            <summary>📌 Contacto</summary>
-            <div class="legal-content">
-                <p><strong>AhorraTodo Chic</strong><br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com" style="color: #10B981;">ahorratodochic@gmail.com</a></p>
-            </div>
-        </details>
-    </div>
-</div>
-
-<!-- FOOTER -->
 <div class="footer">
-    <span>© <span id="year"></span> AhorraTodo Chic | <a href="#legal-section">Legal</a></span>
+    <span>© 2024 AhorraTodo Chic | <a href="#">Legal</a></span>
 </div>
 
 <script>
-// 10 TIENDAS ACTUALIZADAS
 const stores = [
     {
         id: "ebay",
         name: "eBay",
         category: ["Moda", "Tech"],
-        brandColor: "#E53238",
-        brandText: "#ffffff",
-        logoLetter: "ebay",
+        color: "#E53238",
+        logo: "ebay",
         products: ["👟", "💎", "⌚"],
-        description: "Sneakers hype, vintage y subastas que no encuentras en otro lado.",
-        rating: "4.8",
-        offers: "12.4k",
-        link: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic"
+        description: "Subastas y compras verificadas",
+        link: "#"
     },
     {
         id: "fitory",
         name: "Fitory",
         category: ["Moda"],
-        brandColor: "#FF3B8D",
-        brandText: "#ffffff",
-        logoLetter: "F",
+        color: "#FF3B8D",
+        logo: "F",
         products: ["👗", "👠", "👜"],
-        description: "Moda curada y best-sellers de Instagram a precio outlet.",
-        rating: "4.9",
-        offers: "8.1k",
-        link: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
+        description: "Colección de moda seleccionada",
+        link: "#"
     },
     {
         id: "amazon",
         name: "Amazon",
         category: ["Tech", "Moda"],
-        brandColor: "#FF9900",
-        brandText: "#000000",
-        logoLetter: "a",
+        color: "#FF9900",
+        logo: "a",
         products: ["📦", "🎧", "📚"],
-        description: "Todo lo esencial con Prime. Tech, hogar y más en 24h.",
-        rating: "4.9",
-        offers: "32k",
-        link: "https://a.co/d/01PMHLaj"
+        description: "Variedad de productos",
+        link: "#"
     },
     {
         id: "oppo",
         name: "OPPO",
         category: ["Tech"],
-        brandColor: "#0a0a0a",
-        brandText: "#ffffff",
-        logoLetter: "OPPO",
+        color: "#0a0a0a",
+        logo: "OPPO",
         products: ["📱", "⌚", "🎧"],
-        description: "Flagships con cámara Hasselblad y carga de 100W.",
-        rating: "4.7",
-        offers: "2.3k",
-        link: "https://oppode.pxf.io/oNGWvO"
+        description: "Smartphones y electrónica",
+        link: "#"
     },
     {
         id: "aliexpress",
         name: "AliExpress",
         category: ["Moda", "Tech", "Belleza"],
-        brandColor: "#FF4747",
-        brandText: "#ffffff",
-        logoLetter: "A",
+        color: "#FF4747",
+        logo: "A",
         products: ["👕", "👟", "🔧"],
-        description: "Gadgets virales, streetwear y joyas desde $2.99.",
-        rating: "4.6",
-        offers: "28k",
-        link: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
+        description: "Tienda online internacional",
+        link: "#"
     },
     {
         id: "alibaba",
-        name: "Alibaba.com",
-        category: ["Tech", "Viajes"],
-        brandColor: "#FF6A00",
-        brandText: "#ffffff",
-        logoLetter: "Alibaba",
-        products: ["📦", "🏭", "⚙️"],
-        description: "Compra al por mayor directo de fábrica. Para emprendedores.",
-        rating: "4.5",
-        offers: "5.4k",
-        link: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
+        name: "Alibaba",
+        category: ["Tech"],
+        color: "#FF6A00",
+        logo: "Alibaba",
+        products: ["📦", "🏭", "🚚"],
+        description: "Plataforma de compra mayorista",
+        link: "#"
     },
     {
         id: "tiktok",
         name: "TikTok Shop",
         category: ["Belleza", "Moda"],
-        brandColor: "#000000",
-        brandText: "#ffffff",
-        logoLetter: "TikTok",
+        color: "#000000",
+        logo: "TikTok",
         products: ["💄", "👕", "💅"],
-        description: "Lo que ves en tu FYP, ahora comprable al instante.",
-        rating: "4.8",
-        offers: "15.2k",
-        link: "https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/"
+        description: "Tienda integrada en la app",
+        link: "#"
     },
     {
         id: "klook",
         name: "Klook",
         category: ["Viajes"],
-        brandColor: "#00B8E6",
-        brandText: "#ffffff",
-        logoLetter: "K",
+        color: "#00B8E6",
+        logo: "K",
         products: ["✈️", "🏖️", "🎭"],
-        description: "Tours, actividades y experiencias. Cancelación gratis.",
-        rating: "4.7",
-        offers: "9.8k",
-        link: "https://klook.tpx.lt/5L2UeosB"
+        description: "Experiencias y tours",
+        link: "#"
     },
     {
         id: "wooeye",
         name: "WooEye",
         category: ["Belleza"],
-        brandColor: "#D946A6",
-        brandText: "#ffffff",
-        logoLetter: "W",
+        color: "#D946A6",
+        logo: "W",
         products: ["👁️", "✨", "🎨"],
-        description: "Lentes de color premium con prescripción incluida.",
-        rating: "4.6",
-        offers: "1.2k",
-        link: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
+        description: "Lentes de contacto",
+        link: "#"
     },
     {
         id: "temu",
         name: "Temu",
         category: ["Moda"],
-        brandColor: "#FF0000",
-        brandText: "#ffffff",
-        logoLetter: "T",
+        color: "#FF0000",
+        logo: "T",
         products: ["🛍️", "💎", "👕"],
-        description: "Compras directas de fábrica. Envío rápido a todo el mundo.",
-        rating: "4.5",
-        offers: "18.7k",
-        link: "https://temu.to/k/p3t3h4hf35v"
+        description: "Plataforma de compras",
+        link: "#"
     }
 ];
 
-let currentCategory = "all";
-
-function renderStores() {
-    const grid = document.getElementById("storesGrid");
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    
-    const filtered = stores.filter(store => {
-        const matchCategory = currentCategory === "all" || store.category.includes(currentCategory);
-        const matchSearch = store.name.toLowerCase().includes(searchTerm) || 
-                           store.description.toLowerCase().includes(searchTerm);
-        return matchCategory && matchSearch;
-    });
-    
-    grid.innerHTML = filtered.map(store => `
-        <div class="store-card">
-            <div style="display: flex; gap: 12px;">
-                <div class="store-logo" style="background-color: ${store.brandColor}; color: ${store.brandText};">${store.logoLetter}</div>
-                <div class="store-emoji-grid">
-                    ${store.products.map((emoji, i) => `
-                        <div class="emoji-box">
-                            ${emoji}
-                            ${i === 0 ? '<span class="emoji-badge">-40%</span>' : ''}
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="store-name">${store.name}</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <p class="store-description">${store.description}</p>
-            <div class="store-footer">
-                <span class="store-rating">⭐ ${store.rating}</span>
-                <span>🔥 ${store.offers} ofertas</span>
-            </div>
-            <a href="${store.link}" target="_blank" class="btn-store">
-                Ver ofertas →
-            </a>
-        </div>
-    `).join('');
-}
+let currentCategory = "Todos";
 
 function filterCategory(cat) {
     currentCategory = cat;
-    document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
     event.target.classList.add("active");
     renderStores();
 }
 
-document.getElementById("searchInput").addEventListener("input", renderStores);
-document.getElementById("year").textContent = new Date().getFullYear();
+function renderStores() {
+    const search = document.getElementById("search").value.toLowerCase();
+    const filtered = stores.filter(s => {
+        const matchCat = currentCategory === "Todos" || s.category.includes(currentCategory);
+        const matchSearch = s.name.toLowerCase().includes(search) || s.description.toLowerCase().includes(search);
+        return matchCat && matchSearch;
+    });
 
+    const html = filtered.map(s => `
+        <div class="store-card">
+            <div style="display:flex;gap:12px;">
+                <div class="store-logo" style="background-color:${s.color};color:white;">
+                    ${s.logo}
+                </div>
+                <div class="store-emoji-grid">
+                    ${s.products.map((p,i) => `<div class="emoji-box">${p}</div>`).join('')}
+                </div>
+            </div>
+            <div class="store-name">${s.name}</div>
+            <div class="affiliate-tag">💰 Afiliado</div>
+            <p class="store-description">${s.description}</p>
+            <a href="${s.link}" class="btn-store">Ver →</a>
+        </div>
+    `).join('');
+    
+    document.getElementById("stores").innerHTML = html || '<p style="grid-column:1/-1;text-align:center;color:#a0aec0;">No encontramos resultados</p>';
+}
+
+document.getElementById("search").addEventListener("input", renderStores);
 renderStores();
 </script>
 
