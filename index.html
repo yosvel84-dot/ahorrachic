@@ -3,311 +3,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AhorraTodo Chic | Portal de Compras Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Portal de compras con enlaces a tiendas oficiales. Algunos enlaces incluyen comisiones de afiliado que no afectan tu precio.">
+    <meta name="verify-admitad" content="aacdd45797" />
+    <title>AhorraTodo Chic | Portal Oficial de Compras</title>
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0A0A0A&quot;,&quot;theme_color&quot;:&quot;#10B981&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
+    <meta name="theme-color" content="#10B981">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET & BASE */
+        * {box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0;}
+        html {scroll-behavior: smooth; width: 100%;}
+        body {width: 100%; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0A0A0A; min-height: 100vh; margin: 0; padding: 0; color: #FFFFFF; font-size: clamp(13px, 2vw, 16px); overflow-x: hidden;}
+        
+        /* ANIMATIONS - OPTIMIZADAS */
+        @keyframes fadeInUp {from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}}
+        @keyframes slideInDown {from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);}}
+        @keyframes gradientFlow {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}
+        @keyframes glow {0%, 100% {box-shadow: 0 0 12px rgba(16, 185, 129, 0.3), 0 8px 24px rgba(16, 185, 129, 0.1);} 50% {box-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 8px 32px rgba(16, 185, 129, 0.2);}}
+        @keyframes borderGradient {0% {border-left-color: rgba(16, 185, 129, 0.3);} 50% {border-left-color: rgba(16, 185, 129, 0.8);} 100% {border-left-color: rgba(16, 185, 129, 0.3);}}
+        @keyframes pulse {0%, 100% {opacity: 1;} 50% {opacity: 0.5;}}
+        
+        /* COMPLIANCE BANNER */
+        .compliance-banner {background: linear-gradient(135deg, #064E3B 0%, #047857 100%); border-bottom: 2px solid #10B981; padding: 12px; font-size: clamp(0.75em, 1.5vw, 0.9em); color: #E0F2FE; text-align: center; line-height: 1.5; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3); animation: slideInDown 0.6s ease;}
+        .compliance-banner strong {color: #10B981; font-weight: 600;}
+        .compliance-banner a {color: #86EFAC; text-decoration: none; font-weight: 500;}
+        
+        /* LANGUAGE SWITCHER */
+        .lang-switcher {max-width: 1200px; margin: 0 auto; padding: 15px 12px 0; text-align: right; animation: fadeInUp 0.6s ease 0.15s both;}
+        .lang-btn {background: #10B981; color: #FFFFFF; border: none; padding: 8px 16px; cursor: pointer; border-radius: 8px; font-weight: 600; font-size: clamp(0.8em, 1.5vw, 0.9em); transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); font-family: inherit; position: relative; overflow: hidden;}
+        .lang-btn::before {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.2); transition: left 0.5s ease;}
+        .lang-btn:hover {background: #059669; transform: translateY(-2px);}
+        .lang-btn:hover::before {left: 100%;}
+        
+        /* MAIN LAYOUT */
+        .main-wrapper {max-width: 1200px; margin: 0 auto; padding: 20px 12px;}
+        
+        /* HERO SECTION */
+        .hero-section {text-align: center; margin-bottom: 30px; padding: 40px 15px; background: linear-gradient(-45deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.08), rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.12)); background-size: 300% 300%; animation: gradientFlow 15s ease infinite, fadeInUp 0.8s ease; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37), 0 0 20px rgba(16, 185, 129, 0.2);}
+        .hero-title {font-size: clamp(1.5em, 5vw, 2.8em); font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.1; animation: fadeInUp 0.8s ease 0.2s both;}
+        .hero-subtitle {font-size: clamp(0.85em, 2.5vw, 1em); color: #B0B0B0; margin-bottom: 15px; font-weight: 400; line-height: 1.4; animation: fadeInUp 0.8s ease 0.3s both;}
+        
+        /* TRUST BADGES */
+        .trust-section {display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 20px;}
+        .trust-badge {display: flex; align-items: center; gap: 6px; font-size: clamp(0.7em, 1.3vw, 0.8em); color: #E0F2FE; padding: 8px 10px; background: rgba(16, 185, 129, 0.15); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.3); backdrop-filter: blur(5px); animation: fadeInUp 0.8s ease;}
+        .trust-badge strong {color: #10B981;}
+        .live-users-badge {display: flex; align-items: center; gap: 6px; font-size: clamp(0.7em, 1.3vw, 0.8em); color: #FFFFFF; padding: 10px 14px; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%); border-radius: 8px; border: 1px solid #10B981; margin-top: 15px; justify-content: center; backdrop-filter: blur(5px);}
+        .live-dot {display: inline-block; width: 8px; height: 8px; background: #22C55E; border-radius: 50%; animation: pulse 2s infinite;}
+        
+        /* SEPARATORS */
+        .separator-line {height: 2px; background: linear-gradient(90deg, transparent 0%, #10B981 20%, #10B981 80%, transparent 100%); margin: 30px 0; opacity: 0.6; animation: fadeInUp 0.8s ease 0.5s both;}
+        
+        /* STORES SECTION */
+        .stores-section {margin-bottom: 30px;}
+        .stores-header {text-align: center; margin-bottom: 25px; animation: fadeInUp 0.8s ease;}
+        .stores-title {font-size: clamp(1.2em, 4vw, 2em); font-weight: 700; color: #FFFFFF; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 10px;}
+        .stores-subtitle {font-size: clamp(0.8em, 2vw, 0.95em); color: #B0B0B0; font-weight: 400;}
+        
+        /* CONTENT WRAPPER */
+        .content-wrapper {display: grid; grid-template-columns: 1fr 280px; gap: 20px; margin-bottom: 30px;}
+        
+        /* SEARCH BAR - OPTIMIZADO */
+        .search-bar {width: 100%; padding: 10px 12px; background: rgba(26, 26, 26, 0.8); border: 2px solid #2A2A2A; border-radius: 10px; color: #FFFFFF; font-size: clamp(0.85em, 2vw, 0.95em); margin-bottom: 15px; transition: all 0.3s ease; backdrop-filter: blur(5px); animation: fadeInUp 0.8s ease 0.3s both;}
+        .search-bar:focus {outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); background: rgba(26, 26, 26, 0.95);}
+        
+        /* CATEGORY TABS */
+        .category-tabs {display: flex; gap: 8px; margin-bottom: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 6px; -webkit-overflow-scrolling: touch; animation: fadeInUp 0.8s ease 0.35s both;}
+        .category-tabs::-webkit-scrollbar {height: 3px;}
+        .category-tabs::-webkit-scrollbar-thumb {background: #10B981;}
+        .category-btn {background: #1A1A1A; color: #B0B0B0; border: 2px solid #2A2A2A; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: clamp(0.7em, 1.3vw, 0.8em); transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; position: relative; overflow: hidden;}
+        .category-btn::before {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.1); transition: left 0.5s ease;}
+        .category-btn:hover::before {left: 100%;}
+        .category-btn.active {background: #10B981; color: #FFFFFF; border-color: #10B981;}
+        
+        /* STORES GRID */
+        .stores-grid {display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 30px;}
+        
+        /* STORE CARDS */
+        .store-card {background: rgba(26, 26, 26, 0.7); border: 1px solid #2A2A2A; border-left: 4px solid rgba(16, 185, 129, 0.4); border-radius: 12px; padding: 14px; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 10px; backdrop-filter: blur(5px); animation: fadeInUp 0.6s ease; position: relative; overflow: hidden;}
+        .store-card::before {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent); transition: left 0.5s ease;}
+        .store-card:hover::before {left: 100%;}
+        .store-card:hover {border-color: #10B981; background: rgba(36, 36, 36, 0.9); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25), 0 0 20px rgba(16, 185, 129, 0.15); transform: translateY(-6px); border-left-color: #10B981;}
+        .store-card.hide {display: none;}
+        
+        /* STORE HEADER */
+        .store-header {display: flex; align-items: center; gap: 10px; position: relative; z-index: 1;}
+        .store-badge {padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.7em; color: white; min-width: 65px; text-align: center; flex-shrink: 0;}
+        .bg-amazon {background-color: #FF9900;} 
+        .bg-aliexpress {background: linear-gradient(135deg, #FF471A, #E61919);} 
+        .bg-alibaba {background-color: #FF6A00;} 
+        .bg-tiktok {background: linear-gradient(135deg, #000000, #ff0050);} 
+        .bg-fitory {background: linear-gradient(135deg, #FF6B6B, #FF4757);}
+        .bg-ebay {background: linear-gradient(135deg, #E53238, #C3122E);}
+        .bg-wooeye {background: linear-gradient(135deg, #D946A6, #EC4899);}
+        .bg-travel {background: linear-gradient(135deg, #0066CC, #00A8E8);}
+        .bg-klook {background: linear-gradient(135deg, #00B8E6, #0099CC);}
+        .bg-oppo {background: linear-gradient(135deg, #0099FF, #00C4FF);}
+        .bg-temu {background: linear-gradient(135deg, #FF0000, #CC0000);}
+        
+        .store-name {font-weight: 700; color: #FFFFFF; font-size: clamp(0.9em, 2vw, 1em); flex: 1;}
+        .store-description {font-size: clamp(0.75em, 1.4vw, 0.85em); color: #B0B0B0; line-height: 1.3; flex: 1; position: relative; z-index: 1;}
+        .affiliate-tag {display: inline-block; background: rgba(16, 185, 129, 0.25); color: #86EFAC; font-size: 0.65em; padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.4);}
+        
+        /* BUTTONS */
+        .btn-store {display: block; padding: 12px 16px; background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: clamp(0.75em, 1.3vw, 0.85em); text-align: center; border: none; cursor: pointer; width: 100%; margin-top: 6px; transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); position: relative; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1); transform: translateY(0) perspective(800px); z-index: 1;}
+        .btn-store::after {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); transition: left 0.6s ease;}
+        .btn-store:hover::after {left: 100%;}
+        .btn-store:hover {background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15); transform: translateY(-4px) perspective(800px) rotateX(2deg);}
+        
+        /* SIDEBAR */
+        .sidebar {display: flex; flex-direction: column; gap: 14px; animation: fadeInUp 0.8s ease 0.4s both;}
+        .widget-box {background: rgba(26, 26, 26, 0.7); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 16px; transition: all 0.3s ease; backdrop-filter: blur(5px); animation: fadeInUp 0.8s ease; box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);}
+        .widget-box:hover {border-color: rgba(16, 185, 129, 0.6); transform: translateY(-2px);}
+        
+        .widget-title {font-size: clamp(0.7em, 1.2vw, 0.8em); color: #10B981; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;}
+        .live-clock {font-size: clamp(1.6em, 3vw, 2em); font-weight: 700; color: #FFFFFF; margin: 6px 0; font-family: 'Monaco', monospace;}
+        .live-greeting {font-size: clamp(0.8em, 1.5vw, 0.95em); color: #B0B0B0; font-weight: 500;}
+        .live-users {font-size: clamp(1.3em, 2.5vw, 1.6em); font-weight: 700; color: #22C55E; margin: 8px 0;}
+        .live-users-text {font-size: clamp(0.7em, 1.2vw, 0.85em); color: #B0B0B0; margin-top: 4px;}
+        
+        /* PROMO SECTION */
+        .promo-section {margin-top: 15px; animation: fadeInUp 0.8s ease 0.7s both;}
+        .promo-title {font-size: clamp(0.85em, 1.8vw, 1em); font-weight: 700; color: #FFFFFF; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;}
+        .promo-card {background: rgba(26, 26, 26, 0.7); border: 2px solid #10B981; border-radius: 12px; padding: 14px; position: relative; margin-bottom: 10px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2), 0 0 12px rgba(16, 185, 129, 0.1); backdrop-filter: blur(5px); animation: fadeInUp 0.8s ease; transition: all 0.3s ease;}
+        .promo-card:hover {transform: translateY(-4px); border-color: #22C55E;}
+        .promo-badge {position: absolute; top: 8px; right: 8px; background: #10B981; color: #000; font-size: 0.6em; font-weight: 700; padding: 3px 6px; border-radius: 4px;}
+        .promo-card h3 {margin: 0 0 8px 0; color: #FFFFFF; font-size: clamp(0.9em, 1.8vw, 1em); font-weight: 700; padding-right: 50px;}
+        .promo-card p {margin: 0 0 10px 0; color: #B0B0B0; font-size: clamp(0.75em, 1.3vw, 0.85em); line-height: 1.3;}
+        .contact-info {display: flex; flex-direction: column; gap: 6px; margin: 10px 0; padding: 8px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; border-left: 3px solid #10B981;}
+        .contact-item {display: flex; align-items: center; gap: 6px; font-size: clamp(0.75em, 1.2vw, 0.85em); color: #E0E0E0;}
+        .contact-item strong {color: #10B981; min-width: 45px; font-weight: 600;}
+        .contact-item a {color: #FFFFFF; text-decoration: none; font-weight: 500;}
+        .promo-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px;}
+        .btn-promo {padding: 10px 14px; background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: clamp(0.7em, 1.2vw, 0.8em); text-align: center; border: none; cursor: pointer; display: block; transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1); transform: translateY(0) perspective(800px); position: relative; overflow: hidden;}
+        .btn-promo::after {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); transition: left 0.6s ease;}
+        .btn-promo:hover::after {left: 100%;}
+        .btn-promo:hover {background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15); transform: translateY(-3px) perspective(800px) rotateX(2deg);}
+        .btn-promo.secondary {background: linear-gradient(135deg, #606060, #505050);}
+        .btn-promo.secondary:hover {background: linear-gradient(135deg, #707070, #606060); transform: translateY(-3px) perspective(800px) rotateX(2deg);}
+        
+        /* LEGAL SECTION */
+        .legal-section {background: #0F0F0F; margin-top: 30px; padding: 25px 12px; border-top: 2px solid rgba(16, 185, 129, 0.4); animation: fadeInUp 0.8s ease;}
+        .legal-container {max-width: 1200px; margin: 0 auto;}
+        .legal-title {font-size: clamp(1em, 2.8vw, 1.2em); font-weight: 700; color: #FFFFFF; margin-bottom: 15px; text-align: center;}
+        .legal-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 15px;}
+        .legal-item {background: rgba(26, 26, 26, 0.7); border: 1px solid #2A2A2A; border-radius: 12px; overflow: hidden; animation: fadeInUp 0.8s ease; backdrop-filter: blur(5px);}
+        .legal-item summary {padding: 10px; cursor: pointer; color: #10B981; font-weight: 600; font-size: clamp(0.75em, 1.3vw, 0.85em); list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none; background: #242424; transition: all 0.3s ease;}
+        .legal-item summary::-webkit-details-marker {display: none;}
+        .legal-item summary::after {content: '+'; font-size: 1.2em; color: #10B981; font-weight: 700;}
+        .legal-item[open] summary::after {content: '−';}
+        .legal-item summary:hover {background: rgba(16, 185, 129, 0.1);}
+        .legal-content {padding: 12px; font-size: clamp(0.7em, 1.2vw, 0.8em); line-height: 1.4; color: #B0B0B0; background: #1A1A1A;}
+        .legal-content p {margin: 0 0 6px 0;}
+        .legal-content ul {margin: 0 0 6px 0; padding-left: 16px;}
+        .legal-content li {margin: 3px 0; font-size: 0.95em;}
+        
+        /* FOOTER */
+        .footer {text-align: center; padding: 15px 12px; font-size: clamp(0.7em, 1.2vw, 0.8em); color: #808080; border-top: 1px solid #2A2A2A; margin-top: 25px; animation: fadeInUp 0.8s ease 1.3s both;}
+        .footer a {color: #10B981; text-decoration: none; font-weight: 600;}
+        
+        /* LANGUAGE TOGGLE */
+        .en-text {display: none;}
+        .es-text {display: inline-block;}
+        
+        /* RESPONSIVE - TABLET */
+        @media(max-width: 1024px) {
+            .content-wrapper {grid-template-columns: 1fr; gap: 25px;}
+            .sidebar {flex-direction: row; flex-wrap: wrap;}
+            .promo-section {grid-column: 1 / -1;}
+            .stores-grid {grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));}
+            
+            /* REDUCIR ANIMACIONES EN TABLET */
+            .store-card, .widget-box, .legal-item {animation-duration: 0.3s !important;}
+        }
+        
+        /* RESPONSIVE - MOBILE */
+        @media(max-width: 768px) {
+            .stores-grid {grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));}
+            .hero-section {padding: 20px 12px;}
+            .main-wrapper {padding: 15px 10px;}
+            
+            /* DESACTIVAR ANIMACIONES COMPLEJAS EN MOBILE */
+            @media (prefers-reduced-motion: reduce) {
+                * {animation-duration: 0.01s !important; animation-iteration-count: 1 !important;}
+            }
+            
+            /* MOBILE OPTIMIZADO */
+            .hero-section {animation: fadeInUp 0.4s ease !important;}
+            .store-card {animation: fadeInUp 0.3s ease !important; animation-delay: 0s !important;}
+            .widget-box {animation: fadeInUp 0.3s ease !important; animation-delay: 0s !important;}
+            .trust-badge {animation-delay: 0s !important;}
+        }
+        
+        @media(max-width: 480px) {
+            .stores-grid {grid-template-columns: 1fr;}
+            .store-card {padding: 12px;}
+            body {font-size: 14px;}
+        }
+    
+    
+    </style>
+
 </head>
-<body style="margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;min-height:100vh">
 
-<style>
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; width: 100%; }
-body { width: 100%; font-size: 16px; line-height: 1.5; }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+<body>
 
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-.header-top { width: 100%; border-bottom: 1px solid #1f1f1f; background: rgba(17,17,17,0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 40; animation: slideInDown 0.6s ease; }
-.header-content { max-width: 1120px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; gap: 16px; }
-.banner-message { display: flex; align-items: center; gap: 8px; color: #a0aec0; }
-.live-dot { display: inline-block; width: 6px; height: 6px; background: #10B981; border-radius: 50%; animation: pulse 2s infinite; }
-.lang-btn { background: #10B981; color: #000; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 12px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
-.lang-btn:hover { background: #059669; transform: translateY(-2px); }
-
-.main-wrapper { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
-
-.hero-section { animation: fadeInUp 0.8s ease; margin-bottom: 32px; }
-.hero-title { font-size: clamp(28px, 6vw, 48px); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.03em; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-.hero-highlight { display: inline-block; background: #10B981; color: #000; padding: 8px 16px; border-radius: 999px; font-size: 0.9em; transform: rotate(-2deg); }
-.hero-subtitle { font-size: clamp(14px, 2.5vw, 16px); color: #a0aec0; font-weight: 400; line-height: 1.6; max-width: 520px; margin-top: 12px; }
-
-.trust-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-.badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 1px solid #262626; background: rgba(17,17,17,0.6); color: #e0e7ff; }
-.badge.primary { border-color: #10B981; background: rgba(16,185,129,0.15); color: #10B981; }
-
-.search-section { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-radius: 28px; padding: 20px; margin-bottom: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
-.search-input { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.8); border: 2px solid #2A2A2A; border-radius: 12px; color: #fff; font-size: 14px; transition: all 0.3s ease; font-family: inherit; }
-.search-input:focus { outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); background: rgba(26,26,26,0.95); }
-
-.category-tabs { display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 8px 0; }
-.category-btn { background: #1A1A1A; color: #a0aec0; border: 2px solid #2A2A2A; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
-.category-btn:hover { border-color: #404040; }
-.category-btn.active { background: #10B981; color: #000; border-color: #10B981; box-shadow: 0 0 20px rgba(16,185,129,0.25); }
-
-.stores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
-
-.store-card { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-left: 4px solid rgba(16,185,129,0.4); border-radius: 20px; padding: 20px; transition: all 0.3s ease; display: flex; flex-direction: column; backdrop-filter: blur(5px); position: relative; overflow: hidden; animation: fadeInUp 0.6s ease; }
-.store-card:hover { border-color: #10B981; background: linear-gradient(to bottom, rgba(36,36,36,0.95), rgba(30,30,30,0.8)); box-shadow: 0 8px 32px rgba(16,185,129,0.25), 0 0 20px rgba(16,185,129,0.15); transform: translateY(-6px); border-left-color: #10B981; }
-
-.store-logo { width: 72px; height: 72px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05); position: relative; overflow: hidden; text-align: center; padding: 8px; color: white; }
-
-.store-emoji-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px; flex: 1; }
-.emoji-box { aspect-ratio: 1; border-radius: 12px; border: 1px solid #2a2a2a; background: #0f0f0f; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-
-.store-name { font-weight: 700; color: #fff; font-size: 16px; margin-top: 12px; }
-.store-description { font-size: 13px; color: #a0aec0; line-height: 1.4; margin: 8px 0; }
-.affiliate-tag { display: inline-block; background: rgba(16,185,129,0.25); color: #86EFAC; font-size: 10px; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.4); font-weight: 600; margin-top: 8px; }
-
-.btn-store { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; background: linear-gradient(135deg, #10B981, #059669); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(16,185,129,0.2); z-index: 1; }
-.btn-store:hover { background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 8px 24px rgba(16,185,129,0.3); transform: translateY(-2px); }
-
-.footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #64748b; border-top: 1px solid #2a2a2a; margin-top: 32px; animation: fadeInUp 0.8s ease 1.3s both; }
-
-@media(max-width: 768px) {
-    .stores-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 28px; }
-}
-</style>
-
-<!-- Header -->
-<div class="header-top">
-    <div class="header-content">
-        <div class="banner-message">
-            <span class="live-dot"></span>
-            <span><strong style="color:#10B981">✓ Legal:</strong> Directorio de tiendas oficiales. Links transparentes sin costo extra.</span>
-        </div>
-        <button class="lang-btn">🇬🇧 English</button>
-    </div>
+<div class="compliance-banner">
+    <strong><span class="es-text">⚖️ TRANSPARENCIA:</span><span class="en-text">⚖️ LEGAL:</span></strong>
+    <span class="es-text">Directorio de enlaces afiliados. <a href="#legal-section">Ver términos →</a></span>
+    <span class="en-text">Affiliate directory. <a href="#legal-section">See terms →</a></span>
 </div>
 
-<!-- Main -->
+<div class="lang-switcher">
+    <button class="lang-btn" onclick="toggleLanguage()">
+        <span class="es-text">🇬🇧 English</span>
+        <span class="en-text">🇪🇸 Español</span>
+    </button>
+</div>
+
 <div class="main-wrapper">
+    <div class="hero-section">
+        <h1 class="hero-title"><span class="es-text">AhorraTodo Chic</span><span class="en-text">SaveEverything Chic</span></h1>
+        <p class="hero-subtitle"><span class="es-text">Tu portal inteligente de compras, ofertas y tendencias</span><span class="en-text">Your smart shopping hub for deals</span></p>
+        <div class="trust-section">
+            <div class="trust-badge">✅ <strong><span class="es-text">12 Tiendas</span><span class="en-text">12 Stores</span></strong></div>
+            <div class="trust-badge">✅ <strong><span class="es-text">Sin Datos</span><span class="en-text">No Data</span></strong></div>
+            <div class="trust-badge">✅ <strong><span class="es-text">Transparente</span><span class="en-text">Transparent</span></strong></div>
+            <div class="trust-badge">✅ <strong><span class="es-text">FTC/GDPR</span><span class="en-text">FTC/GDPR</span></strong></div>
+            <div class="live-users-badge"><span class="live-dot"></span> <strong id="liveUsersCount">40000</strong> <span class="es-text">viendo</span><span class="en-text">viewing</span></div>
+        </div>
+    </div>
     
-    <!-- Hero -->
-    <section class="hero-section">
-        <h1 class="hero-title">
-            AhorraTodo<span class="hero-highlight">Chic</span>
-        </h1>
-        <p class="hero-subtitle">
-            Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas verificadas.
-        </p>
-        
-        <div class="trust-badges">
-            <div class="badge">✅ 10 Tiendas verificadas</div>
-            <div class="badge">✅ Sin rastreo de datos</div>
-            <div class="badge">✅ Transparente</div>
-            <div class="badge primary">✅ FTC / GDPR</div>
-            <div class="badge">
-                <span class="live-dot"></span>
-                <strong>40,569 viendo ahora</strong>
+    <div class="separator-line"></div>
+
+    <div class="stores-section">
+        <div class="stores-header">
+            <h2 class="stores-title">🛍️ <span class="es-text">No te pierdas las nuevas ofertas del día</span><span class="en-text">Don't miss today's new deals</span></h2>
+            <p class="stores-subtitle"><span class="es-text">Explora nuestras categorías y encuentra lo que buscas</span><span class="en-text">Browse our categories and find what you're looking for</span></p>
+        </div>
+
+        <div class="content-wrapper">
+            <div>
+                <input type="text" class="search-bar" id="searchInput" onkeyup="debounceSearch()">
+                <div class="category-tabs">
+                    <button class="category-btn active" onclick="filterCategory('all', this)"><span class="es-text">🔥 Todos</span><span class="en-text">🔥 All</span></button>
+                    <button class="category-btn" onclick="filterCategory('moda', this)"><span class="es-text">👗 Moda</span><span class="en-text">👗 Fashion</span></button>
+                    <button class="category-btn" onclick="filterCategory('tech', this)"><span class="es-text">📱 Tech</span><span class="en-text">📱 Tech</span></button>
+                    <button class="category-btn" onclick="filterCategory('belleza', this)"><span class="es-text">✨ Belleza</span><span class="en-text">✨ Beauty</span></button>
+                    <button class="category-btn" onclick="filterCategory('viajes', this)"><span class="es-text">✈️ Viajes</span><span class="en-text">✈️ Travel</span></button>
+                </div>
+                
+                <div class="stores-grid" id="storesGrid">
+                    <div class="store-card" data-category="moda tech" data-search="ebay auction marketplace">
+                        <div class="store-header">
+                            <span class="store-badge bg-ebay">EBAY</span>
+                            <div>
+                                <div class="store-name">eBay</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Subastas y compras verificadas</span><span class="en-text">Auctions & verified purchases</span></div>
+                        <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="moda" data-search="fitory footwear ropa zapatos">
+                        <div class="store-header">
+                            <span class="store-badge bg-fitory">FITORY</span>
+                            <div>
+                                <div class="store-name">Fitory</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Ropa y zapatos premium USA</span><span class="en-text">Premium clothing & shoes USA</span></div>
+                        <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="tech" data-search="amazon">
+                        <div class="store-header">
+                            <span class="store-badge bg-amazon">AMAZON</span>
+                            <div>
+                                <div class="store-name">Amazon</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Productos variados</span><span class="en-text">Varied products</span></div>
+                        <a href="https://a.co/d/01PMHLaj" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+                    
+                    <div class="store-card" data-category="tech" data-search="oppo smartphones electronics premium">
+                        <div class="store-header">
+                            <span class="store-badge bg-oppo">OPPO</span>
+                            <div>
+                                <div class="store-name">OPPO</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Smartphones y electronics premium</span><span class="en-text">Premium smartphones & electronics</span></div>
+                        <a href="https://oppode.pxf.io/oNGWvO" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+                    
+                    <div class="store-card" data-category="moda" data-search="aliexpress">
+                        <div class="store-header">
+                            <span class="store-badge bg-aliexpress">ALIEXPRESS</span>
+                            <div>
+                                <div class="store-name">AliExpress</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Tienda China</span><span class="en-text">Chinese store</span></div>
+                        <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+                    
+                    <div class="store-card" data-category="tech" data-search="alibaba">
+                        <div class="store-header">
+                            <span class="store-badge bg-alibaba">ALIBABA</span>
+                            <div>
+                                <div class="store-name">Alibaba</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Mayorista</span><span class="en-text">Wholesale</span></div>
+                        <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+                    
+                    <div class="store-card" data-category="moda" data-search="tiktok">
+                        <div class="store-header">
+                            <span class="store-badge bg-tiktok">TIKTOK</span>
+                            <div>
+                                <div class="store-name">TikTok Shop</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Tienda oficial</span><span class="en-text">Official store</span></div>
+                        <a href="https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="belleza" data-search="wooeye lentes contacto color beauty">
+                        <div class="store-header">
+                            <span class="store-badge bg-wooeye">WOOEYE</span>
+                            <div>
+                                <div class="store-name">WooEye</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Lentes de color premium</span><span class="en-text">Premium color lenses</span></div>
+                        <a href="https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="viajes" data-search="travel payouts booking hotels flights">
+                        <div class="store-header">
+                            <span class="store-badge bg-travel">TRAVEL</span>
+                            <div>
+                                <div class="store-name">Travel Payouts</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Hoteles, vuelos y viajes</span><span class="en-text">Hotels, flights & travel deals</span></div>
+                        <a href="https://www.travelpayouts.com/?marker=745519" target="_blank" class="btn-store"><span class="es-text">Explorar →</span><span class="en-text">Explore →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="viajes" data-search="klook tours experiences activities">
+                        <div class="store-header">
+                            <span class="store-badge bg-klook">KLOOK</span>
+                            <div>
+                                <div class="store-name">Klook</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Tours, actividades y experiencias</span><span class="en-text">Tours, activities & experiences</span></div>
+                        <a href="https://klook.tpx.lt/5L2UeosB" target="_blank" class="btn-store"><span class="es-text">Explorar →</span><span class="en-text">Explore →</span></a>
+                    </div>
+
+                    <div class="store-card" data-category="moda" data-search="temu compras ofertas barato">
+                        <div class="store-header">
+                            <span class="store-badge bg-temu">TEMU</span>
+                            <div>
+                                <div class="store-name">Temu</div>
+                                <div class="affiliate-tag"><span class="es-text">💰 Afiliado</span><span class="en-text">💰 Affiliate</span></div>
+                            </div>
+                        </div>
+                        <div class="store-description"><span class="es-text">Compras directas de fábrica</span><span class="en-text">Direct factory shopping</span></div>
+                        <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" class="btn-store"><span class="es-text">Acceder →</span><span class="en-text">Enter →</span></a>
+                    </div>
+                
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="widget-box">
+                    <div class="widget-title"><span class="es-text">⏰ Hora</span><span class="en-text">⏰ Time</span></div>
+                    <div id="liveGreeting" class="live-greeting">¡Hola!</div>
+                    <div id="liveClock" class="live-clock">00:00</div>
+                </div>
+
+                <div class="widget-box">
+                    <div class="widget-title"><span class="es-text">👥 Visitantes</span><span class="en-text">👥 Visitors</span></div>
+                    <div class="live-users"><span class="live-dot"></span> <span id="sidebarLiveUsers">40000</span></div>
+                    <div class="live-users-text"><span class="es-text">viendo ahora</span><span class="en-text">viewing now</span></div>
+                </div>
+                
+                <div class="promo-section">
+                    <h3 class="promo-title">📢 <span class="es-text">PROMOCIONA TU TIENDA</span><span class="en-text">PROMOTE YOUR STORE</span></h3>
+                    <div class="promo-card">
+                        <div class="promo-badge"><span class="es-text">Oficial</span><span class="en-text">Official</span></div>
+                        <h3>❄️ YRT SOLUTIONS LLC</h3>
+                        <p><span class="es-text">Aires acondicionados 24/7 Florida</span><span class="en-text">AC services 24/7</span></p>
+                        <div class="contact-info">
+                            <div class="contact-item"><strong>📞</strong><a href="tel:+13054911906">305-491-1906</a></div>
+                            <div class="contact-item"><strong>📧</strong><a href="mailto:yosvelreina@gmail.com">Email</a></div>
+                        </div>
+                        <div class="promo-buttons">
+                            <a href="https://wa.me/13054911906" target="_blank" class="btn-promo">WhatsApp</a>
+                            <a href="tel:+13054911906" class="btn-promo secondary"><span class="es-text">Llamar</span><span class="en-text">Call</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-card">
+                        <div class="promo-badge"><span class="es-text">Ads</span><span class="en-text">Ads</span></div>
+                        <h3>📢 <span class="es-text">¿Tu tienda?</span><span class="en-text">Your store?</span></h3>
+                        <p><span class="es-text">Llega a miles</span><span class="en-text">Reach thousands</span></p>
+                        <div class="promo-buttons">
+                            <a href="https://wa.me/13054911906" target="_blank" class="btn-promo">WhatsApp</a>
+                            <a href="mailto:ahorratodochic@gmail.com" class="btn-promo secondary">Email</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Search -->
-    <section class="search-section">
-        <input type="text" id="searchInput" class="search-input" placeholder="Buscar eBay, sneakers, belleza...">
-        <div class="category-tabs" id="categoryTabs">
-            <!-- Buttons go here -->
-        </div>
-    </section>
-    
-    <!-- Stores Grid -->
-    <div class="stores-grid" id="storesGrid"></div>
+    </div>
 
 </div>
 
-<!-- Footer -->
+<div class="separator-line"></div>
+
+<div class="legal-section" id="legal-section">
+    <div class="legal-container">
+        <h2 class="legal-title">⚖️ <span class="es-text">Legal</span><span class="en-text">Legal</span></h2>
+        <div class="legal-grid">
+            <details class="legal-item">
+                <summary><span class="es-text">🔗 Afiliados</span><span class="en-text">🔗 Affiliates</span></summary>
+                <div class="legal-content">
+                    <p><strong><span class="es-text">Transparencia:</span><span class="en-text">Transparency:</span></strong> <span class="es-text">Algunos enlaces generan comisión sin costo extra para ti.</span><span class="en-text">Some links generate commission at no extra cost to you.</span></p>
+                    <ul><li>✅ FTC 16 CFR 255</li></ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">🔒 Privacidad</span><span class="en-text">🔒 Privacy</span></summary>
+                <div class="legal-content">
+                    <p><strong><span class="es-text">Datos:</span><span class="en-text">Data:</span></strong></p>
+                    <ul><li>❌ <span class="es-text">NO recopilamos datos</span><span class="en-text">NO data collection</span></li><li>✅ GDPR Compliant</li></ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">⚖️ Responsabilidad</span><span class="en-text">⚖️ Liability</span></summary>
+                <div class="legal-content">
+                    <p><strong><span class="es-text">Somos un directorio:</span><span class="en-text">We are a directory:</span></strong></p>
+                    <ul><li>🔗 <span class="es-text">NO somos tienda</span><span class="en-text">NOT a store</span></li><li>💳 <span class="es-text">NO procesamos pagos</span><span class="en-text">NO payment processing</span></li></ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">📋 Cookies</span><span class="en-text">📋 Cookies</span></summary>
+                <div class="legal-content">
+                    <p><strong><span class="es-text">Solo técnicas:</span><span class="en-text">Technical only:</span></strong></p>
+                    <ul><li>✅ <span class="es-text">Idioma (es/en)</span><span class="en-text">Language (es/en)</span></li><li>❌ <span class="es-text">NO tracking</span><span class="en-text">NO tracking</span></li></ul>
+                </div>
+            </details>
+            <details class="legal-item">
+                <summary><span class="es-text">📌 Contacto</span><span class="en-text">📌 Contact</span></summary>
+                <div class="legal-content">
+                    <p><strong><span class="es-text">Propiedad intelectual:</span><span class="en-text">Intellectual property:</span></strong><br><span class="es-text">Todos los derechos sobre el diseño, contenido y código de AhorraTodo Chic son propiedad de AhorraTodo Chic. No se permite reproducción, distribución o uso sin permiso explícito.</span><span class="en-text">All rights over the design, content and code of SaveEverything Chic are owned by SaveEverything Chic. Reproduction, distribution or use is not permitted without explicit permission.</span><br><br><strong><span class="es-text">Ubicación:</span><span class="en-text">Location:</span></strong><br><span class="es-text">AhorraTodo Chic<br>Miami, FL<br></span><span class="en-text">SaveEverything Chic<br>Miami, FL<br></span><a href="mailto:ahorratodochic@gmail.com">Email</a></p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+</div>
+
 <div class="footer">
-    <span>© 2024 AhorraTodo Chic | <a href="#" style="color: #10B981;">Legal</a></span>
+    <span class="es-text">© <span id="currentYear"></span> AhorraTodo Chic | <a href="#legal-section">Legal</a></span>
+    <span class="en-text">© <span id="currentYearEn"></span> SaveEverything Chic | <a href="#legal-section">Legal</a></span>
 </div>
 
 <script>
-const stores = [
-    {
-        id: "ebay",
-        name: "eBay",
-        category: ["Moda", "Tech"],
-        brandColor: "#E53238",
-        brandText: "#ffffff",
-        logoLetter: "ebay",
-        products: ["👟", "💎", "⌚"],
-        description: "Subastas y compras verificadas",
-        link: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1"
-    },
-    {
-        id: "fitory",
-        name: "Fitory",
-        category: ["Moda"],
-        brandColor: "#FF3B8D",
-        brandText: "#ffffff",
-        logoLetter: "F",
-        products: ["👗", "👠", "👜"],
-        description: "Colección de moda seleccionada",
-        link: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
-    },
-    {
-        id: "amazon",
-        name: "Amazon",
-        category: ["Tech", "Moda"],
-        brandColor: "#FF9900",
-        brandText: "#000000",
-        logoLetter: "a",
-        products: ["📦", "🎧", "📚"],
-        description: "Variedad de productos",
-        link: "https://a.co/d/01PMHLaj"
-    },
-    {
-        id: "oppo",
-        name: "OPPO",
-        category: ["Tech"],
-        brandColor: "#0a0a0a",
-        brandText: "#ffffff",
-        logoLetter: "OPPO",
-        products: ["📱", "⌚", "🎧"],
-        description: "Smartphones y electrónica",
-        link: "https://oppode.pxf.io/oNGWvO"
-    },
-    {
-        id: "aliexpress",
-        name: "AliExpress",
-        category: ["Moda", "Tech", "Belleza"],
-        brandColor: "#FF4747",
-        brandText: "#ffffff",
-        logoLetter: "A",
-        products: ["👕", "👟", "🔧"],
-        description: "Tienda online internacional",
-        link: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
-    },
-    {
-        id: "alibaba",
-        name: "Alibaba",
-        category: ["Tech"],
-        brandColor: "#FF6A00",
-        brandText: "#ffffff",
-        logoLetter: "Alibaba",
-        products: ["📦", "🏭", "🚚"],
-        description: "Plataforma de compra mayorista",
-        link: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
-    },
-    {
-        id: "tiktok",
-        name: "TikTok Shop",
-        category: ["Belleza", "Moda"],
-        brandColor: "#000000",
-        brandText: "#ffffff",
-        logoLetter: "TikTok",
-        products: ["💄", "👕", "💅"],
-        description: "Tienda integrada en la app",
-        link: "https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/"
-    },
-    {
-        id: "klook",
-        name: "Klook",
-        category: ["Viajes"],
-        brandColor: "#00B8E6",
-        brandText: "#ffffff",
-        logoLetter: "K",
-        products: ["✈️", "🏖️", "🎭"],
-        description: "Experiencias y tours",
-        link: "https://klook.tpx.lt/5L2UeosB"
-    },
-    {
-        id: "wooeye",
-        name: "WooEye",
-        category: ["Belleza"],
-        brandColor: "#D946A6",
-        brandText: "#ffffff",
-        logoLetter: "W",
-        products: ["👁️", "✨", "🎨"],
-        description: "Lentes de contacto",
-        link: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
-    },
-    {
-        id: "temu",
-        name: "Temu",
-        category: ["Moda"],
-        brandColor: "#FF0000",
-        brandText: "#ffffff",
-        logoLetter: "T",
-        products: ["🛍️", "💎", "👕"],
-        description: "Plataforma de compras",
-        link: "https://temu.to/k/p3t3h4hf35v"
-    }
-];
+let currentLang = 'es';
+let currentVisitors = 0;
+let searchTimeout;
 
-const categories = [
-    { id: "Todos", label: "🔥 Todos" },
-    { id: "Moda", label: "👗 Moda" },
-    { id: "Tech", label: "📱 Tech" },
-    { id: "Belleza", label: "✨ Belleza" },
-    { id: "Viajes", label: "✈️ Viajes" }
-];
-
-let currentCategory = "Todos";
-
-function renderCategories() {
-    const container = document.getElementById("categoryTabs");
-    container.innerHTML = categories.map(cat => `
-        <button class="category-btn ${cat.id === "Todos" ? "active" : ""}" 
-                onclick="filterCategory('${cat.id}')" 
-                style="margin-top: 16px;">
-            ${cat.label}
-        </button>
-    `).join("");
-}
-
-function filterCategory(category) {
-    currentCategory = category;
-    document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
-    event.target.classList.add("active");
-    renderStores();
-}
-
-function renderStores() {
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    const filtered = stores.filter(store => {
-        const matchCategory = currentCategory === "Todos" || store.category.includes(currentCategory);
-        const matchSearch = store.name.toLowerCase().includes(searchTerm) || 
-                           store.description.toLowerCase().includes(searchTerm);
-        return matchCategory && matchSearch;
+// CONTADOR DE VISITANTES REALISTA (sessionStorage)
+function initializeVisitors() {
+    let stored = sessionStorage.getItem('ahorratodo-users');
+    let data = stored ? JSON.parse(stored) : { count: 40000, timestamp: Date.now(), sessions: {} };
+    const now = Date.now();
+    const fiveMinutes = 5 * 60 * 1000;
+    
+    // Limpiar sesiones expiradas
+    Object.keys(data.sessions).forEach(key => {
+        if (now - data.sessions[key] > fiveMinutes) delete data.sessions[key];
     });
-
-    const grid = document.getElementById("storesGrid");
-    grid.innerHTML = filtered.map(store => `
-        <div class="store-card">
-            <div style="display: flex; gap: 12px;">
-                <div class="store-logo" style="background-color: ${store.brandColor};">
-                    ${store.logoLetter}
-                </div>
-                <div class="store-emoji-grid">
-                    ${store.products.map(emoji => `<div class="emoji-box">${emoji}</div>`).join("")}
-                </div>
-            </div>
-            
-            <div class="store-name">${store.name}</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <p class="store-description">${store.description}</p>
-            
-            <a href="${store.link}" target="_blank" class="btn-store">
-                Ver →
-            </a>
-        </div>
-    `).join("");
+    
+    // Crear sesión única
+    const sessionId = 'ses_' + Math.random().toString(36).substr(2, 9);
+    data.sessions[sessionId] = now;
+    
+    // Calcular visitantes activos (máximo 50k, mínimo 35k, base 40k)
+    const activeCount = Math.min(50000, Math.max(35000, 40000 + Math.floor(Math.random() * 2000) - 1000));
+    data.count = activeCount;
+    data.timestamp = now;
+    
+    sessionStorage.setItem('ahorratodo-users', JSON.stringify(data));
+    currentVisitors = activeCount;
+    return activeCount;
 }
 
-// Init
-renderCategories();
-renderStores();
+function updateLiveUsersCount() {
+    const data = JSON.parse(sessionStorage.getItem('ahorratodo-users') || '{"count":40000}');
+    document.getElementById('liveUsersCount').textContent = data.count.toLocaleString();
+    document.getElementById('sidebarLiveUsers').textContent = data.count.toLocaleString();
+}
 
-document.getElementById("searchInput").addEventListener("input", renderStores);
+// SEARCH CON DEBOUNCE
+function debounceSearch() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(searchStores, 250);
+}
+
+function updateSearchPlaceholder() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.placeholder = currentLang === 'es' ? '🔍 Busca...' : '🔍 Search...';
+}
+
+function toggleLanguage() {
+    document.querySelectorAll('.es-text').forEach(el => {
+        el.style.display = currentLang === 'es' ? 'none' : (el.tagName === 'SPAN' ? 'inline-block' : 'block');
+    });
+    document.querySelectorAll('.en-text').forEach(el => {
+        el.style.display = currentLang === 'es' ? (el.tagName === 'SPAN' ? 'inline-block' : 'block') : 'none';
+    });
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    updateClock();
+    updateSearchPlaceholder();
+}
+
+function updateClock() {
+    const now = new Date();
+    document.getElementById('liveClock').innerText = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    const hour = now.getHours();
+    const greeting = currentLang === 'es' 
+        ? (hour >= 6 && hour < 12 ? '🌅 Buenos días' : hour >= 12 && hour < 19 ? '☀️ Buenas tardes' : '🌙 Buenas noches')
+        : (hour >= 6 && hour < 12 ? '🌅 Good morning' : hour >= 12 && hour < 19 ? '☀️ Good afternoon' : '🌙 Good evening');
+    document.getElementById('liveGreeting').innerText = greeting;
+}
+
+function filterCategory(category, btn) {
+    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.store-card').forEach(card => {
+        const cats = card.getAttribute('data-category');
+        card.classList.toggle('hide', category !== 'all' && !cats.includes(category));
+    });
+}
+
+function searchStores() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.store-card');
+    cards.forEach(card => {
+        const match = card.getAttribute('data-search').includes(search) || card.querySelector('.store-name').innerText.toLowerCase().includes(search);
+        card.classList.toggle('hide', !match && search !== '');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateClock();
+    setInterval(updateClock, 1000);
+    initializeVisitors();
+    updateLiveUsersCount();
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+    document.getElementById('currentYearEn').innerText = new Date().getFullYear();
+    updateSearchPlaceholder();
+});
 </script>
 
 </body>
+
 </html>
