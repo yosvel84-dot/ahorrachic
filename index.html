@@ -26,17 +26,14 @@
             overflow-x: hidden;
         }
         
-        /* ANIMACIONES */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        @keyframes glow { 0%, 100% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.3), 0 8px 24px rgba(16, 185, 129, 0.1); } 50% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 8px 32px rgba(16, 185, 129, 0.2); } }
         
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* HEADER SUPERIOR */
         .top-banner {
             width: 100%;
             border-bottom: 1px solid #1f1f1f;
@@ -77,7 +74,6 @@
         
         .banner-message strong { color: #10B981; }
         
-        .lang-switcher { display: flex; }
         .lang-btn {
             background: #10B981;
             color: #000;
@@ -92,25 +88,13 @@
         }
         .lang-btn:hover { background: #059669; transform: translateY(-2px); }
         
-        /* MAIN LAYOUT */
         .main-wrapper {
             max-width: 1120px;
             margin: 0 auto;
             padding: 32px 16px 64px;
         }
         
-        /* HERO SECTION */
-        .hero-section {
-            text-align: left;
-            margin-bottom: 40px;
-            padding: 0;
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .hero-content { display: flex; flex-direction: column; gap: 24px; }
-        
-        .hero-header { display: flex; flex-direction: column; gap: 16px; }
-        
+        .hero-section { animation: fadeInUp 0.8s ease; }
         .hero-title {
             font-size: clamp(28px, 6vw, 48px);
             font-weight: 800;
@@ -139,13 +123,14 @@
             font-weight: 400;
             line-height: 1.6;
             max-width: 520px;
+            margin-top: 12px;
         }
         
-        /* TRUST BADGES */
         .trust-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            margin-top: 16px;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
         
@@ -169,22 +154,9 @@
             color: #10B981;
         }
         
-        /* SEARCH SECTION */
-        .search-section {
-            margin-top: 32px;
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
+        .search-section { margin-top: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
         
-        .search-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .search-input-wrapper {
-            position: relative;
-            width: 100%;
-        }
+        .search-input-wrapper { position: relative; width: 100%; }
         
         .search-input {
             width: 100%;
@@ -205,7 +177,6 @@
         }
         .search-input::placeholder { color: #64748b; }
         
-        /* CATEGORY TABS */
         .category-tabs {
             display: flex;
             gap: 8px;
@@ -213,6 +184,7 @@
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 8px;
+            padding-top: 16px;
             animation: fadeInUp 0.8s ease 0.35s both;
         }
         
@@ -237,7 +209,6 @@
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
         }
         
-        /* STORES GRID */
         .stores-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -246,7 +217,6 @@
             animation: fadeInUp 0.8s ease 0.4s both;
         }
         
-        /* STORE CARDS - PREMIUM */
         .store-card {
             background: linear-gradient(to bottom, rgba(23, 23, 23, 0.8), rgba(20, 20, 20, 0.6));
             border: 1px solid #262626;
@@ -287,16 +257,6 @@
         }
         
         .store-card:hover::before { opacity: 1; }
-        .store-card.hide { display: none; }
-        
-        /* STORE HEADER */
-        .store-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            position: relative;
-            z-index: 1;
-        }
         
         .store-logo {
             width: 72px;
@@ -314,14 +274,6 @@
             overflow: hidden;
             text-align: center;
             padding: 8px;
-        }
-        
-        .store-logo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), transparent);
-            pointer-events: none;
         }
         
         .store-emoji-grid {
@@ -344,18 +296,6 @@
             overflow: hidden;
         }
         
-        .emoji-box::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent);
-        }
-        
-        .emoji-box:hover {
-            border-color: #333;
-            transform: scale(1.05);
-        }
-        
         .emoji-badge {
             position: absolute;
             top: 4px;
@@ -366,10 +306,7 @@
             font-weight: 700;
             padding: 2px 4px;
             border-radius: 3px;
-            display: none;
         }
-        
-        .emoji-box:first-child .emoji-badge { display: block; }
         
         .store-name {
             font-weight: 700;
@@ -397,7 +334,6 @@
             margin-top: 4px;
         }
         
-        /* STORE FOOTER */
         .store-footer {
             display: flex;
             align-items: center;
@@ -420,14 +356,6 @@
             color: #e0e7ff;
         }
         
-        .store-offers {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: #64748b;
-        }
-        
-        /* BOTÓN CTA */
         .btn-store {
             display: flex;
             align-items: center;
@@ -469,55 +397,6 @@
             transform: translateY(-2px);
         }
         
-        .btn-store:active { transform: scale(0.98); }
-        
-        /* SIDEBAR */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-        
-        .widget-box {
-            background: rgba(26, 26, 26, 0.7);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 16px;
-            padding: 16px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .widget-box:hover {
-            border-color: rgba(16, 185, 129, 0.6);
-            transform: translateY(-2px);
-        }
-        
-        .widget-title {
-            font-size: 11px;
-            color: #10B981;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        
-        .live-clock {
-            font-size: clamp(24px, 4vw, 32px);
-            font-weight: 700;
-            color: #FFFFFF;
-            margin: 8px 0;
-            font-family: 'Monaco', monospace;
-        }
-        
-        .live-greeting {
-            font-size: 14px;
-            color: #a0aec0;
-            font-weight: 500;
-        }
-        
-        /* LEGAL SECTION */
         .legal-section {
             background: #0F0F0F;
             margin-top: 40px;
@@ -532,6 +411,9 @@
             color: #FFFFFF;
             margin-bottom: 20px;
             text-align: center;
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .legal-grid {
@@ -566,7 +448,6 @@
             transition: all 0.3s ease;
         }
         
-        .legal-item summary::-webkit-details-marker { display: none; }
         .legal-item summary::after {
             content: '+';
             font-size: 18px;
@@ -584,7 +465,6 @@
             background: #1A1A1A;
         }
         
-        /* FOOTER */
         .footer {
             text-align: center;
             padding: 20px 16px;
@@ -597,30 +477,16 @@
         
         .footer a { color: #10B981; text-decoration: none; font-weight: 600; }
         
-        /* LENGUAJE */
-        .en-text { display: none; }
-        .es-text { display: inline-block; }
-        
-        /* RESPONSIVE */
-        @media(max-width: 1024px) {
-            .stores-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-            .main-wrapper { padding: 24px 12px 48px; }
-        }
-        
         @media(max-width: 768px) {
             .stores-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
             .store-card { padding: 16px; }
             .store-logo { width: 60px; height: 60px; font-size: 12px; }
             .store-name { font-size: 14px; }
             .hero-title { font-size: 28px; }
-            .top-banner-content { font-size: 11px; }
-            .sidebar { grid-column: 1 / -1; }
         }
         
         @media(max-width: 480px) {
             .stores-grid { grid-template-columns: 1fr; }
-            .store-card { padding: 14px; }
-            .store-emoji-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 22px; }
             .main-wrapper { padding: 16px 12px 40px; }
         }
@@ -634,14 +500,9 @@
     <div class="top-banner-content">
         <div class="banner-message">
             <span class="live-indicator"></span>
-            <span><strong>✓ Legal:</strong> <span class="es-text">Ganamos comisión sin costo extra para ti.</span><span class="en-text">We earn commission at no extra cost to you.</span></span>
+            <span><strong>✓ Legal:</strong> Ganamos comisión sin costo extra para ti.</span>
         </div>
-        <div class="lang-switcher">
-            <button class="lang-btn" onclick="toggleLanguage()">
-                <span class="es-text">🇬🇧 English</span>
-                <span class="en-text">🇪🇸 Español</span>
-            </button>
-        </div>
+        <button class="lang-btn">🇬🇧 English</button>
     </div>
 </div>
 
@@ -650,414 +511,271 @@
     
     <!-- HERO -->
     <section class="hero-section">
-        <div class="hero-content">
-            <div class="hero-header">
-                <h1 class="hero-title">
-                    <span class="es-text">AhorraTodo</span><span class="en-text">SaveEverything</span>
-                    <span class="highlight"><span class="es-text">Chic</span><span class="en-text">Chic</span></span>
-                </h1>
-                <p class="hero-subtitle">
-                    <span class="es-text">Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 12 tiendas premium.</span>
-                    <span class="en-text">Your smart shopping hub. We curate only the best from 12 premium stores.</span>
-                </p>
-            </div>
-            
-            <!-- TRUST BADGES -->
-            <div class="trust-badges">
-                <div class="badge">✅ <strong><span class="es-text">12 Tiendas</span><span class="en-text">12 Stores</span></strong></div>
-                <div class="badge">✅ <strong><span class="es-text">Sin Datos</span><span class="en-text">No Data</span></strong></div>
-                <div class="badge">✅ <strong><span class="es-text">Transparente</span><span class="en-text">Transparent</span></strong></div>
-                <div class="badge primary">✅ <strong>FTC / GDPR</strong></div>
-                <div class="badge">
-                    <span class="live-indicator"></span>
-                    <strong id="liveUsersCount">40,569</strong>
-                    <span class="es-text">viendo</span><span class="en-text">viewing</span>
-                </div>
+        <h1 class="hero-title">
+            AhorraTodo
+            <span class="highlight">Chic</span>
+        </h1>
+        <p class="hero-subtitle">
+            Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas premium.
+        </p>
+        
+        <!-- TRUST BADGES -->
+        <div class="trust-badges">
+            <div class="badge">✅ <strong>10 Tiendas verificadas</strong></div>
+            <div class="badge">✅ <strong>Sin rastreo</strong></div>
+            <div class="badge">✅ <strong>Transparente</strong></div>
+            <div class="badge primary">✅ <strong>FTC / GDPR</strong></div>
+            <div class="badge" style="margin-left: auto;">
+                <span class="live-indicator"></span>
+                <strong>40,569 viendo ahora</strong>
             </div>
         </div>
     </section>
     
     <!-- BÚSQUEDA Y FILTROS -->
     <section class="search-section">
-        <div class="search-container">
-            <div class="search-input-wrapper">
-                <input type="text" class="search-input" id="searchInput" onkeyup="debounceSearch()" 
-                    placeholder="🔍 Busca eBay, sneakers, belleza...">
-            </div>
-            <div class="category-tabs">
-                <button class="category-btn active" onclick="filterCategory('all', this)">
-                    <span class="es-text">🔥 Todos</span><span class="en-text">🔥 All</span>
-                </button>
-                <button class="category-btn" onclick="filterCategory('moda', this)">
-                    <span class="es-text">👗 Moda</span><span class="en-text">👗 Fashion</span>
-                </button>
-                <button class="category-btn" onclick="filterCategory('tech', this)">
-                    <span class="es-text">📱 Tech</span><span class="en-text">📱 Tech</span>
-                </button>
-                <button class="category-btn" onclick="filterCategory('belleza', this)">
-                    <span class="es-text">✨ Belleza</span><span class="en-text">✨ Beauty</span>
-                </button>
-                <button class="category-btn" onclick="filterCategory('viajes', this)">
-                    <span class="es-text">✈️ Viajes</span><span class="en-text">✈️ Travel</span>
-                </button>
-            </div>
+        <div class="search-input-wrapper">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Busca eBay, sneakers, belleza...">
+        </div>
+        <div class="category-tabs">
+            <button class="category-btn active" onclick="filterCategory('all')">🔥 Todos</button>
+            <button class="category-btn" onclick="filterCategory('moda')">👗 Moda</button>
+            <button class="category-btn" onclick="filterCategory('tech')">📱 Tech</button>
+            <button class="category-btn" onclick="filterCategory('belleza')">✨ Belleza</button>
+            <button class="category-btn" onclick="filterCategory('viajes')">✈️ Viajes</button>
         </div>
     </section>
     
     <!-- STORES GRID -->
-    <div class="stores-grid" id="storesGrid">
-        <!-- eBay -->
-        <div class="store-card" data-category="moda tech" data-search="ebay auction marketplace">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #E53238, #C3122E); color: #fff;">eBay</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">👟<span class="emoji-badge">-40%</span></div>
-                    <div class="emoji-box">💎</div>
-                    <div class="emoji-box">⌚</div>
-                    <div class="emoji-box">🎮</div>
-                </div>
-            </div>
-            <div class="store-name">eBay</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Subastas verificadas y vintage que no encuentras en otro lado. Envío desde $3.99.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.8</span>
-                <span class="store-offers">🔥 12.4k ofertas</span>
-            </div>
-            <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- Fitory -->
-        <div class="store-card" data-category="moda" data-search="fitory footwear ropa zapatos">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #FF6B6B, #FF4757); color: #fff;">F</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">👗<span class="emoji-badge">-50%</span></div>
-                    <div class="emoji-box">👠</div>
-                    <div class="emoji-box">👜</div>
-                    <div class="emoji-box">🕶️</div>
-                </div>
-            </div>
-            <div class="store-name">Fitory</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Moda premium curada. Los best-sellers de Instagram a precio outlet.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.9</span>
-                <span class="store-offers">🔥 8.1k ofertas</span>
-            </div>
-            <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- Amazon -->
-        <div class="store-card" data-category="tech moda" data-search="amazon">
-            <div class="store-header">
-                <div class="store-logo" style="background: #FF9900; color: #000;">a</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">📦<span class="emoji-badge">Prime</span></div>
-                    <div class="emoji-box">🎧</div>
-                    <div class="emoji-box">📚</div>
-                    <div class="emoji-box">🏠</div>
-                </div>
-            </div>
-            <div class="store-name">Amazon</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Lo esencial: Tech, hogar, moda. Prime = envío 24h gratis.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.9</span>
-                <span class="store-offers">🔥 32k ofertas</span>
-            </div>
-            <a href="https://a.co/d/01PMHLaj" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- OPPO -->
-        <div class="store-card" data-category="tech" data-search="oppo smartphones electronics">
-            <div class="store-header">
-                <div class="store-logo" style="background: #0a0a0a; color: #fff; border: 1px solid #444;">OPPO</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">📱<span class="emoji-badge">New</span></div>
-                    <div class="emoji-box">⌚</div>
-                    <div class="emoji-box">🎧</div>
-                    <div class="emoji-box">🖥️</div>
-                </div>
-            </div>
-            <div class="store-name">OPPO</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Flagships con cámara Hasselblad y carga 100W. Tech premium.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.7</span>
-                <span class="store-offers">🔥 2.3k ofertas</span>
-            </div>
-            <a href="https://oppode.pxf.io/oNGWvO" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- AliExpress -->
-        <div class="store-card" data-category="moda tech belleza" data-search="aliexpress">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #FF471A, #E61919); color: #fff;">A</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">👕<span class="emoji-badge">$2.99</span></div>
-                    <div class="emoji-box">💍</div>
-                    <div class="emoji-box">📲</div>
-                    <div class="emoji-box">🪴</div>
-                </div>
-            </div>
-            <div class="store-name">AliExpress</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Gadgets virales, streetwear y joyas desde $2.99. Envío gratis.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.6</span>
-                <span class="store-offers">🔥 28k ofertas</span>
-            </div>
-            <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- Alibaba -->
-        <div class="store-card" data-category="tech viajes" data-search="alibaba">
-            <div class="store-header">
-                <div class="store-logo" style="background: #FF6A00; color: #fff;">Alibaba</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">📦<span class="emoji-badge">B2B</span></div>
-                    <div class="emoji-box">🏭</div>
-                    <div class="emoji-box">⚙️</div>
-                    <div class="emoji-box">🚚</div>
-                </div>
-            </div>
-            <div class="store-name">Alibaba.com</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Compra mayorista directo de fábrica. Para emprendedores.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.5</span>
-                <span class="store-offers">🔥 5.4k ofertas</span>
-            </div>
-            <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- TikTok Shop -->
-        <div class="store-card" data-category="belleza moda" data-search="tiktok">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #000000, #ff0050); color: #fff;">TikTok</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">💄<span class="emoji-badge">Viral</span></div>
-                    <div class="emoji-box">👕</div>
-                    <div class="emoji-box">💅</div>
-                    <div class="emoji-box">🎀</div>
-                </div>
-            </div>
-            <div class="store-name">TikTok Shop</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Lo que ves en tu FYP, ahora comprable al instante.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.8</span>
-                <span class="store-offers">🔥 15.2k ofertas</span>
-            </div>
-            <a href="https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- WooEye -->
-        <div class="store-card" data-category="belleza" data-search="wooeye lentes contacto color">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #D946A6, #EC4899); color: #fff;">W</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">👁️<span class="emoji-badge">-30%</span></div>
-                    <div class="emoji-box">✨</div>
-                    <div class="emoji-box">🎨</div>
-                    <div class="emoji-box">💜</div>
-                </div>
-            </div>
-            <div class="store-name">WooEye</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Lentes de color premium con prescripción incluida.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.6</span>
-                <span class="store-offers">🔥 1.2k ofertas</span>
-            </div>
-            <a href="https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-
-        <!-- Klook -->
-        <div class="store-card" data-category="viajes" data-search="klook tours experiences">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #00B8E6, #0099CC); color: #fff;">K</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">✈️<span class="emoji-badge">Book</span></div>
-                    <div class="emoji-box">🏖️</div>
-                    <div class="emoji-box">🎭</div>
-                    <div class="emoji-box">🎢</div>
-                </div>
-            </div>
-            <div class="store-name">Klook</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Tours, actividades y experiencias. Cancelación gratis.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.7</span>
-                <span class="store-offers">🔥 9.8k ofertas</span>
-            </div>
-            <a href="https://klook.tpx.lt/5L2UeosB" target="_blank" class="btn-store">
-                <span class="es-text">Explorar</span><span class="en-text">Explore</span> →
-            </a>
-        </div>
-
-        <!-- Temu -->
-        <div class="store-card" data-category="moda" data-search="temu compras ofertas">
-            <div class="store-header">
-                <div class="store-logo" style="background: linear-gradient(135deg, #FF0000, #CC0000); color: #fff;">T</div>
-                <div class="store-emoji-grid">
-                    <div class="emoji-box">🛍️<span class="emoji-badge">Hot</span></div>
-                    <div class="emoji-box">💎</div>
-                    <div class="emoji-box">👕</div>
-                    <div class="emoji-box">💍</div>
-                </div>
-            </div>
-            <div class="store-name">Temu</div>
-            <div class="affiliate-tag">💰 Afiliado</div>
-            <div class="store-description">Compras directas de fábrica. Envío rápido a todo el mundo.</div>
-            <div class="store-footer">
-                <span class="store-rating">⭐ 4.5</span>
-                <span class="store-offers">🔥 18.7k ofertas</span>
-            </div>
-            <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" class="btn-store">
-                <span class="es-text">Acceder</span><span class="en-text">Enter</span> →
-            </a>
-        </div>
-    </div>
+    <div class="stores-grid" id="storesGrid"></div>
 
 </div>
 
 <!-- LEGAL SECTION -->
 <div class="legal-section" id="legal-section">
-    <div style="max-width: 1120px; margin: 0 auto;">
-        <h2 class="legal-title">⚖️ <span class="es-text">Legal</span><span class="en-text">Legal</span></h2>
-        <div class="legal-grid">
-            <details class="legal-item">
-                <summary><span class="es-text">🔗 Afiliados</span><span class="en-text">🔗 Affiliates</span></summary>
-                <div class="legal-content">
-                    <p><strong><span class="es-text">Transparencia:</span><span class="en-text">Transparency:</span></strong> <span class="es-text">Algunos enlaces generan comisión sin costo extra para ti.</span><span class="en-text">Some links generate commission at no extra cost to you.</span></p>
-                    <ul><li>✅ FTC 16 CFR 255</li></ul>
-                </div>
-            </details>
-            <details class="legal-item">
-                <summary><span class="es-text">🔒 Privacidad</span><span class="en-text">🔒 Privacy</span></summary>
-                <div class="legal-content">
-                    <p><strong><span class="es-text">Datos:</span><span class="en-text">Data:</span></strong></p>
-                    <ul><li>❌ <span class="es-text">NO recopilamos datos</span><span class="en-text">NO data collection</span></li><li>✅ GDPR Compliant</li></ul>
-                </div>
-            </details>
-            <details class="legal-item">
-                <summary><span class="es-text">📦 Garantía</span><span class="en-text">📦 Warranty</span></summary>
-                <div class="legal-content">
-                    <p><strong><span class="es-text">No somos tienda:</span><span class="en-text">We are a directory:</span></strong></p>
-                    <ul><li>🔗 <span class="es-text">Enlaces directos a tiendas oficiales</span><span class="en-text">Direct links to official stores</span></li><li>💳 <span class="es-text">NO procesamos pagos</span><span class="en-text">NO payment processing</span></li></ul>
-                </div>
-            </details>
-            <details class="legal-item">
-                <summary><span class="es-text">📌 Contacto</span><span class="en-text">📌 Contact</span></summary>
-                <div class="legal-content">
-                    <p><strong><span class="es-text">AhorraTodo Chic</span><span class="en-text">SaveEverything Chic</span></strong><br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com" style="color: #10B981;">ahorratodochic@gmail.com</a></p>
-                </div>
-            </details>
-        </div>
+    <h2 class="legal-title">⚖️ Legal</h2>
+    <div class="legal-grid">
+        <details class="legal-item">
+            <summary>🔗 Afiliados</summary>
+            <div class="legal-content">
+                <p><strong>Transparencia:</strong> Algunos enlaces generan comisión sin costo extra para ti.</p>
+                <ul><li>✅ FTC 16 CFR 255</li></ul>
+            </div>
+        </details>
+        <details class="legal-item">
+            <summary>🔒 Privacidad</summary>
+            <div class="legal-content">
+                <p><strong>Datos:</strong></p>
+                <ul><li>❌ NO recopilamos datos</li><li>✅ GDPR Compliant</li></ul>
+            </div>
+        </details>
+        <details class="legal-item">
+            <summary>📦 Garantía</summary>
+            <div class="legal-content">
+                <p><strong>No somos tienda:</strong> Enlaces directos a tiendas oficiales.</p>
+                <ul><li>🔗 NO procesamos pagos</li></ul>
+            </div>
+        </details>
+        <details class="legal-item">
+            <summary>📌 Contacto</summary>
+            <div class="legal-content">
+                <p><strong>AhorraTodo Chic</strong><br>Miami, FL<br><a href="mailto:ahorratodochic@gmail.com" style="color: #10B981;">ahorratodochic@gmail.com</a></p>
+            </div>
+        </details>
     </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    <span class="es-text">© <span id="currentYear"></span> AhorraTodo Chic | <a href="#legal-section">Legal</a></span>
-    <span class="en-text">© <span id="currentYearEn"></span> SaveEverything Chic | <a href="#legal-section">Legal</a></span>
+    <span>© <span id="year"></span> AhorraTodo Chic | <a href="#legal-section">Legal</a></span>
 </div>
 
 <script>
-let currentLang = 'es';
-let searchTimeout;
+// 10 TIENDAS ACTUALIZADAS
+const stores = [
+    {
+        id: "ebay",
+        name: "eBay",
+        category: ["Moda", "Tech"],
+        brandColor: "#E53238",
+        brandText: "#ffffff",
+        logoLetter: "ebay",
+        products: ["👟", "💎", "⌚"],
+        description: "Sneakers hype, vintage y subastas que no encuentras en otro lado.",
+        rating: "4.8",
+        offers: "12.4k",
+        link: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic"
+    },
+    {
+        id: "fitory",
+        name: "Fitory",
+        category: ["Moda"],
+        brandColor: "#FF3B8D",
+        brandText: "#ffffff",
+        logoLetter: "F",
+        products: ["👗", "👠", "👜"],
+        description: "Moda curada y best-sellers de Instagram a precio outlet.",
+        rating: "4.9",
+        offers: "8.1k",
+        link: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
+    },
+    {
+        id: "amazon",
+        name: "Amazon",
+        category: ["Tech", "Moda"],
+        brandColor: "#FF9900",
+        brandText: "#000000",
+        logoLetter: "a",
+        products: ["📦", "🎧", "📚"],
+        description: "Todo lo esencial con Prime. Tech, hogar y más en 24h.",
+        rating: "4.9",
+        offers: "32k",
+        link: "https://a.co/d/01PMHLaj"
+    },
+    {
+        id: "oppo",
+        name: "OPPO",
+        category: ["Tech"],
+        brandColor: "#0a0a0a",
+        brandText: "#ffffff",
+        logoLetter: "OPPO",
+        products: ["📱", "⌚", "🎧"],
+        description: "Flagships con cámara Hasselblad y carga de 100W.",
+        rating: "4.7",
+        offers: "2.3k",
+        link: "https://oppode.pxf.io/oNGWvO"
+    },
+    {
+        id: "aliexpress",
+        name: "AliExpress",
+        category: ["Moda", "Tech", "Belleza"],
+        brandColor: "#FF4747",
+        brandText: "#ffffff",
+        logoLetter: "A",
+        products: ["👕", "👟", "🔧"],
+        description: "Gadgets virales, streetwear y joyas desde $2.99.",
+        rating: "4.6",
+        offers: "28k",
+        link: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
+    },
+    {
+        id: "alibaba",
+        name: "Alibaba.com",
+        category: ["Tech", "Viajes"],
+        brandColor: "#FF6A00",
+        brandText: "#ffffff",
+        logoLetter: "Alibaba",
+        products: ["📦", "🏭", "⚙️"],
+        description: "Compra al por mayor directo de fábrica. Para emprendedores.",
+        rating: "4.5",
+        offers: "5.4k",
+        link: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
+    },
+    {
+        id: "tiktok",
+        name: "TikTok Shop",
+        category: ["Belleza", "Moda"],
+        brandColor: "#000000",
+        brandText: "#ffffff",
+        logoLetter: "TikTok",
+        products: ["💄", "👕", "💅"],
+        description: "Lo que ves en tu FYP, ahora comprable al instante.",
+        rating: "4.8",
+        offers: "15.2k",
+        link: "https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/"
+    },
+    {
+        id: "klook",
+        name: "Klook",
+        category: ["Viajes"],
+        brandColor: "#00B8E6",
+        brandText: "#ffffff",
+        logoLetter: "K",
+        products: ["✈️", "🏖️", "🎭"],
+        description: "Tours, actividades y experiencias. Cancelación gratis.",
+        rating: "4.7",
+        offers: "9.8k",
+        link: "https://klook.tpx.lt/5L2UeosB"
+    },
+    {
+        id: "wooeye",
+        name: "WooEye",
+        category: ["Belleza"],
+        brandColor: "#D946A6",
+        brandText: "#ffffff",
+        logoLetter: "W",
+        products: ["👁️", "✨", "🎨"],
+        description: "Lentes de color premium con prescripción incluida.",
+        rating: "4.6",
+        offers: "1.2k",
+        link: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
+    },
+    {
+        id: "temu",
+        name: "Temu",
+        category: ["Moda"],
+        brandColor: "#FF0000",
+        brandText: "#ffffff",
+        logoLetter: "T",
+        products: ["🛍️", "💎", "👕"],
+        description: "Compras directas de fábrica. Envío rápido a todo el mundo.",
+        rating: "4.5",
+        offers: "18.7k",
+        link: "https://temu.to/k/p3t3h4hf35v"
+    }
+];
 
-// INICIALIZAR
-document.addEventListener('DOMContentLoaded', function() {
-    updateClock();
-    setInterval(updateClock, 1000);
-    initializeVisitors();
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    document.getElementById('currentYearEn').textContent = new Date().getFullYear();
-});
+let currentCategory = "all";
 
-// RELOJ EN VIVO
-function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const greeting = currentLang === 'es' 
-        ? (now.getHours() >= 6 && now.getHours() < 12 ? '🌅 Buenos días' : now.getHours() >= 12 && now.getHours() < 19 ? '☀️ Buenas tardes' : '🌙 Buenas noches')
-        : (now.getHours() >= 6 && now.getHours() < 12 ? '🌅 Good morning' : now.getHours() >= 12 && now.getHours() < 19 ? '☀️ Good afternoon' : '🌙 Good evening');
+function renderStores() {
+    const grid = document.getElementById("storesGrid");
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
     
-    document.querySelectorAll('.live-clock').forEach(el => el.textContent = `${hours}:${minutes}`);
-    document.querySelectorAll('.live-greeting').forEach(el => el.textContent = greeting);
-}
-
-// VISITANTES EN VIVO
-function initializeVisitors() {
-    let stored = sessionStorage.getItem('ahorratodo-users');
-    let data = stored ? JSON.parse(stored) : { count: 40569, sessions: {} };
-    const activeCount = Math.min(50000, Math.max(35000, 40000 + Math.floor(Math.random() * 5000) - 2500));
-    data.count = activeCount;
-    sessionStorage.setItem('ahorratodo-users', JSON.stringify(data));
-    updateLiveUsersCount();
-}
-
-function updateLiveUsersCount() {
-    const data = JSON.parse(sessionStorage.getItem('ahorratodo-users') || '{"count":40569}');
-    document.getElementById('liveUsersCount').textContent = data.count.toLocaleString();
-}
-
-// BÚSQUEDA CON DEBOUNCE
-function debounceSearch() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(searchStores, 250);
-}
-
-function searchStores() {
-    const search = document.getElementById('searchInput').value.toLowerCase();
-    document.querySelectorAll('.store-card').forEach(card => {
-        const match = card.getAttribute('data-search').includes(search) || 
-                     card.querySelector('.store-name').textContent.toLowerCase().includes(search);
-        card.classList.toggle('hide', !match && search !== '');
+    const filtered = stores.filter(store => {
+        const matchCategory = currentCategory === "all" || store.category.includes(currentCategory);
+        const matchSearch = store.name.toLowerCase().includes(searchTerm) || 
+                           store.description.toLowerCase().includes(searchTerm);
+        return matchCategory && matchSearch;
     });
+    
+    grid.innerHTML = filtered.map(store => `
+        <div class="store-card">
+            <div style="display: flex; gap: 12px;">
+                <div class="store-logo" style="background-color: ${store.brandColor}; color: ${store.brandText};">${store.logoLetter}</div>
+                <div class="store-emoji-grid">
+                    ${store.products.map((emoji, i) => `
+                        <div class="emoji-box">
+                            ${emoji}
+                            ${i === 0 ? '<span class="emoji-badge">-40%</span>' : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="store-name">${store.name}</div>
+            <div class="affiliate-tag">💰 Afiliado</div>
+            <p class="store-description">${store.description}</p>
+            <div class="store-footer">
+                <span class="store-rating">⭐ ${store.rating}</span>
+                <span>🔥 ${store.offers} ofertas</span>
+            </div>
+            <a href="${store.link}" target="_blank" class="btn-store">
+                Ver ofertas →
+            </a>
+        </div>
+    `).join('');
 }
 
-// FILTRAR POR CATEGORÍA
-function filterCategory(category, btn) {
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.store-card').forEach(card => {
-        const cats = card.getAttribute('data-category');
-        card.classList.toggle('hide', category !== 'all' && !cats.includes(category));
-    });
+function filterCategory(cat) {
+    currentCategory = cat;
+    document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+    renderStores();
 }
 
-// CAMBIAR IDIOMA
-function toggleLanguage() {
-    document.querySelectorAll('.es-text').forEach(el => {
-        el.style.display = currentLang === 'es' ? 'none' : (el.tagName === 'SPAN' ? 'inline-block' : 'block');
-    });
-    document.querySelectorAll('.en-text').forEach(el => {
-        el.style.display = currentLang === 'es' ? (el.tagName === 'SPAN' ? 'inline-block' : 'block') : 'none';
-    });
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    updateClock();
-}
+document.getElementById("searchInput").addEventListener("input", renderStores);
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderStores();
 </script>
 
 </body>
