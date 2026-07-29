@@ -3,78 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal de compras con enlaces a tiendas oficiales. Algunos enlaces incluyen comisiones de afiliado que no afectan tu precio.">
-    <meta name="verify-admitad" content="aacdd45797" />
-    <title>AhorraTodo Chic | Portal de Compras</title>
+    <title>AhorraTodo Chic | Portal de Compras Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; width: 100%; }
-        body { width: 100%; font-family: 'Inter', system-ui; background: #0a0a0a; min-height: 100vh; color: #fff; font-size: 16px; overflow-x: hidden; }
-        
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
-        .header-top { width: 100%; border-bottom: 1px solid #1f1f1f; background: rgba(17,17,17,0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 40; animation: slideInDown 0.6s ease; }
-        .header-content { max-width: 1120px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
-        .banner-message { display: flex; align-items: center; gap: 8px; color: #a0aec0; }
-        .live-dot { display: inline-block; width: 6px; height: 6px; background: #10B981; border-radius: 50%; animation: pulse 2s infinite; }
-        .lang-btn { background: #10B981; color: #000; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 12px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
-        .lang-btn:hover { background: #059669; transform: translateY(-2px); }
-
-        .main-wrapper { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
-        
-        .hero-section { animation: fadeInUp 0.8s ease; margin-bottom: 32px; }
-        .hero-title { font-size: clamp(28px, 6vw, 48px); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.03em; margin-bottom: 12px; }
-        .hero-highlight { display: inline-block; background: #10B981; color: #000; padding: 8px 16px; border-radius: 999px; font-size: 0.9em; transform: rotate(-2deg); margin-left: 12px; vertical-align: middle; }
-        .hero-subtitle { font-size: clamp(14px, 2.5vw, 16px); color: #a0aec0; font-weight: 400; line-height: 1.6; max-width: 520px; margin-top: 12px; }
-
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 1px solid #262626; background: rgba(17,17,17,0.6); color: #e0e7ff; }
-        .badge.primary { border-color: #10B981; background: rgba(16,185,129,0.15); color: #10B981; }
-
-        .search-section { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-radius: 28px; padding: 20px; margin-bottom: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
-        .search-title { font-size: clamp(18px, 3vw, 26px); font-weight: 700; color: #fff; margin-bottom: 4px; }
-        .search-subtitle { font-size: 13px; color: #a0aec0; }
-        
-        .search-input { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.8); border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 14px; transition: all 0.3s ease; font-family: inherit; margin: 16px 0; }
-        .search-input:focus { outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
-
-        .category-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-top: 16px; }
-        .category-btn { background: #1A1A1A; color: #a0aec0; border: 2px solid #2a2a2a; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
-        .category-btn:hover { border-color: #404040; }
-        .category-btn.active { background: #10B981; color: #000; border-color: #10B981; box-shadow: 0 0 20px rgba(16,185,129,0.25); }
-
-        .stores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
-
-        .store-card { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-left: 4px solid rgba(16,185,129,0.4); border-radius: 20px; padding: 20px; transition: all 0.3s ease; display: flex; flex-direction: column; backdrop-filter: blur(5px); position: relative; animation: fadeInUp 0.6s ease; }
-        .store-card:hover { border-color: #10B981; background: linear-gradient(to bottom, rgba(36,36,36,0.95), rgba(30,30,30,0.8)); box-shadow: 0 8px 32px rgba(16,185,129,0.25); transform: translateY(-6px); border-left-color: #10B981; }
-
-        .store-logo { width: 72px; height: 72px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05); position: relative; overflow: hidden; text-align: center; padding: 8px; color: white; }
-
-        .store-emoji-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px; flex: 1; }
-        .emoji-box { aspect-ratio: 1; border-radius: 12px; border: 1px solid #2a2a2a; background: #0f0f0f; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-
-        .store-name { font-weight: 700; color: #fff; font-size: 16px; margin-top: 12px; }
-        .store-description { font-size: 13px; color: #a0aec0; line-height: 1.4; margin: 8px 0; }
-        
-        .affiliate-tag { display: inline-block; background: rgba(16,185,129,0.25); color: #86EFAC; font-size: 10px; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.4); font-weight: 600; margin-top: 8px; }
-
-        .btn-store { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; background: linear-gradient(135deg, #10B981, #059669); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
-        .btn-store:hover { background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 8px 24px rgba(16,185,129,0.3); transform: translateY(-2px); }
-
-        .footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #64748b; border-top: 1px solid #2a2a2a; margin-top: 32px; }
-        .footer a { color: #10B981; text-decoration: none; font-weight: 600; }
-
-        @media (max-width: 768px) {
-            .stores-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 28px; }
-        }
-    </style>
 </head>
-<body>
+<body style="margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;min-height:100vh">
 
+<style>
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; width: 100%; }
+body { width: 100%; font-size: 16px; line-height: 1.5; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.header-top { width: 100%; border-bottom: 1px solid #1f1f1f; background: rgba(17,17,17,0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 40; animation: slideInDown 0.6s ease; }
+.header-content { max-width: 1120px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; gap: 16px; }
+.banner-message { display: flex; align-items: center; gap: 8px; color: #a0aec0; }
+.live-dot { display: inline-block; width: 6px; height: 6px; background: #10B981; border-radius: 50%; animation: pulse 2s infinite; }
+.lang-btn { background: #10B981; color: #000; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 12px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+.lang-btn:hover { background: #059669; transform: translateY(-2px); }
+
+.main-wrapper { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
+
+.hero-section { animation: fadeInUp 0.8s ease; margin-bottom: 32px; }
+.hero-title { font-size: clamp(28px, 6vw, 48px); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.03em; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.hero-highlight { display: inline-block; background: #10B981; color: #000; padding: 8px 16px; border-radius: 999px; font-size: 0.9em; transform: rotate(-2deg); }
+.hero-subtitle { font-size: clamp(14px, 2.5vw, 16px); color: #a0aec0; font-weight: 400; line-height: 1.6; max-width: 520px; margin-top: 12px; }
+
+.trust-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 1px solid #262626; background: rgba(17,17,17,0.6); color: #e0e7ff; }
+.badge.primary { border-color: #10B981; background: rgba(16,185,129,0.15); color: #10B981; }
+
+.search-section { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-radius: 28px; padding: 20px; margin-bottom: 32px; animation: fadeInUp 0.8s ease 0.3s both; }
+.search-input { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.8); border: 2px solid #2A2A2A; border-radius: 12px; color: #fff; font-size: 14px; transition: all 0.3s ease; font-family: inherit; }
+.search-input:focus { outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); background: rgba(26,26,26,0.95); }
+
+.category-tabs { display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 8px 0; }
+.category-btn { background: #1A1A1A; color: #a0aec0; border: 2px solid #2A2A2A; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
+.category-btn:hover { border-color: #404040; }
+.category-btn.active { background: #10B981; color: #000; border-color: #10B981; box-shadow: 0 0 20px rgba(16,185,129,0.25); }
+
+.stores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+
+.store-card { background: linear-gradient(to bottom, rgba(23,23,23,0.8), rgba(20,20,20,0.6)); border: 1px solid #262626; border-left: 4px solid rgba(16,185,129,0.4); border-radius: 20px; padding: 20px; transition: all 0.3s ease; display: flex; flex-direction: column; backdrop-filter: blur(5px); position: relative; overflow: hidden; animation: fadeInUp 0.6s ease; }
+.store-card:hover { border-color: #10B981; background: linear-gradient(to bottom, rgba(36,36,36,0.95), rgba(30,30,30,0.8)); box-shadow: 0 8px 32px rgba(16,185,129,0.25), 0 0 20px rgba(16,185,129,0.15); transform: translateY(-6px); border-left-color: #10B981; }
+
+.store-logo { width: 72px; height: 72px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05); position: relative; overflow: hidden; text-align: center; padding: 8px; color: white; }
+
+.store-emoji-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px; flex: 1; }
+.emoji-box { aspect-ratio: 1; border-radius: 12px; border: 1px solid #2a2a2a; background: #0f0f0f; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+
+.store-name { font-weight: 700; color: #fff; font-size: 16px; margin-top: 12px; }
+.store-description { font-size: 13px; color: #a0aec0; line-height: 1.4; margin: 8px 0; }
+.affiliate-tag { display: inline-block; background: rgba(16,185,129,0.25); color: #86EFAC; font-size: 10px; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.4); font-weight: 600; margin-top: 8px; }
+
+.btn-store { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 16px; background: linear-gradient(135deg, #10B981, #059669); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; width: 100%; margin-top: 12px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(16,185,129,0.2); z-index: 1; }
+.btn-store:hover { background: linear-gradient(135deg, #059669, #047857); box-shadow: 0 8px 24px rgba(16,185,129,0.3); transform: translateY(-2px); }
+
+.footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #64748b; border-top: 1px solid #2a2a2a; margin-top: 32px; animation: fadeInUp 0.8s ease 1.3s both; }
+
+@media(max-width: 768px) {
+    .stores-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 28px; }
+}
+</style>
+
+<!-- Header -->
 <div class="header-top">
     <div class="header-content">
         <div class="banner-message">
@@ -85,51 +86,46 @@
     </div>
 </div>
 
+<!-- Main -->
 <div class="main-wrapper">
+    
+    <!-- Hero -->
     <section class="hero-section">
-        <div>
-            <h1 class="hero-title">
-                AhorraTodo<span class="hero-highlight">Chic</span>
-            </h1>
-            <p class="hero-subtitle">
-                Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas oficiales.
-            </p>
-        </div>
+        <h1 class="hero-title">
+            AhorraTodo<span class="hero-highlight">Chic</span>
+        </h1>
+        <p class="hero-subtitle">
+            Tu portal inteligente de compras. Curamos solo lo que vale la pena, de 10 tiendas verificadas.
+        </p>
         
         <div class="trust-badges">
             <div class="badge">✅ 10 Tiendas verificadas</div>
             <div class="badge">✅ Sin rastreo de datos</div>
             <div class="badge">✅ Transparente</div>
             <div class="badge primary">✅ FTC / GDPR</div>
-            <div class="badge" style="margin-left:auto;">
+            <div class="badge">
                 <span class="live-dot"></span>
                 <strong>40,569 viendo ahora</strong>
             </div>
         </div>
     </section>
     
+    <!-- Search -->
     <section class="search-section">
-        <div style="margin-bottom:16px;">
-            <h2 class="search-title">Busca tu tienda favorita</h2>
-            <p class="search-subtitle">Encuentra lo que buscas y accede directamente</p>
-        </div>
-        
-        <input type="text" id="search" class="search-input" placeholder="Buscar eBay, Amazon, TikTok...">
-        
-        <div class="category-tabs">
-            <button class="category-btn active" onclick="filterCategory('Todos')">🔥 Todos</button>
-            <button class="category-btn" onclick="filterCategory('Moda')">👗 Moda</button>
-            <button class="category-btn" onclick="filterCategory('Tech')">📱 Tech</button>
-            <button class="category-btn" onclick="filterCategory('Belleza')">✨ Belleza</button>
-            <button class="category-btn" onclick="filterCategory('Viajes')">✈️ Viajes</button>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar eBay, sneakers, belleza...">
+        <div class="category-tabs" id="categoryTabs">
+            <!-- Buttons go here -->
         </div>
     </section>
     
-    <div class="stores-grid" id="stores"></div>
+    <!-- Stores Grid -->
+    <div class="stores-grid" id="storesGrid"></div>
+
 </div>
 
+<!-- Footer -->
 <div class="footer">
-    <span>© 2024 AhorraTodo Chic | <a href="#">Legal</a></span>
+    <span>© 2024 AhorraTodo Chic | <a href="#" style="color: #10B981;">Legal</a></span>
 </div>
 
 <script>
@@ -138,143 +134,179 @@ const stores = [
         id: "ebay",
         name: "eBay",
         category: ["Moda", "Tech"],
-        color: "#E53238",
-        logo: "ebay",
+        brandColor: "#E53238",
+        brandText: "#ffffff",
+        logoLetter: "ebay",
         products: ["👟", "💎", "⌚"],
         description: "Subastas y compras verificadas",
-        link: "#"
+        link: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1"
     },
     {
         id: "fitory",
         name: "Fitory",
         category: ["Moda"],
-        color: "#FF3B8D",
-        logo: "F",
+        brandColor: "#FF3B8D",
+        brandText: "#ffffff",
+        logoLetter: "F",
         products: ["👗", "👠", "👜"],
         description: "Colección de moda seleccionada",
-        link: "#"
+        link: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
     },
     {
         id: "amazon",
         name: "Amazon",
         category: ["Tech", "Moda"],
-        color: "#FF9900",
-        logo: "a",
+        brandColor: "#FF9900",
+        brandText: "#000000",
+        logoLetter: "a",
         products: ["📦", "🎧", "📚"],
         description: "Variedad de productos",
-        link: "#"
+        link: "https://a.co/d/01PMHLaj"
     },
     {
         id: "oppo",
         name: "OPPO",
         category: ["Tech"],
-        color: "#0a0a0a",
-        logo: "OPPO",
+        brandColor: "#0a0a0a",
+        brandText: "#ffffff",
+        logoLetter: "OPPO",
         products: ["📱", "⌚", "🎧"],
         description: "Smartphones y electrónica",
-        link: "#"
+        link: "https://oppode.pxf.io/oNGWvO"
     },
     {
         id: "aliexpress",
         name: "AliExpress",
         category: ["Moda", "Tech", "Belleza"],
-        color: "#FF4747",
-        logo: "A",
+        brandColor: "#FF4747",
+        brandText: "#ffffff",
+        logoLetter: "A",
         products: ["👕", "👟", "🔧"],
         description: "Tienda online internacional",
-        link: "#"
+        link: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
     },
     {
         id: "alibaba",
         name: "Alibaba",
         category: ["Tech"],
-        color: "#FF6A00",
-        logo: "Alibaba",
+        brandColor: "#FF6A00",
+        brandText: "#ffffff",
+        logoLetter: "Alibaba",
         products: ["📦", "🏭", "🚚"],
         description: "Plataforma de compra mayorista",
-        link: "#"
+        link: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
     },
     {
         id: "tiktok",
         name: "TikTok Shop",
         category: ["Belleza", "Moda"],
-        color: "#000000",
-        logo: "TikTok",
+        brandColor: "#000000",
+        brandText: "#ffffff",
+        logoLetter: "TikTok",
         products: ["💄", "👕", "💅"],
         description: "Tienda integrada en la app",
-        link: "#"
+        link: "https://www.tiktok.com/t/ZT96rvjFfUYSm-lCzVZ/"
     },
     {
         id: "klook",
         name: "Klook",
         category: ["Viajes"],
-        color: "#00B8E6",
-        logo: "K",
+        brandColor: "#00B8E6",
+        brandText: "#ffffff",
+        logoLetter: "K",
         products: ["✈️", "🏖️", "🎭"],
         description: "Experiencias y tours",
-        link: "#"
+        link: "https://klook.tpx.lt/5L2UeosB"
     },
     {
         id: "wooeye",
         name: "WooEye",
         category: ["Belleza"],
-        color: "#D946A6",
-        logo: "W",
+        brandColor: "#D946A6",
+        brandText: "#ffffff",
+        logoLetter: "W",
         products: ["👁️", "✨", "🎨"],
         description: "Lentes de contacto",
-        link: "#"
+        link: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
     },
     {
         id: "temu",
         name: "Temu",
         category: ["Moda"],
-        color: "#FF0000",
-        logo: "T",
+        brandColor: "#FF0000",
+        brandText: "#ffffff",
+        logoLetter: "T",
         products: ["🛍️", "💎", "👕"],
         description: "Plataforma de compras",
-        link: "#"
+        link: "https://temu.to/k/p3t3h4hf35v"
     }
+];
+
+const categories = [
+    { id: "Todos", label: "🔥 Todos" },
+    { id: "Moda", label: "👗 Moda" },
+    { id: "Tech", label: "📱 Tech" },
+    { id: "Belleza", label: "✨ Belleza" },
+    { id: "Viajes", label: "✈️ Viajes" }
 ];
 
 let currentCategory = "Todos";
 
-function filterCategory(cat) {
-    currentCategory = cat;
-    document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+function renderCategories() {
+    const container = document.getElementById("categoryTabs");
+    container.innerHTML = categories.map(cat => `
+        <button class="category-btn ${cat.id === "Todos" ? "active" : ""}" 
+                onclick="filterCategory('${cat.id}')" 
+                style="margin-top: 16px;">
+            ${cat.label}
+        </button>
+    `).join("");
+}
+
+function filterCategory(category) {
+    currentCategory = category;
+    document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
     event.target.classList.add("active");
     renderStores();
 }
 
 function renderStores() {
-    const search = document.getElementById("search").value.toLowerCase();
-    const filtered = stores.filter(s => {
-        const matchCat = currentCategory === "Todos" || s.category.includes(currentCategory);
-        const matchSearch = s.name.toLowerCase().includes(search) || s.description.toLowerCase().includes(search);
-        return matchCat && matchSearch;
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const filtered = stores.filter(store => {
+        const matchCategory = currentCategory === "Todos" || store.category.includes(currentCategory);
+        const matchSearch = store.name.toLowerCase().includes(searchTerm) || 
+                           store.description.toLowerCase().includes(searchTerm);
+        return matchCategory && matchSearch;
     });
 
-    const html = filtered.map(s => `
+    const grid = document.getElementById("storesGrid");
+    grid.innerHTML = filtered.map(store => `
         <div class="store-card">
-            <div style="display:flex;gap:12px;">
-                <div class="store-logo" style="background-color:${s.color};color:white;">
-                    ${s.logo}
+            <div style="display: flex; gap: 12px;">
+                <div class="store-logo" style="background-color: ${store.brandColor};">
+                    ${store.logoLetter}
                 </div>
                 <div class="store-emoji-grid">
-                    ${s.products.map((p,i) => `<div class="emoji-box">${p}</div>`).join('')}
+                    ${store.products.map(emoji => `<div class="emoji-box">${emoji}</div>`).join("")}
                 </div>
             </div>
-            <div class="store-name">${s.name}</div>
+            
+            <div class="store-name">${store.name}</div>
             <div class="affiliate-tag">💰 Afiliado</div>
-            <p class="store-description">${s.description}</p>
-            <a href="${s.link}" class="btn-store">Ver →</a>
+            <p class="store-description">${store.description}</p>
+            
+            <a href="${store.link}" target="_blank" class="btn-store">
+                Ver →
+            </a>
         </div>
-    `).join('');
-    
-    document.getElementById("stores").innerHTML = html || '<p style="grid-column:1/-1;text-align:center;color:#a0aec0;">No encontramos resultados</p>';
+    `).join("");
 }
 
-document.getElementById("search").addEventListener("input", renderStores);
+// Init
+renderCategories();
 renderStores();
+
+document.getElementById("searchInput").addEventListener("input", renderStores);
 </script>
 
 </body>
