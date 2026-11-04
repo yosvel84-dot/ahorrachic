@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Terminal Cuántica & Directorio de Equipos Esenciales para Cuba y Familias en Amazon.">
-    <title>AhorraTodo Chic // QUANTUM HUD 3D</title>
+    <meta name="description" content="AhorraTodo Chic - Guía y directorio de equipos esenciales para Cuba y familias: splits inverter, lavadoras portátiles, plantas eléctricas, radios de manivela, ventiladores solares, zapatillas, ropa de marca y medicamentos en Amazon.">
+    <title>AhorraTodo Chic | Equipos Esenciales, Zapatillas, Ropa &amp; Medicinas Amazon</title>
     <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#020408&quot;,&quot;theme_color&quot;:&quot;#00f0ff&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
     <meta name="theme-color" content="#00f0ff">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -78,24 +78,44 @@
             margin: 0 auto;
             padding: 18px 14px 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
         }
+        
+        /* LOGO OFICIAL AHORRATODO CHIC */
+        .brand-logo-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.1em, 2vw, 1.45em);
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .logo-ahorra {color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}
+        .logo-chic {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-magenta) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px var(--neon-cyan));
+        }
+
         .amazon-partner-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             background: rgba(0, 240, 255, 0.08);
             border: 1px solid var(--neon-cyan);
-            padding: 7px 20px;
+            padding: 7px 18px;
             border-radius: 4px;
-            font-size: 0.85em;
+            font-size: 0.82em;
             color: var(--neon-cyan);
             font-family: 'Orbitron', sans-serif;
             box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
-            clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
         }
         .live-dot {
             width: 9px; height: 9px;
@@ -112,14 +132,14 @@
             background: transparent;
             color: var(--neon-cyan);
             border: 1px solid var(--neon-cyan);
-            padding: 9px 22px;
+            padding: 8px 18px;
             cursor: pointer;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 0.85em;
+            font-size: 0.82em;
             font-family: 'Orbitron', sans-serif;
             transition: all 0.3s;
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
         }
         .lang-btn:hover {
             background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
@@ -148,6 +168,26 @@
             position: relative;
             backdrop-filter: blur(14px);
         }
+        
+        /* LOGO PRINCIPAL HERO */
+        .hero-brand-title {
+            font-size: clamp(2.2em, 5.8vw, 4em);
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        .hero-brand-title .brand-ahorra {
+            color: #ffffff;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+        }
+        .hero-brand-title .brand-chic {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-magenta) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px var(--neon-cyan));
+        }
+
         .hero-badge {
             display: inline-block;
             background: linear-gradient(90deg, rgba(255, 0, 85, 0.25), rgba(157, 0, 255, 0.25));
@@ -158,21 +198,21 @@
             font-weight: 800;
             padding: 7px 20px;
             border-radius: 50px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             box-shadow: 0 0 20px rgba(255, 0, 85, 0.45);
             letter-spacing: 1.5px;
         }
         .hero-title {
-            font-size: clamp(1.85em, 4.6vw, 3.4em);
-            font-weight: 900;
-            color: #ffffff;
+            font-size: clamp(1.4em, 3.2vw, 2.2em);
+            font-weight: 800;
+            color: #e2e8f0;
             margin-bottom: 16px;
-            line-height: 1.2;
-            text-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+            line-height: 1.25;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
         }
         .hero-title span.accent-green {
             color: var(--neon-cyan);
-            text-shadow: 0 0 25px var(--neon-cyan), 0 0 50px var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
         }
         .hero-subtitle {
             font-size: clamp(0.95em, 1.8vw, 1.15em);
@@ -648,6 +688,7 @@
             .sidebar {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;}
         }
         @media(max-width: 640px) {
+            .top-bar {justify-content: center; gap: 12px;}
             .category-tabs {
                 gap: 6px;
                 padding-bottom: 8px;
@@ -672,17 +713,23 @@
 <!-- COMPLIANCE BANNER AMAZON -->
 <div class="compliance-banner">
     <strong><span class="es-text">⚡ PROTOCOLO OFICIAL AMAZON ASSOCIATES:</span><span class="en-text">⚡ OFFICIAL AMAZON ASSOCIATES PROTOCOL:</span></strong>
-    <span class="es-text">En calidad de Afiliado de Amazon, obtengo ingresos por compras adscritas. Precios y stock sincronizados en vivo por Amazon.com.</span>
-    <span class="en-text">As an Amazon Associate I earn from qualifying purchases. Real-time prices &amp; inventory synced with Amazon.com.</span>
+    <span class="es-text">En calidad de Afiliado de Amazon, obtengo ingresos por compras adscritas que cumplen los requisitos aplicables. Los precios y disponibilidad son determinados exclusivamente por Amazon.com.</span>
+    <span class="en-text">As an Amazon Associate I earn from qualifying purchases. Prices and availability are determined exclusively by Amazon.com.</span>
 </div>
 
-<!-- TOP BAR -->
+<!-- TOP BAR CON LOGO AHORRATODO CHIC -->
 <div class="top-bar">
+    <a href="#" class="brand-logo-top">
+        <span class="logo-ahorra">AHORRATODO</span>
+        <span class="logo-chic">CHIC</span>
+    </a>
+    
     <div class="amazon-partner-badge">
         <span class="live-dot"></span>
         <span class="es-text">TERMINAL CUBA // <span id="todayDateEs"></span></span>
         <span class="en-text">CUBA TERMINAL // <span id="todayDateEn"></span></span>
     </div>
+    
     <button class="lang-btn" onclick="toggleLanguage()">
         <span class="es-text">🌐 ENGLISH MODE</span>
         <span class="en-text">🌐 MODO ESPAÑOL</span>
@@ -690,32 +737,37 @@
 </div>
 
 <div class="main-wrapper">
-    <!-- HERO 3D -->
+    <!-- HERO CON NOMBRE OFICIAL AHORRATODO CHIC -->
     <div class="hero-section">
-        <div class="hero-badge"><span class="es-text">🚀 DIRECTO AL FUTURO: ENVÍOS &amp; EQUIPOS CUBA 2026</span><span class="en-text">🚀 FUTURE READY: CUBA GEAR &amp; DISPATCH 2026</span></div>
+        <div class="hero-brand-title">
+            <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
+        </div>
+        
+        <div class="hero-badge"><span class="es-text">⚡ GUÍA OFICIAL DE EQUIPOS &amp; ENVÍOS FAMILIARES 2026</span><span class="en-text">⚡ OFFICIAL FAMILY GEAR &amp; DISPATCH 2026</span></div>
+        
         <h1 class="hero-title">
             <span class="es-text">Equipos Esenciales para Cuba en <span class="accent-green">Amazon</span></span>
             <span class="en-text">Essential Cuba Gear on <span class="accent-green">Amazon</span></span>
         </h1>
         <p class="hero-subtitle">
-            <span class="es-text">Matriz de selección avanzada: mini splits inverter de consumo ultra reducido, generadores de apagón, estaciones LiFePO4, telecomunicaciones solares, calzado y medicina prioritaria.</span>
-            <span class="en-text">Advanced equipment matrix: ultra-low draw inverter splits, blackout power generators, LiFePO4 power stations, solar radios, footwear, and priority healthcare.</span>
+            <span class="es-text">Selección recomendada de aires split inverter de bajo consumo, lavadoras portátiles, plantas eléctricas para apagones, radios de emergencia a manivela, ventiladores solares, zapatillas de marca, ropa y medicinas con entrega rápida.</span>
+            <span class="en-text">Curated selection of low-draw inverter mini-splits, portable washing machines, power generators, emergency hand-crank radios, solar gear, brand sneakers, clothing, and medicines on Amazon.</span>
         </p>
         <div class="trust-pills">
-            <div class="trust-pill">⚡ <strong><span class="es-text">Ultra Bajo Consumo</span><span class="en-text">Low Energy Matrix</span></strong></div>
-            <div class="trust-pill">🛡️ <strong><span class="es-text">Garantía Prime A-to-Z</span><span class="en-text">Prime A-to-Z Shield</span></strong></div>
-            <div class="trust-pill">📦 <strong><span class="es-text">Despacho Ultra Rápido</span><span class="en-text">Hyper Fast Delivery</span></strong></div>
+            <div class="trust-pill">⚡ <strong><span class="es-text">Bajo Consumo Eléctrico</span><span class="en-text">Low Energy Matrix</span></strong></div>
+            <div class="trust-pill">🛡️ <strong><span class="es-text">Garantía de la A a la Z</span><span class="en-text">A-to-Z Shield</span></strong></div>
+            <div class="trust-pill">📦 <strong><span class="es-text">Envío Prime Rápido</span><span class="en-text">Fast Prime Delivery</span></strong></div>
         </div>
     </div>
 
     <!-- NOTICE BAR HUD -->
     <div class="notice-bar">
         <div class="notice-left">
-            <span>🛡️ <span class="es-text">Sincronización cuántica de precios y stock con los servidores de Amazon</span><span class="en-text">Quantum pricing &amp; inventory sync via Amazon direct cloud</span></span>
+            <span>🛡️ <span class="es-text">Precios y disponibilidad actualizados en vivo al pulsar cada botón oficial de Amazon</span><span class="en-text">Live prices and availability updated when clicking any official Amazon button</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">● ENLACES 100% SEGUROS</span>
-            <span class="en-text">● 100% SECURE LINKS</span>
+            <span class="es-text">✓ ENLACES DIRECTOS VERIFICADOS</span>
+            <span class="en-text">✓ VERIFIED DIRECT LINKS</span>
         </div>
     </div>
 
@@ -726,32 +778,32 @@
             <div class="controls-card">
                 <div class="search-input-wrap">
                     <span class="search-icon">⚡</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Escribe para escanear catálogo (nike, inverter, generador, tylenol, solar)..." oninput="handleSearch()">
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..." oninput="handleSearch()">
                 </div>
                 
                 <!-- BANNER DINÁMICO DE BÚSQUEDA -->
                 <div class="dynamic-search-banner" id="dynamicSearchBanner">
                     <div style="font-size: 0.9em;">
-                        <span class="es-text">¿Filtrar <strong>"<span id="searchKeyword"></span>"</strong> en la base global de Amazon?</span>
-                        <span class="en-text">Search <strong>"<span id="searchKeywordEn"></span>"</strong> in Amazon global base?</span>
+                        <span class="es-text">¿Buscando <strong>"<span id="searchKeyword"></span>"</strong> en todo el catálogo de Amazon?</span>
+                        <span class="en-text">Searching <strong>"<span id="searchKeywordEn"></span>"</strong> in full Amazon catalog?</span>
                     </div>
                     <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-direct-amazon" id="dynamicAmazonLink">
-                        <span class="es-text">LANZAR ENLACE OFICIAL →</span>
-                        <span class="en-text">LAUNCH OFFICIAL LINK →</span>
+                        <span class="es-text">VER RESULTADOS EN AMAZON →</span>
+                        <span class="en-text">VIEW RESULTS ON AMAZON →</span>
                     </a>
                 </div>
 
                 <div class="category-tabs">
-                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">⚡ TODOS</span><span class="en-text">⚡ ALL</span></button>
-                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas</span><span class="en-text">👟 Sneakers</span></button>
-                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa</span><span class="en-text">👕 Apparel</span></button>
-                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Salud</span><span class="en-text">💊 Health</span></button>
+                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todo</span><span class="en-text">🔥 All</span></button>
+                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas de Marca</span><span class="en-text">👟 Brand Sneakers</span></button>
+                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa de Marca</span><span class="en-text">👕 Brand Clothing</span></button>
+                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Medicinas &amp; Salud</span><span class="en-text">💊 Meds &amp; Health</span></button>
                     <button class="cat-btn" onclick="selectCat('electro', this)"><span class="es-text">❄️ Splits &amp; Lavadoras</span><span class="en-text">❄️ AC &amp; Washers</span></button>
-                    <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">🔋 Baterías &amp; Plantas</span><span class="en-text">🔋 Power Matrix</span></button>
-                    <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">☀️ Solar &amp; Brisa</span><span class="en-text">☀️ Solar Gear</span></button>
-                    <button class="cat-btn" onclick="selectCat('emergencia', this)"><span class="es-text">📻 Radios Apagón</span><span class="en-text">📻 Radios</span></button>
-                    <button class="cat-btn" onclick="selectCat('tech', this)"><span class="es-text">📱 Tech Liberada</span><span class="en-text">📱 Tech</span></button>
-                    <button class="cat-btn" onclick="selectCat('motos', this)"><span class="es-text">🏍️ Motos &amp; Herramientas</span><span class="en-text">🏍️ Tools</span></button>
+                    <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">⚡ Plantas &amp; Baterías</span><span class="en-text">⚡ Power &amp; Batteries</span></button>
+                    <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">💨 Ventiladores &amp; Solar</span><span class="en-text">💨 Solar &amp; Fans</span></button>
+                    <button class="cat-btn" onclick="selectCat('emergencia', this)"><span class="es-text">📻 Radios &amp; Linternas</span><span class="en-text">📻 Radios &amp; Lights</span></button>
+                    <button class="cat-btn" onclick="selectCat('tech', this)"><span class="es-text">📱 Celulares &amp; Tech</span><span class="en-text">📱 Phones &amp; Tech</span></button>
+                    <button class="cat-btn" onclick="selectCat('motos', this)"><span class="es-text">🏍️ Motos &amp; Herramientas</span><span class="en-text">🏍️ Moto &amp; Tools</span></button>
                 </div>
             </div>
 
@@ -762,42 +814,42 @@
         <!-- SIDEBAR HUD -->
         <aside class="sidebar">
             <div class="amazon-box">
-                <h3 class="amazon-box-title">📦 <span class="es-text">OFERTAS AMAZON</span><span class="en-text">AMAZON DEALS</span></h3>
+                <h3 class="amazon-box-title">📦 <span class="es-text">Amazon Ofertas del Día</span><span class="en-text">Amazon Today's Deals</span></h3>
                 <p class="amazon-box-desc">
-                    <span class="es-text">Terminal directa a rebajas relámpago y liquidaciones de inventario oficial.</span>
-                    <span class="en-text">Direct gate to official lightning sales and surplus inventory.</span>
+                    <span class="es-text">Accede a miles de liquidaciones, rebajas de temporada y ofertas relámpago directamente en Amazon oficial.</span>
+                    <span class="en-text">Access thousands of clearances, seasonal sales, and lightning deals directly on official Amazon.</span>
                 </p>
                 <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-amz-today">
-                    <span class="es-text">ABRIR AMAZON HUB →</span>
-                    <span class="en-text">OPEN AMAZON HUB →</span>
+                    <span class="es-text">ABRIR AMAZON OFICIAL →</span>
+                    <span class="en-text">OPEN OFFICIAL AMAZON →</span>
                 </a>
             </div>
 
             <!-- YRT SOLUTIONS -->
             <div class="yrt-widget">
-                <span class="yrt-badge">PARTNER CERTIFICADO</span>
+                <span class="yrt-badge">⭐ Patrocinador Oficial</span>
                 <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
                 <p class="yrt-desc">
-                    <span class="es-text">Aires Acondicionados en Miami y Sur de la Florida. Instalación, reparación y diagnóstico 24/7.</span>
-                    <span class="en-text">AC Experts in Miami &amp; South Florida. 24/7 installation, maintenance &amp; repair.</span>
+                    <span class="es-text">Servicio profesional de Aires Acondicionados en Miami y todo el sur de Florida. Instalación, reparación y mantenimiento 24/7 con garantía.</span>
+                    <span class="en-text">Professional AC Services in Miami &amp; South Florida. 24/7 repair, installation, and maintenance with warranty.</span>
                 </p>
                 <a href="tel:+13054911906" class="yrt-tel">📞 305-491-1906</a>
                 <div class="yrt-buttons">
-                    <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20solicito%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
-                    <a href="tel:+13054911906" class="btn-call">Llamada</a>
+                    <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20necesito%20una%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
+                    <a href="tel:+13054911906" class="btn-call">Llamar</a>
                 </div>
             </div>
 
             <!-- ACTIVIDAD RADAR -->
             <div class="stats-widget">
-                <div class="stats-title"><span class="es-text">RADAR DE TRÁFICO EN VIVO</span><span class="en-text">LIVE TRAFFIC RADAR</span></div>
+                <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
                 <div class="stats-users">
                     <span class="live-dot"></span>
-                    <span id="activeUsers">32</span>
+                    <span id="activeUsers">26</span>
                 </div>
                 <div style="font-size: 0.8em; color: #94a3b8; margin-top: 6px;">
-                    <span class="es-text">Usuarios consultando ofertas en tiempo real</span>
-                    <span class="en-text">Active shoppers browsing right now</span>
+                    <span class="es-text">buscando en Amazon en tiempo real</span>
+                    <span class="en-text">browsing Amazon right now</span>
                 </div>
             </div>
         </aside>
@@ -805,35 +857,34 @@
 
     <!-- SECCIÓN LEGAL -->
     <div class="legal-box" id="legal">
-        <h3 class="legal-title"><span class="es-text">Transparencia &amp; Marco Legal</span><span class="en-text">Transparency &amp; Legal Frame</span></h3>
+        <h3 class="legal-title"><span class="es-text">Información Legal &amp; Transparencia</span><span class="en-text">Legal Disclosures &amp; Transparency</span></h3>
         <div class="legal-grid">
             <details class="legal-card">
-                <summary><span class="es-text">📦 Afiliado Amazon (FTC)</span><span class="en-text">📦 Amazon Associate (FTC)</span></summary>
+                <summary><span class="es-text">📦 Afiliado de Amazon (FTC)</span><span class="en-text">📦 Amazon Associate (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC. Obtengo comisiones por compras elegibles sin costo adicional para el usuario.</span>
-                    <span class="en-text">SaveEverything Chic is an Amazon Services LLC Associate. We earn commissions from qualifying purchases at zero extra cost to you.</span>
+                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC, un programa de publicidad para afiliados diseñado para proporcionar un medio para que los sitios web obtengan comisiones por publicidad y enlaces a Amazon.com. Esto no añade ningún costo a tus compras. Cumplimiento con FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. At no extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No procesamos cobros ni almacenamos stock directamente. Toda transacción se efectúa en los servidores protegidos de Amazon.com.</span>
-                    <span class="en-text">All financial transactions and warranties are operated directly by Amazon.com.</span>
+                    <span class="es-text">AhorraTodo Chic no es una tienda directa ni procesa pagos ni almacena inventario. Todos los precios, pedidos, envíos, garantías y devoluciones son gestionados exclusivamente por Amazon.com bajo sus propios términos de servicio.</span>
+                    <span class="en-text">SaveEverything Chic is not a store and processes no payments. All prices, orders, shipping, and returns are handled exclusively by Amazon.com under their terms of service.</span>
                 </div>
             </details>
             <details class="legal-card">
-                <summary><span class="es-text">🔒 Privacidad Cuántica</span><span class="en-text">🔒 Privacy Guard</span></summary>
+                <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy &amp; Cookies</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">Cero rastreo invasivo. Tu idioma de preferencia se almacena de forma local en tu terminal navegador.</span>
-                    <span class="en-text">No intrusive trackers. User preferences stored strictly in local memory.</span>
+                    <span class="es-text">No recopilamos datos personales sensibles, no vendemos información y no utilizamos cookies invasivas. Solo se guarda tu preferencia de idioma localmente en tu navegador. Cumplimiento GDPR / CCPA.</span>
+                    <span class="en-text">We do not collect sensitive personal data, sell information, or use invasive trackers. Only your language preference is saved locally. GDPR / CCPA compliant.</span>
                 </div>
             </details>
             <details class="legal-card">
-                <summary><span class="es-text">📍 Central de Operaciones</span><span class="en-text">📍 Operations HQ</span></summary>
+                <summary><span class="es-text">📍 Contacto &amp; Soporte</span><span class="en-text">📍 Contact &amp; Support</span></summary>
                 <div class="legal-card-body">
-                    AhorraTodo Chic • Miami, Florida, USA.<br>
-                    Email: ahorratodochic@gmail.com<br>
-                    Comms: +1 (305) 491-1906
+                    <span class="es-text">AhorraTodo Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com / yosvelreina@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
+                    <span class="en-text">SaveEverything Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com / yosvelreina@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
                 </div>
             </details>
         </div>
@@ -841,11 +892,11 @@
 </div>
 
 <footer class="footer">
-    <p>© <span id="yearCopy"></span> AhorraTodo Chic (SaveEverything Chic). Cyberdeck Terminal. Miami, FL. All Rights Reserved.</p>
+    <p>© <span id="yearCopy"></span> AhorraTodo Chic (SaveEverything Chic). Miami, FL. <span class="es-text">Todos los derechos reservados.</span><span class="en-text">All rights reserved.</span></p>
 </footer>
 
 <!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20deseo%20informacion%20de%20un%20producto" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
+<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20tengo%20una%20pregunta%20sobre%20una%20oferta" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
     💬
 </a>
 
@@ -858,169 +909,169 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-nike-revolution",
         cat: "zapatillas",
-        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras",
-        name_en: "Nike Men's & Women's Lightweight Athletic Sneakers",
-        desc_es: "Amortiguación reactiva de espuma, tracción de alta durabilidad y malla fresca de ventilación activa.",
-        desc_en: "Responsive foam cushion, heavy duty traction outsole, breathable mesh structure.",
+        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras y Resistentes",
+        name_en: "Nike Men's & Women's Lightweight Athletic Running Sneakers",
+        desc_es: "Amortiguación de espuma suave, suela de alta tracción y tejido de malla transpirable. Máxima comodidad para caminar o correr.",
+        desc_en: "Soft foam cushioning, durable traction outsole and breathable mesh fabric. Maximum daily and running comfort.",
         img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
         badge_es: "Top Marca Nike",
         badge_en: "Nike Top Brand",
-        feature_es: "Espuma Suave • Malla Fresca",
-        feature_en: "Soft Foam • Breathable",
+        feature_es: "Amortiguación suave • Malla fresca",
+        feature_en: "Soft Cushioning • Breathable Mesh",
         searchQuery: "nike running shoes sneakers men women"
     },
     {
         id: "amz-adidas-cloudfoam",
         cat: "zapatillas",
-        name_es: "Zapatillas Adidas Cloudfoam Pure Ultra Confort",
-        name_en: "Adidas Cloudfoam Pure All-Day Walking Sneakers",
-        desc_es: "Plantilla con memoria viscoelástica que neutraliza el impacto diario en jornadas prolongadas.",
-        desc_en: "Memory foam sockliner designed to absorb shock during extended standing & walking.",
+        name_es: "Zapatillas Adidas Cloudfoam Pure Cómodas de Caminar",
+        name_en: "Adidas Cloudfoam Pure Running & Walking Sneakers",
+        desc_es: "Plantilla viscoelástica ultra suave que se adapta al pie como un guante. Ideales para estar de pie y caminar todo el día.",
+        desc_en: "Ultra-soft memory foam footbed that hugs your foot. Perfect for standing all day and daily walks.",
         img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
         badge_es: "Máximo Confort",
         badge_en: "Max Comfort",
-        feature_es: "Suela Flexible • Cloudfoam",
-        feature_en: "Flexible Sole • Cloudfoam",
+        feature_es: "Plantilla Cloudfoam • Suela flexible",
+        feature_en: "Cloudfoam Sockliner • Flexible",
         searchQuery: "adidas cloudfoam sneakers men women"
     },
     {
         id: "amz-puma-smash",
         cat: "zapatillas",
-        name_es: "Zapatillas Puma Clásicas Urbanas de Cuero Genuino",
-        name_en: "Puma Classic Genuine Leather Casual Sneakers",
-        desc_es: "Construcción en cuero resistente al desgaste continuo y suela de alta adherencia antideslizante.",
-        desc_en: "Heavy-duty leather upper built for extreme wear resistance and non-marking traction.",
+        name_es: "Zapatillas Puma Clásicas Urbanas y Deportivas de Cuero",
+        name_en: "Puma Classic Leather Casual & Street Sneakers",
+        desc_es: "Estilo icónico y duradero, suela de goma anti-deslizante y materiales de alta calidad para máxima durabilidad diaria.",
+        desc_en: "Iconic durable street style, non-marking rubber outsole and premium leather construction.",
         img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80",
         badge_es: "Alta Durabilidad",
-        badge_en: "High Durability",
-        feature_es: "Cuero Robusto • Anti-Resbalón",
-        feature_en: "Rugged Leather • Anti-Slip",
+        badge_en: "Durable Leather",
+        feature_es: "Cuero resistente • Suela anti-resbalón",
+        feature_en: "Durable Leather • Anti-slip Sole",
         searchQuery: "puma smash sneakers shoes"
     },
     {
         id: "amz-skechers-slipins",
         cat: "zapatillas",
-        name_es: "Zapatillas Skechers Slip-ins Manos Libres",
+        name_es: "Zapatillas Skechers Slip-ins Manos Libres Cómodas",
         name_en: "Skechers Hands-Free Slip-ins Walking Shoes",
-        desc_es: "Calzado automático sin agacharse ni ajustar cordones. Amortiguación ortopédica superior.",
-        desc_en: "Hands-free easy step-in with orthopedic arch fit. Zero bending required.",
+        desc_es: "Se ponen solas sin agacharse ni atar cordones. Amortiguación ortopédica ideal para largas jornadas y personas mayores.",
+        desc_en: "Step in hands-free with no bending or tying. Orthopedic cushioning, perfect for walking and seniors.",
         img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Manos Libres",
+        badge_es: "Sin Agacharse",
         badge_en: "Hands-Free",
-        feature_es: "Sin Cordones • Arco Ortopédico",
-        feature_en: "No Laces • Arch Comfort",
+        feature_es: "Sin cordones • Suela ortopédica",
+        feature_en: "Slip-on • Arch Fit Comfort",
         searchQuery: "skechers slip-ins shoes sneakers"
     },
     {
         id: "amz-tommy-polo",
         cat: "ropa",
-        name_es: "Polos Clásicos Tommy Hilfiger Algodón Piqué",
+        name_es: "Polos Clásicos Tommy Hilfiger de Algodón Cuello Piqué",
         name_en: "Tommy Hilfiger Classic Pique Cotton Polo Shirts",
-        desc_es: "100% fibra natural de algodón transpirable con corte anatómico y emblema bordado de alta precisión.",
-        desc_en: "100% breathable natural cotton with classic tailored fit and iconic emblem.",
+        desc_es: "100% algodón suave y transpirable, corte clásico con logo bordado en el pecho. Elegante, fresco y duradero para climas cálidos.",
+        desc_en: "100% soft breathable pique cotton, classic fit with embroidered flag logo. Timeless, cool and durable.",
         img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Original 100%",
-        badge_en: "100% Authentic",
-        feature_es: "Algodón Puro • Fresco",
-        feature_en: "Pure Cotton • Cool Wear",
+        badge_es: "Marca Original",
+        badge_en: "Original Brand",
+        feature_es: "100% Algodón • Logo bordado",
+        feature_en: "100% Cotton • Embroidered Logo",
         searchQuery: "tommy hilfiger polo shirt men"
     },
     {
         id: "amz-levis-jeans",
         cat: "ropa",
-        name_es: "Jeans Levi's 505 Regular Fit Mezclilla Reforzada",
-        name_en: "Levi's Men's 505 Regular Fit Heavyweight Denim Jeans",
-        desc_es: "El pantalón vaquero estándar de máxima resistencia. Tela pesada indeformable para trabajo y diario.",
-        desc_en: "Legendary rugged denim built for demanding everyday wear and long-lasting shape.",
+        name_es: "Pantalones Jeans Levi's 505 / 501 Regular Fit Original",
+        name_en: "Levi's Men's 505 Regular Fit Classic Denim Jeans",
+        desc_es: "El vaquero más resistente y reconocido del mundo. Tela de mezclilla gruesa indeformable para máxima durabilidad de trabajo o salida.",
+        desc_en: "The world's most durable classic denim jeans. Heavyweight authentic denim built to last for years.",
         img: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
         badge_es: "Indestructible",
-        badge_en: "Ultra Rugged",
-        feature_es: "Corte Recto • Mezclilla Auténtica",
-        feature_en: "Straight Fit • Heavy Denim",
+        badge_en: "Durable Denim",
+        feature_es: "Mezclilla original • Corte recto",
+        feature_en: "Original Denim • Straight Leg",
         searchQuery: "levis 505 regular fit jeans men"
     },
     {
         id: "amz-sport-dryfit-pack",
         cat: "ropa",
-        name_es: "Pack Camisetas Dry-Fit Ultra Transpirables",
-        name_en: "Quick-Dry Moisture Wicking Athletic Tees Multi-Pack",
-        desc_es: "Tecnología hidrófuga que expulsa el sudor y calor al instante. No requieren plancha.",
-        desc_en: "Moisture-wicking microfibers keep body cool under high humidity. Wrinkle-free.",
+        name_es: "Pack Camisetas Deportivas Dry-Fit Frescas y Transpirables",
+        name_en: "Men's Moisture-Wicking Athletic Quick-Dry T-Shirts Pack",
+        desc_es: "Secado ultra rápido y anti-sudor. No necesitan planchado, no retienen calor y son ideales para climas calurosos.",
+        desc_en: "Moisture-wicking, quick-dry fabric. Wrinkle-free, lightweight and designed for hot weather and sports.",
         img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Anti-Calor",
-        badge_en: "Heat Defense",
-        feature_es: "Secado Rápido • Sin Plancha",
-        feature_en: "Quick Dry • Easy Care",
+        badge_es: "Frescas Anti-Calor",
+        badge_en: "Quick-Dry",
+        feature_es: "Secado ultra rápido • Sin plancha",
+        feature_en: "Quick dry • Anti-odor",
         searchQuery: "under armour moisture wicking t shirts men pack"
     },
     {
         id: "amz-ck-underwear",
         cat: "ropa",
-        name_es: "Pack Bóxers Calvin Klein Algodón Suave",
-        name_en: "Calvin Klein Cotton Classics Boxer Briefs Pack",
-        desc_es: "Banda elástica con soporte de alta resiliencia y tejido fresco que mantiene su forma lavado tras lavado.",
-        desc_en: "Signature elastic waistband with shape-retaining breathable stretch cotton.",
+        name_es: "Pack Ropa Interior Calvin Klein Boxer Briefs de Algodón",
+        name_en: "Calvin Klein Men's Cotton Classics Boxer Briefs Pack",
+        desc_es: "Pretina elástica emblemática, algodón puro suave y elástico que no se deforma tras lavadas constantes.",
+        desc_en: "Classic logo waistband, 100% breathable cotton offering all-day softness, flexibility and durable support.",
         img: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80",
         badge_es: "Pack Familiar",
-        badge_en: "Family Pack",
-        feature_es: "Algodón Suave • Pretina Firme",
-        feature_en: "Soft Cotton • Secure Band",
+        badge_en: "Value Pack",
+        feature_es: "Algodón elástico • Pretina suave",
+        feature_en: "Stretch Cotton • Soft Waistband",
         searchQuery: "calvin klein boxer briefs pack"
     },
     {
         id: "amz-tylenol-500",
         cat: "medicamentos",
-        name_es: "Acetaminofén 500mg Extra Fuerte Botiquín",
-        name_en: "Acetaminophen 500mg Extra Strength Pain Reliever",
-        desc_es: "Bloqueador rápido de fiebres, dolores musculares y cefaleas comunes. Esencial en envíos prioritarios.",
-        desc_en: "Rapid relief from fevers, headaches, and muscle aches. Vital health supply.",
+        name_es: "Acetaminofén 500mg Extra Fuerte (Frasco Familiar)",
+        name_en: "Acetaminophen 500mg Extra Strength Pain Reliever & Fever Reducer",
+        desc_es: "Alivia dolor de cabeza, dolores musculares, fiebres y malestares comunes. Esencial en cualquier botiquín y envíos familiares.",
+        desc_en: "Relieves headaches, body aches, muscle pain, and reduces fever fast. Essential household and family staple.",
         img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Esencial Salud",
-        badge_en: "Essential Med",
-        feature_es: "500mg • Alivio Inmediato",
-        feature_en: "500mg • Rapid Relief",
+        badge_es: "Básico de Botiquín",
+        badge_en: "Essential Medicine",
+        feature_es: "500mg • Rápido alivio fiebre y dolor",
+        feature_en: "500mg • Rapid Fever & Pain Relief",
         searchQuery: "acetaminophen 500 mg extra strength tylenol"
     },
     {
         id: "amz-ibuprofen-200",
         cat: "medicamentos",
-        name_es: "Ibuprofeno 200mg Antiinflamatorio Potente",
-        name_en: "Ibuprofen 200mg Anti-Inflammatory Tablets",
-        desc_es: "Neutraliza inflamaciones, dolor articular, odontalgia y malestar general. Envase de alta cantidad.",
-        desc_en: "Relieves joint swelling, toothaches, body aches and systemic inflammation.",
+        name_es: "Ibuprofeno 200mg Antiinflamatorio y Alivio del Dolor",
+        name_en: "Ibuprofen 200mg Tablets Pain Reliever / Fever Reducer",
+        desc_es: "Combate inflamación, dolores de muelas, artritis, espalda y fiebres. Bote grande de alta duración.",
+        desc_en: "Anti-inflammatory pain relief for joint aches, toothaches, back pain and fever.",
         img: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80",
         badge_es: "Antiinflamatorio",
-        badge_en: "Anti-Inflammatory",
-        feature_es: "200mg • Dolor Articular",
-        feature_en: "200mg • Joint Care",
+        badge_en: "Anti-inflammatory",
+        feature_es: "200mg • Articulaciones y dolor",
+        feature_en: "200mg • Joint & Muscle Relief",
         searchQuery: "ibuprofen 200 mg pain reliever tablets"
     },
     {
         id: "amz-centrum-silver",
         cat: "medicamentos",
-        name_es: "Multivitamínico Completo Centrum Silver 50+",
-        name_en: "Centrum Silver Multivitamin for Adults 50+ Minerals",
-        desc_es: "Refuerzo inmunológico y óseo: Zinc, Vitaminas D3, Complejo B12 y Calcio para adultos mayores.",
-        desc_en: "Immune and bone matrix: Zinc, Vitamin D3, B-complex and Calcium for seniors.",
+        name_es: "Multivitamínico Completo Centrum Silver Adultos 50+",
+        name_en: "Centrum Silver Multivitamin for Adults 50+ Minerals & Vitamins",
+        desc_es: "Vitaminas A, C, D3, B12, Zinc y Calcio. Refuerza defensas, el corazón, la visión y la vitalidad de adultos mayores.",
+        desc_en: "Complete daily vitamins & minerals with Zinc, Vitamin D3 and B-complex to support heart, eyes and bones.",
         img: "https://images.unsplash.com/photo-1577401239170-897942555fb3?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Sistema Inmune",
-        badge_en: "Immune Boost",
-        feature_es: "Zinc + D3 + B12 • Vitalidad",
-        feature_en: "Zinc + D3 + B12 • Vitality",
+        badge_es: "Defensas & Vitalidad",
+        badge_en: "Immune Support",
+        feature_es: "Zinc + D3 + B12 • Sistema inmune",
+        feature_en: "Zinc + D3 + B12 • Heart & Bones",
         searchQuery: "centrum silver multivitamin adults 50 plus"
     },
     {
         id: "amz-tensiometro-digital",
         cat: "medicamentos",
-        name_es: "Tensiómetro Digital LCD con Detección Arritmia",
-        name_en: "Digital Upper Arm Blood Pressure Monitor & Pulse",
-        desc_es: "Lectura digital precisa de pulso y presión sistólica/diastólica. Funciona a baterías o conexión USB.",
-        desc_en: "Accurate blood pressure and arrhythmia monitor with large backlit LCD display.",
+        name_es: "Tensiómetro Digital Automático de Brazo con Pantalla LCD",
+        name_en: "Automatic Digital Blood Pressure Monitor with Large Cuff",
+        desc_es: "Mide presión arterial y pulso con un solo toque. Pantalla grande iluminada, detector de arritmias y memoria. Funciona a pilas o USB.",
+        desc_en: "Accurate one-touch blood pressure and pulse monitor. Large backlit display, arrhythmia detection, dual memory.",
         img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Diagnóstico LCD",
-        badge_en: "LCD Diagnostic",
-        feature_es: "Brazalete Amplio • Memoria",
-        feature_en: "Large Cuff • Dual Memory",
+        badge_es: "Control Médico",
+        badge_en: "Health Essential",
+        feature_es: "Pantalla LCD • Detección de arritmias",
+        feature_en: "LCD Display • Irregular Heartbeat",
         searchQuery: "digital blood pressure monitor upper arm"
     },
     {
@@ -1028,13 +1079,13 @@ const AMAZON_DEALS_DATABASE = [
         cat: "medicamentos",
         name_es: "Botiquín de Primeros Auxilios Completo 200+ Piezas",
         name_en: "Complete First Aid Kit 200+ Pieces Medical Supplies",
-        desc_es: "Estuche impermeable con gasas estériles, vendas, curitas, toallitas antisépticas, tijeras y pinzas.",
-        desc_en: "Waterproof pouch with bandages, antiseptic wipes, gauze pads, scissors and first aid tools.",
+        desc_es: "Estuche impermeable con gasas estériles, vendas, curitas, toallitas antisépticas, tijeras y pinzas para emergencias en casa.",
+        desc_en: "Waterproof pouch with bandages, antiseptic wipes, gauze pads, scissors and emergency first aid tools.",
         img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80",
         badge_es: "200+ Piezas",
         badge_en: "200+ Pieces",
-        feature_es: "Estuche Resistente • Gasas y Vendas",
-        feature_en: "Waterproof Case • Sterile Supplies",
+        feature_es: "Estuche resistente • Gasas y vendas",
+        feature_en: "Waterproof case • Sterile Supplies",
         searchQuery: "first aid kit medical emergency supplies"
     },
     {
@@ -1042,50 +1093,50 @@ const AMAZON_DEALS_DATABASE = [
         cat: "electro",
         name_es: "Aire Acondicionado Mini Split Inverter 12,000 BTU 115V",
         name_en: "Mini Split Inverter Air Conditioner 12,000 BTU 115V",
-        desc_es: "Compresor de modulación ultra eficiente. Enfría velozmente con mínimo amperaje, ideal para plantas.",
-        desc_en: "Ultra-low draw inverter compressor. Cools rapidly and handles voltage fluctuations flawlessly.",
+        desc_es: "Tecnología inverter de ultra bajo consumo eléctrico. Enfría habitaciones rápido y trabaja perfecto con plantas o voltaje inestable.",
+        desc_en: "High-efficiency inverter mini split. Cools fast with minimum electric draw, ideal for voltage fluctuations.",
         img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Ultra Eficiente",
-        badge_en: "Ultra Efficient",
-        feature_es: "115V Inverter • Silencioso",
-        feature_en: "115V Inverter • Ultra Quiet",
+        badge_es: "Bajo Consumo",
+        badge_en: "Low Energy Draw",
+        feature_es: "Inverter 115V • Ultra silencioso",
+        feature_en: "Inverter 115V • Ultra Quiet",
         searchQuery: "mini split air conditioner 12000 btu 115v inverter"
     },
     {
         id: "amz-lavadora-portatil",
         cat: "electro",
-        name_es: "Lavadora Portátil Doble Tina con Centrífuga",
+        name_es: "Lavadora Portátil Automática Doble Tina con Centrifugado",
         name_en: "Portable Twin Tub Washing Machine with Spin Dryer",
-        desc_es: "Lava y centrifuga casi seca la ropa en minutos sin necesidad de tubería fija ni alta presión.",
-        desc_en: "Fast wash & high-RPM spin dryer. Zero fixed plumbing required, ultra water-efficient.",
+        desc_es: "Lava y exprime ropa rápido ahorrando agua y corriente. Compacta, ligera y perfecta para casas sin instalación fija de plomería.",
+        desc_en: "Compact twin tub washer and spinner. Saves water and power, ideal for apartments or off-grid plumbing.",
         img: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Ahorro Hídrico",
+        badge_es: "Ahorro de Agua",
         badge_en: "Water Saver",
-        feature_es: "Doble Tina • Secado Rápido",
-        feature_en: "Twin Tub • Fast Spin",
+        feature_es: "Doble tina • Centrifugado rápido",
+        feature_en: "Twin tub • Fast Spin Dryer",
         searchQuery: "portable washing machine twin tub spin dryer"
     },
     {
         id: "amz-radio-manivela",
         cat: "emergencia",
-        name_es: "Radio Solar y Manivela de Emergencia AM/FM/SW",
-        name_en: "Emergency Solar & Hand-Crank Radio AM/FM/SW Charger",
-        desc_es: "Energía inagotable: manivela cinética, celda solar y batería USB. Sintoniza noticias en apagones.",
-        desc_en: "Infinite power: kinetic hand-crank, solar cell & power bank. Tunes all frequencies.",
+        name_es: "Radio de Emergencia Solar AM/FM/SW a Manivela con Linterna",
+        name_en: "Emergency Solar Hand Crank Radio AM/FM/SW with Flashlight",
+        desc_es: "Nunca se queda sin batería: se recarga con manivela, panel solar o USB. Sintoniza noticias durante apagones y recarga celulares.",
+        desc_en: "Never dies: charges by hand crank, solar, or USB. Tunes news during blackouts and charges smartphones.",
         img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Zero Apagones",
-        badge_en: "Blackout Shield",
-        feature_es: "Manivela + Solar • Linterna",
-        feature_en: "Crank + Solar • LED Torch",
+        badge_es: "Vital para Apagones",
+        badge_en: "Blackout Must-Have",
+        feature_es: "Manivela + Solar • Carga teléfonos",
+        feature_en: "Crank + Solar • Phone Charger",
         searchQuery: "emergency hand crank solar radio am fm flashlight"
     },
     {
         id: "amz-linterna-tactica",
         cat: "emergencia",
-        name_es: "Linterna LED Táctica Recargable 10,000 Lúmenes",
+        name_es: "Linterna LED Táctica Recargable 10,000 Lúmenes Potente",
         name_en: "High-Powered Tactical Rechargeable LED Flashlight",
-        desc_es: "Ilumina distancias gigantescas. Resistente a golpes, agua y con batería recargable de alta duración.",
-        desc_en: "Ultra bright tactical flashlight. Water resistant, durable aluminum body, and long-lasting battery.",
+        desc_es: "Ilumina distancias gigantescas. Resistente a golpes, agua y con batería recargable que dura días de uso continuo.",
+        desc_en: "Ultra bright tactical flashlight. Water resistant, durable aluminum body, and long-lasting rechargeable battery.",
         img: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80",
         badge_es: "Alta Potencia",
         badge_en: "High Power",
@@ -1096,57 +1147,57 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-gen-inverter",
         cat: "energia",
-        name_es: "Generador Inverter Silencioso 2500W Gasolina",
-        name_en: "Quiet 2500W Portable Inverter Generator Low-Fuel",
-        desc_es: "Tecnología de onda senoidal pura que protege refrigeradores y splits. Consumo mínimo de combustible.",
-        desc_en: "Pure sine wave power safe for sensitive electronics and inverter AC units with minimal fuel consumption.",
+        name_es: "Generador Eléctrico Inverter Silencioso 2500W Gasolina",
+        name_en: "Quiet Inverter Generator 2500W Portable Gas Powered",
+        desc_es: "El salvavidas para apagones continuos. Silencioso, gasta poquísima gasolina y es seguro para refrigeradores, splits y TV.",
+        desc_en: "Essential for extended power outages. Ultra quiet, fuel-efficient and safe for sensitive home appliances.",
         img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Top Planta",
-        badge_en: "Top Generator",
-        feature_es: "Silencioso • Onda Pura",
-        feature_en: "Quiet • Pure Sine Wave",
+        badge_es: "Top Apagones",
+        badge_en: "Top Blackout Pick",
+        feature_es: "Bajo consumo • Silencioso",
+        feature_en: "Low fuel • Quiet",
         searchQuery: "inverter generator portable 2500w"
     },
     {
         id: "amz-power-station",
         cat: "energia",
-        name_es: "Estación de Energía LiFePO4 600W Salida 110V AC",
-        name_en: "Portable LiFePO4 Power Station 600W AC Outlet Solar",
-        desc_es: "Batería química de 3000+ ciclos sin humo ni ruidos. Alimenta ventiladores, luces y laptops.",
-        desc_en: "Heavy-duty 3000+ cycle LiFePO4 battery with 110V AC outlet. Powers lights and fans silently.",
+        name_es: "Estación de Energía LiFePO4 600W con Salida 110V AC",
+        name_en: "Portable LiFePO4 Power Station 600W Solar Compatible",
+        desc_es: "Batería de litio recargable con enchufe 110V AC. Enciende bombillos, ventiladores y carga laptops sin gasolina, humo ni ruido.",
+        desc_en: "Rechargeable LiFePO4 battery with AC outlet. Powers lights, fans, and electronics quietly with zero fumes.",
         img: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80",
         badge_es: "Batería Solar",
         badge_en: "Solar Battery",
-        feature_es: "110V AC • Cero Humo",
+        feature_es: "Salida 110V • Sin ruido ni humo",
         feature_en: "110V AC • Zero Noise",
         searchQuery: "portable power station lifepo4 600w"
     },
     {
         id: "amz-fan-solar",
         cat: "solar",
-        name_es: "Ventilador Solar Recargable con Panel 24h Brisa",
-        name_en: "Solar Rechargeable High-Velocity Fan with Solar Panel",
-        desc_es: "Hasta 24 horas continuas de flujo de aire para noches sin electricidad. Incluye panel solar externo.",
-        desc_en: "Up to 24-hour runtime per charge. Includes solar capture panel and USB device charging.",
+        name_es: "Ventilador Recargable Solar con Panel y Luces LED",
+        name_en: "Solar Rechargeable Fan with Solar Panel & LED Bulbs",
+        desc_es: "Batería de larga duración de 12 a 24 horas continuas para dormir con brisa en los apagones. Incluye panel solar y puerto USB.",
+        desc_en: "Long life battery (12-24 hrs runtime). Includes solar panel, USB phone charger and lighting.",
         img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80",
-        badge_es: "24h Duración",
-        badge_en: "24h Runtime",
-        feature_es: "Panel Solar • Puerto USB",
-        feature_en: "Solar Panel • USB Port",
+        badge_es: "Más Vendido",
+        badge_en: "Best Seller",
+        feature_es: "Batería 24h • Panel solar incluido",
+        feature_en: "24h Battery • Solar panel included",
         searchQuery: "solar rechargeable fan with panel led light"
     },
     {
         id: "amz-solar-bulbs",
         cat: "solar",
-        name_es: "Pack 4 Bombillos Solares Recargables con Control",
+        name_es: "Pack 4 Bombillos Solares Recargables con Control Remoto",
         name_en: "Pack of 4 Solar Rechargeable Bulbs with Remote Control",
-        desc_es: "Se recargan con luz solar durante el día y brindan iluminación continua toda la noche sin gastar luz.",
+        desc_es: "Se recargan con luz solar durante el día y brindan iluminación continua toda la noche en cualquier habitación sin gastar luz.",
         desc_en: "Charges during daytime with solar panel, provides dependable illumination throughout the night.",
         img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
         badge_es: "Pack Ahorro",
         badge_en: "Budget Pack",
-        feature_es: "Carga Solar • Control Remoto",
-        feature_en: "Solar Charge • Remote",
+        feature_es: "Carga solar • Control remoto",
+        feature_en: "Solar charge • Remote",
         searchQuery: "solar rechargeable light bulbs pack remote"
     },
     {
@@ -1154,8 +1205,8 @@ const AMAZON_DEALS_DATABASE = [
         cat: "tech",
         name_es: "Teléfono Inteligente Liberado 128GB Batería 5000mAh",
         name_en: "Unlocked Smartphone 128GB Dual SIM 5000mAh Battery",
-        desc_es: "Compatible con redes de USA y Cubacel. Doble ranura SIM, gran pantalla y batería de larga duración.",
-        desc_en: "Unlocked for global carriers, dual SIM for Cuba, massive battery life, and crisp HD display.",
+        desc_es: "Compatible con todas las redes en USA, Cuba y el Caribe. Doble SIM para Cubacel, gran pantalla y batería para varios días.",
+        desc_en: "Unlocked for global carriers, dual SIM, massive battery life, and crisp HD display.",
         img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
         badge_es: "Liberado Global",
         badge_en: "Global Unlocked",
@@ -1166,9 +1217,9 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-powerbank-solar",
         cat: "tech",
-        name_es: "Batería Externa Power Bank 36,800mAh Carga Solar",
+        name_es: "Batería Externa Power Bank 36,800mAh Carga Rápida Solar",
         name_en: "Solar Power Bank 36,800mAh Fast Charging Heavy Duty",
-        desc_es: "Carga hasta 4 teléfonos simultáneamente. Resistente a caídas, agua y equipada con potente linterna.",
+        desc_es: "Carga hasta 4 teléfonos simultáneamente. Resistente a caídas, agua y equipada con potente linterna de rescate.",
         desc_en: "Charges 4 devices simultaneously with solar backup recharge and ultra bright flashlight.",
         img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80",
         badge_es: "Carga Rápida",
@@ -1180,10 +1231,10 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-jump-starter",
         cat: "motos",
-        name_es: "Arrancador Portátil de Baterías Auto y Moto 1500A",
+        name_es: "Arrancador Portátil de Baterías de Auto y Moto 1500A",
         name_en: "Portable Car & Motorcycle Jump Starter 1500A Peak",
-        desc_es: "Arranca motores al instante sin necesidad de cables puente ni otro vehículo. Incluye puerto USB.",
-        desc_en: "Instantly jump-start vehicle batteries safely without another car. Emergency booster.",
+        desc_es: "Arranca autos y motos al instante sin necesidad de otro vehículo. Incluye linterna de emergencia y puerto USB.",
+        desc_en: "Instantly jump-start dead vehicle batteries safely without another car. Emergency booster.",
         img: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80",
         badge_es: "Motos & Autos",
         badge_en: "Moto & Auto",
@@ -1194,9 +1245,9 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-drill-impact",
         cat: "motos",
-        name_es: "Kit Taladro Inalámbrico 20V con 2 Baterías y Maletín",
+        name_es: "Kit Taladro Atornillador Inalámbrico 20V con 2 Baterías",
         name_en: "Cordless Drill Driver Kit 20V with 2 Batteries & Case",
-        desc_es: "Fuerza profesional para mecánica de motos, tornillos oxidados y reparaciones del hogar.",
+        desc_es: "Fuerza profesional para mecánica de motos, construcción y reparaciones del hogar. Incluye maletín y puntas surtidas.",
         desc_en: "Heavy-duty power for automotive, construction and household repairs with carry case.",
         img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80",
         badge_es: "Kit Completo",
@@ -1244,7 +1295,7 @@ function renderDeals() {
                         <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
                     </div>
                     <a href="${amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy">
-                        ${currentLang === 'es' ? 'CONECTAR EN AMAZON →' : 'CONNECT ON AMAZON →'}
+                        ${currentLang === 'es' ? 'VER PRECIO Y OFERTA EN AMAZON →' : 'CHECK PRICE & DEALS ON AMAZON →'}
                     </a>
                 </div>
             </div>
@@ -1255,9 +1306,9 @@ function renderDeals() {
     if (matches === 0) {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 50px; color: #94a3b8; border: 1px dashed rgba(0,240,255,0.4); border-radius: 16px; background: rgba(8,14,28,0.6);">
-                <p style="font-size: 1.3em; margin-bottom: 16px; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se detectaron registros con esa clave.' : 'No items matched this query.'}</p>
+                <p style="font-size: 1.3em; margin-bottom: 16px; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se detectaron productos con esa palabra exacta.' : 'No items matched this query.'}</p>
                 <a href="https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}" target="_blank" class="btn-direct-amazon" style="display: inline-block;">
-                    ${currentLang === 'es' ? `Escanear "${query}" en Amazon Global →` : `Scan "${query}" on Global Amazon →`}
+                    ${currentLang === 'es' ? `Buscar "${query}" directamente en todo Amazon →` : `Search "${query}" directly on Amazon →`}
                 </a>
             </div>
         `;
@@ -1326,8 +1377,8 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Escribe para escanear catálogo (nike, inverter, generador, tylenol, solar)..."
-            : "Type to scan catalog (nike, inverter, generator, tylenol, solar)...";
+            ? "Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..."
+            : "Search any product on Amazon (e.g. nike sneakers, levis, tylenol, mini split, generator)...";
     }
     renderDeals();
 }
