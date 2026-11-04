@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Guía y directorio de equipos esenciales para Cuba y familias: splits inverter, lavadoras portátiles, plantas eléctricas, radios de manivela, ventiladores solares y tecnología en Amazon.">
-    <title>AhorraTodo Chic | Equipos Esenciales para Cuba & Envíos Amazon</title>
+    <meta name="description" content="AhorraTodo Chic - Guía y directorio de equipos esenciales para Cuba y familias: splits inverter, lavadoras portátiles, plantas eléctricas, radios de manivela, ventiladores solares, zapatillas, ropa de marca y medicamentos en Amazon.">
+    <title>AhorraTodo Chic | Equipos Esenciales, Zapatillas, Ropa & Medicinas Amazon</title>
     <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0A0A0A&quot;,&quot;theme_color&quot;:&quot;#10B981&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
     <meta name="theme-color" content="#10B981">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -150,14 +150,90 @@
         .es-text {display: inline-block;}
 
         /* RESPONSIVE */
+        /* MOBILE & TABLET RESPONSIVE EXCELLENCE */
         @media(max-width: 900px) {
             .content-grid {grid-template-columns: 1fr;}
             .sidebar {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;}
         }
-        @media(max-width: 550px) {
-            .products-grid {grid-template-columns: 1fr;}
+        @media(max-width: 640px) {
+            body {font-size: 14px;}
+            .main-wrapper {padding: 10px 10px 40px;}
+            .top-bar {padding: 10px 8px 0; gap: 8px;}
+            .amazon-partner-badge {font-size: 0.72em; padding: 4px 10px;}
+            .lang-btn {font-size: 0.75em; padding: 6px 12px;}
+            
+            .hero-section {padding: 22px 14px; margin: 10px 0 16px; border-radius: 14px;}
+            .hero-title {font-size: 1.55em; line-height: 1.2;}
+            .hero-subtitle {font-size: 0.82em; margin-bottom: 12px; line-height: 1.4;}
+            .trust-pills {gap: 6px;}
+            .trust-pill {font-size: 0.7em; padding: 4px 8px;}
+            
+            .notice-bar {padding: 10px 12px; margin-bottom: 16px; font-size: 0.8em; flex-direction: column; align-items: flex-start; gap: 4px;}
+            .controls-card {padding: 12px; border-radius: 14px; margin-bottom: 16px;}
+            .search-input {padding: 11px 12px 11px 38px; font-size: 0.88em;}
+            .search-icon {left: 12px; font-size: 1em;}
+            
+            .category-tabs {
+                gap: 6px;
+                padding-bottom: 6px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .category-tabs::-webkit-scrollbar {display: none;}
+            .cat-btn {padding: 8px 13px; font-size: 0.76em; border-radius: 20px;}
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .product-card {
+                padding: 14px;
+                border-radius: 14px;
+            }
+            .product-img-wrap {
+                height: 195px;
+            }
+            .product-title {
+                font-size: 0.98em;
+                min-height: auto;
+            }
+            .product-desc {
+                font-size: 0.8em;
+                min-height: auto;
+                margin-bottom: 10px;
+            }
+            .btn-amazon-buy {
+                padding: 13px 14px;
+                font-size: 0.88em;
+                min-height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .sidebar {grid-template-columns: 1fr;}
-            .hero-title {font-size: 1.5em;}
+            
+            /* BOTON FLOTANTE DE WHATSAPP EN MOVIL */
+            .mobile-wa-float {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #22C55E;
+                color: #FFFFFF;
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                box-shadow: 0 4px 16px rgba(34, 197, 94, 0.5);
+                z-index: 9999;
+                text-decoration: none;
+                transition: transform 0.2s;
+            }
+            .mobile-wa-float:active {
+                transform: scale(0.92);
+            }
         }
     </style>
 </head>
@@ -193,8 +269,8 @@
             <span class="en-text">Essential Cuba Gear on <span class="accent-green">Amazon</span></span>
         </h1>
         <p class="hero-subtitle">
-            <span class="es-text">Selección recomendada de aires split inverter de bajo consumo, lavadoras portátiles, plantas eléctricas para apagones, radios de emergencia a manivela y energía solar con entrega rápida.</span>
-            <span class="en-text">Curated selection of low-draw inverter mini-splits, portable washing machines, power generators, emergency hand-crank radios, and solar gear on Amazon.</span>
+            <span class="es-text">Selección recomendada de aires split inverter de bajo consumo, lavadoras portátiles, plantas eléctricas para apagones, radios de emergencia a manivela, ventiladores solares, zapatillas de marca, ropa y medicinas con entrega rápida.</span>
+            <span class="en-text">Curated selection of low-draw inverter mini-splits, portable washing machines, power generators, emergency hand-crank radios, solar gear, brand sneakers, clothing, and medicines on Amazon.</span>
         </p>
         <div class="trust-pills">
             <div class="trust-pill">📦 <strong><span class="es-text">Envío Prime Rápido</span><span class="en-text">Fast Prime Delivery</span></strong></div>
@@ -221,7 +297,7 @@
             <div class="controls-card">
                 <div class="search-input-wrap">
                     <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca cualquier producto en Amazon (ej. split inverter, lavadora, radio manivela, planta, celular)..." oninput="handleSearch()">
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..." oninput="handleSearch()">
                 </div>
                 
                 <!-- BANNER DINÁMICO DE BÚSQUEDA DIRECTA -->
@@ -238,6 +314,9 @@
 
                 <div class="category-tabs">
                     <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todo</span><span class="en-text">🔥 All</span></button>
+                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas de Marca</span><span class="en-text">👟 Brand Sneakers</span></button>
+                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa de Marca</span><span class="en-text">👕 Brand Clothing</span></button>
+                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Medicinas & Salud</span><span class="en-text">💊 Meds & Health</span></button>
                     <button class="cat-btn" onclick="selectCat('electro', this)"><span class="es-text">❄️ Splits & Lavadoras</span><span class="en-text">❄️ AC & Washers</span></button>
                     <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">⚡ Plantas & Baterías</span><span class="en-text">⚡ Power & Batteries</span></button>
                     <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">💨 Ventiladores & Solar</span><span class="en-text">💨 Solar & Fans</span></button>
@@ -347,6 +426,194 @@ const AMAZON_TAG = "ahorratodochi-20";
 
 /* CATÁLOGO COMPLETO DE EQUIPOS ESENCIALES PARA CUBA & ENVÍOS (CON FOTOS REALES EN ALTA CALIDAD) */
 const AMAZON_DEALS_DATABASE = [
+    /* ZAPATILLAS DE MARCAS */
+    {
+        id: "amz-nike-revolution",
+        cat: "zapatillas",
+        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras y Resistentes",
+        name_en: "Nike Men's & Women's Lightweight Athletic Running Sneakers",
+        desc_es: "Amortiguación de espuma suave, suela de alta tracción y tejido de malla transpirable. Máxima comodidad para caminar o correr.",
+        desc_en: "Soft foam cushioning, durable traction outsole and breathable mesh fabric. Maximum daily and running comfort.",
+        img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Top Marca Nike",
+        badge_en: "Nike Top Brand",
+        feature_es: "Amortiguación suave • Malla fresca",
+        feature_en: "Soft Cushioning • Breathable Mesh",
+        searchQuery: "nike running shoes sneakers men women"
+    },
+    {
+        id: "amz-adidas-cloudfoam",
+        cat: "zapatillas",
+        name_es: "Zapatillas Adidas Cloudfoam Pure Cómodas de Caminar",
+        name_en: "Adidas Cloudfoam Pure Running & Walking Sneakers",
+        desc_es: "Plantilla viscoelástica ultra suave que se adapta al pie como un guante. Ideales para estar de pie y caminar todo el día.",
+        desc_en: "Ultra-soft memory foam footbed that hugs your foot. Perfect for standing all day and daily walks.",
+        img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Máximo Confort",
+        badge_en: "Max Comfort",
+        feature_es: "Plantilla Cloudfoam • Suela flexible",
+        feature_en: "Cloudfoam Sockliner • Flexible",
+        searchQuery: "adidas cloudfoam sneakers men women"
+    },
+    {
+        id: "amz-puma-smash",
+        cat: "zapatillas",
+        name_es: "Zapatillas Puma Clásicas Urbanas y Deportivas de Cuero",
+        name_en: "Puma Classic Leather Casual & Street Sneakers",
+        desc_es: "Estilo icónico y duradero, suela de goma anti-deslizante y materiales de alta calidad para máxima durabilidad diaria.",
+        desc_en: "Iconic durable street style, non-marking rubber outsole and premium leather construction.",
+        img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Alta Durabilidad",
+        badge_en: "Durable Leather",
+        feature_es: "Cuero resistente • Suela anti-resbalón",
+        feature_en: "Durable Leather • Anti-slip Sole",
+        searchQuery: "puma smash sneakers shoes"
+    },
+    {
+        id: "amz-skechers-slipins",
+        cat: "zapatillas",
+        name_es: "Zapatillas Skechers Slip-ins Manos Libres Cómodas",
+        name_en: "Skechers Hands-Free Slip-ins Walking Shoes",
+        desc_es: "Se ponen solas sin agacharse ni atar cordones. Amortiguación ortopédica ideal para largas jornadas y personas mayores.",
+        desc_en: "Step in hands-free with no bending or tying. Orthopedic cushioning, perfect for walking and seniors.",
+        img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Sin Agacharse",
+        badge_en: "Hands-Free",
+        feature_es: "Sin cordones • Suela ortopédica",
+        feature_en: "Slip-on • Arch Fit Comfort",
+        searchQuery: "skechers slip-ins shoes sneakers"
+    },
+
+    /* ROPA DE MARCA */
+    {
+        id: "amz-tommy-polo",
+        cat: "ropa",
+        name_es: "Polos Clásicos Tommy Hilfiger de Algodón Cuello Piqué",
+        name_en: "Tommy Hilfiger Classic Pique Cotton Polo Shirts",
+        desc_es: "100% algodón suave y transpirable, corte clásico con logo bordado en el pecho. Elegante, fresco y duradero para climas cálidos.",
+        desc_en: "100% soft breathable pique cotton, classic fit with embroidered flag logo. Timeless, cool and durable.",
+        img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Marca Original",
+        badge_en: "Original Brand",
+        feature_es: "100% Algodón • Logo bordado",
+        feature_en: "100% Cotton • Embroidered Logo",
+        searchQuery: "tommy hilfiger polo shirt men"
+    },
+    {
+        id: "amz-levis-jeans",
+        cat: "ropa",
+        name_es: "Pantalones Jeans Levi's 505 / 501 Regular Fit Original",
+        name_en: "Levi's Men's 505 Regular Fit Classic Denim Jeans",
+        desc_es: "El vaquero más resistente y reconocido del mundo. Tela de mezclilla gruesa indeformable para máxima durabilidad de trabajo o salida.",
+        desc_en: "The world's most durable classic denim jeans. Heavyweight authentic denim built to last for years.",
+        img: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Indestructible",
+        badge_en: "Durable Denim",
+        feature_es: "Mezclilla original • Corte recto",
+        feature_en: "Original Denim • Straight Leg",
+        searchQuery: "levis 505 regular fit jeans men"
+    },
+    {
+        id: "amz-sport-dryfit-pack",
+        cat: "ropa",
+        name_es: "Pack Camisetas Deportivas Dry-Fit Frescas y Transpirables",
+        name_en: "Men's Moisture-Wicking Athletic Quick-Dry T-Shirts Pack",
+        desc_es: "Secado ultra rápido y anti-sudor. No necesitan planchado, no retienen calor y son ideales para climas calurosos.",
+        desc_en: "Moisture-wicking, quick-dry fabric. Wrinkle-free, lightweight and designed for hot weather and sports.",
+        img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Frescas Anti-Calor",
+        badge_en: "Quick-Dry",
+        feature_es: "Secado ultra rápido • Sin plancha",
+        feature_en: "Quick dry • Anti-odor",
+        searchQuery: "under armour moisture wicking t shirts men pack"
+    },
+    {
+        id: "amz-ck-underwear",
+        cat: "ropa",
+        name_es: "Pack Ropa Interior Calvin Klein Boxer Briefs de Algodón",
+        name_en: "Calvin Klein Men's Cotton Classics Boxer Briefs Pack",
+        desc_es: "Pretina elástica emblemática, algodón puro suave y elástico que no se deforma tras lavadas constantes.",
+        desc_en: "Classic logo waistband, 100% breathable cotton offering all-day softness, flexibility and durable support.",
+        img: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Pack Familiar",
+        badge_en: "Value Pack",
+        feature_es: "Algodón elástico • Pretina suave",
+        feature_en: "Stretch Cotton • Soft Waistband",
+        searchQuery: "calvin klein boxer briefs pack"
+    },
+
+    /* MEDICAMENTOS Y FARMACIA */
+    {
+        id: "amz-tylenol-500",
+        cat: "medicamentos",
+        name_es: "Acetaminofén 500mg Extra Fuerte (Frasco Familiar)",
+        name_en: "Acetaminophen 500mg Extra Strength Pain Reliever & Fever Reducer",
+        desc_es: "Alivia dolor de cabeza, dolores musculares, fiebres y malestares comunes. Esencial en cualquier botiquín y envíos familiares.",
+        desc_en: "Relieves headaches, body aches, muscle pain, and reduces fever fast. Essential household and family staple.",
+        img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Básico de Botiquín",
+        badge_en: "Essential Medicine",
+        feature_es: "500mg • Rápido alivio fiebre y dolor",
+        feature_en: "500mg • Rapid Fever & Pain Relief",
+        searchQuery: "acetaminophen 500 mg extra strength tylenol"
+    },
+    {
+        id: "amz-ibuprofen-200",
+        cat: "medicamentos",
+        name_es: "Ibuprofeno 200mg Antiinflamatorio y Alivio del Dolor",
+        name_en: "Ibuprofen 200mg Tablets Pain Reliever / Fever Reducer",
+        desc_es: "Combate inflamación, dolores de muelas, artritis, espalda y fiebres. Bote grande de alta duración.",
+        desc_en: "Anti-inflammatory pain relief for joint aches, toothaches, back pain and fever.",
+        img: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Antiinflamatorio",
+        badge_en: "Anti-inflammatory",
+        feature_es: "200mg • Articulaciones y dolor",
+        feature_en: "200mg • Joint & Muscle Relief",
+        searchQuery: "ibuprofen 200 mg pain reliever tablets"
+    },
+    {
+        id: "amz-centrum-silver",
+        cat: "medicamentos",
+        name_es: "Multivitamínico Completo Centrum Silver Adultos 50+",
+        name_en: "Centrum Silver Multivitamin for Adults 50+ Minerals & Vitamins",
+        desc_es: "Vitaminas A, C, D3, B12, Zinc y Calcio. Refuerza defensas, el corazón, la visión y la vitalidad de adultos mayores.",
+        desc_en: "Complete daily vitamins & minerals with Zinc, Vitamin D3 and B-complex to support heart, eyes and bones.",
+        img: "https://images.unsplash.com/photo-1577401239170-897942555fb3?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Defensas & Vitalidad",
+        badge_en: "Immune Support",
+        feature_es: "Zinc + D3 + B12 • Sistema inmune",
+        feature_en: "Zinc + D3 + B12 • Heart & Bones",
+        searchQuery: "centrum silver multivitamin adults 50 plus"
+    },
+    {
+        id: "amz-tensiometro-digital",
+        cat: "medicamentos",
+        name_es: "Tensiómetro Digital Automático de Brazo con Pantalla LCD",
+        name_en: "Automatic Digital Blood Pressure Monitor with Large Cuff",
+        desc_es: "Mide presión arterial y pulso con un solo toque. Pantalla grande iluminada, detector de arritmias y memoria. Funciona a pilas o USB.",
+        desc_en: "Accurate one-touch blood pressure and pulse monitor. Large backlit display, arrhythmia detection, dual memory.",
+        img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Control Médico",
+        badge_en: "Health Essential",
+        feature_es: "Pantalla LCD • Detección de arritmias",
+        feature_en: "LCD Display • Irregular Heartbeat",
+        searchQuery: "digital blood pressure monitor upper arm"
+    },
+    {
+        id: "amz-first-aid-kit",
+        cat: "medicamentos",
+        name_es: "Botiquín de Primeros Auxilios Completo 200+ Piezas",
+        name_en: "Complete First Aid Kit 200+ Pieces Medical Supplies",
+        desc_es: "Estuche impermeable con gasas estériles, vendas, curitas, toallitas antisépticas, tijeras y pinzas para emergencias en casa.",
+        desc_en: "Waterproof pouch with bandages, antiseptic wipes, gauze pads, scissors and emergency first aid tools.",
+        img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80",
+        badge_es: "200+ Piezas",
+        badge_en: "200+ Pieces",
+        feature_es: "Estuche resistente • Gasas y vendas",
+        feature_en: "Waterproof case • Sterile Supplies",
+        searchQuery: "first aid kit medical emergency supplies"
+    },
+
     {
         id: "amz-split-inverter",
         cat: "electro",
@@ -618,8 +885,8 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca cualquier producto en Amazon (ej. split inverter, lavadora, radio manivela, planta, celular)..."
-            : "Search any product on Amazon (e.g. mini split, washer, crank radio, generator, phone)...";
+            ? "Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..."
+            : "Search any product on Amazon (e.g. nike sneakers, levis, tylenol, mini split, generator)...";
     }
     
     renderDeals();
@@ -649,6 +916,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateActiveShoppers, 8000);
 });
 </script>
+
+<!-- BOTÓN FLOTANTE WHATSAPP PARA TELÉFONOS -->
+<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20tengo%20una%20pregunta%20sobre%20una%20oferta" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
+    💬
+</a>
 
 </body>
 </html>
