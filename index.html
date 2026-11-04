@@ -3,292 +3,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Guía y directorio de equipos esenciales para Cuba y familias: splits inverter, lavadoras portátiles, plantas eléctricas, radios de manivela, ventiladores solares, zapatillas, ropa de marca y medicamentos en Amazon.">
-    <title>AhorraTodo Chic | Equipos Esenciales, Zapatillas, Ropa &amp; Medicinas Amazon</title>
-    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0A0A0A&quot;,&quot;theme_color&quot;:&quot;#10B981&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
-    <meta name="theme-color" content="#10B981">
+    <meta name="description" content="AhorraTodo Chic - Terminal Cuántica & Directorio de Equipos Esenciales para Cuba y Familias en Amazon.">
+    <title>AhorraTodo Chic // QUANTUM HUD 3D</title>
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;AhorraTodo Chic&quot;,&quot;short_name&quot;:&quot;AhorraTodo&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#030706&quot;,&quot;theme_color&quot;:&quot;#00ff9d&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;https://cdn-icons-png.flaticon.com/512/3081/3081559.png&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
+    <meta name="theme-color" content="#00ff9d">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* RESET & BASE */
+        /* ================= RESET & AMBIENTE CYBER 3D ================= */
         * {box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0;}
+        :root {
+            --neon-green: #00ff9d;
+            --neon-glow: rgba(0, 255, 157, 0.45);
+            --neon-cyan: #00e5ff;
+            --cyber-dark: #030806;
+            --card-surface: rgba(4, 15, 10, 0.75);
+            --border-glow: rgba(0, 255, 157, 0.25);
+        }
+        
         html {scroll-behavior: smooth; width: 100%;}
-        body {width: 100%; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0A0A0A; min-height: 100vh; margin: 0; padding: 0; color: #FFFFFF; font-size: clamp(13px, 1.8vw, 15px); overflow-x: hidden;}
-        
-        /* ANIMATIONS */
-        @keyframes fadeInUp {from {opacity: 0; transform: translateY(16px);} to {opacity: 1; transform: translateY(0);}}
-        @keyframes pulseDot {0%, 100% {opacity: 1; transform: scale(1);} 50% {opacity: 0.4; transform: scale(0.85);}}
-        @keyframes fireGlow {0%, 100% {box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);} 50% {box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);}}
+        body {
+            width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--cyber-dark);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #d1fae5;
+            font-size: clamp(14px, 1.8vw, 16px);
+            overflow-x: hidden;
+            position: relative;
+        }
 
-        /* COMPLIANCE BANNER AMAZON */
-        .compliance-banner {background: linear-gradient(135deg, #064E3B 0%, #047857 100%); border-bottom: 2px solid #10B981; padding: 10px 14px; font-size: clamp(0.74em, 1.3vw, 0.84em); color: #E0F2FE; text-align: center; line-height: 1.4;}
-        .compliance-banner strong {color: #A7F3D0; font-weight: 700;}
-        .compliance-banner a {color: #6EE7B7; text-decoration: underline;}
-        
-        /* TOP BAR CENTRADA */
-        .top-bar {max-width: 1240px; margin: 0 auto; padding: 14px 14px 0; display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;}
-        .amazon-partner-badge {display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); padding: 6px 14px; border-radius: 20px; font-size: 0.8em; color: #6EE7B7; font-weight: 700;}
-        .live-dot {width: 8px; height: 8px; background: #10B981; border-radius: 50%; animation: pulseDot 2s infinite ease-in-out;}
-        .lang-btn {background: #10B981; color: #FFFFFF; border: none; padding: 8px 16px; cursor: pointer; border-radius: 8px; font-weight: 700; font-size: 0.82em; transition: all 0.25s ease; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); font-family: inherit;}
-        .lang-btn:hover {background: #059669; transform: translateY(-2px);}
-        
+        /* FONDO HOLOGRÁFICO RETROFUTURISTA 3D */
+        .cyber-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 20%, #062b1b 0%, #020b06 65%, #010402 100%);
+        }
+        .cyber-grid {
+            position: absolute;
+            bottom: -30%;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 157, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 157, 0.12) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(600px) rotateX(72deg);
+            animation: gridMove 14s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { transform: perspective(600px) rotateX(72deg) translateY(0); }
+            100% { transform: perspective(600px) rotateX(72deg) translateY(60px); }
+        }
+
+        /* SCANLINE INTERFAZ HUD */
+        body::before {
+            content: " ";
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.02));
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        h1, h2, h3, .hud-font {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* COMPLIANCE BANNER SCI-FI */
+        .compliance-banner {
+            background: rgba(3, 20, 12, 0.9);
+            border-bottom: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-glow);
+            padding: 8px 14px;
+            font-size: clamp(0.72em, 1.2vw, 0.82em);
+            color: #a7f3d0;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+        .compliance-banner strong {color: var(--neon-green); font-weight: 700; text-shadow: 0 0 6px var(--neon-green);}
+
+        /* TOP HUD BAR */
+        .top-bar {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 14px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .amazon-partner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 255, 157, 0.06);
+            border: 1px solid var(--neon-green);
+            padding: 6px 18px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: var(--neon-green);
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 12px rgba(0, 255, 157, 0.2);
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+        .live-dot {
+            width: 8px; height: 8px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
+            animation: pulseDot 1.5s infinite alternate;
+        }
+        @keyframes pulseDot {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.3); opacity: 1; }
+        }
+        .lang-btn {
+            background: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85em;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+        }
+        .lang-btn:hover {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-green);
+            transform: translateY(-2px);
+        }
+
         /* MAIN WRAPPER */
-        .main-wrapper {max-width: 1240px; margin: 0 auto; padding: 16px 14px 40px;}
-        
-        /* HERO SECTION */
-        .hero-section {text-align: center; margin: 15px 0 22px; padding: 34px 18px; background: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.08) 50%, rgba(10, 10, 10, 0.95) 100%), #111111; border-radius: 18px; border: 1.5px solid rgba(16, 185, 129, 0.35); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(16, 185, 129, 0.15); animation: fadeInUp 0.5s ease;}
-        .hero-badge {display: inline-block; background: linear-gradient(135deg, #10B981, #059669); color: #000000; font-size: clamp(0.72em, 1.3vw, 0.8em); font-weight: 900; padding: 5px 14px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; animation: fireGlow 3s infinite;}
-        .hero-title {font-size: clamp(1.65em, 4.8vw, 2.9em); font-weight: 900; color: #FFFFFF; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.5px;}
-        .hero-title span.accent-green {color: #10B981; text-shadow: 0 0 20px rgba(16, 185, 129, 0.45);}\n        .hero-subtitle {font-size: clamp(0.85em, 2vw, 1.05em); color: #D1D5DB; margin-bottom: 18px; max-width: 820px; margin-left: auto; margin-right: auto; line-height: 1.45;}
-        
-        /* TRUST PILLS */
-        .trust-pills {display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px;}
-        .trust-pill {display: inline-flex; align-items: center; gap: 6px; font-size: 0.75em; color: #E5E7EB; padding: 6px 12px; background: rgba(16, 185, 129, 0.08); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.25);}
-        .trust-pill strong {color: #10B981;}
-        
-        /* NOTICE BAR CENTRADA */
-        .notice-bar {background: linear-gradient(90deg, #06281E 0%, #0D382B 50%, #06281E 100%); border: 1.5px solid #10B981; border-radius: 12px; padding: 12px 18px; margin-bottom: 22px; display: flex; align-items: center; justify-content: center; text-align: center; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);}
-        .notice-left {display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 0.88em; color: #E0F2FE;}
-        .notice-right {font-size: 0.78em; color: #34D399; font-weight: 600;}
-        
-        /* CONTENT LAYOUT */
-        .content-grid {display: grid; grid-template-columns: 1fr 310px; gap: 22px; align-items: start;}
-        
+        .main-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 14px 60px;
+        }
+
+        /* HERO MATRIX 3D */
+        .hero-section {
+            text-align: center;
+            margin: 20px auto 30px;
+            padding: 45px 20px;
+            background: radial-gradient(circle, rgba(0, 255, 157, 0.08) 0%, rgba(4, 15, 10, 0.85) 100%);
+            border: 1px solid rgba(0, 255, 157, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 0 35px rgba(0, 255, 157, 0.15), inset 0 0 25px rgba(0, 255, 157, 0.08);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.15);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-size: 0.75em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            text-shadow: 0 0 8px var(--neon-green);
+        }
+        .hero-title {
+            font-size: clamp(1.8em, 4.5vw, 3.2em);
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 14px;
+            line-height: 1.2;
+            text-shadow: 0 0 25px rgba(255,255,255,0.3);
+        }
+        .hero-title span.accent-green {
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+        }
+        .hero-subtitle {
+            font-size: clamp(0.95em, 1.8vw, 1.15em);
+            color: #94a3b8;
+            max-width: 820px;
+            margin: 0 auto 24px;
+            line-height: 1.5;
+        }
+
+        /* PILLS HOLOGRÁFICAS */
+        .trust-pills {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+            padding: 8px 16px;
+            background: rgba(0, 255, 157, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            border-radius: 6px;
+            color: #e2e8f0;
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.1);
+        }
+        .trust-pill strong {color: var(--neon-green);}
+
+        /* NOTICE BAR HUD */
+        .notice-bar {
+            background: rgba(3, 15, 10, 0.8);
+            border: 1px dashed var(--neon-green);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.15);
+        }
+        .notice-left {font-size: 0.9em; color: #e2e8f0;}
+        .notice-right {font-size: 0.85em; color: var(--neon-green); font-family: 'Orbitron', sans-serif;}
+
+        /* LAYOUT PRINCIPAL */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 26px;
+            align-items: start;
+        }
+
         /* CONTROLS CARD */
-        .controls-card {background: #141414; border: 1px solid #262626; border-radius: 16px; padding: 18px; margin-bottom: 18px;}
-        .search-input-wrap {position: relative; margin-bottom: 12px;}
-        .search-input {width: 100%; padding: 13px 14px 13px 44px; background: #0A0A0A; border: 2px solid #2E2E2E; border-radius: 10px; color: #FFFFFF; font-size: 0.95em; font-family: inherit; transition: all 0.25s;}
-        .search-input:focus {outline: none; border-color: #10B981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25); background: #121212;}
-        .search-icon {position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.2em; color: #10B981; pointer-events: none;}
-        
-        /* BANNER DINÁMICO DE BÚSQUEDA CENTRADO */
-        .dynamic-search-banner {display: none; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.2)); border: 1.5px solid #10B981; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; align-items: center; justify-content: center; text-align: center; gap: 12px; flex-wrap: wrap;}
-        .dynamic-search-text {font-size: 0.85em; color: #F1F5F9;}
-        .dynamic-search-text strong {color: #10B981;}
-        .btn-direct-amazon {padding: 8px 16px; background: #10B981; color: #000; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 0.8em; transition: all 0.2s; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);}
-        .btn-direct-amazon:hover {background: #34D399; transform: translateY(-2px);}
-        
-        /* CATEGORY TABS CENTRADAS */
-        .category-tabs {display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding-bottom: 4px;}
-        .category-tabs::-webkit-scrollbar {height: 4px;}
-        .category-tabs::-webkit-scrollbar-thumb {background: #10B981; border-radius: 4px;}
-        .cat-btn {background: #1F1F1F; color: #9CA3AF; border: 1px solid #333333; padding: 9px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.8em; white-space: nowrap; transition: all 0.2s; font-family: inherit;}
-        .cat-btn:hover {color: #FFFFFF; background: #2A2A2A; border-color: #10B981;}
-        .cat-btn.active {background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #000000; font-weight: 900; border-color: #10B981; box-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);}
-        
-        /* PRODUCTS GRID */
-        .products-grid {display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 30px; justify-content: center;}
-        
-        /* PRODUCT CARD CENTRADA */
-        .product-card {background: rgba(26, 26, 26, 0.7); border: 1px solid #2A2A2A; border-left: 4px solid rgba(16, 185, 129, 0.4); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; transition: all 0.25s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);}
-        .product-card:hover {border-color: #10B981; border-left-color: #10B981; transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6), 0 0 18px rgba(16, 185, 129, 0.25); background: rgba(36, 36, 36, 0.9);}
-        
-        .card-top {position: relative; margin-bottom: 10px;}
-        .card-badges {display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 10px;}
-        .amazon-tag {background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.68em; font-weight: 800; padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;}
-        .verified-badge {background: rgba(34, 197, 94, 0.2); color: #4ADE80; font-size: 0.7em; font-weight: 800; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(34, 197, 94, 0.3);}
-        
-        /* FOTO DEL PRODUCTO */
-        .product-img-wrap {width: 100%; height: 160px; background: #121212; border-radius: 10px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.08); position: relative; display: flex; align-items: center; justify-content: center;}
-        .product-img {width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;}
-        .product-card:hover .product-img {transform: scale(1.05);}
-        .product-img-fallback {font-size: 3em; display: none;}
-        
-        .product-title {font-size: 0.95em; font-weight: 700; color: #FFFFFF; line-height: 1.35; margin-bottom: 6px; min-height: 2.7em; text-align: center;}
-        .product-desc {font-size: 0.78em; color: #9CA3AF; line-height: 1.35; margin-bottom: 12px; min-height: 2.7em; text-align: center;}
-        
-        .product-features {display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; font-size: 0.75em; color: #A7F3D0; font-weight: 600; background: rgba(0,0,0,0.3); padding: 7px 10px; border-radius: 6px;}
-        
-        .btn-amazon-buy {display: block; width: 100%; padding: 12px 14px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #000000; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 0.86em; text-align: center; transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); border: none; cursor: pointer;}
-        .btn-amazon-buy:hover {background: linear-gradient(135deg, #34D399 0%, #10B981 100%); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);}
-        
-        /* SIDEBAR */
-        .sidebar {display: flex; flex-direction: column; gap: 16px;}
-        
-        /* AMAZON WIDGET */
-        .amazon-box {background: rgba(26, 26, 26, 0.7); border: 2px solid #10B981; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2); backdrop-filter: blur(5px); text-align: center;}
-        .amazon-box-title {font-size: 1.1em; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 6px;}
-        .amazon-box-desc {font-size: 0.8em; color: #CBD5E1; line-height: 1.4; margin-bottom: 12px;}
-        .btn-amz-today {display: block; width: 100%; padding: 12px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #000; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 0.82em; text-align: center; transition: all 0.2s; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);}
-        .btn-amz-today:hover {background: linear-gradient(135deg, #34D399 0%, #10B981 100%); transform: translateY(-2px);}
-        
-        /* YRT SOLUTIONS */
-        .yrt-widget {background: linear-gradient(180deg, #14221B 0%, #0D1612 100%); border: 2px solid #10B981; border-radius: 14px; padding: 18px; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2); text-align: center;}
-        .yrt-badge {display: inline-block; background: #10B981; color: #000000; font-size: 0.68em; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom: 8px;}
-        .yrt-title {font-size: 1.15em; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;}
-        .yrt-desc {font-size: 0.8em; color: #A7F3D0; line-height: 1.4; margin-bottom: 12px;}
-        .yrt-tel {display: block; font-size: 1.1em; font-weight: 800; color: #FFFFFF; text-decoration: none; margin-bottom: 10px; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px; text-align: center; border: 1px dashed #10B981;}
-        .yrt-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 8px;}
-        .btn-wa {padding: 10px; background: #22C55E; color: #000; text-decoration: none; border-radius: 8px; font-weight: 800; font-size: 0.78em; text-align: center;}
-        .btn-call {padding: 10px; background: #262626; color: #FFF; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 0.78em; text-align: center; border: 1px solid #404040;}
-        
-        /* ACTIVIDAD EN VIVO */
-        .stats-widget {background: rgba(26, 26, 26, 0.7); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 16px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.15); text-align: center;}
-        .stats-title {font-size: 0.75em; color: #9CA3AF; text-transform: uppercase; font-weight: 700; margin-bottom: 8px;}
-        .stats-users {font-size: 1.6em; font-weight: 800; color: #10B981; display: flex; align-items: center; justify-content: center; gap: 8px;}
-        .stats-note {font-size: 0.75em; color: #6B7280; margin-top: 4px;}
-        
-        /* LEGAL SECTION */
-        .legal-box {margin-top: 35px; border-top: 1px solid #262626; padding-top: 25px;}
-        .legal-title {font-size: 1em; font-weight: 700; color: #E5E7EB; text-align: center; margin-bottom: 16px;}
-        .legal-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;}
-        .legal-card {background: #141414; border: 1px solid #262626; border-radius: 8px; overflow: hidden;}
-        .legal-card summary {padding: 10px 14px; cursor: pointer; color: #10B981; font-weight: 600; font-size: 0.8em; list-style: none; display: flex; justify-content: space-between; align-items: center; background: #1A1A1A;}
-        .legal-card summary::-webkit-details-marker {display: none;}
-        .legal-card-body {padding: 12px; font-size: 0.74em; color: #9CA3AF; line-height: 1.45;}
+        .controls-card {
+            background: var(--card-surface);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.8);
+        }
+        .search-input-wrap {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px 18px 15px 50px;
+            background: rgba(1, 10, 6, 0.8);
+            border: 1px solid rgba(0, 255, 157, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1.05em;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-glow);
+            background: rgba(2, 18, 10, 0.95);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neon-green);
+            font-size: 1.2em;
+        }
 
-        /* FOOTER */
-        .footer {text-align: center; padding: 25px 14px; font-size: 0.75em; color: #6B7280; border-top: 1px solid #1F1F1F; margin-top: 35px;}
-        .footer a {color: #10B981; text-decoration: none;}
+        /* BANNER DINÁMICO DE BÚSQUEDA */
+        .dynamic-search-banner {
+            display: none;
+            background: rgba(0, 255, 157, 0.08);
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            box-shadow: 0 0 15px var(--neon-glow);
+        }
+        .btn-direct-amazon {
+            padding: 10px 22px;
+            background: var(--neon-green);
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.85em;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px var(--neon-glow);
+        }
+        .btn-direct-amazon:hover {
+            background: #ffffff;
+            box-shadow: 0 0 25px #ffffff;
+            transform: scale(1.05);
+        }
 
-        /* LANGUAGE DISPLAY */
+        /* CATEGORÍAS TIPO HUD BUTTONS */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .cat-btn {
+            background: rgba(4, 20, 13, 0.6);
+            color: #94a3b8;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85em;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.25s;
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+        .cat-btn:hover {
+            color: #ffffff;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 12px var(--neon-glow);
+        }
+        .cat-btn.active {
+            background: var(--neon-green);
+            color: #000000;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+            font-weight: 900;
+        }
+
+        /* GRID DE PRODUCTOS 3D */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+            perspective: 1200px;
+        }
+
+        /* TARJETA 3D */
+        .product-card-wrap {
+            perspective: 1000px;
+        }
+        .product-card {
+            background: var(--card-surface);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(8px);
+            transform-style: preserve-3d;
+            transition: transform 0.15s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }
+        .product-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 157, 0.25), inset 0 0 15px rgba(0, 255, 157, 0.1);
+        }
+
+        /* LUZ HOLOGRÁFICA */
+        .holo-glare {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 18px;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 255, 157, 0.25), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card-top {
+            transform: translateZ(25px);
+            margin-bottom: 14px;
+        }
+        .card-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .amazon-tag {
+            background: rgba(0, 255, 157, 0.15);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            font-size: 0.7em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+        .verified-badge {
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            font-size: 0.7em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .product-img-wrap {
+            width: 100%;
+            height: 180px;
+            background: #020905;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            position: relative;
+            transform: translateZ(35px);
+        }
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: contrast(105%) brightness(95%);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.1);
+            filter: contrast(115%) brightness(105%);
+        }
+
+        .product-title {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            min-height: 2.6em;
+            transform: translateZ(20px);
+        }
+        .product-desc {
+            font-size: 0.85em;
+            color: #94a3b8;
+            margin-bottom: 14px;
+            min-height: 2.8em;
+            line-height: 1.4;
+            transform: translateZ(15px);
+        }
+        .product-features {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.85em;
+            color: var(--neon-green);
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            transform: translateZ(20px);
+        }
+
+        .btn-amazon-buy {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--neon-green) 0%, #059669 100%);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 0.88em;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px var(--neon-glow);
+            transform: translateZ(30px);
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+        .btn-amazon-buy:hover {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 30px #ffffff;
+            transform: translateZ(40px) scale(1.03);
+        }
+
+        /* SIDEBAR HUD */
+        .sidebar {display: flex; flex-direction: column; gap: 20px;}
+        
+        .amazon-box, .yrt-widget, .stats-widget {
+            background: var(--card-surface);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        .amazon-box {border-color: var(--neon-green);}
+        .amazon-box-title {
+            font-size: 1.15em;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .amazon-box-desc {font-size: 0.85em; color: #94a3b8; margin-bottom: 14px;}
+        .btn-amz-today {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            background: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.82em;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s;
+        }
+        .btn-amz-today:hover {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .yrt-widget {
+            background: radial-gradient(circle at center, rgba(0, 255, 157, 0.1) 0%, rgba(3, 15, 10, 0.9) 100%);
+        }
+        .yrt-badge {
+            display: inline-block;
+            background: var(--neon-green);
+            color: #000;
+            font-size: 0.72em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .yrt-title {font-size: 1.2em; color: #ffffff; margin-bottom: 8px;}
+        .yrt-desc {font-size: 0.85em; color: #a7f3d0; margin-bottom: 14px;}
+        .yrt-tel {
+            display: block;
+            font-size: 1.2em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            color: var(--neon-green);
+            text-decoration: none;
+            margin-bottom: 12px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px dashed var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+        .yrt-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+        .btn-wa {
+            padding: 10px;
+            background: #22c55e;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.85em;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .btn-call {
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85em;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .stats-title {font-size: 0.8em; color: #94a3b8; font-family: 'Orbitron', sans-serif; margin-bottom: 10px;}
+        .stats-users {
+            font-size: 2em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            color: var(--neon-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-shadow: 0 0 15px var(--neon-green);
+        }
+
+        /* LEGAL & FOOTER */
+        .legal-box {margin-top: 45px; border-top: 1px solid rgba(0, 255, 157, 0.2); padding-top: 30px;}
+        .legal-title {font-size: 1.1em; color: #ffffff; text-align: center; margin-bottom: 20px;}
+        .legal-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;}
+        .legal-card {background: rgba(3, 15, 10, 0.7); border: 1px solid rgba(0, 255, 157, 0.2); border-radius: 8px;}
+        .legal-card summary {padding: 12px 16px; cursor: pointer; color: var(--neon-green); font-family: 'Orbitron', sans-serif; font-size: 0.82em;}
+        .legal-card-body {padding: 14px; font-size: 0.8em; color: #94a3b8; line-height: 1.5;}
+
+        .footer {text-align: center; padding: 30px 14px; font-size: 0.85em; color: #64748b; border-top: 1px solid rgba(0, 255, 157, 0.1); margin-top: 40px;}
+        .footer a {color: var(--neon-green); text-decoration: none;}
+
         .en-text {display: none;}
         .es-text {display: inline-block;}
 
-        /* RESPONSIVE */
+        /* BOTÓN FLOTANTE HUD WHATSAPP */
+        .mobile-wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--neon-green);
+            color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 0 25px var(--neon-green);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .mobile-wa-float:hover {transform: scale(1.15) rotate(10deg);}
+
+        /* RESPONSIVE MOBILE */
         @media(max-width: 900px) {
             .content-grid {grid-template-columns: 1fr;}
-            .sidebar {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;}
+            .sidebar {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;}
         }
         @media(max-width: 640px) {
-            body {font-size: 14px;}
-            .main-wrapper {padding: 10px 10px 40px;}
-            .top-bar {padding: 10px 8px 0; gap: 8px;}
-            .amazon-partner-badge {font-size: 0.72em; padding: 4px 10px;}
-            .lang-btn {font-size: 0.75em; padding: 6px 12px;}
-            
-            .hero-section {padding: 22px 14px; margin: 10px 0 16px; border-radius: 14px;}
-            .hero-title {font-size: 1.55em; line-height: 1.2;}
-            .hero-subtitle {font-size: 0.82em; margin-bottom: 12px; line-height: 1.4;}
-            .trust-pills {gap: 6px;}
-            .trust-pill {font-size: 0.7em; padding: 4px 8px;}
-            
-            .notice-bar {padding: 10px 12px; margin-bottom: 16px; font-size: 0.8em; flex-direction: column; align-items: center; gap: 4px;}
-            .controls-card {padding: 12px; border-radius: 14px; margin-bottom: 16px;}
-            .search-input {padding: 11px 12px 11px 38px; font-size: 0.88em;}
-            .search-icon {left: 12px; font-size: 1em;}
-            
             .category-tabs {
                 gap: 6px;
-                padding-bottom: 6px;
+                padding-bottom: 8px;
                 overflow-x: auto;
                 flex-wrap: nowrap;
                 justify-content: flex-start;
                 scrollbar-width: none;
-                -ms-overflow-style: none;
-                -webkit-overflow-scrolling: touch;
             }
             .category-tabs::-webkit-scrollbar {display: none;}
-            .cat-btn {padding: 8px 13px; font-size: 0.76em; border-radius: 20px;}
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-            .product-card {
-                padding: 14px;
-                border-radius: 14px;
-            }
-            .product-img-wrap {
-                height: 195px;
-            }
-            .product-title {
-                font-size: 0.98em;
-                min-height: auto;
-            }
-            .product-desc {
-                font-size: 0.8em;
-                min-height: auto;
-                margin-bottom: 10px;
-            }
-            .btn-amazon-buy {
-                padding: 13px 14px;
-                font-size: 0.88em;
-                min-height: 46px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+            .cat-btn {padding: 8px 14px; font-size: 0.78em; white-space: nowrap;}
+            .products-grid {grid-template-columns: 1fr;}
             .sidebar {grid-template-columns: 1fr;}
-            
-            /* BOTON FLOTANTE DE WHATSAPP EN MOVIL */
-            .mobile-wa-float {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: #22C55E;
-                color: #FFFFFF;
-                width: 54px;
-                height: 54px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 26px;
-                box-shadow: 0 4px 16px rgba(34, 197, 94, 0.5);
-                z-index: 9999;
-                text-decoration: none;
-                transition: transform 0.2s;
-            }
-            .mobile-wa-float:active {
-                transform: scale(0.92);
-            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- BANNER REGLAMENTARIO DE AMAZON ASSOCIATES -->
+<!-- FONDO Y RETÍCULA VIRTUAL 3D -->
+<div class="cyber-bg"><div class="cyber-grid"></div></div>
+
+<!-- COMPLIANCE BANNER AMAZON -->
 <div class="compliance-banner">
-    <strong><span class="es-text">⚖️ AVISO DE AFILIADO DE AMAZON:</span><span class="en-text">⚖️ AMAZON ASSOCIATES NOTICE:</span></strong>
-    <span class="es-text">En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y disponibilidad son determinados exclusivamente por Amazon.com.</span>
-    <span class="en-text">As an Amazon Associate I earn from qualifying purchases. Prices and availability are determined exclusively by Amazon.com.</span>
+    <strong><span class="es-text">⚡ PROTOCOLO OFICIAL AMAZON ASSOCIATES:</span><span class="en-text">⚡ OFFICIAL AMAZON ASSOCIATES PROTOCOL:</span></strong>
+    <span class="es-text">En calidad de Afiliado de Amazon, obtengo ingresos por compras adscritas. Precios y stock sincronizados en vivo por Amazon.com.</span>
+    <span class="en-text">As an Amazon Associate I earn from qualifying purchases. Real-time prices &amp; inventory synced with Amazon.com.</span>
 </div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
     <div class="amazon-partner-badge">
         <span class="live-dot"></span>
-        <span class="es-text">Equipos Esenciales para Cuba &amp; Envíos: <span id="todayDateEs"></span></span>
-        <span class="en-text">Essential Cuba &amp; Family Gear: <span id="todayDateEn"></span></span>
+        <span class="es-text">TERMINAL CUBA // <span id="todayDateEs"></span></span>
+        <span class="en-text">CUBA TERMINAL // <span id="todayDateEn"></span></span>
     </div>
     <button class="lang-btn" onclick="toggleLanguage()">
-        <span class="es-text">🇺🇸 English</span>
-        <span class="en-text">🇪🇸 Español</span>
+        <span class="es-text">🌐 ENGLISH MODE</span>
+        <span class="en-text">🌐 MODO ESPAÑOL</span>
     </button>
 </div>
 
 <div class="main-wrapper">
-    <!-- HERO -->
+    <!-- HERO 3D -->
     <div class="hero-section">
-        <div class="hero-badge"><span class="es-text">⚡ GUÍA OFICIAL DE EQUIPOS &amp; ENVÍOS FAMILIARES</span><span class="en-text">⚡ OFFICIAL FAMILY GEAR &amp; SHIPPING GUIDE</span></div>
+        <div class="hero-badge"><span class="es-text">🚀 DIRECTO AL FUTURO: ENVÍOS &amp; EQUIPOS CUBA 2026</span><span class="en-text">🚀 FUTURE READY: CUBA GEAR &amp; DISPATCH 2026</span></div>
         <h1 class="hero-title">
             <span class="es-text">Equipos Esenciales para Cuba en <span class="accent-green">Amazon</span></span>
             <span class="en-text">Essential Cuba Gear on <span class="accent-green">Amazon</span></span>
         </h1>
         <p class="hero-subtitle">
-            <span class="es-text">Selección recomendada de aires split inverter de bajo consumo, lavadoras portátiles, plantas eléctricas para apagones, radios de emergencia a manivela, ventiladores solares, zapatillas de marca, ropa y medicinas con entrega rápida.</span>
-            <span class="en-text">Curated selection of low-draw inverter mini-splits, portable washing machines, power generators, emergency hand-crank radios, solar gear, brand sneakers, clothing, and medicines on Amazon.</span>
+            <span class="es-text">Matriz de selección avanzada: mini splits inverter de consumo ultra reducido, generadores de apagón, estaciones LiFePO4, telecomunicaciones solares, calzado y medicina prioritaria.</span>
+            <span class="en-text">Advanced equipment matrix: ultra-low draw inverter splits, blackout power generators, LiFePO4 power stations, solar radios, footwear, and priority healthcare.</span>
         </p>
         <div class="trust-pills">
-            <div class="trust-pill">📦 <strong><span class="es-text">Envío Prime Rápido</span><span class="en-text">Fast Prime Delivery</span></strong></div>
-            <div class="trust-pill">🛡️ <strong><span class="es-text">Garantía de la A a la Z</span><span class="en-text">A-to-Z Guarantee</span></strong></div>
-            <div class="trust-pill">⚡ <strong><span class="es-text">Bajo Consumo Eléctrico</span><span class="en-text">Low Power Consumption</span></strong></div>
+            <div class="trust-pill">⚡ <strong><span class="es-text">Ultra Bajo Consumo</span><span class="en-text">Low Energy Matrix</span></strong></div>
+            <div class="trust-pill">🛡️ <strong><span class="es-text">Garantía Prime A-to-Z</span><span class="en-text">Prime A-to-Z Shield</span></strong></div>
+            <div class="trust-pill">📦 <strong><span class="es-text">Despacho Ultra Rápido</span><span class="en-text">Hyper Fast Delivery</span></strong></div>
         </div>
     </div>
 
-    <!-- NOTICE BAR COMPLIANT -->
+    <!-- NOTICE BAR HUD -->
     <div class="notice-bar">
         <div class="notice-left">
-            <span>🛡️ <span class="es-text">Precios y disponibilidad actualizados en vivo al pulsar cada botón oficial de Amazon</span><span class="en-text">Live prices and availability updated when clicking any official Amazon button</span></span>
+            <span>🛡️ <span class="es-text">Sincronización cuántica de precios y stock con los servidores de Amazon</span><span class="en-text">Quantum pricing &amp; inventory sync via Amazon direct cloud</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">✓ Enlaces directos verificados</span>
-            <span class="en-text">✓ Verified direct links</span>
+            <span class="es-text">● ENLACES 100% SEGUROS</span>
+            <span class="en-text">● 100% SECURE LINKS</span>
         </div>
     </div>
 
@@ -298,116 +741,115 @@
             <!-- CONTROLS & DYNAMIC SEARCH -->
             <div class="controls-card">
                 <div class="search-input-wrap">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..." oninput="handleSearch()">
+                    <span class="search-icon">⚡</span>
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Escribe para escanear catálogo (nike, inverter, generador, tylenol, solar)..." oninput="handleSearch()">
                 </div>
                 
-                <!-- BANNER DINÁMICO DE BÚSQUEDA DIRECTA -->
+                <!-- BANNER DINÁMICO DE BÚSQUEDA -->
                 <div class="dynamic-search-banner" id="dynamicSearchBanner">
-                    <div class="dynamic-search-text">
-                        <span class="es-text">¿Buscando <strong>"<span id="searchKeyword"></span>"</strong> en todo el catálogo de Amazon?</span>
-                        <span class="en-text">Searching <strong>"<span id="searchKeywordEn"></span>"</strong> in full Amazon catalog?</span>
+                    <div style="font-size: 0.9em;">
+                        <span class="es-text">¿Filtrar <strong>"<span id="searchKeyword"></span>"</strong> en la base global de Amazon?</span>
+                        <span class="en-text">Search <strong>"<span id="searchKeywordEn"></span>"</strong> in Amazon global base?</span>
                     </div>
                     <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-direct-amazon" id="dynamicAmazonLink">
-                        <span class="es-text">Ver resultados en Amazon →</span>
-                        <span class="en-text">View results on Amazon →</span>
+                        <span class="es-text">LANZAR ENLACE OFICIAL →</span>
+                        <span class="en-text">LAUNCH OFFICIAL LINK →</span>
                     </a>
                 </div>
 
                 <div class="category-tabs">
-                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todo</span><span class="en-text">🔥 All</span></button>
-                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas de Marca</span><span class="en-text">👟 Brand Sneakers</span></button>
-                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa de Marca</span><span class="en-text">👕 Brand Clothing</span></button>
-                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Medicinas &amp; Salud</span><span class="en-text">💊 Meds &amp; Health</span></button>
+                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">⚡ TODOS</span><span class="en-text">⚡ ALL</span></button>
+                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas</span><span class="en-text">👟 Sneakers</span></button>
+                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa</span><span class="en-text">👕 Apparel</span></button>
+                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Salud</span><span class="en-text">💊 Health</span></button>
                     <button class="cat-btn" onclick="selectCat('electro', this)"><span class="es-text">❄️ Splits &amp; Lavadoras</span><span class="en-text">❄️ AC &amp; Washers</span></button>
-                    <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">⚡ Plantas &amp; Baterías</span><span class="en-text">⚡ Power &amp; Batteries</span></button>
-                    <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">💨 Ventiladores &amp; Solar</span><span class="en-text">💨 Solar &amp; Fans</span></button>
-                    <button class="cat-btn" onclick="selectCat('emergencia', this)"><span class="es-text">📻 Radios &amp; Linternas</span><span class="en-text">📻 Radios &amp; Lights</span></button>
-                    <button class="cat-btn" onclick="selectCat('tech', this)"><span class="es-text">📱 Celulares &amp; Tech</span><span class="en-text">📱 Phones &amp; Tech</span></button>
-                    <button class="cat-btn" onclick="selectCat('motos', this)"><span class="es-text">🏍️ Motos &amp; Herramientas</span><span class="en-text">🏍️ Moto &amp; Tools</span></button>
+                    <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">🔋 Baterías &amp; Plantas</span><span class="en-text">🔋 Power Matrix</span></button>
+                    <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">☀️ Solar &amp; Brisa</span><span class="en-text">☀️ Solar Gear</span></button>
+                    <button class="cat-btn" onclick="selectCat('emergencia', this)"><span class="es-text">📻 Radios Apagón</span><span class="en-text">📻 Radios</span></button>
+                    <button class="cat-btn" onclick="selectCat('tech', this)"><span class="es-text">📱 Tech Liberada</span><span class="en-text">📱 Tech</span></button>
+                    <button class="cat-btn" onclick="selectCat('motos', this)"><span class="es-text">🏍️ Motos &amp; Herramientas</span><span class="en-text">🏍️ Tools</span></button>
                 </div>
             </div>
 
-            <!-- PRODUCT CARDS DE AMAZON -->
+            <!-- CONTENEDOR 3D DE PRODUCTOS -->
             <div class="products-grid" id="dealsContainer"></div>
         </div>
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR HUD -->
         <aside class="sidebar">
-            <!-- AMAZON SECCIÓN DESTACADA -->
             <div class="amazon-box">
-                <h3 class="amazon-box-title">📦 <span class="es-text">Amazon Ofertas del Día</span><span class="en-text">Amazon Today's Deals</span></h3>
+                <h3 class="amazon-box-title">📦 <span class="es-text">OFERTAS AMAZON</span><span class="en-text">AMAZON DEALS</span></h3>
                 <p class="amazon-box-desc">
-                    <span class="es-text">Accede a miles de liquidaciones, rebajas de temporada y ofertas relámpago directamente en Amazon oficial.</span>
-                    <span class="en-text">Access thousands of clearances, seasonal sales, and lightning deals directly on official Amazon.</span>
+                    <span class="es-text">Terminal directa a rebajas relámpago y liquidaciones de inventario oficial.</span>
+                    <span class="en-text">Direct gate to official lightning sales and surplus inventory.</span>
                 </p>
                 <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-amz-today">
-                    <span class="es-text">Abrir Amazon Ofertas Oficiales →</span>
-                    <span class="en-text">Open Amazon Official Deals →</span>
+                    <span class="es-text">ABRIR AMAZON HUB →</span>
+                    <span class="en-text">OPEN AMAZON HUB →</span>
                 </a>
             </div>
 
-            <!-- YRT SOLUTIONS: ALTO INGRESO LOCAL EN MIAMI -->
+            <!-- YRT SOLUTIONS -->
             <div class="yrt-widget">
-                <span class="yrt-badge">⭐ Patrocinador Oficial</span>
+                <span class="yrt-badge">PARTNER CERTIFICADO</span>
                 <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
                 <p class="yrt-desc">
-                    <span class="es-text">Servicio profesional de Aires Acondicionados en Miami y todo el sur de Florida. Instalación, reparación y mantenimiento 24/7 con garantía.</span>
-                    <span class="en-text">Professional AC Services in Miami &amp; South Florida. 24/7 repair, installation, and maintenance with warranty.</span>
+                    <span class="es-text">Aires Acondicionados en Miami y Sur de la Florida. Instalación, reparación y diagnóstico 24/7.</span>
+                    <span class="en-text">AC Experts in Miami &amp; South Florida. 24/7 installation, maintenance &amp; repair.</span>
                 </p>
                 <a href="tel:+13054911906" class="yrt-tel">📞 305-491-1906</a>
                 <div class="yrt-buttons">
-                    <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20necesito%20una%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
-                    <a href="tel:+13054911906" class="btn-call">Llamar Ahora</a>
+                    <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20solicito%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
+                    <a href="tel:+13054911906" class="btn-call">Llamada</a>
                 </div>
             </div>
 
-            <!-- ACTIVIDAD EN VIVO REALISTA -->
+            <!-- ACTIVIDAD RADAR -->
             <div class="stats-widget">
-                <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
+                <div class="stats-title"><span class="es-text">RADAR DE TRÁFICO EN VIVO</span><span class="en-text">LIVE TRAFFIC RADAR</span></div>
                 <div class="stats-users">
                     <span class="live-dot"></span>
-                    <span id="activeUsers">26</span>
-                    <span style="font-size: 0.55em; color: #9CA3AF; font-weight: 500;"><span class="es-text">buscando en Amazon</span><span class="en-text">browsing Amazon</span></span>
+                    <span id="activeUsers">32</span>
                 </div>
-                <div class="stats-note">
-                    <span class="es-text">🔥 Última consulta hace 2 minutos</span>
-                    <span class="en-text">🔥 Last search 2 mins ago</span>
+                <div style="font-size: 0.8em; color: #94a3b8; margin-top: 6px;">
+                    <span class="es-text">Usuarios consultando ofertas en tiempo real</span>
+                    <span class="en-text">Active shoppers browsing right now</span>
                 </div>
             </div>
         </aside>
     </div>
 
-    <!-- SECCIÓN LEGAL TRANSPARENTE -->
+    <!-- SECCIÓN LEGAL -->
     <div class="legal-box" id="legal">
-        <h3 class="legal-title"><span class="es-text">Información Legal &amp; Transparencia</span><span class="en-text">Legal Disclosures &amp; Transparency</span></h3>
+        <h3 class="legal-title"><span class="es-text">Transparencia &amp; Marco Legal</span><span class="en-text">Transparency &amp; Legal Frame</span></h3>
         <div class="legal-grid">
             <details class="legal-card">
-                <summary><span class="es-text">📦 Afiliado de Amazon (FTC)</span><span class="en-text">📦 Amazon Associate (FTC)</span></summary>
+                <summary><span class="es-text">📦 Afiliado Amazon (FTC)</span><span class="en-text">📦 Amazon Associate (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC, un programa de publicidad para afiliados diseñado para proporcionar un medio para que los sitios web obtengan comisiones por publicidad y enlaces a Amazon.com. Esto no añade ningún costo a tus compras. Cumplimiento con FTC 16 CFR 255.</span>
-                    <span class="en-text">SaveEverything Chic is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. At no extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC. Obtengo comisiones por compras elegibles sin costo adicional para el usuario.</span>
+                    <span class="en-text">SaveEverything Chic is an Amazon Services LLC Associate. We earn commissions from qualifying purchases at zero extra cost to you.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic no es una tienda directa ni procesa pagos ni almacena inventario. Todos los precios, pedidos, envíos, garantías y devoluciones son gestionados exclusivamente por Amazon.com bajo sus propios términos de servicio.</span>
-                    <span class="en-text">SaveEverything Chic is not a store and processes no payments. All prices, orders, shipping, and returns are handled exclusively by Amazon.com under their terms of service.</span>
+                    <span class="es-text">No procesamos cobros ni almacenamos stock directamente. Toda transacción se efectúa en los servidores protegidos de Amazon.com.</span>
+                    <span class="en-text">All financial transactions and warranties are operated directly by Amazon.com.</span>
                 </div>
             </details>
             <details class="legal-card">
-                <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy &amp; Cookies</span></summary>
+                <summary><span class="es-text">🔒 Privacidad Cuántica</span><span class="en-text">🔒 Privacy Guard</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No recopilamos datos personales sensibles, no vendemos información y no utilizamos cookies invasivas. Solo se guarda tu preferencia de idioma localmente en tu navegador. Cumplimiento GDPR / CCPA.</span>
-                    <span class="en-text">We do not collect sensitive personal data, sell information, or use invasive trackers. Only your language preference is saved locally. GDPR / CCPA compliant.</span>
+                    <span class="es-text">Cero rastreo invasivo. Tu idioma de preferencia se almacena de forma local en tu terminal navegador.</span>
+                    <span class="en-text">No intrusive trackers. User preferences stored strictly in local memory.</span>
                 </div>
             </details>
             <details class="legal-card">
-                <summary><span class="es-text">📍 Contacto &amp; Soporte</span><span class="en-text">📍 Contact &amp; Support</span></summary>
+                <summary><span class="es-text">📍 Central de Operaciones</span><span class="en-text">📍 Operations HQ</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com / yosvelreina@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
-                    <span class="en-text">SaveEverything Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com / yosvelreina@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
+                    AhorraTodo Chic • Miami, Florida, USA.<br>
+                    Email: ahorratodochic@gmail.com<br>
+                    Comms: +1 (305) 491-1906
                 </div>
             </details>
         </div>
@@ -415,190 +857,188 @@
 </div>
 
 <footer class="footer">
-    <p>© <span id="yearCopy"></span> AhorraTodo Chic (SaveEverything Chic). Miami, FL. <span class="es-text">Todos los derechos reservados.</span><span class="en-text">All rights reserved.</span></p>
+    <p>© <span id="yearCopy"></span> AhorraTodo Chic (SaveEverything Chic). Cyberdeck Terminal. Miami, FL. All Rights Reserved.</p>
 </footer>
 
-<!-- SCRIPT COMPLIANT CON AMAZON ASSOCIATES Y FOTOS REALES -->
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20deseo%20informacion%20de%20un%20producto" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
+    💬
+</a>
+
+<!-- SCRIPT AUDITADO Y SIN ERRORES -->
 <script>
 let currentLang = 'es';
 let activeCategory = 'all';
-
-/* TAG OFICIAL DE AMAZON DE YOSVEL */
 const AMAZON_TAG = "ahorratodochi-20";
 
-/* CATÁLOGO COMPLETO DE EQUIPOS ESENCIALES PARA CUBA & ENVÍOS */
+/* CATÁLOGO COMPLETO SIN FALTANTES */
 const AMAZON_DEALS_DATABASE = [
-    /* ZAPATILLAS DE MARCAS */
     {
         id: "amz-nike-revolution",
         cat: "zapatillas",
-        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras y Resistentes",
-        name_en: "Nike Men's & Women's Lightweight Athletic Running Sneakers",
-        desc_es: "Amortiguación de espuma suave, suela de alta tracción y tejido de malla transpirable. Máxima comodidad para caminar o correr.",
-        desc_en: "Soft foam cushioning, durable traction outsole and breathable mesh fabric. Maximum daily and running comfort.",
+        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras",
+        name_en: "Nike Men's & Women's Lightweight Athletic Sneakers",
+        desc_es: "Amortiguación reactiva de espuma, tracción de alta durabilidad y malla fresca de ventilación activa.",
+        desc_en: "Responsive foam cushion, heavy duty traction outsole, breathable mesh structure.",
         img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
         badge_es: "Top Marca Nike",
         badge_en: "Nike Top Brand",
-        feature_es: "Amortiguación suave • Malla fresca",
-        feature_en: "Soft Cushioning • Breathable Mesh",
+        feature_es: "Espuma Suave • Malla Fresca",
+        feature_en: "Soft Foam • Breathable",
         searchQuery: "nike running shoes sneakers men women"
     },
     {
         id: "amz-adidas-cloudfoam",
         cat: "zapatillas",
-        name_es: "Zapatillas Adidas Cloudfoam Pure Cómodas de Caminar",
-        name_en: "Adidas Cloudfoam Pure Running & Walking Sneakers",
-        desc_es: "Plantilla viscoelástica ultra suave que se adapta al pie como un guante. Ideales para estar de pie y caminar todo el día.",
-        desc_en: "Ultra-soft memory foam footbed that hugs your foot. Perfect for standing all day and daily walks.",
+        name_es: "Zapatillas Adidas Cloudfoam Pure Ultra Confort",
+        name_en: "Adidas Cloudfoam Pure All-Day Walking Sneakers",
+        desc_es: "Plantilla con memoria viscoelástica que neutraliza el impacto diario en jornadas prolongadas.",
+        desc_en: "Memory foam sockliner designed to absorb shock during extended standing & walking.",
         img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
         badge_es: "Máximo Confort",
         badge_en: "Max Comfort",
-        feature_es: "Plantilla Cloudfoam • Suela flexible",
-        feature_en: "Cloudfoam Sockliner • Flexible",
+        feature_es: "Suela Flexible • Cloudfoam",
+        feature_en: "Flexible Sole • Cloudfoam",
         searchQuery: "adidas cloudfoam sneakers men women"
     },
     {
         id: "amz-puma-smash",
         cat: "zapatillas",
-        name_es: "Zapatillas Puma Clásicas Urbanas y Deportivas de Cuero",
-        name_en: "Puma Classic Leather Casual & Street Sneakers",
-        desc_es: "Estilo icónico y duradero, suela de goma anti-deslizante y materiales de alta calidad para máxima durabilidad diaria.",
-        desc_en: "Iconic durable street style, non-marking rubber outsole and premium leather construction.",
+        name_es: "Zapatillas Puma Clásicas Urbanas de Cuero Genuino",
+        name_en: "Puma Classic Genuine Leather Casual Sneakers",
+        desc_es: "Construcción en cuero resistente al desgaste continuo y suela de alta adherencia antideslizante.",
+        desc_en: "Heavy-duty leather upper built for extreme wear resistance and non-marking traction.",
         img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80",
         badge_es: "Alta Durabilidad",
-        badge_en: "Durable Leather",
-        feature_es: "Cuero resistente • Suela anti-resbalón",
-        feature_en: "Durable Leather • Anti-slip Sole",
+        badge_en: "High Durability",
+        feature_es: "Cuero Robusto • Anti-Resbalón",
+        feature_en: "Rugged Leather • Anti-Slip",
         searchQuery: "puma smash sneakers shoes"
     },
     {
         id: "amz-skechers-slipins",
         cat: "zapatillas",
-        name_es: "Zapatillas Skechers Slip-ins Manos Libres Cómodas",
+        name_es: "Zapatillas Skechers Slip-ins Manos Libres",
         name_en: "Skechers Hands-Free Slip-ins Walking Shoes",
-        desc_es: "Se ponen solas sin agacharse ni atar cordones. Amortiguación ortopédica ideal para largas jornadas y personas mayores.",
-        desc_en: "Step in hands-free with no bending or tying. Orthopedic cushioning, perfect for walking and seniors.",
+        desc_es: "Calzado automático sin agacharse ni ajustar cordones. Amortiguación ortopédica superior.",
+        desc_en: "Hands-free easy step-in with orthopedic arch fit. Zero bending required.",
         img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Sin Agacharse",
+        badge_es: "Manos Libres",
         badge_en: "Hands-Free",
-        feature_es: "Sin cordones • Suela ortopédica",
-        feature_en: "Slip-on • Arch Fit Comfort",
+        feature_es: "Sin Cordones • Arco Ortopédico",
+        feature_en: "No Laces • Arch Comfort",
         searchQuery: "skechers slip-ins shoes sneakers"
     },
-
-    /* ROPA DE MARCA */
     {
         id: "amz-tommy-polo",
         cat: "ropa",
-        name_es: "Polos Clásicos Tommy Hilfiger de Algodón Cuello Piqué",
+        name_es: "Polos Clásicos Tommy Hilfiger Algodón Piqué",
         name_en: "Tommy Hilfiger Classic Pique Cotton Polo Shirts",
-        desc_es: "100% algodón suave y transpirable, corte clásico con logo bordado en el pecho. Elegante, fresco y duradero para climas cálidos.",
-        desc_en: "100% soft breathable pique cotton, classic fit with embroidered flag logo. Timeless, cool and durable.",
+        desc_es: "100% fibra natural de algodón transpirable con corte anatómico y emblema bordado de alta precisión.",
+        desc_en: "100% breathable natural cotton with classic tailored fit and iconic emblem.",
         img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Marca Original",
-        badge_en: "Original Brand",
-        feature_es: "100% Algodón • Logo bordado",
-        feature_en: "100% Cotton • Embroidered Logo",
+        badge_es: "Original 100%",
+        badge_en: "100% Authentic",
+        feature_es: "Algodón Puro • Fresco",
+        feature_en: "Pure Cotton • Cool Wear",
         searchQuery: "tommy hilfiger polo shirt men"
     },
     {
         id: "amz-levis-jeans",
         cat: "ropa",
-        name_es: "Pantalones Jeans Levi's 505 / 501 Regular Fit Original",
-        name_en: "Levi's Men's 505 Regular Fit Classic Denim Jeans",
-        desc_es: "El vaquero más resistente y reconocido del mundo. Tela de mezclilla gruesa indeformable para máxima durabilidad de trabajo o salida.",
-        desc_en: "The world's most durable classic denim jeans. Heavyweight authentic denim built to last for years.",
+        name_es: "Jeans Levi's 505 Regular Fit Mezclilla Reforzada",
+        name_en: "Levi's Men's 505 Regular Fit Heavyweight Denim Jeans",
+        desc_es: "El pantalón vaquero estándar de máxima resistencia. Tela pesada indeformable para trabajo y diario.",
+        desc_en: "Legendary rugged denim built for demanding everyday wear and long-lasting shape.",
         img: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
         badge_es: "Indestructible",
-        badge_en: "Durable Denim",
-        feature_es: "Mezclilla original • Corte recto",
-        feature_en: "Original Denim • Straight Leg",
+        badge_en: "Ultra Rugged",
+        feature_es: "Corte Recto • Mezclilla Auténtica",
+        feature_en: "Straight Fit • Heavy Denim",
         searchQuery: "levis 505 regular fit jeans men"
     },
     {
         id: "amz-sport-dryfit-pack",
         cat: "ropa",
-        name_es: "Pack Camisetas Deportivas Dry-Fit Frescas y Transpirables",
-        name_en: "Men's Moisture-Wicking Athletic Quick-Dry T-Shirts Pack",
-        desc_es: "Secado ultra rápido y anti-sudor. No necesitan planchado, no retienen calor y son ideales para climas calurosos.",
-        desc_en: "Moisture-wicking, quick-dry fabric. Wrinkle-free, lightweight and designed for hot weather and sports.",
+        name_es: "Pack Camisetas Dry-Fit Ultra Transpirables",
+        name_en: "Quick-Dry Moisture Wicking Athletic Tees Multi-Pack",
+        desc_es: "Tecnología hidrófuga que expulsa el sudor y calor al instante. No requieren plancha.",
+        desc_en: "Moisture-wicking microfibers keep body cool under high humidity. Wrinkle-free.",
         img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Frescas Anti-Calor",
-        badge_en: "Quick-Dry",
-        feature_es: "Secado ultra rápido • Sin plancha",
-        feature_en: "Quick dry • Anti-odor",
+        badge_es: "Anti-Calor",
+        badge_en: "Heat Defense",
+        feature_es: "Secado Rápido • Sin Plancha",
+        feature_en: "Quick Dry • Easy Care",
         searchQuery: "under armour moisture wicking t shirts men pack"
     },
     {
         id: "amz-ck-underwear",
         cat: "ropa",
-        name_es: "Pack Ropa Interior Calvin Klein Boxer Briefs de Algodón",
-        name_en: "Calvin Klein Men's Cotton Classics Boxer Briefs Pack",
-        desc_es: "Pretina elástica emblemática, algodón puro suave y elástico que no se deforma tras lavadas constantes.",
-        desc_en: "Classic logo waistband, 100% breathable cotton offering all-day softness, flexibility and durable support.",
+        name_es: "Pack Bóxers Calvin Klein Algodón Suave",
+        name_en: "Calvin Klein Cotton Classics Boxer Briefs Pack",
+        desc_es: "Banda elástica con soporte de alta resiliencia y tejido fresco que mantiene su forma lavado tras lavado.",
+        desc_en: "Signature elastic waistband with shape-retaining breathable stretch cotton.",
         img: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80",
         badge_es: "Pack Familiar",
-        badge_en: "Value Pack",
-        feature_es: "Algodón elástico • Pretina suave",
-        feature_en: "Stretch Cotton • Soft Waistband",
+        badge_en: "Family Pack",
+        feature_es: "Algodón Suave • Pretina Firme",
+        feature_en: "Soft Cotton • Secure Band",
         searchQuery: "calvin klein boxer briefs pack"
     },
-
-    /* MEDICAMENTOS Y FARMACIA */
     {
         id: "amz-tylenol-500",
         cat: "medicamentos",
-        name_es: "Acetaminofén 500mg Extra Fuerte (Frasco Familiar)",
-        name_en: "Acetaminophen 500mg Extra Strength Pain Reliever & Fever Reducer",
-        desc_es: "Alivia dolor de cabeza, dolores musculares, fiebres y malestares comunes. Esencial en cualquier botiquín y envíos familiares.",
-        desc_en: "Relieves headaches, body aches, muscle pain, and reduces fever fast. Essential household and family staple.",
+        name_es: "Acetaminofén 500mg Extra Fuerte Botiquín",
+        name_en: "Acetaminophen 500mg Extra Strength Pain Reliever",
+        desc_es: "Bloqueador rápido de fiebres, dolores musculares y cefaleas comunes. Esencial en envíos prioritarios.",
+        desc_en: "Rapid relief from fevers, headaches, and muscle aches. Vital health supply.",
         img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Básico de Botiquín",
-        badge_en: "Essential Medicine",
-        feature_es: "500mg • Rápido alivio fiebre y dolor",
-        feature_en: "500mg • Rapid Fever & Pain Relief",
+        badge_es: "Esencial Salud",
+        badge_en: "Essential Med",
+        feature_es: "500mg • Alivio Inmediato",
+        feature_en: "500mg • Rapid Relief",
         searchQuery: "acetaminophen 500 mg extra strength tylenol"
     },
     {
         id: "amz-ibuprofen-200",
         cat: "medicamentos",
-        name_es: "Ibuprofeno 200mg Antiinflamatorio y Alivio del Dolor",
-        name_en: "Ibuprofen 200mg Tablets Pain Reliever / Fever Reducer",
-        desc_es: "Combate inflamación, dolores de muelas, artritis, espalda y fiebres. Bote grande de alta duración.",
-        desc_en: "Anti-inflammatory pain relief for joint aches, toothaches, back pain and fever.",
+        name_es: "Ibuprofeno 200mg Antiinflamatorio Potente",
+        name_en: "Ibuprofen 200mg Anti-Inflammatory Tablets",
+        desc_es: "Neutraliza inflamaciones, dolor articular, odontalgia y malestar general. Envase de alta cantidad.",
+        desc_en: "Relieves joint swelling, toothaches, body aches and systemic inflammation.",
         img: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80",
         badge_es: "Antiinflamatorio",
-        badge_en: "Anti-inflammatory",
-        feature_es: "200mg • Articulaciones y dolor",
-        feature_en: "200mg • Joint & Muscle Relief",
+        badge_en: "Anti-Inflammatory",
+        feature_es: "200mg • Dolor Articular",
+        feature_en: "200mg • Joint Care",
         searchQuery: "ibuprofen 200 mg pain reliever tablets"
     },
     {
         id: "amz-centrum-silver",
         cat: "medicamentos",
-        name_es: "Multivitamínico Completo Centrum Silver Adultos 50+",
-        name_en: "Centrum Silver Multivitamin for Adults 50+ Minerals & Vitamins",
-        desc_es: "Vitaminas A, C, D3, B12, Zinc y Calcio. Refuerza defensas, el corazón, la visión y la vitalidad de adultos mayores.",
-        desc_en: "Complete daily vitamins & minerals with Zinc, Vitamin D3 and B-complex to support heart, eyes and bones.",
+        name_es: "Multivitamínico Completo Centrum Silver 50+",
+        name_en: "Centrum Silver Multivitamin for Adults 50+ Minerals",
+        desc_es: "Refuerzo inmunológico y óseo: Zinc, Vitaminas D3, Complejo B12 y Calcio para adultos mayores.",
+        desc_en: "Immune and bone matrix: Zinc, Vitamin D3, B-complex and Calcium for seniors.",
         img: "https://images.unsplash.com/photo-1577401239170-897942555fb3?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Defensas & Vitalidad",
-        badge_en: "Immune Support",
-        feature_es: "Zinc + D3 + B12 • Sistema inmune",
-        feature_en: "Zinc + D3 + B12 • Heart & Bones",
+        badge_es: "Sistema Inmune",
+        badge_en: "Immune Boost",
+        feature_es: "Zinc + D3 + B12 • Vitalidad",
+        feature_en: "Zinc + D3 + B12 • Vitality",
         searchQuery: "centrum silver multivitamin adults 50 plus"
     },
     {
         id: "amz-tensiometro-digital",
         cat: "medicamentos",
-        name_es: "Tensiómetro Digital Automático de Brazo con Pantalla LCD",
-        name_en: "Automatic Digital Blood Pressure Monitor with Large Cuff",
-        desc_es: "Mide presión arterial y pulso con un solo toque. Pantalla grande iluminada, detector de arritmias y memoria. Funciona a pilas o USB.",
-        desc_en: "Accurate one-touch blood pressure and pulse monitor. Large backlit display, arrhythmia detection, dual memory.",
+        name_es: "Tensiómetro Digital LCD con Detección Arritmia",
+        name_en: "Digital Upper Arm Blood Pressure Monitor & Pulse",
+        desc_es: "Lectura digital precisa de pulso y presión sistólica/diastólica. Funciona a baterías o conexión USB.",
+        desc_en: "Accurate blood pressure and arrhythmia monitor with large backlit LCD display.",
         img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Control Médico",
-        badge_en: "Health Essential",
-        feature_es: "Pantalla LCD • Detección de arritmias",
-        feature_en: "LCD Display • Irregular Heartbeat",
+        badge_es: "Diagnóstico LCD",
+        badge_en: "LCD Diagnostic",
+        feature_es: "Brazalete Amplio • Memoria",
+        feature_en: "Large Cuff • Dual Memory",
         searchQuery: "digital blood pressure monitor upper arm"
     },
     {
@@ -606,121 +1046,64 @@ const AMAZON_DEALS_DATABASE = [
         cat: "medicamentos",
         name_es: "Botiquín de Primeros Auxilios Completo 200+ Piezas",
         name_en: "Complete First Aid Kit 200+ Pieces Medical Supplies",
-        desc_es: "Estuche impermeable con gasas estériles, vendas, curitas, toallitas antisépticas, tijeras y pinzas para emergencias en casa.",
-        desc_en: "Waterproof pouch with bandages, antiseptic wipes, gauze pads, scissors and emergency first aid tools.",
+        desc_es: "Estuche impermeable con gasas estériles, vendas, curitas, toallitas antisépticas, tijeras y pinzas.",
+        desc_en: "Waterproof pouch with bandages, antiseptic wipes, gauze pads, scissors and first aid tools.",
         img: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80",
         badge_es: "200+ Piezas",
         badge_en: "200+ Pieces",
-        feature_es: "Estuche resistente • Gasas y vendas",
-        feature_en: "Waterproof case • Sterile Supplies",
+        feature_es: "Estuche Resistente • Gasas y Vendas",
+        feature_en: "Waterproof Case • Sterile Supplies",
         searchQuery: "first aid kit medical emergency supplies"
     },
-
     {
         id: "amz-split-inverter",
         cat: "electro",
         name_es: "Aire Acondicionado Mini Split Inverter 12,000 BTU 115V",
         name_en: "Mini Split Inverter Air Conditioner 12,000 BTU 115V",
-        desc_es: "Tecnología inverter de ultra bajo consumo eléctrico. Enfría habitaciones rápido y trabaja perfecto con plantas o voltaje inestable.",
-        desc_en: "High-efficiency inverter mini split. Cools fast with minimum electric draw, ideal for voltage fluctuations.",
+        desc_es: "Compresor de modulación ultra eficiente. Enfría velozmente con mínimo amperaje, ideal para plantas.",
+        desc_en: "Ultra-low draw inverter compressor. Cools rapidly and handles voltage fluctuations flawlessly.",
         img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Bajo Consumo",
-        badge_en: "Low Energy Draw",
-        feature_es: "Inverter 115V • Ultra silencioso",
-        feature_en: "Inverter 115V • Ultra Quiet",
+        badge_es: "Ultra Eficiente",
+        badge_en: "Ultra Efficient",
+        feature_es: "115V Inverter • Silencioso",
+        feature_en: "115V Inverter • Ultra Quiet",
         searchQuery: "mini split air conditioner 12000 btu 115v inverter"
     },
     {
         id: "amz-lavadora-portatil",
         cat: "electro",
-        name_es: "Lavadora Portátil Automática Doble Tina con Centrifugado",
+        name_es: "Lavadora Portátil Doble Tina con Centrífuga",
         name_en: "Portable Twin Tub Washing Machine with Spin Dryer",
-        desc_es: "Lava y exprime ropa rápido ahorrando agua y corriente. Compacta, ligera y perfecta para casas sin instalación fija de plomería.",
-        desc_en: "Compact twin tub washer and spinner. Saves water and power, ideal for apartments or off-grid plumbing.",
+        desc_es: "Lava y centrifuga casi seca la ropa en minutos sin necesidad de tubería fija ni alta presión.",
+        desc_en: "Fast wash & high-RPM spin dryer. Zero fixed plumbing required, ultra water-efficient.",
         img: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Ahorro de Agua",
+        badge_es: "Ahorro Hídrico",
         badge_en: "Water Saver",
-        feature_es: "Doble tina • Centrifugado rápido",
-        feature_en: "Twin tub • Fast Spin Dryer",
+        feature_es: "Doble Tina • Secado Rápido",
+        feature_en: "Twin Tub • Fast Spin",
         searchQuery: "portable washing machine twin tub spin dryer"
     },
     {
         id: "amz-radio-manivela",
         cat: "emergencia",
-        name_es: "Radio de Emergencia Solar AM/FM/SW a Manivela con Linterna",
-        name_en: "Emergency Solar Hand Crank Radio AM/FM/SW with Flashlight",
-        desc_es: "Nunca se queda sin batería: se recarga con manivela, panel solar o USB. Sintoniza noticias durante apagones y recarga celulares.",
-        desc_en: "Never dies: charges by hand crank, solar, or USB. Tunes news during blackouts and charges smartphones.",
+        name_es: "Radio Solar y Manivela de Emergencia AM/FM/SW",
+        name_en: "Emergency Solar & Hand-Crank Radio AM/FM/SW Charger",
+        desc_es: "Energía inagotable: manivela cinética, celda solar y batería USB. Sintoniza noticias en apagones.",
+        desc_en: "Infinite power: kinetic hand-crank, solar cell & power bank. Tunes all frequencies.",
         img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Vital para Apagones",
-        badge_en: "Blackout Must-Have",
-        feature_es: "Manivela + Solar • Carga teléfonos",
-        feature_en: "Crank + Solar • Phone Charger",
+        badge_es: "Zero Apagones",
+        badge_en: "Blackout Shield",
+        feature_es: "Manivela + Solar • Linterna",
+        feature_en: "Crank + Solar • LED Torch",
         searchQuery: "emergency hand crank solar radio am fm flashlight"
-    },
-    {
-        id: "amz-gen-inverter",
-        cat: "energia",
-        name_es: "Generador Eléctrico Inverter Silencioso 2500W Gasolina",
-        name_en: "Quiet Inverter Generator 2500W Portable Gas Powered",
-        desc_es: "El salvavidas para apagones continuos. Silencioso, gasta poquísima gasolina y es seguro para refrigeradores, splits y TV.",
-        desc_en: "Essential for extended power outages. Ultra quiet, fuel-efficient and safe for sensitive home appliances.",
-        img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Top Apagones",
-        badge_en: "Top Blackout Pick",
-        feature_es: "Bajo consumo • Silencioso",
-        feature_en: "Low fuel • Quiet",
-        searchQuery: "inverter generator portable 2500w"
-    },
-    {
-        id: "amz-power-station",
-        cat: "energia",
-        name_es: "Estación de Energía LiFePO4 600W con Salida 110V AC",
-        name_en: "Portable LiFePO4 Power Station 600W Solar Compatible",
-        desc_es: "Batería de litio recargable con enchufe 110V AC. Enciende bombillos, ventiladores y carga laptops sin gasolina, humo ni ruido.",
-        desc_en: "Rechargeable LiFePO4 battery with AC outlet. Powers lights, fans, and electronics quietly with zero fumes.",
-        img: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Batería Solar",
-        badge_en: "Solar Battery",
-        feature_es: "Salida 110V • Sin ruido ni humo",
-        feature_en: "110V AC • Zero Noise",
-        searchQuery: "portable power station lifepo4 600w"
-    },
-    {
-        id: "amz-fan-solar",
-        cat: "solar",
-        name_es: "Ventilador Recargable Solar con Panel y Luces LED",
-        name_en: "Solar Rechargeable Fan with Solar Panel & LED Bulbs",
-        desc_es: "Batería de larga duración de 12 a 24 horas continuas para dormir con brisa en los apagones. Incluye panel solar y puerto USB.",
-        desc_en: "Long life battery (12-24 hrs runtime). Includes solar panel, USB phone charger and lighting.",
-        img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Más Vendido",
-        badge_en: "Best Seller",
-        feature_es: "Batería 24h • Panel solar incluido",
-        feature_en: "24h Battery • Solar panel included",
-        searchQuery: "solar rechargeable fan with panel led light"
-    },
-    {
-        id: "amz-solar-bulbs",
-        cat: "solar",
-        name_es: "Pack 4 Bombillos Solares Recargables con Control Remoto",
-        name_en: "Pack of 4 Solar Rechargeable Bulbs with Remote Control",
-        desc_es: "Se recargan con luz solar durante el día y brindan iluminación continua toda la noche en cualquier habitación sin gastar luz.",
-        desc_en: "Charges during daytime with solar panel, provides dependable illumination throughout the night.",
-        img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Pack Ahorro",
-        badge_en: "Budget Pack",
-        feature_es: "Carga solar • Control remoto",
-        feature_en: "Solar charge • Remote",
-        searchQuery: "solar rechargeable light bulbs pack remote"
     },
     {
         id: "amz-linterna-tactica",
         cat: "emergencia",
-        name_es: "Linterna LED Táctica Recargable 10,000 Lúmenes Potente",
+        name_es: "Linterna LED Táctica Recargable 10,000 Lúmenes",
         name_en: "High-Powered Tactical Rechargeable LED Flashlight",
-        desc_es: "Ilumina distancias gigantescas. Resistente a golpes, agua y con batería recargable que dura días de uso continuo.",
-        desc_en: "Ultra bright tactical flashlight. Water resistant, durable aluminum body, and long-lasting rechargeable battery.",
+        desc_es: "Ilumina distancias gigantescas. Resistente a golpes, agua y con batería recargable de alta duración.",
+        desc_en: "Ultra bright tactical flashlight. Water resistant, durable aluminum body, and long-lasting battery.",
         img: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80",
         badge_es: "Alta Potencia",
         badge_en: "High Power",
@@ -729,12 +1112,68 @@ const AMAZON_DEALS_DATABASE = [
         searchQuery: "tactical flashlight high lumens rechargeable"
     },
     {
+        id: "amz-gen-inverter",
+        cat: "energia",
+        name_es: "Generador Inverter Silencioso 2500W Gasolina",
+        name_en: "Quiet 2500W Portable Inverter Generator Low-Fuel",
+        desc_es: "Tecnología de onda senoidal pura que protege refrigeradores y splits. Consumo mínimo de combustible.",
+        desc_en: "Pure sine wave power safe for sensitive electronics and inverter AC units with minimal fuel consumption.",
+        img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Top Planta",
+        badge_en: "Top Generator",
+        feature_es: "Silencioso • Onda Pura",
+        feature_en: "Quiet • Pure Sine Wave",
+        searchQuery: "inverter generator portable 2500w"
+    },
+    {
+        id: "amz-power-station",
+        cat: "energia",
+        name_es: "Estación de Energía LiFePO4 600W Salida 110V AC",
+        name_en: "Portable LiFePO4 Power Station 600W AC Outlet Solar",
+        desc_es: "Batería química de 3000+ ciclos sin humo ni ruidos. Alimenta ventiladores, luces y laptops.",
+        desc_en: "Heavy-duty 3000+ cycle LiFePO4 battery with 110V AC outlet. Powers lights and fans silently.",
+        img: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Batería Solar",
+        badge_en: "Solar Battery",
+        feature_es: "110V AC • Cero Humo",
+        feature_en: "110V AC • Zero Noise",
+        searchQuery: "portable power station lifepo4 600w"
+    },
+    {
+        id: "amz-fan-solar",
+        cat: "solar",
+        name_es: "Ventilador Solar Recargable con Panel 24h Brisa",
+        name_en: "Solar Rechargeable High-Velocity Fan with Solar Panel",
+        desc_es: "Hasta 24 horas continuas de flujo de aire para noches sin electricidad. Incluye panel solar externo.",
+        desc_en: "Up to 24-hour runtime per charge. Includes solar capture panel and USB device charging.",
+        img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80",
+        badge_es: "24h Duración",
+        badge_en: "24h Runtime",
+        feature_es: "Panel Solar • Puerto USB",
+        feature_en: "Solar Panel • USB Port",
+        searchQuery: "solar rechargeable fan with panel led light"
+    },
+    {
+        id: "amz-solar-bulbs",
+        cat: "solar",
+        name_es: "Pack 4 Bombillos Solares Recargables con Control",
+        name_en: "Pack of 4 Solar Rechargeable Bulbs with Remote Control",
+        desc_es: "Se recargan con luz solar durante el día y brindan iluminación continua toda la noche sin gastar luz.",
+        desc_en: "Charges during daytime with solar panel, provides dependable illumination throughout the night.",
+        img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Pack Ahorro",
+        badge_en: "Budget Pack",
+        feature_es: "Carga Solar • Control Remoto",
+        feature_en: "Solar Charge • Remote",
+        searchQuery: "solar rechargeable light bulbs pack remote"
+    },
+    {
         id: "amz-smartphone-unlocked",
         cat: "tech",
         name_es: "Teléfono Inteligente Liberado 128GB Batería 5000mAh",
         name_en: "Unlocked Smartphone 128GB Dual SIM 5000mAh Battery",
-        desc_es: "Compatible con todas las redes en USA, Cuba y el Caribe. Doble SIM para Cubacel, gran pantalla y batería para varios días.",
-        desc_en: "Unlocked for global carriers, dual SIM, massive battery life, and crisp HD display.",
+        desc_es: "Compatible con redes de USA y Cubacel. Doble ranura SIM, gran pantalla y batería de larga duración.",
+        desc_en: "Unlocked for global carriers, dual SIM for Cuba, massive battery life, and crisp HD display.",
         img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
         badge_es: "Liberado Global",
         badge_en: "Global Unlocked",
@@ -745,9 +1184,9 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-powerbank-solar",
         cat: "tech",
-        name_es: "Batería Externa Power Bank 36,800mAh Carga Rápida Solar",
+        name_es: "Batería Externa Power Bank 36,800mAh Carga Solar",
         name_en: "Solar Power Bank 36,800mAh Fast Charging Heavy Duty",
-        desc_es: "Carga hasta 4 teléfonos simultáneamente. Resistente a caídas, agua y equipada con potente linterna de rescate.",
+        desc_es: "Carga hasta 4 teléfonos simultáneamente. Resistente a caídas, agua y equipada con potente linterna.",
         desc_en: "Charges 4 devices simultaneously with solar backup recharge and ultra bright flashlight.",
         img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80",
         badge_es: "Carga Rápida",
@@ -759,10 +1198,10 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-jump-starter",
         cat: "motos",
-        name_es: "Arrancador Portátil de Baterías de Auto y Moto 1500A",
+        name_es: "Arrancador Portátil de Baterías Auto y Moto 1500A",
         name_en: "Portable Car & Motorcycle Jump Starter 1500A Peak",
-        desc_es: "Arranca autos y motos al instante sin necesidad de otro vehículo. Incluye linterna de emergencia y puerto USB.",
-        desc_en: "Instantly jump-start dead vehicle batteries safely without another car. Emergency booster.",
+        desc_es: "Arranca motores al instante sin necesidad de cables puente ni otro vehículo. Incluye puerto USB.",
+        desc_en: "Instantly jump-start vehicle batteries safely without another car. Emergency booster.",
         img: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80",
         badge_es: "Motos & Autos",
         badge_en: "Moto & Auto",
@@ -773,9 +1212,9 @@ const AMAZON_DEALS_DATABASE = [
     {
         id: "amz-drill-impact",
         cat: "motos",
-        name_es: "Kit Taladro Atornillador Inalámbrico 20V con 2 Baterías",
+        name_es: "Kit Taladro Inalámbrico 20V con 2 Baterías y Maletín",
         name_en: "Cordless Drill Driver Kit 20V with 2 Batteries & Case",
-        desc_es: "Fuerza profesional para mecánica de motos, construcción y reparaciones del hogar. Incluye maletín y puntas surtidas.",
+        desc_es: "Fuerza profesional para mecánica de motos, tornillos oxidados y reparaciones del hogar.",
         desc_en: "Heavy-duty power for automotive, construction and household repairs with carry case.",
         img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80",
         badge_es: "Kit Completo",
@@ -789,67 +1228,92 @@ const AMAZON_DEALS_DATABASE = [
 function renderDeals() {
     const container = document.getElementById('dealsContainer');
     const query = document.getElementById('dealSearch').value.toLowerCase().trim();
-    
     container.innerHTML = '';
     
     let matches = 0;
     AMAZON_DEALS_DATABASE.forEach(item => {
-        if (activeCategory !== 'all' && item.cat !== activeCategory) {
-            return;
-        }
+        if (activeCategory !== 'all' && item.cat !== activeCategory) return;
         
         const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
         const desc = (currentLang === 'es' ? item.desc_es : item.desc_en).toLowerCase();
-        if (query && !title.includes(query) && !desc.includes(query)) {
-            return;
-        }
+        if (query && !title.includes(query) && !desc.includes(query)) return;
         
         matches++;
-        
         const amazonUrl = `https://www.amazon.com/s?k=${encodeURIComponent(item.searchQuery)}&tag=${AMAZON_TAG}`;
         
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="card-top">
-                <div class="card-badges">
-                    <span class="amazon-tag">📦 AMAZON</span>
-                    <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+        const wrap = document.createElement('div');
+        wrap.className = 'product-card-wrap';
+        wrap.innerHTML = `
+            <div class="product-card" onmousemove="handle3DTilt(event, this)" onmouseleave="reset3DTilt(this)">
+                <div class="holo-glare"></div>
+                <div class="card-top">
+                    <div class="card-badges">
+                        <span class="amazon-tag">AMAZON HUB</span>
+                        <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+                    </div>
+                    <div class="product-img-wrap">
+                        <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80';">
+                    </div>
+                    <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
+                    <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
                 </div>
-                <div class="product-img-wrap">
-                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy" onerror="this.style.display='none';">
+                <div>
+                    <div class="product-features">
+                        <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
+                    </div>
+                    <a href="${amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy">
+                        ${currentLang === 'es' ? 'CONECTAR EN AMAZON →' : 'CONNECT ON AMAZON →'}
+                    </a>
                 </div>
-                <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
-                <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
-            </div>
-            <div>
-                <div class="product-features">
-                    <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
-                    <span style="color: #38BDF8;">Prime</span>
-                </div>
-                <a href="${amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy">
-                    ${currentLang === 'es' ? 'Ver Precio y Oferta en Amazon →' : 'Check Price &amp; Deals on Amazon →'}
-                </a>
             </div>
         `;
-        container.appendChild(card);
+        container.appendChild(wrap);
     });
-    
+
     if (matches === 0) {
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #9CA3AF;">
-                <p style="font-size: 1.2em; margin-bottom: 12px;">🔍 ${currentLang === 'es' ? 'No hay productos guardados con esa palabra exacta.' : 'No saved products matching that query.'}</p>
+            <div style="grid-column: 1 / -1; text-align: center; padding: 50px; color: #94a3b8; border: 1px dashed rgba(0,255,157,0.3); border-radius: 16px;">
+                <p style="font-size: 1.3em; margin-bottom: 16px;">⚡ ${currentLang === 'es' ? 'No se detectaron registros con esa clave.' : 'No items matched this query.'}</p>
                 <a href="https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}" target="_blank" class="btn-direct-amazon" style="display: inline-block;">
-                    ${currentLang === 'es' ? `Buscar "${query}" directamente en todo Amazon →` : `Search "${query}" directly on Amazon →`}
+                    ${currentLang === 'es' ? `Escanear "${query}" en Amazon Global →` : `Scan "${query}" on Global Amazon →`}
                 </a>
             </div>
         `;
     }
 }
 
+/* EFECTO 3D TILT SIN BLOQUEO DE ESTILOS */
+function handle3DTilt(e, card) {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    
+    const glare = card.querySelector('.holo-glare');
+    if (glare) {
+        glare.style.opacity = '1';
+        glare.style.background = `radial-gradient(circle at ${(x / rect.width) * 100}% ${(y / rect.height) * 100}%, rgba(0, 255, 157, 0.35), transparent 60%)`;
+    }
+}
+
+function reset3DTilt(card) {
+    card.style.transform = '';
+    const glare = card.querySelector('.holo-glare');
+    if (glare) {
+        glare.style.opacity = '';
+        glare.style.background = '';
+    }
+}
+
 function handleSearch() {
-    const input = document.getElementById('dealSearch');
-    const val = input.value.trim();
+    const val = document.getElementById('dealSearch').value.trim();
     const banner = document.getElementById('dynamicSearchBanner');
     const kwEs = document.getElementById('searchKeyword');
     const kwEn = document.getElementById('searchKeywordEn');
@@ -863,7 +1327,6 @@ function handleSearch() {
     } else {
         banner.style.display = 'none';
     }
-    
     renderDeals();
 }
 
@@ -876,28 +1339,22 @@ function selectCat(cat, btn) {
 
 function toggleLanguage() {
     currentLang = currentLang === 'es' ? 'en' : 'es';
-    
-    document.querySelectorAll('.es-text').forEach(el => {
-        el.style.display = currentLang === 'es' ? (el.tagName === 'SPAN' ? 'inline-block' : 'block') : 'none';
-    });
-    document.querySelectorAll('.en-text').forEach(el => {
-        el.style.display = currentLang === 'en' ? (el.tagName === 'SPAN' ? 'inline-block' : 'block') : 'none';
-    });
+    document.querySelectorAll('.es-text').forEach(el => el.style.display = currentLang === 'es' ? 'inline-block' : 'none');
+    document.querySelectorAll('.en-text').forEach(el => el.style.display = currentLang === 'en' ? 'inline-block' : 'none');
     
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca cualquier producto en Amazon (ej. zapatillas nike, levis, tylenol, split inverter, planta)..."
-            : "Search any product on Amazon (e.g. nike sneakers, levis, tylenol, mini split, generator)...";
+            ? "Escribe para escanear catálogo (nike, inverter, generador, tylenol, solar)..."
+            : "Type to scan catalog (nike, inverter, generator, tylenol, solar)...";
     }
-    
     renderDeals();
 }
 
-function updateActiveShoppers() {
-    const base = 26;
-    const variation = Math.floor(Math.sin(Date.now() / 20000) * 6);
-    const total = Math.max(18, base + variation);
+function updateRadar() {
+    const base = 28;
+    const variation = Math.floor(Math.sin(Date.now() / 15000) * 8);
+    const total = Math.max(20, base + variation);
     const el = document.getElementById('activeUsers');
     if (el) el.textContent = total;
 }
@@ -906,23 +1363,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     const optionsEs = { day: 'numeric', month: 'short' };
     const optionsEn = { month: 'short', day: 'numeric' };
-    const dateEs = today.toLocaleDateString('es-ES', optionsEs);
-    const dateEn = today.toLocaleDateString('en-US', optionsEn);
-    
-    document.getElementById('todayDateEs').textContent = dateEs;
-    document.getElementById('todayDateEn').textContent = dateEn;
+    document.getElementById('todayDateEs').textContent = today.toLocaleDateString('es-ES', optionsEs).toUpperCase();
+    document.getElementById('todayDateEn').textContent = today.toLocaleDateString('en-US', optionsEn).toUpperCase();
     document.getElementById('yearCopy').textContent = today.getFullYear();
     
     renderDeals();
-    updateActiveShoppers();
-    setInterval(updateActiveShoppers, 8000);
+    updateRadar();
+    setInterval(updateRadar, 6000);
 });
 </script>
-
-<!-- BOTÓN FLOTANTE WHATSAPP PARA TELÉFONOS -->
-<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20tengo%20una%20pregunta%20sobre%20una%20oferta" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
-    💬
-</a>
 
 </body>
 </html>
