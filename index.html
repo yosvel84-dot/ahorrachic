@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Guía y directorio de equipos esenciales para su rutina diaria y familias: splits inverter, lavadoras portátiles, plantas eléctricas, radios de manivela, ventiladores solares, zapatillas, ropa de marca, medicamentos y tiendas oficiales afiliadas.">
-    <title>AhorraTodo Chic | Equipos Esenciales, Tiendas Aliadas & Amazon</title>
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Amazon, AliExpress, Alibaba, VEVOR, Fitory Footwear y WOOEYE.">
+    <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -101,7 +101,7 @@
             filter: drop-shadow(0 0 6px var(--neon-cyan));
         }
 
-        .amazon-partner-badge {
+        .partner-status-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -288,32 +288,6 @@
             font-size: 1.1em;
         }
 
-        /* BANNER DINÁMICO DE BÚSQUEDA */
-        .dynamic-search-banner {
-            display: none;
-            background: linear-gradient(90deg, rgba(0, 240, 255, 0.1), rgba(157, 0, 255, 0.12));
-            border: 1px solid var(--neon-cyan);
-            border-radius: 6px;
-            padding: 10px 14px;
-            margin-bottom: 14px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .btn-direct-amazon {
-            padding: 7px 16px;
-            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 800;
-            font-size: 0.76em;
-            font-family: 'Orbitron', sans-serif;
-            border: none;
-        }
-
         /* CATEGORÍAS COMPACTAS */
         .category-tabs {
             display: flex;
@@ -344,10 +318,10 @@
             box-shadow: 0 0 14px var(--neon-cyan);
         }
 
-        /* GRID DE PRODUCTOS COMPACTA */
+        /* GRID DE TIENDAS COMPACTA */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             gap: 16px;
             margin-bottom: 30px;
         }
@@ -399,7 +373,7 @@
             border: 1px solid var(--neon-magenta);
         }
 
-        /* FOTO DE PRODUCTO AJUSTADA */
+        /* FOTO DE TIENDA AJUSTADA */
         .product-img-wrap {
             width: 100%;
             height: 130px;
@@ -420,11 +394,11 @@
         }
 
         .product-title {
-            font-size: 0.92em;
+            font-size: 0.95em;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
-            min-height: 2.4em;
+            min-height: 2.2em;
             line-height: 1.25;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -486,32 +460,11 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(8px);
         }
-        .amazon-box {text-align: center; border-color: var(--neon-cyan);}
-        .amazon-box-title {font-size: 0.95em; color: #ffffff; margin-bottom: 6px;}
-        .amazon-box-desc {font-size: 0.78em; color: #94a3b8; margin-bottom: 10px;}
-        .btn-amz-today {
-            display: block;
-            width: 100%;
-            padding: 9px;
-            background: transparent;
-            color: var(--neon-cyan);
-            border: 1px solid var(--neon-cyan);
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 0.74em;
-            font-family: 'Orbitron', sans-serif;
-        }
-        .btn-amz-today:hover {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 0 15px var(--neon-cyan);
-        }
 
         /* TIENDAS AFILIADAS COMPACTAS EN SIDEBAR */
         .partner-stores-box {
-            border-color: rgba(157, 0, 255, 0.45);
-            background: radial-gradient(circle at top, rgba(157, 0, 255, 0.1) 0%, rgba(8, 16, 36, 0.95) 100%);
+            border-color: rgba(0, 240, 255, 0.45);
+            background: radial-gradient(circle at top, rgba(0, 240, 255, 0.1) 0%, rgba(8, 16, 36, 0.95) 100%);
         }
         .partner-stores-title {
             font-size: 0.95em;
@@ -700,7 +653,7 @@
         <span class="logo-chic">CHIC</span>
     </a>
     
-    <div class="amazon-partner-badge">
+    <div class="partner-status-badge">
         <span class="live-dot"></span>
         <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
         <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
@@ -719,31 +672,31 @@
             <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
         </div>
         
-        <div class="hero-badge"><span class="es-text">⚡ GUÍA OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL GUIDE 2026</span></div>
+        <div class="hero-badge"><span class="es-text">⚡ DIRECTORIO OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL DIRECTORY 2026</span></div>
         
         <h1 class="hero-title">
-            <span class="es-text">Equipos Esenciales & Tiendas Aliadas en <span class="accent-green">Amazon y Más</span></span>
-            <span class="en-text">Daily Routine Essentials & Partner Stores on <span class="accent-green">Amazon & Beyond</span></span>
+            <span class="es-text">Tiendas Oficiales & <span class="accent-green">Afiliados Globales</span></span>
+            <span class="en-text">Official Partner Stores & <span class="accent-green">Global Affiliates</span></span>
         </h1>
         <p class="hero-subtitle">
-            <span class="es-text">Splits inverter, plantas eléctricas, zapatillas de marca, medicinas y enlaces oficiales a tiendas aliadas internacionales.</span>
-            <span class="en-text">Inverter mini-splits, generators, brand sneakers, medicines and direct links to international partner stores.</span>
+            <span class="es-text">Acceso directo a las plataformas comerciales más importantes del mundo con enlaces y promociones oficiales verificadas.</span>
+            <span class="en-text">Direct access to the world's top shopping platforms with verified official links and promotions.</span>
         </p>
         <div class="trust-pills">
-            <div class="trust-pill">⚡ <strong><span class="es-text">Bajo Consumo</span><span class="en-text">Low Power</span></strong></div>
-            <div class="trust-pill">🛡️ <strong><span class="es-text">Compra Segura</span><span class="en-text">Buyer Protection</span></strong></div>
-            <div class="trust-pill">📦 <strong><span class="es-text">Envíos Directos</span><span class="en-text">Fast Delivery</span></strong></div>
+            <div class="trust-pill">🛡️ <strong><span class="es-text">Enlaces Verificados</span><span class="en-text">Verified Links</span></strong></div>
+            <div class="trust-pill">⚡ <strong><span class="es-text">Compras Protegidas</span><span class="en-text">Buyer Protection</span></strong></div>
+            <div class="trust-pill">📦 <strong><span class="es-text">Cobertura Mundial</span><span class="en-text">Worldwide Coverage</span></strong></div>
         </div>
     </div>
 
     <!-- NOTICE BAR COMPACTA -->
     <div class="notice-bar">
         <div class="notice-left">
-            <span>🛡️ <span class="es-text">Precios y cupones actualizados en tiempo real al acceder</span><span class="en-text">Live prices and coupons updated in real time</span></span>
+            <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">✓ ENLACES DIRECTOS VERIFICADOS</span>
-            <span class="en-text">✓ VERIFIED DIRECT LINKS</span>
+            <span class="es-text">✓ 6 TIENDAS OFICIALES INTEGRADAS</span>
+            <span class="en-text">✓ 6 OFFICIAL INTEGRATED STORES</span>
         </div>
     </div>
 
@@ -754,51 +707,41 @@
             <div class="controls-card">
                 <div class="search-input-wrap">
                     <span class="search-icon">⚡</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca productos o tiendas (ej. vevor, fitory, aliexpress, zapatillas)..." oninput="handleSearch()">
-                </div>
-                
-                <!-- BANNER DINÁMICO DE BÚSQUEDA -->
-                <div class="dynamic-search-banner" id="dynamicSearchBanner">
-                    <div style="font-size: 0.85em;">
-                        <span class="es-text">¿Buscando <strong>"<span id="searchKeyword"></span>"</strong> en todo Amazon?</span>
-                        <span class="en-text">Searching <strong>"<span id="searchKeywordEn"></span>"</strong> in full Amazon?</span>
-                    </div>
-                    <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-direct-amazon" id="dynamicAmazonLink">
-                        <span class="es-text">VER EN AMAZON →</span>
-                        <span class="en-text">VIEW ON AMAZON →</span>
-                    </a>
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. amazon, vevor, aliexpress, alibaba, fitory, wooeye)..." oninput="handleSearch()">
                 </div>
 
                 <div class="category-tabs">
-                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todo</span><span class="en-text">🔥 All</span></button>
-                    <button class="cat-btn" onclick="selectCat('tiendas', this)"><span class="es-text">🌐 Tiendas Aliadas</span><span class="en-text">🌐 Partner Stores</span></button>
-                    <button class="cat-btn" onclick="selectCat('zapatillas', this)"><span class="es-text">👟 Zapatillas</span><span class="en-text">👟 Sneakers</span></button>
-                    <button class="cat-btn" onclick="selectCat('ropa', this)"><span class="es-text">👕 Ropa</span><span class="en-text">👕 Clothing</span></button>
-                    <button class="cat-btn" onclick="selectCat('medicamentos', this)"><span class="es-text">💊 Medicinas</span><span class="en-text">💊 Meds</span></button>
-                    <button class="cat-btn" onclick="selectCat('electro', this)"><span class="es-text">❄️ Clima & Hogar</span><span class="en-text">❄️ Appliances</span></button>
-                    <button class="cat-btn" onclick="selectCat('energia', this)"><span class="es-text">⚡ Plantas</span><span class="en-text">⚡ Power</span></button>
-                    <button class="cat-btn" onclick="selectCat('solar', this)"><span class="es-text">💨 Solar</span><span class="en-text">💨 Solar</span></button>
-                    <button class="cat-btn" onclick="selectCat('emergencia', this)"><span class="es-text">📻 Emergencia</span><span class="en-text">📻 Emergency</span></button>
-                    <button class="cat-btn" onclick="selectCat('tech', this)"><span class="es-text">📱 Tech</span><span class="en-text">📱 Tech</span></button>
-                    <button class="cat-btn" onclick="selectCat('motos', this)"><span class="es-text">🏍️ Herramientas</span><span class="en-text">🏍️ Tools</span></button>
+                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
+                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
+                    <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
+                    <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
+                    <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
                 </div>
             </div>
 
-            <!-- CONTENEDOR DE PRODUCTOS -->
+            <!-- CONTENEDOR DE TIENDAS -->
             <div class="products-grid" id="dealsContainer"></div>
         </div>
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
             
-            <!-- TIENDAS ALIADAS -->
+            <!-- ACCESOS RÁPIDOS A TIENDAS ALIADAS -->
             <div class="partner-stores-box">
-                <h3 class="partner-stores-title">🌐 <span class="es-text">Tiendas Aliadas</span><span class="en-text">Partner Stores</span></h3>
+                <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
                 <div class="partner-stores-list">
+                    <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="noopener noreferrer" class="partner-store-item">
+                        <div>
+                            <div class="store-name">📦 Amazon Oficial</div>
+                            <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
                     <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="noopener noreferrer" class="partner-store-item">
                         <div>
                             <div class="store-name">🛍️ AliExpress</div>
-                            <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory prices</span></div>
+                            <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory direct</span></div>
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
@@ -814,7 +757,7 @@
                     <a href="https://vevorca.pxf.io/2R6B7O" target="_blank" rel="noopener noreferrer" class="partner-store-item">
                         <div>
                             <div class="store-name">🔧 VEVOR CA</div>
-                            <div class="store-tagline"><span class="es-text">Herramientas y maquinaria</span><span class="en-text">Tough equipment</span></div>
+                            <div class="store-tagline"><span class="es-text">Equipos industriales</span><span class="en-text">Tough machinery</span></div>
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
@@ -830,24 +773,11 @@
                     <a href="https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q" target="_blank" rel="noopener noreferrer" class="partner-store-item">
                         <div>
                             <div class="store-name">👁️ WooEye Contacts</div>
-                            <div class="store-tagline"><span class="es-text">Lentes de color cosméticos</span><span class="en-text">Color contact lenses</span></div>
+                            <div class="store-tagline"><span class="es-text">Lentes cosméticos de color</span><span class="en-text">Color contact lenses</span></div>
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
                 </div>
-            </div>
-
-            <!-- AMAZON TODAY DEALS -->
-            <div class="amazon-box">
-                <h3 class="amazon-box-title">📦 <span class="es-text">Amazon Ofertas del Día</span><span class="en-text">Amazon Today's Deals</span></h3>
-                <p class="amazon-box-desc">
-                    <span class="es-text">Liquidaciones, rebajas de temporada y ofertas relámpago en Amazon.</span>
-                    <span class="en-text">Seasonal sales, discounts and lightning deals on official Amazon.</span>
-                </p>
-                <a href="https://a.co/d/01PMHLaj" target="_blank" rel="noopener noreferrer" class="btn-amz-today">
-                    <span class="es-text">ABRIR AMAZON OFICIAL →</span>
-                    <span class="en-text">OPEN AMAZON →</span>
-                </a>
             </div>
 
             <!-- YRT SOLUTIONS -->
@@ -873,8 +803,8 @@
                     <span id="activeUsers">26</span>
                 </div>
                 <div style="font-size: 0.75em; color: #94a3b8; margin-top: 4px;">
-                    <span class="es-text">buscando ofertas en tiempo real</span>
-                    <span class="en-text">browsing deals right now</span>
+                    <span class="es-text">visitando tiendas aliadas en tiempo real</span>
+                    <span class="en-text">browsing partner stores right now</span>
                 </div>
             </div>
         </aside>
@@ -887,21 +817,21 @@
             <details class="legal-card">
                 <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en Amazon Services LLC Associates Program y redes como Impact y Admitad. Recibimos comisiones por compras referidas sin costo extra para ti. Cumplimiento FTC 16 CFR 255.</span>
-                    <span class="en-text">SaveEverything Chic participates in Amazon Services LLC Associates Program and affiliate networks. We earn referral fees at no extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC y en redes globales como Impact y Admitad. Recibimos comisiones por compras referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic participates in Amazon Services LLC Associates Program and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, envíos y garantías son gestionados por las plataformas oficiales (Amazon, AliExpress, Alibaba, Vevor, Fitory, WooEye).</span>
-                    <span class="en-text">We are not a direct store. Orders, payments, shipping, and guarantees are managed exclusively by the official partner platforms.</span>
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, envíos, garantías y devoluciones son gestionados exclusivamente por las plataformas oficiales (Amazon, AliExpress, Alibaba, VEVOR, Fitory, WooEye) bajo sus propios términos.</span>
+                    <span class="en-text">We are not a direct retailer. All orders, payments, shipping and guarantees are handled exclusively by official partner platforms.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy & Cookies</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No vendemos datos personales. Solo se guarda tu preferencia de idioma localmente en tu navegador. Cumplimiento GDPR / CCPA.</span>
+                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma. Cumplimiento GDPR / CCPA.</span>
                     <span class="en-text">We do not sell personal data. Only your language preference is saved locally. GDPR / CCPA compliant.</span>
                 </div>
             </details>
@@ -920,370 +850,136 @@
     <p>© <span id="yearCopy"></span> AhorraTodo Chic (SaveEverything Chic). Miami, FL. <span class="es-text">Todos los derechos reservados.</span><span class="en-text">All rights reserved.</span></p>
 </footer>
 
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20tengo%20una%20pregunta%20sobre%20una%20oferta" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
+<!-- BOTÓN FLOTANTE WHATSAPP COMPACTO -->
+<a href="https://wa.me/13054911906?text=Hola%20AhorraTodo%20Chic,%20tengo%20una%20pregunta%20sobre%20las%20tiendas" target="_blank" rel="noopener noreferrer" class="mobile-wa-float" title="Contactar por WhatsApp">
     💬
 </a>
 
 <script>
 let currentLang = 'es';
 let activeCategory = 'all';
-const AMAZON_TAG = "ahorratodochi-20";
 
-const AMAZON_DEALS_DATABASE = [
-    /* ================= TIENDAS AFILIADAS DIRECTAS ================= */
+/* ================= BASE DE DATOS DE TIENDAS OFICIALES ================= */
+const STORES_DATABASE = [
     {
-        id: "partner-aliexpress",
-        cat: "tiendas",
+        id: "store-amazon-global",
+        cat: "global",
+        hub: "AMAZON OFICIAL",
+        name_es: "Amazon.com - Catálogo Global Oficial & Ofertas",
+        name_en: "Amazon.com - Official Global Store & Daily Deals",
+        desc_es: "Millones de productos con garantía de la A a la Z, envíos rápidos Prime, ofertas relámpago y el catálogo más grande del mundo.",
+        desc_en: "Millions of products with A-to-Z guarantee, fast Prime shipping, lightning deals and the world's largest catalog.",
+        img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Catálogo Global",
+        badge_en: "Global Catalog",
+        feature_es: "Garantía de la A a la Z • Envío Prime",
+        feature_en: "A-to-Z Shield • Prime Delivery",
+        url: "https://www.amazon.com/?tag=ahorratodochi-20"
+    },
+    {
+        id: "store-aliexpress",
+        cat: "global",
         hub: "ALIEXPRESS",
         name_es: "AliExpress Oficial - Millones de Productos a Precios de Fábrica",
-        name_en: "AliExpress Official - Direct Factory Deals & Super Value Items",
-        desc_es: "Electrónica, repuestos, moda y herramientas con cupones de bienvenida y envíos globales.",
-        desc_en: "Electronics, parts, clothing and tools with mega discounts and global delivery.",
+        name_en: "AliExpress Official - Direct Factory Deals & Super Value",
+        desc_es: "Electrónica, repuestos, moda, accesorios y herramientas con súper descuentos, cupones de bienvenida y envíos directos internacionales.",
+        desc_en: "Electronics, automotive parts, clothing and tools with mega discounts, global shipping and buyer protection.",
         img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
         badge_es: "Super Ofertas",
         badge_en: "Super Deals",
-        feature_es: "Precios directos • Cupones",
-        feature_en: "Factory Direct • Coupons",
-        directUrl: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
+        feature_es: "Precios de fábrica • Cupones globales",
+        feature_en: "Factory Direct • Global Coupons",
+        url: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
     },
     {
-        id: "partner-alibaba",
-        cat: "tiendas",
+        id: "store-alibaba",
+        cat: "global",
         hub: "ALIBABA",
         name_es: "Alibaba.com - Portal Mayorista B2B y Fabricantes Directos",
         name_en: "Alibaba.com - Global B2B Wholesale & Manufacturer Hub",
-        desc_es: "Importa productos, maquinaria y mercancía al por mayor directamente de fabricantes verificados.",
-        desc_en: "Source manufactured goods, machinery and bulk supplies directly from verified suppliers.",
+        desc_es: "La plataforma líder de comercio al por mayor. Importa productos, maquinaria y materias primas directamente de fabricantes certificados.",
+        desc_en: "Leading B2B wholesale platform. Source manufactured goods, machinery and supplies directly from certified suppliers.",
         img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80",
         badge_es: "Mayorista B2B",
         badge_en: "B2B Wholesale",
-        feature_es: "Precios por volumen • Verificados",
+        feature_es: "Precios por volumen • Trade Assurance",
         feature_en: "Bulk Pricing • Trade Assurance",
-        directUrl: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
+        url: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
     },
     {
-        id: "partner-vevor",
-        cat: "tiendas",
+        id: "store-vevor",
+        cat: "herramientas",
         hub: "VEVOR CA",
-        name_es: "VEVOR CA - Maquinaria, Equipos de Taller y Herramientas",
-        name_en: "VEVOR CA - Tough Equipment & Industrial Tools",
-        desc_es: "Herramientas de trabajo pesado, refrigeración, gastronomía y soldadura con máxima durabilidad.",
-        desc_en: "Tough industrial tools, equipment and refrigeration at unbeatable value.",
+        name_es: "VEVOR CA - Maquinaria, Equipos de Taller y Herramientas Robustas",
+        name_en: "VEVOR CA - Tough Equipment & Industrial Tools at Best Prices",
+        desc_es: "Especialistas en herramientas eléctricas, refrigeración, gastronomía, soldadoras, tornos y equipos pesados con máxima calidad.",
+        desc_en: "Tough tools, industrial equipment, refrigeration, kitchen gear, and welding machines at unbeatable value.",
         img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
         badge_es: "Uso Rudo",
         badge_en: "Tough Tools",
-        feature_es: "Calidad industrial • Garantía",
-        feature_en: "Industrial Quality • Warranty",
-        directUrl: "https://vevorca.pxf.io/2R6B7O"
+        feature_es: "Calidad industrial • Garantía VEVOR",
+        feature_en: "Industrial Quality • VEVOR Guarantee",
+        url: "https://vevorca.pxf.io/2R6B7O"
     },
     {
-        id: "partner-fitory",
-        cat: "tiendas",
+        id: "store-fitory",
+        cat: "moda",
         hub: "FITORY",
         name_es: "Fitory Footwear - Sandalias Ergonómicas y Calzado Ultra Cómodo",
         name_en: "Fitory Footwear - Ergonomic Comfort Slides & Sandals",
-        desc_es: "Sandalias y pantuflas con soporte para el arco plantar y suela acolchada para todo el día.",
-        desc_en: "Arch support slide sandals and casual comfort footwear for all-day relaxation.",
+        desc_es: "Pantuflas y sandalias con soporte para el arco plantar, suelas acolchadas y materiales duraderos para descansar los pies todo el día.",
+        desc_en: "Arch support slide sandals and casual comfort footwear designed for all-day relaxation and support.",
         img: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80",
         badge_es: "Ergonómico",
         badge_en: "Ergonomic",
         feature_es: "Soporte de arco • Suela suave",
-        feature_en: "Arch Support • Cushioning",
-        directUrl: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
+        feature_en: "Arch Support • Soft Cushioning",
+        url: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
     },
     {
-        id: "partner-wooeye",
-        cat: "tiendas",
+        id: "store-wooeye",
+        cat: "belleza",
         hub: "WOOEYE",
-        name_es: "WOOEYE - Lentes de Contacto Cosméticos de Color",
+        name_es: "WOOEYE - Lentes de Contacto Cosméticos de Color de Alta Calidad",
         name_en: "WOOEYE - Premium Cosmetic Colored Contact Lenses",
-        desc_es: "Lentillas cosméticas seguras, naturales y de cosplay con alta hidratación y certificadas.",
-        desc_en: "Natural and cosplay colored contact lenses, safe, breathable and moisturizing.",
+        desc_es: "Lentillas cosméticas seguras, naturales y de cosplay, de alta hidratación, transpirables y certificadas para transformar tu mirada.",
+        desc_en: "Natural and cosplay colored contact lenses. Certified, breathable and moisturizing to enhance your eyes.",
         img: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?auto=format&fit=crop&w=600&q=80",
         badge_es: "Cosmético",
         badge_en: "Cosmetic",
         feature_es: "Certificados • Alta hidratación",
         feature_en: "Certified Safe • High Moisture",
-        directUrl: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
-    },
-
-    /* ================= CATÁLOGO AMAZON ================= */
-    {
-        id: "amz-nike-revolution",
-        cat: "zapatillas",
-        hub: "AMAZON",
-        name_es: "Zapatillas Deportivas Nike Hombre & Mujer Ligeras",
-        name_en: "Nike Men's & Women's Lightweight Athletic Sneakers",
-        desc_es: "Amortiguación suave y malla transpirable para caminar o correr con máxima comodidad.",
-        desc_en: "Soft foam cushioning and breathable mesh for running and everyday walking.",
-        img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Top Nike",
-        badge_en: "Top Nike",
-        feature_es: "Amortiguación • Malla fresca",
-        feature_en: "Cushioning • Mesh",
-        searchQuery: "nike running shoes sneakers men women"
-    },
-    {
-        id: "amz-adidas-cloudfoam",
-        cat: "zapatillas",
-        hub: "AMAZON",
-        name_es: "Zapatillas Adidas Cloudfoam Pure Cómodas",
-        name_en: "Adidas Cloudfoam Pure Running Sneakers",
-        desc_es: "Plantilla viscoelástica ultra suave. Ideales para estar de pie y caminar todo el día.",
-        desc_en: "Memory foam footbed that hugs your foot for all-day comfort.",
-        img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Confort",
-        badge_en: "Comfort",
-        feature_es: "Cloudfoam • Flexible",
-        feature_en: "Cloudfoam • Flexible",
-        searchQuery: "adidas cloudfoam sneakers men women"
-    },
-    {
-        id: "amz-puma-smash",
-        cat: "zapatillas",
-        hub: "AMAZON",
-        name_es: "Zapatillas Puma Clásicas Urbanas de Cuero",
-        name_en: "Puma Classic Leather Casual Sneakers",
-        desc_es: "Estilo icónico, suela de goma anti-deslizante y alta durabilidad para el día a día.",
-        desc_en: "Classic street style and durable rubber outsole for long-lasting wear.",
-        img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Cuero",
-        badge_en: "Leather",
-        feature_es: "Cuero • Anti-resbalón",
-        feature_en: "Leather • Anti-slip",
-        searchQuery: "puma smash sneakers shoes"
-    },
-    {
-        id: "amz-skechers-slipins",
-        cat: "zapatillas",
-        hub: "AMAZON",
-        name_es: "Zapatillas Skechers Slip-ins Manos Libres",
-        name_en: "Skechers Hands-Free Slip-ins Walking Shoes",
-        desc_es: "Se calzan solas sin agacharse ni atar cordones. Amortiguación ortopédica ideal.",
-        desc_en: "Step in hands-free with orthopedic cushioning for all-day support.",
-        img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Slip-in",
-        badge_en: "Slip-in",
-        feature_es: "Sin manos • Ortopédico",
-        feature_en: "Hands-free • Arch Fit",
-        searchQuery: "skechers slip-ins shoes sneakers"
-    },
-    {
-        id: "amz-tommy-polo",
-        cat: "ropa",
-        hub: "AMAZON",
-        name_es: "Polos Clásicos Tommy Hilfiger de Algodón",
-        name_en: "Tommy Hilfiger Classic Cotton Polo Shirts",
-        desc_es: "100% algodón suave y transpirable, corte clásico con logo bordado en el pecho.",
-        desc_en: "100% soft breathable pique cotton with embroidered flag logo.",
-        img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Original",
-        badge_en: "Original",
-        feature_es: "100% Algodón • Logo",
-        feature_en: "100% Cotton • Logo",
-        searchQuery: "tommy hilfiger polo shirt men"
-    },
-    {
-        id: "amz-levis-jeans",
-        cat: "ropa",
-        hub: "AMAZON",
-        name_es: "Pantalones Jeans Levi's 505 / 501 Original",
-        name_en: "Levi's Men's 505 Regular Fit Classic Jeans",
-        desc_es: "Mezclilla resistente indeformable para máxima durabilidad de trabajo o salida.",
-        desc_en: "Authentic heavyweight denim built to last for years.",
-        img: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Denim",
-        badge_en: "Denim",
-        feature_es: "Mezclilla clásica • Recto",
-        feature_en: "Classic Denim • Straight",
-        searchQuery: "levis 505 regular fit jeans men"
-    },
-    {
-        id: "amz-sport-dryfit-pack",
-        cat: "ropa",
-        hub: "AMAZON",
-        name_es: "Pack Camisetas Deportivas Dry-Fit Frescas",
-        name_en: "Men's Quick-Dry Athletic T-Shirts Pack",
-        desc_es: "Secado ultra rápido, frescas y sin planchado para climas calurosos.",
-        desc_en: "Moisture-wicking, wrinkle-free fabric ideal for workouts and warm weather.",
-        img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Dry-Fit",
-        badge_en: "Dry-Fit",
-        feature_es: "Secado rápido • Anti-olor",
-        feature_en: "Quick dry • Anti-odor",
-        searchQuery: "under armour moisture wicking t shirts men pack"
-    },
-    {
-        id: "amz-ck-underwear",
-        cat: "ropa",
-        hub: "AMAZON",
-        name_es: "Pack Ropa Interior Calvin Klein Boxer Briefs",
-        name_en: "Calvin Klein Cotton Boxer Briefs Pack",
-        desc_es: "Pretina clásica emblemática y algodón suave elástico de alta resistencia.",
-        desc_en: "Classic logo waistband with 100% breathable stretch cotton.",
-        img: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Familiar",
-        badge_en: "Value Pack",
-        feature_es: "Algodón elástico • Suave",
-        feature_en: "Stretch Cotton • Soft",
-        searchQuery: "calvin klein boxer briefs pack"
-    },
-    {
-        id: "amz-tylenol-500",
-        cat: "medicamentos",
-        hub: "AMAZON",
-        name_es: "Acetaminofén 500mg Extra Fuerte (Bote Grande)",
-        name_en: "Acetaminophen 500mg Extra Strength",
-        desc_es: "Alivia dolor de cabeza, dolores musculares y reduce fiebres rápidamente.",
-        desc_en: "Fast relief for headaches, body aches, and fever reduction.",
-        img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Botiquín",
-        badge_en: "First Aid",
-        feature_es: "500mg • Alivio rápido",
-        feature_en: "500mg • Fast relief",
-        searchQuery: "acetaminophen 500 mg extra strength tylenol"
-    },
-    {
-        id: "amz-ibuprofen-200",
-        cat: "medicamentos",
-        hub: "AMAZON",
-        name_es: "Ibuprofeno 200mg Antiinflamatorio y Dolor",
-        name_en: "Ibuprofen 200mg Pain Reliever Tablets",
-        desc_es: "Combate inflamación, dolores articulares, espalda y fiebre.",
-        desc_en: "Anti-inflammatory pain relief for joint aches, back pain and fever.",
-        img: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Alivio",
-        badge_en: "Relief",
-        feature_es: "200mg • Articulaciones",
-        feature_en: "200mg • Joints",
-        searchQuery: "ibuprofen 200 mg pain reliever tablets"
-    },
-    {
-        id: "amz-split-inverter",
-        cat: "electro",
-        hub: "AMAZON",
-        name_es: "Aire Mini Split Inverter 12,000 BTU 115V",
-        name_en: "Mini Split Inverter AC 12,000 BTU 115V",
-        desc_es: "Tecnología inverter de ultra bajo consumo eléctrico. Enfría rápido y silencioso.",
-        desc_en: "High-efficiency inverter mini split with minimum electric draw.",
-        img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Inverter",
-        badge_en: "Inverter",
-        feature_es: "115V • Silencioso",
-        feature_en: "115V • Ultra Quiet",
-        searchQuery: "mini split air conditioner 12000 btu 115v inverter"
-    },
-    {
-        id: "amz-lavadora-portatil",
-        cat: "electro",
-        hub: "AMAZON",
-        name_es: "Lavadora Portátil Doble Tina con Centrifugado",
-        name_en: "Portable Twin Tub Washer with Spin Dryer",
-        desc_es: "Lava y exprime rápido ahorrando agua y corriente. Compacta y ligera.",
-        desc_en: "Compact twin tub washer and fast spin dryer. Saves water and power.",
-        img: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Ahorro",
-        badge_en: "Compact",
-        feature_es: "Doble tina • Centrifugado",
-        feature_en: "Twin tub • Spinner",
-        searchQuery: "portable washing machine twin tub spin dryer"
-    },
-    {
-        id: "amz-radio-manivela",
-        cat: "emergencia",
-        hub: "AMAZON",
-        name_es: "Radio de Emergencia Solar a Manivela con Linterna",
-        name_en: "Emergency Solar Hand Crank Radio",
-        desc_es: "Se recarga con manivela, solar o USB. Sintoniza AM/FM y carga teléfonos.",
-        desc_en: "Charges by crank, solar or USB. AM/FM tuner with power bank for phones.",
-        img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Vital",
-        badge_en: "Essential",
-        feature_es: "Manivela + Solar • USB",
-        feature_en: "Crank + Solar • USB",
-        searchQuery: "emergency hand crank solar radio am fm flashlight"
-    },
-    {
-        id: "amz-gen-inverter",
-        cat: "energia",
-        hub: "AMAZON",
-        name_es: "Generador Inverter Silencioso 2500W Gasolina",
-        name_en: "Quiet Inverter Generator 2500W Gas",
-        desc_es: "Gasta poca gasolina y protege refrigeradores, televisores y splits.",
-        desc_en: "Fuel-efficient and safe for sensitive electronics during blackouts.",
-        img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Inverter",
-        badge_en: "Inverter",
-        feature_es: "2500W • Bajo combustible",
-        feature_en: "2500W • Low fuel",
-        searchQuery: "inverter generator portable 2500w"
-    },
-    {
-        id: "amz-fan-solar",
-        cat: "solar",
-        hub: "AMAZON",
-        name_es: "Ventilador Recargable Solar con Panel y Luces",
-        name_en: "Solar Rechargeable Fan with Panel",
-        desc_es: "Batería de larga duración de 12-24h para dormir fresco sin fluido eléctrico.",
-        desc_en: "12-24h battery runtime with solar panel and emergency lights.",
-        img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Solar",
-        badge_en: "Solar",
-        feature_es: "Batería 24h • Panel solar",
-        feature_en: "24h Battery • Solar panel",
-        searchQuery: "solar rechargeable fan with panel led light"
-    },
-    {
-        id: "amz-drill-impact",
-        cat: "motos",
-        hub: "AMAZON",
-        name_es: "Kit Taladro Atornillador Inalámbrico 20V",
-        name_en: "Cordless Drill Driver Kit 20V 2 Batteries",
-        desc_es: "Fuerza para mecánica, construcción y hogar con 2 baterías y maletín.",
-        desc_en: "Heavy-duty cordless drill with 2 batteries and case for all repairs.",
-        img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80",
-        badge_es: "20V",
-        badge_en: "20V",
-        feature_es: "2 Baterías • Maletín",
-        feature_en: "2 Batteries • Case",
-        searchQuery: "cordless drill set 20v 2 batteries"
+        url: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
     }
 ];
 
-function renderDeals() {
+function renderStores() {
     const container = document.getElementById('dealsContainer');
     const query = document.getElementById('dealSearch').value.toLowerCase().trim();
     container.innerHTML = '';
     
     let matches = 0;
-    AMAZON_DEALS_DATABASE.forEach(item => {
+    STORES_DATABASE.forEach(item => {
         if (activeCategory !== 'all' && item.cat !== activeCategory) return;
         
         const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
         const desc = (currentLang === 'es' ? item.desc_es : item.desc_en).toLowerCase();
-        const hub = (item.hub || '').toLowerCase();
+        const hub = item.hub.toLowerCase();
         if (query && !title.includes(query) && !desc.includes(query) && !hub.includes(query)) return;
         
         matches++;
-        const targetUrl = item.directUrl 
-            ? item.directUrl 
-            : `https://www.amazon.com/s?k=${encodeURIComponent(item.searchQuery)}&tag=${AMAZON_TAG}`;
-        
-        const btnText = item.directUrl
-            ? (currentLang === 'es' ? 'IR A LA TIENDA →' : 'GO TO STORE →')
-            : (currentLang === 'es' ? 'VER EN AMAZON →' : 'VIEW ON AMAZON →');
+        const btnText = currentLang === 'es' ? 'IR A LA TIENDA OFICIAL →' : 'GO TO OFFICIAL STORE →';
 
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
             <div class="card-top">
                 <div class="card-badges">
-                    <span class="amazon-tag">${item.hub || 'AMAZON'}</span>
+                    <span class="amazon-tag">${item.hub}</span>
                     <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
                 </div>
                 <div class="product-img-wrap">
-                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80';">
+                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
                 </div>
                 <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
                 <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
@@ -1292,7 +988,7 @@ function renderDeals() {
                 <div class="product-features">
                     <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
                 </div>
-                <a href="${targetUrl}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy">
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy">
                     ${btnText}
                 </a>
             </div>
@@ -1303,38 +999,21 @@ function renderDeals() {
     if (matches === 0) {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: #94a3b8; border: 1px dashed rgba(0,240,255,0.3); border-radius: 10px; background: rgba(8,14,28,0.5);">
-                <p style="font-size: 1.1em; margin-bottom: 12px; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron resultados.' : 'No items matched this query.'}</p>
-                <a href="https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}" target="_blank" class="btn-direct-amazon" style="display: inline-block;">
-                    ${currentLang === 'es' ? `Buscar "${query}" en Amazon →` : `Search "${query}" on Amazon →`}
-                </a>
+                <p style="font-size: 1.1em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron tiendas con esa búsqueda.' : 'No partner stores matched your query.'}</p>
             </div>
         `;
     }
 }
 
 function handleSearch() {
-    const val = document.getElementById('dealSearch').value.trim();
-    const banner = document.getElementById('dynamicSearchBanner');
-    const kwEs = document.getElementById('searchKeyword');
-    const kwEn = document.getElementById('searchKeywordEn');
-    const amzLink = document.getElementById('dynamicAmazonLink');
-    
-    if (val.length > 1) {
-        banner.style.display = 'flex';
-        kwEs.textContent = val;
-        kwEn.textContent = val;
-        amzLink.href = `https://www.amazon.com/s?k=${encodeURIComponent(val)}&tag=${AMAZON_TAG}`;
-    } else {
-        banner.style.display = 'none';
-    }
-    renderDeals();
+    renderStores();
 }
 
 function selectCat(cat, btn) {
     activeCategory = cat;
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderDeals();
+    renderStores();
 }
 
 function toggleLanguage() {
@@ -1345,10 +1024,10 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca productos o tiendas (ej. vevor, fitory, aliexpress, zapatillas)..."
-            : "Search products or stores (e.g. vevor, fitory, aliexpress, sneakers)...";
+            ? "Busca una tienda (ej. amazon, vevor, aliexpress, alibaba, fitory, wooeye)..."
+            : "Search a store (e.g. amazon, vevor, aliexpress, alibaba, fitory, wooeye)...";
     }
-    renderDeals();
+    renderStores();
 }
 
 function updateRadar() {
@@ -1371,7 +1050,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elDateEn) elDateEn.textContent = today.toLocaleDateString('en-US', optionsEn).toUpperCase();
     if (elYear) elYear.textContent = today.getFullYear();
     
-    renderDeals();
+    renderStores();
     updateRadar();
     setInterval(updateRadar, 6000);
 });
