@@ -10,33 +10,39 @@
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= PALETA CIBER-FUTURISTA ULTRA COMPACTA ================= */
+        /* ================= ESTILO MODERNO Y ULTRA LEGIBLE ================= */
         * {box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0;}
         :root {
             --neon-cyan: #00f0ff;
-            --neon-cyan-glow: rgba(0, 240, 255, 0.45);
+            --neon-cyan-glow: rgba(0, 240, 255, 0.35);
             --neon-magenta: #ff0055;
-            --neon-purple: #9d00ff;
+            --neon-purple: #8b5cf6;
             --cyber-void: #030712;
-            --card-surface: rgba(10, 18, 36, 0.82);
-            --card-border: rgba(0, 240, 255, 0.35);
+            --card-surface: rgba(13, 23, 44, 0.88);
+            --card-border: rgba(0, 240, 255, 0.3);
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
         
         html {scroll-behavior: smooth; width: 100%;}
         body {
             width: 100%;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: var(--font-main);
             background: var(--cyber-void);
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            color: #e0f2fe;
-            font-size: clamp(12px, 1.3vw, 14px);
+            color: var(--text-main);
+            font-size: clamp(13px, 1.35vw, 15px);
+            line-height: 1.45;
             overflow-x: hidden;
             position: relative;
+            -webkit-font-smoothing: antialiased;
         }
 
         .cyber-bg {
@@ -46,25 +52,24 @@
             z-index: -1;
             overflow: hidden;
             background: 
-                radial-gradient(circle at 15% 20%, rgba(157, 0, 255, 0.2) 0%, transparent 45%),
-                radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.18) 0%, transparent 50%),
-                radial-gradient(circle at 50% 90%, rgba(255, 0, 85, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(255, 0, 85, 0.1) 0%, transparent 60%),
                 #030712;
         }
 
-        h1, h2, h3, h4, .hud-font {
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1.1px;
-            text-transform: uppercase;
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+            letter-spacing: -0.01em;
         }
 
-        /* COMPLIANCE BANNER SCI-FI COMPACTO */
+        /* COMPLIANCE BANNER */
         .compliance-banner {
-            background: rgba(6, 14, 30, 0.95);
-            border-bottom: 1px solid var(--neon-cyan);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
-            padding: 5px 10px;
-            font-size: 0.72em;
+            background: rgba(8, 18, 38, 0.96);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            padding: 6px 12px;
+            font-size: 0.76em;
             color: #bae6fd;
             text-align: center;
             backdrop-filter: blur(8px);
@@ -75,7 +80,7 @@
         .top-bar {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 10px 12px 0;
+            padding: 12px 14px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -86,19 +91,19 @@
         .brand-logo-top {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.05em;
-            font-weight: 900;
-            letter-spacing: 1.3px;
+            font-family: var(--font-heading);
+            font-size: 1.1em;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
-        .logo-ahorra {color: #ffffff; text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);}
+        .logo-ahorra {color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);}
         .logo-chic {
             background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-magenta) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px var(--neon-cyan));
+            filter: drop-shadow(0 0 6px var(--neon-cyan));
         }
 
         .partner-status-badge {
@@ -106,15 +111,15 @@
             align-items: center;
             gap: 6px;
             background: rgba(0, 240, 255, 0.08);
-            border: 1px solid var(--neon-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.4);
             padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.72em;
+            border-radius: 6px;
+            font-size: 0.74em;
+            font-weight: 600;
             color: var(--neon-cyan);
-            font-family: 'Orbitron', sans-serif;
         }
         .live-dot {
-            width: 6px; height: 6px;
+            width: 7px; height: 7px;
             background: var(--neon-magenta);
             border-radius: 50%;
             box-shadow: 0 0 8px var(--neon-magenta);
@@ -125,15 +130,15 @@
             100% { transform: scale(1.3); opacity: 1; }
         }
         .lang-btn {
-            background: transparent;
+            background: rgba(0, 240, 255, 0.06);
             color: var(--neon-cyan);
             border: 1px solid var(--neon-cyan);
-            padding: 4px 10px;
+            padding: 4px 12px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 700;
-            font-size: 0.7em;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 0.74em;
+            font-family: var(--font-main);
             transition: all 0.25s;
         }
         .lang-btn:hover {
@@ -146,27 +151,26 @@
         .main-wrapper {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 10px 12px 35px;
+            padding: 10px 14px 35px;
         }
 
-        /* HERO MATRIX REDUCIDO */
+        /* HERO MATRIX REDUCIDO Y LEGIBLE */
         .hero-section {
             text-align: center;
-            margin: 8px auto 14px;
-            padding: 14px 14px;
+            margin: 10px auto 16px;
+            padding: 16px 14px;
             background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(10, 18, 36, 0.95) 100%);
             border: 1px solid rgba(0, 240, 255, 0.35);
-            border-radius: 10px;
-            box-shadow: 0 0 18px rgba(0, 240, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.08);
             backdrop-filter: blur(8px);
         }
         
         .hero-brand-title {
-            font-size: clamp(1.3em, 3vw, 1.8em);
-            font-weight: 900;
-            letter-spacing: 1.5px;
+            font-size: clamp(1.4em, 3.2vw, 1.9em);
+            font-weight: 800;
             margin-bottom: 2px;
-            line-height: 1.1;
+            line-height: 1.15;
         }
         .hero-brand-title .brand-ahorra {color: #ffffff;}
         .hero-brand-title .brand-chic {
@@ -177,32 +181,32 @@
 
         .hero-badge {
             display: inline-block;
-            background: linear-gradient(90deg, rgba(255, 0, 85, 0.2), rgba(157, 0, 255, 0.2));
+            background: linear-gradient(90deg, rgba(255, 0, 85, 0.2), rgba(139, 92, 246, 0.2));
             border: 1px solid var(--neon-magenta);
             color: #ffffff;
-            font-size: 0.62em;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 0.68em;
             font-weight: 700;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 30px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
         }
         .hero-title {
-            font-size: clamp(0.95em, 1.8vw, 1.25em);
-            font-weight: 800;
-            color: #e2e8f0;
-            margin-bottom: 4px;
+            font-size: clamp(1em, 2vw, 1.35em);
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 6px;
         }
         .hero-title span.accent-green {
             color: var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
         .hero-subtitle {
-            font-size: 0.82em;
-            color: #94a3b8;
+            font-size: 0.86em;
+            color: var(--text-muted);
             max-width: 680px;
-            margin: 0 auto 8px;
-            line-height: 1.3;
+            margin: 0 auto 10px;
+            line-height: 1.4;
         }
 
         /* PILLS COMPACTAS */
@@ -215,42 +219,43 @@
         .trust-pill {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            font-size: 0.72em;
-            padding: 3px 8px;
+            gap: 5px;
+            font-size: 0.74em;
+            font-weight: 500;
+            padding: 3px 10px;
             background: rgba(10, 22, 45, 0.75);
             border: 1px solid rgba(0, 240, 255, 0.25);
-            border-radius: 4px;
+            border-radius: 6px;
             color: #e2e8f0;
         }
-        .trust-pill strong {color: var(--neon-cyan);}
+        .trust-pill strong {color: var(--neon-cyan); font-weight: 700;}
 
         /* NOTICE BAR COMPACTA */
         .notice-bar {
             background: rgba(8, 16, 34, 0.85);
-            border: 1px dashed var(--neon-cyan);
-            border-radius: 6px;
-            padding: 6px 10px;
+            border: 1px dashed rgba(0, 240, 255, 0.45);
+            border-radius: 8px;
+            padding: 7px 12px;
             margin-bottom: 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 8px;
             flex-wrap: wrap;
-            font-size: 0.74em;
+            font-size: 0.76em;
         }
         .notice-left {color: #bae6fd;}
-        .notice-right {color: var(--neon-magenta); font-family: 'Orbitron', sans-serif;}
+        .notice-right {color: var(--neon-magenta); font-weight: 700;}
 
         /* LAYOUT PRINCIPAL */
         .content-grid {
             display: grid;
-            grid-template-columns: 1fr 270px;
+            grid-template-columns: 1fr 280px;
             gap: 16px;
             align-items: start;
         }
 
-        /* CONTROLS CARD COMPACTO */
+        /* CONTROLS CARD */
         .controls-card {
             background: var(--card-surface);
             border: 1px solid var(--card-border);
@@ -261,18 +266,18 @@
         }
         .search-input-wrap {
             position: relative;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .search-input {
             width: 100%;
-            padding: 7px 10px 7px 34px;
+            padding: 8px 12px 8px 36px;
             background: rgba(4, 9, 20, 0.95);
             border: 1px solid rgba(0, 240, 255, 0.35);
-            border-radius: 5px;
+            border-radius: 6px;
             color: #ffffff;
-            font-size: 0.85em;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
+            font-size: 0.88em;
+            font-family: var(--font-main);
+            font-weight: 500;
         }
         .search-input:focus {
             outline: none;
@@ -281,7 +286,7 @@
         }
         .search-icon {
             position: absolute;
-            left: 10px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--neon-cyan);
@@ -293,18 +298,18 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
         }
         .cat-btn {
             background: rgba(8, 16, 34, 0.7);
-            color: #94a3b8;
+            color: var(--text-muted);
             border: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 5px 10px;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.68em;
-            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 0.72em;
+            font-family: var(--font-main);
             transition: all 0.2s;
         }
         .cat-btn:hover {
@@ -315,10 +320,11 @@
             background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
             color: #ffffff;
             border-color: #ffffff;
-            box-shadow: 0 0 10px var(--neon-cyan);
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
 
-        /* GRID DE TIENDAS ULTRA COMPACTA */
+        /* GRID DE TIENDAS COMPACTA */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -326,7 +332,7 @@
             margin-bottom: 24px;
         }
 
-        /* TARJETA REDUCIDA */
+        /* TARJETA REDUCIDA Y NÍTIDA */
         .product-card {
             background: var(--card-surface);
             border: 1px solid var(--card-border);
@@ -338,12 +344,12 @@
             text-align: center;
             position: relative;
             backdrop-filter: blur(6px);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .product-card:hover {
             border-color: var(--neon-cyan);
-            box-shadow: 0 6px 18px rgba(0, 240, 255, 0.22);
+            box-shadow: 0 6px 18px rgba(0, 240, 255, 0.25);
             transform: translateY(-3px);
         }
 
@@ -356,11 +362,11 @@
             margin-bottom: 6px;
         }
         .amazon-tag, .verified-badge {
-            font-size: 0.58em;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 0.62em;
             font-weight: 700;
-            padding: 1px 5px;
-            border-radius: 3px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            letter-spacing: 0.2px;
         }
         .amazon-tag {
             background: rgba(0, 240, 255, 0.12);
@@ -397,35 +403,37 @@
         }
 
         .product-title {
-            font-size: 0.82em;
+            font-family: var(--font-heading);
+            font-size: 0.85em;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
-            line-height: 1.2;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 2em;
-        }
-        .product-desc {
-            font-size: 0.72em;
-            color: #94a3b8;
-            margin-bottom: 6px;
             line-height: 1.25;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            min-height: 2.5em;
+            min-height: 2.1em;
+        }
+        .product-desc {
+            font-size: 0.74em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.6em;
         }
         .product-features {
-            font-size: 0.68em;
+            font-size: 0.7em;
+            font-weight: 500;
             color: var(--neon-cyan);
             background: rgba(4, 9, 22, 0.7);
             border: 1px solid rgba(0, 240, 255, 0.2);
             padding: 3px 6px;
-            border-radius: 3px;
+            border-radius: 4px;
             margin-bottom: 6px;
             white-space: nowrap;
             overflow: hidden;
@@ -435,14 +443,14 @@
         .btn-amazon-buy {
             display: block;
             width: 100%;
-            padding: 6px 4px;
+            padding: 7px 6px;
             background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 800;
-            font-size: 0.68em;
-            font-family: 'Orbitron', sans-serif;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.72em;
+            letter-spacing: 0.3px;
             text-align: center;
             transition: all 0.2s;
             border: none;
@@ -461,7 +469,7 @@
             border: 1px solid var(--card-border);
             border-radius: 10px;
             padding: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(8px);
         }
 
@@ -471,7 +479,8 @@
             background: radial-gradient(circle at top, rgba(0, 240, 255, 0.1) 0%, rgba(8, 16, 36, 0.95) 100%);
         }
         .partner-stores-title {
-            font-size: 0.85em;
+            font-size: 0.88em;
+            font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
             text-align: center;
@@ -487,8 +496,8 @@
             justify-content: space-between;
             background: rgba(4, 9, 22, 0.85);
             border: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 5px 8px;
-            border-radius: 5px;
+            padding: 6px 8px;
+            border-radius: 6px;
             text-decoration: none;
             color: #e0f2fe;
             transition: all 0.2s;
@@ -499,23 +508,22 @@
             transform: translateX(2px);
         }
         .store-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.7em;
+            font-size: 0.74em;
             font-weight: 700;
             color: #ffffff;
         }
         .store-tagline {
-            font-size: 0.65em;
-            color: #94a3b8;
+            font-size: 0.68em;
+            color: var(--text-muted);
         }
         .store-arrow {
             color: var(--neon-cyan);
             font-weight: 800;
-            font-size: 0.8em;
+            font-size: 0.85em;
         }
 
         .yrt-widget {
-            background: radial-gradient(circle at center, rgba(157, 0, 255, 0.14) 0%, rgba(6, 14, 32, 0.95) 100%);
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.14) 0%, rgba(6, 14, 32, 0.95) 100%);
             border-color: var(--neon-magenta);
             text-align: center;
         }
@@ -523,57 +531,53 @@
             display: inline-block;
             background: var(--neon-magenta);
             color: #ffffff;
-            font-size: 0.6em;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 0.62em;
             font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-bottom: 4px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 5px;
         }
-        .yrt-title {font-size: 0.9em; color: #ffffff; margin-bottom: 4px;}
-        .yrt-desc {font-size: 0.72em; color: #bae6fd; margin-bottom: 8px;}
+        .yrt-title {font-size: 0.92em; font-weight: 700; color: #ffffff; margin-bottom: 4px;}
+        .yrt-desc {font-size: 0.74em; color: #bae6fd; margin-bottom: 8px; line-height: 1.35;}
         .yrt-tel {
             display: block;
             font-size: 0.95em;
-            font-family: 'Orbitron', sans-serif;
             font-weight: 800;
             color: var(--neon-cyan);
             text-decoration: none;
             margin-bottom: 8px;
             background: rgba(4, 9, 22, 0.8);
-            padding: 5px;
-            border-radius: 5px;
+            padding: 6px;
+            border-radius: 6px;
             border: 1px dashed var(--neon-cyan);
         }
         .yrt-buttons {display: grid; grid-template-columns: 1fr 1fr; gap: 6px;}
         .btn-wa {
-            padding: 6px;
+            padding: 7px;
             background: #22c55e;
             color: #000;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 800;
-            font-size: 0.68em;
-            font-family: 'Orbitron', sans-serif;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.72em;
         }
         .btn-call {
-            padding: 6px;
+            padding: 7px;
             background: rgba(255,255,255,0.1);
             color: #fff;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-weight: 700;
-            font-size: 0.68em;
+            font-size: 0.72em;
             border: 1px solid rgba(255,255,255,0.25);
-            font-family: 'Orbitron', sans-serif;
         }
 
         .stats-widget {text-align: center;}
-        .stats-title {font-size: 0.7em; color: #94a3b8; font-family: 'Orbitron', sans-serif; margin-bottom: 4px;}
+        .stats-title {font-size: 0.72em; font-weight: 600; color: var(--text-muted); margin-bottom: 4px;}
         .stats-users {
-            font-size: 1.4em;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
+            font-family: var(--font-heading);
+            font-size: 1.45em;
+            font-weight: 800;
             color: var(--neon-cyan);
             display: flex;
             align-items: center;
@@ -583,38 +587,38 @@
 
         /* LEGAL & FOOTER */
         .legal-box {margin-top: 24px; border-top: 1px solid rgba(0, 240, 255, 0.15); padding-top: 16px;}
-        .legal-title {font-size: 0.85em; color: #ffffff; text-align: center; margin-bottom: 10px;}
+        .legal-title {font-size: 0.88em; font-weight: 700; color: #ffffff; text-align: center; margin-bottom: 10px;}
         .legal-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;}
-        .legal-card {background: rgba(8, 16, 34, 0.7); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 5px;}
-        .legal-card summary {padding: 8px 10px; cursor: pointer; color: var(--neon-cyan); font-family: 'Orbitron', sans-serif; font-size: 0.7em;}
-        .legal-card-body {padding: 8px 10px; font-size: 0.7em; color: #94a3b8; line-height: 1.35;}
+        .legal-card {background: rgba(8, 16, 34, 0.7); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 6px;}
+        .legal-card summary {padding: 8px 10px; cursor: pointer; color: var(--neon-cyan); font-weight: 600; font-size: 0.74em;}
+        .legal-card-body {padding: 8px 10px; font-size: 0.72em; color: var(--text-muted); line-height: 1.4;}
 
-        .footer {text-align: center; padding: 16px 12px; font-size: 0.72em; color: #64748b; border-top: 1px solid rgba(0, 240, 255, 0.15); margin-top: 24px;}
+        .footer {text-align: center; padding: 18px 12px; font-size: 0.74em; color: #64748b; border-top: 1px solid rgba(0, 240, 255, 0.15); margin-top: 24px;}
         .footer a {color: var(--neon-cyan); text-decoration: none;}
 
         .en-text {display: none;}
         .es-text {display: inline-block;}
 
-        /* BOTÓN FLOTANTE WHATSAPP COMPACTO */
+        /* BOTÓN FLOTANTE WHATSAPP */
         .mobile-wa-float {
             position: fixed;
             bottom: 16px;
             right: 16px;
             background: linear-gradient(135deg, #22c55e, #10b981);
             color: #ffffff;
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 0 14px rgba(34, 197, 94, 0.6);
+            font-size: 22px;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.5);
             z-index: 9999;
             text-decoration: none;
             transition: all 0.3s;
         }
-        .mobile-wa-float:hover {transform: scale(1.1);}
+        .mobile-wa-float:hover {transform: scale(1.08);}
 
         /* RESPONSIVE */
         @media(max-width: 900px) {
@@ -632,7 +636,7 @@
                 scrollbar-width: none;
             }
             .category-tabs::-webkit-scrollbar {display: none;}
-            .cat-btn {padding: 4px 8px; font-size: 0.66em; white-space: nowrap;}
+            .cat-btn {padding: 4px 8px; font-size: 0.68em; white-space: nowrap;}
             .products-grid {grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;}
             .sidebar {grid-template-columns: 1fr;}
         }
@@ -710,7 +714,7 @@
             <!-- CONTROLS -->
             <div class="controls-card">
                 <div class="search-input-wrap">
-                    <span class="search-icon">⚡</span>
+                    <span class="search-icon">🔍</span>
                     <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. ebt, prime video, amazon music, ebay)..." oninput="handleSearch()">
                 </div>
 
@@ -857,7 +861,7 @@
                     <span class="live-dot"></span>
                     <span id="activeUsers">26</span>
                 </div>
-                <div style="font-size: 0.72em; color: #94a3b8; margin-top: 4px;">
+                <div style="font-size: 0.74em; color: var(--text-muted); margin-top: 4px;">
                     <span class="es-text">visitando tiendas aliadas en tiempo real</span>
                     <span class="en-text">browsing partner stores right now</span>
                 </div>
@@ -1143,7 +1147,7 @@ function renderStores() {
 
     if (matches === 0) {
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: #94a3b8; border: 1px dashed rgba(0,240,255,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--text-muted); border: 1px dashed rgba(0,240,255,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
                 <p style="font-size: 0.95em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron tiendas con esa búsqueda.' : 'No partner stores matched your query.'}</p>
             </div>
         `;
