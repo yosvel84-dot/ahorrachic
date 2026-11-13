@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: eBay, Amazon, Prime Video, Amazon Music, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Amazon Prime EBT, eBay, Amazon, Prime Video, Amazon Music, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
     <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
@@ -149,7 +149,7 @@
             padding: 10px 12px 35px;
         }
 
-        /* HERO MATRIX MUCHO MÁS COMPACTO */
+        /* HERO MATRIX REDUCIDO */
         .hero-section {
             text-align: center;
             margin: 8px auto 14px;
@@ -318,7 +318,7 @@
             box-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* GRID DE TIENDAS ULTRA COMPACTA (MENOS ESPACIO) */
+        /* GRID DE TIENDAS ULTRA COMPACTA */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -326,7 +326,7 @@
             margin-bottom: 24px;
         }
 
-        /* TARJETA REDUCIDA Y EFICIENTE */
+        /* TARJETA REDUCIDA */
         .product-card {
             background: var(--card-surface);
             border: 1px solid var(--card-border);
@@ -373,7 +373,7 @@
             border: 1px solid var(--neon-magenta);
         }
 
-        /* FOTO DE TIENDA COMPACTA (85px de altura) */
+        /* FOTO DE TIENDA COMPACTA (85px) */
         .product-img-wrap {
             width: 100%;
             height: 85px;
@@ -646,8 +646,8 @@
 <!-- COMPLIANCE BANNER GLOBAL AFILIADOS -->
 <div class="compliance-banner">
     <strong><span class="es-text">⚡ PROTOCOLO OFICIAL DE AFILIADOS:</span><span class="en-text">⚡ OFFICIAL AFFILIATE DISCLOSURE:</span></strong>
-    <span class="es-text">Como participante de programas de afiliados (eBay Partner Network, Amazon Associates, Impact, Admitad y otros), generamos comisiones por compras elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
-    <span class="en-text">As an affiliate participant (eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases through our official links at no extra cost to you.</span>
+    <span class="es-text">Como participante de programas de afiliados (eBay Partner Network, Amazon Associates, Impact, Admitad y otros), generamos comisiones por compras y suscripciones elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
+    <span class="en-text">As an affiliate participant (eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
 <!-- TOP BAR -->
@@ -699,8 +699,8 @@
             <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">✓ 11 TIENDAS OFICIALES INTEGRADAS</span>
-            <span class="en-text">✓ 11 OFFICIAL INTEGRATED STORES</span>
+            <span class="es-text">✓ 12 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
+            <span class="en-text">✓ 12 OFFICIAL INTEGRATED STORES & SERVICES</span>
         </div>
     </div>
 
@@ -711,13 +711,14 @@
             <div class="controls-card">
                 <div class="search-input-wrap">
                     <span class="search-icon">⚡</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. prime video, amazon music, ebay)..." oninput="handleSearch()">
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. ebt, prime video, amazon music, ebay)..." oninput="handleSearch()">
                 </div>
 
                 <div class="category-tabs">
                     <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
-                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
+                    <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
                     <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
+                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
                     <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
                     <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
                     <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
@@ -736,6 +737,14 @@
             <div class="partner-stores-box">
                 <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
                 <div class="partner-stores-list">
+                    <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
+                        <div>
+                            <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
+                            <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
                     <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
                         <div>
                             <div class="store-name">🎬 Prime Video</div>
@@ -863,8 +872,8 @@
             <details class="legal-card">
                 <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en eBay Partner Network, en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Video y Amazon Music) y en redes globales como Impact y Admitad. Recibimos comisiones por suscripciones y compras referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
-                    <span class="en-text">SaveEverything Chic participates in eBay Partner Network, Amazon Services LLC Associates Program (including Prime Video & Amazon Music) and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                    <span class="es-text">AhorraTodo Chic participa en eBay Partner Network, en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music) y en redes globales como Impact y Admitad. Recibimos comisiones por suscripciones y compras referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic participates in eBay Partner Network, Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music) and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
                 </div>
             </details>
             <details class="legal-card">
@@ -907,6 +916,21 @@ let activeCategory = 'all';
 
 /* ================= BASE DE DATOS DE TIENDAS OFICIALES ================= */
 const STORES_DATABASE = [
+    {
+        id: "store-amazon-ebt",
+        cat: "ebt",
+        hub: "AMAZON EBT / SNAP",
+        name_es: "Amazon Prime con 50% de Descuento (EBT / SNAP / Medicaid)",
+        name_en: "Amazon Prime at 50% Off with EBT / SNAP / Medicaid",
+        desc_es: "Disfruta de todos los beneficios de Amazon Prime al 50% de descuento registrando tu tarjeta EBT o asistencia válida. Envíos gratis y compras de despensa.",
+        desc_en: "Get all Amazon Prime benefits at 50% off with a valid EBT or qualifying government assistance card. Free delivery & grocery savings.",
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "EBT / SNAP 50%",
+        badge_en: "EBT / SNAP 50%",
+        feature_es: "50% Descuento Prime • Envío Gratis",
+        feature_en: "50% Off Prime • Free Fast Shipping",
+        url: "https://link.amazon/B0iARAsyg"
+    },
     {
         id: "store-prime-video",
         cat: "streaming",
@@ -1145,8 +1169,8 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca una tienda (ej. prime video, amazon music, ebay)..."
-            : "Search a store (e.g. prime video, amazon music, ebay)...";
+            ? "Busca una tienda (ej. ebt, prime video, amazon music, ebay)..."
+            : "Search a store (e.g. ebt, prime video, amazon music, ebay)...";
     }
     renderStores();
 }
