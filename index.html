@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas, plataformas de redes, música y los mejores videojuegos en tendencia del 2027.">
-    <title>AhorraTodo Chic | Tiendas Oficiales, Redes, Música & Juegos 2027</title>
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Klook Viajes, Temu, Amazon Prime EBT, eBay, Amazon, Prime Video, Amazon Music, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
+    <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -106,46 +106,6 @@
             filter: drop-shadow(0 0 6px var(--neon-cyan));
         }
 
-        /* NAVEGACIÓN PRINCIPAL ENTRE 3 SUBPÁGINAS */
-        .nav-sections {
-            display: inline-flex;
-            gap: 4px;
-            background: rgba(8, 16, 34, 0.85);
-            border: 1px solid rgba(0, 240, 255, 0.35);
-            border-radius: 8px;
-            padding: 3px;
-            flex-wrap: wrap;
-        }
-        .nav-btn {
-            background: transparent;
-            color: var(--text-muted);
-            border: none;
-            padding: 5px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.74em;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .nav-btn:hover {
-            color: #ffffff;
-        }
-        .nav-btn.active {
-            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         .partner-status-badge {
             display: inline-flex;
             align-items: center;
@@ -194,15 +154,7 @@
             padding: 10px 14px 35px;
         }
 
-        /* VISTAS */
-        .page-view {
-            display: none;
-        }
-        .page-view.active-view {
-            display: block;
-        }
-
-        /* HERO MATRIX REDUCIDO */
+        /* HERO MATRIX REDUCIDO Y LEGIBLE */
         .hero-section {
             text-align: center;
             margin: 10px auto 16px;
@@ -252,7 +204,7 @@
         .hero-subtitle {
             font-size: 0.86em;
             color: var(--text-muted);
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto 10px;
             line-height: 1.4;
         }
@@ -372,7 +324,7 @@
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
 
-        /* GRID DE TARJETAS */
+        /* GRID DE TIENDAS COMPACTA */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -408,7 +360,6 @@
             align-items: center;
             gap: 4px;
             margin-bottom: 6px;
-            flex-wrap: wrap;
         }
         .amazon-tag, .verified-badge {
             font-size: 0.62em;
@@ -428,7 +379,7 @@
             border: 1px solid var(--neon-magenta);
         }
 
-        /* FOTO / LOGO DE TIENDA O JUEGO */
+        /* FOTO DE TIENDA COMPACTA (85px) */
         .product-img-wrap {
             width: 100%;
             height: 85px;
@@ -446,11 +397,6 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
-        }
-        .logo-mode {
-            object-fit: contain !important;
-            padding: 10px;
-            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(3,7,18,0.95) 100%);
         }
         .product-card:hover .product-img {
             transform: scale(1.04);
@@ -681,8 +627,6 @@
         }
         @media(max-width: 640px) {
             .top-bar {justify-content: center; gap: 8px;}
-            .nav-sections {order: 3; width: 100%; justify-content: center; margin-top: 4px;}
-            .nav-btn {padding: 5px 8px; font-size: 0.7em;}
             .category-tabs {
                 gap: 4px;
                 padding-bottom: 4px;
@@ -710,212 +654,193 @@
     <span class="en-text">As an affiliate participant (Travelpayouts/Klook, Temu, eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
-<!-- TOP BAR CON NAVEGADOR DE 3 SUBPÁGINAS -->
+<!-- TOP BAR -->
 <div class="top-bar">
-    <a href="#" class="brand-logo-top" onclick="switchPageView('stores')">
+    <a href="#" class="brand-logo-top">
         <span class="logo-ahorra">AHORRATODO</span>
         <span class="logo-chic">CHIC</span>
     </a>
-
-    <!-- NAVEGADOR DE SUBPÁGINAS -->
-    <nav class="nav-sections">
-        <button class="nav-btn active" id="btnNavStores" onclick="switchPageView('stores')">
-            <span>🛍️</span>
-            <span class="es-text">Tiendas</span>
-            <span class="en-text">Stores</span>
-        </button>
-        <button class="nav-btn" id="btnNavSocial" onclick="switchPageView('social')">
-            <span>🌐</span>
-            <span class="es-text">Redes & Música</span>
-            <span class="en-text">Social & Music</span>
-        </button>
-        <button class="nav-btn" id="btnNavGames" onclick="switchPageView('games')">
-            <span>🎮</span>
-            <span class="es-text">Juegos 2027</span>
-            <span class="en-text">Top Games 2027</span>
-        </button>
-    </nav>
     
-    <div class="header-actions">
-        <div class="partner-status-badge">
-            <span class="live-dot"></span>
-            <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
-            <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
-        </div>
-        
-        <button class="lang-btn" onclick="toggleLanguage()">
-            <span class="es-text">🌐 ENGLISH</span>
-            <span class="en-text">🌐 ESPAÑOL</span>
-        </button>
+    <div class="partner-status-badge">
+        <span class="live-dot"></span>
+        <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
+        <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
     </div>
+    
+    <button class="lang-btn" onclick="toggleLanguage()">
+        <span class="es-text">🌐 ENGLISH</span>
+        <span class="en-text">🌐 ESPAÑOL</span>
+    </button>
 </div>
 
 <div class="main-wrapper">
-
-    <!-- ======================================================== -->
-    <!-- SUBPÁGINA 1: TIENDAS & AFILIADOS (DIRECTORIO PRINCIPAL) -->
-    <!-- ======================================================== -->
-    <div id="pageStoresView" class="page-view active-view">
-        <div class="hero-section">
-            <div class="hero-brand-title">
-                <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
-            </div>
-            
-            <div class="hero-badge"><span class="es-text">⚡ DIRECTORIO OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL DIRECTORY 2026</span></div>
-            
-            <h1 class="hero-title">
-                <span class="es-text">Tiendas Oficiales & <span class="accent-green">Afiliados Globales</span></span>
-                <span class="en-text">Official Partner Stores & <span class="accent-green">Global Affiliates</span></span>
-            </h1>
-            <p class="hero-subtitle">
-                <span class="es-text">Acceso directo a las plataformas comerciales y de viajes más importantes del mundo con enlaces y promociones oficiales verificadas.</span>
-                <span class="en-text">Direct access to the world's top shopping and travel platforms with verified official links and promotions.</span>
-            </p>
-            <div class="trust-pills">
-                <div class="trust-pill">🛡️ <strong><span class="es-text">Enlaces Verificados</span><span class="en-text">Verified Links</span></strong></div>
-                <div class="trust-pill">⚡ <strong><span class="es-text">Compras Protegidas</span><span class="en-text">Buyer Protection</span></strong></div>
-                <div class="trust-pill">📦 <strong><span class="es-text">Cobertura Mundial</span><span class="en-text">Worldwide Coverage</span></strong></div>
-            </div>
+    <!-- HERO COMPACTO -->
+    <div class="hero-section">
+        <div class="hero-brand-title">
+            <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
         </div>
-
-        <div class="notice-bar">
-            <div class="notice-left">
-                <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
-            </div>
-            <div class="notice-right">
-                <span class="es-text">✓ 14 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
-                <span class="en-text">✓ 14 OFFICIAL INTEGRATED STORES & SERVICES</span>
-            </div>
+        
+        <div class="hero-badge"><span class="es-text">⚡ DIRECTORIO OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL DIRECTORY 2026</span></div>
+        
+        <h1 class="hero-title">
+            <span class="es-text">Tiendas Oficiales & <span class="accent-green">Afiliados Globales</span></span>
+            <span class="en-text">Official Partner Stores & <span class="accent-green">Global Affiliates</span></span>
+        </h1>
+        <p class="hero-subtitle">
+            <span class="es-text">Acceso directo a las plataformas comerciales y de viajes más importantes del mundo con enlaces y promociones oficiales verificadas.</span>
+            <span class="en-text">Direct access to the world's top shopping and travel platforms with verified official links and promotions.</span>
+        </p>
+        <div class="trust-pills">
+            <div class="trust-pill">🛡️ <strong><span class="es-text">Enlaces Verificados</span><span class="en-text">Verified Links</span></strong></div>
+            <div class="trust-pill">⚡ <strong><span class="es-text">Compras Protegidas</span><span class="en-text">Buyer Protection</span></strong></div>
+            <div class="trust-pill">📦 <strong><span class="es-text">Cobertura Mundial</span><span class="en-text">Worldwide Coverage</span></strong></div>
         </div>
+    </div>
 
-        <div class="content-grid">
-            <div class="main-content-col">
-                <div class="controls-card">
-                    <div class="search-input-wrap">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..." oninput="handleSearch()">
-                    </div>
+    <!-- NOTICE BAR COMPACTA -->
+    <div class="notice-bar">
+        <div class="notice-left">
+            <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
+        </div>
+        <div class="notice-right">
+            <span class="es-text">✓ 14 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
+            <span class="en-text">✓ 14 OFFICIAL INTEGRATED STORES & SERVICES</span>
+        </div>
+    </div>
 
-                    <div class="category-tabs">
-                        <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
-                        <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
-                        <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
-                        <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
-                        <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
-                        <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
-                        <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
-                        <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
-                        <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
-                    </div>
+    <!-- MAIN GRID -->
+    <div class="content-grid">
+        <div class="main-content-col">
+            <!-- CONTROLS -->
+            <div class="controls-card">
+                <div class="search-input-wrap">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..." oninput="handleSearch()">
                 </div>
 
-                <div class="products-grid" id="dealsContainer"></div>
+                <div class="category-tabs">
+                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
+                    <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
+                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
+                    <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
+                    <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
+                    <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
+                    <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
+                    <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
+                    <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
+                </div>
             </div>
 
-            <!-- SIDEBAR TIENDAS -->
-            <aside class="sidebar">
-                <div class="partner-stores-box">
-                    <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
-                    <div class="partner-stores-list">
-                        <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
-                            <div>
-                                <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
-                                <div class="store-tagline"><span class="es-text">Hoteles, tours y atracciones</span><span class="en-text">Hotels, tours & attractions</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+            <!-- CONTENEDOR DE TIENDAS -->
+            <div class="products-grid" id="dealsContainer"></div>
+        </div>
 
-                        <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff5722;">
-                            <div>
-                                <div class="store-name" style="color: #ff9800;">🧡 Temu Oficial</div>
-                                <div class="store-tagline"><span class="es-text">Súper ofertas y cupones</span><span class="en-text">Hot deals & coupons</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            
+            <!-- ACCESOS RÁPIDOS A TIENDAS ALIADAS -->
+            <div class="partner-stores-box">
+                <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
+                <div class="partner-stores-list">
+                    <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
+                        <div>
+                            <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
+                            <div class="store-tagline"><span class="es-text">Hoteles, tours y atracciones</span><span class="en-text">Hotels, tours & attractions</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
-                            <div>
-                                <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
-                                <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff5722;">
+                        <div>
+                            <div class="store-name" style="color: #ff9800;">🧡 Temu Oficial</div>
+                            <div class="store-tagline"><span class="es-text">Súper ofertas y cupones</span><span class="en-text">Hot deals & coupons</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🎬 Prime Video</div>
-                                <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
+                        <div>
+                            <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
+                            <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🎧 Amazon Music</div>
-                                <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🎬 Prime Video</div>
+                            <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🏷️ eBay Oficial</div>
-                                <div class="store-tagline"><span class="es-text">Subastas y marketplace</span><span class="en-text">Auctions & marketplace</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🎧 Amazon Music</div>
+                            <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">📦 Amazon Oficial</div>
-                                <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🏷️ eBay Oficial</div>
+                            <div class="store-tagline"><span class="es-text">Subastas y marketplace</span><span class="en-text">Auctions & marketplace</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🛍️ AliExpress</div>
-                                <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory direct</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">📦 Amazon Oficial</div>
+                            <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">📦 Alibaba</div>
-                                <div class="store-tagline"><span class="es-text">Compras al por mayor</span><span class="en-text">Wholesale & bulk</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🛍️ AliExpress</div>
+                            <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory direct</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://vevorca.pxf.io/2R6B7O" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🔧 VEVOR CA</div>
-                                <div class="store-tagline"><span class="es-text">Equipos industriales</span><span class="en-text">Tough machinery</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">📦 Alibaba</div>
+                            <div class="store-tagline"><span class="es-text">Compras al por mayor</span><span class="en-text">Wholesale & bulk</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://promeed.sjv.io/oNKaMe" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🛏️ Promeed Silk</div>
-                                <div class="store-tagline"><span class="es-text">Seda Mulberry 100% pura</span><span class="en-text">100% Pure Mulberry silk</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://vevorca.pxf.io/2R6B7O" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🔧 VEVOR CA</div>
+                            <div class="store-tagline"><span class="es-text">Equipos industriales</span><span class="en-text">Tough machinery</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://hkbrightstartlimited.sjv.io/WOeP5O" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">🏠 FliKEZE</div>
-                                <div class="store-tagline"><span class="es-text">Accesorios y hogar inteligente</span><span class="en-text">Smart home accessories</span></div>
-                            </div>
-                            <span class="store-arrow">→</span>
-                        </a>
+                    <a href="https://promeed.sjv.io/oNKaMe" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🛏️ Promeed Silk</div>
+                            <div class="store-tagline"><span class="es-text">Seda Mulberry 100% pura</span><span class="en-text">100% Pure Mulberry silk</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
 
-                        <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                            <div>
-                                <div class="store-name">👡 Fitory Footwear</div>
+                    <a href="https://hkbrightstartlimited.sjv.io/WOeP5O" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">🏠 FliKEZE</div>
+                            <div class="store-tagline"><span class="es-text">Accesorios y hogar inteligente</span><span class="en-text">Smart home accessories</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
+                    <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name">👡 Fitory Footwear</div>
                             <div class="store-tagline"><span class="es-text">Calzado ergonómico</span><span class="en-text">Comfort sandals</span></div>
                         </div>
                         <span class="store-arrow">→</span>
@@ -931,6 +856,7 @@
                 </div>
             </div>
 
+            <!-- YRT SOLUTIONS -->
             <div class="yrt-widget">
                 <span class="yrt-badge">⭐ Patrocinador Oficial</span>
                 <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
@@ -945,6 +871,7 @@
                 </div>
             </div>
 
+            <!-- ACTIVIDAD RADAR -->
             <div class="stats-widget">
                 <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
                 <div class="stats-users">
@@ -958,157 +885,41 @@
             </div>
         </aside>
     </div>
-</div>
 
-<!-- ======================================================== -->
-<!-- SUBPÁGINA 2: REDES SOCIALES & MÚSICA CON LOGOS OFICIALES -->
-<!-- ======================================================== -->
-<div id="pageSocialView" class="page-view">
-    <div class="hero-section" style="border-color: rgba(139, 92, 246, 0.45); background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(10, 18, 36, 0.95) 100%);">
-        <div class="hero-brand-title">
-            <span class="brand-ahorra">HUB DIGITAL</span> <span class="brand-chic" style="background: linear-gradient(135deg, #a855f7 0%, var(--neon-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2026</span>
-        </div>
-        
-        <div class="hero-badge" style="border-color: var(--neon-cyan); background: rgba(0, 240, 255, 0.15);">
-            <span class="es-text">⚡ REDES SOCIALES & STREAMING DE MÚSICA</span>
-            <span class="en-text">⚡ SOCIAL NETWORKS & MUSIC STREAMING</span>
-        </div>
-        
-        <h1 class="hero-title">
-            <span class="es-text">Accesos Directos a las <span class="accent-green">Plataformas Oficiales</span></span>
-            <span class="en-text">Direct Access to <span class="accent-green">Official Platforms</span></span>
-        </h1>
-        <p class="hero-subtitle">
-            <span class="es-text">Conéctate al instante con las redes sociales más utilizadas, plataformas de streaming de música HD con logos oficiales y canales globales.</span>
-            <span class="en-text">Instant direct access to popular social networks, lossless HD music platforms with official logos and global channels.</span>
-        </p>
-        <div class="trust-pills">
-            <div class="trust-pill">🎵 <strong><span class="es-text">Audio HD & Podcasts</span><span class="en-text">HD Audio & Podcasts</span></strong></div>
-            <div class="trust-pill">📱 <strong><span class="es-text">Redes Globales</span><span class="en-text">Global Networks</span></strong></div>
-            <div class="trust-pill">⚡ <strong><span class="es-text">Logos Oficiales</span><span class="en-text">Official Logos</span></strong></div>
+    <!-- SECCIÓN LEGAL -->
+    <div class="legal-box" id="legal">
+        <h3 class="legal-title"><span class="es-text">Información Legal & Transparencia</span><span class="en-text">Legal Disclosures & Transparency</span></h3>
+        <div class="legal-grid">
+            <details class="legal-card">
+                <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
+                <div class="legal-card-body">
+                    <span class="es-text">AhorraTodo Chic participa en Travelpayouts, Temu Affiliate Program, eBay Partner Network, en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music) y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic participates in Travelpayouts, Temu Affiliate Program, eBay Partner Network, Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music) and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                </div>
+            </details>
+            <details class="legal-card">
+                <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
+                <div class="legal-card-body">
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Klook, Travelpayouts, Temu, eBay, Amazon, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
+                    <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, payments, shipping and guarantees are handled exclusively by official partner platforms.</span>
+                </div>
+            </details>
+            <details class="legal-card">
+                <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy & Cookies</span></summary>
+                <div class="legal-card-body">
+                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma. Cumplimiento GDPR / CCPA.</span>
+                    <span class="en-text">We do not sell personal data. Only your language preference is saved locally. GDPR / CCPA compliant.</span>
+                </div>
+            </details>
+            <details class="legal-card">
+                <summary><span class="es-text">📍 Contacto & Soporte</span><span class="en-text">📍 Contact & Support</span></summary>
+                <div class="legal-card-body">
+                    <span class="es-text">AhorraTodo Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
+                    <span class="en-text">SaveEverything Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
+                </div>
+            </details>
         </div>
     </div>
-
-    <div class="notice-bar" style="border-color: var(--neon-purple);">
-        <div class="notice-left">
-            <span>🎧 <span class="es-text">Música, comunidades y contenido oficial al alcance de un clic</span><span class="en-text">Official music, communities and video streaming at your fingertips</span></span>
-        </div>
-        <div class="notice-right">
-            <span class="es-text" style="color: var(--neon-cyan);">✓ 18 PLATAFORMAS OFICIALES 2026</span>
-            <span class="en-text" style="color: var(--neon-cyan);">✓ 18 OFFICIAL 2026 PLATFORMS</span>
-        </div>
-    </div>
-
-    <div class="controls-card">
-        <div class="search-input-wrap">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="socialSearch" placeholder="Busca una plataforma (ej. spotify, tiktok, youtube, instagram)..." oninput="handleSocialSearch()">
-        </div>
-
-        <div class="category-tabs">
-            <button class="cat-btn active" onclick="selectSocialCat('all', this)"><span class="es-text">🔥 Todas</span><span class="en-text">🔥 All</span></button>
-            <button class="cat-btn" onclick="selectSocialCat('musica', this)"><span class="es-text">🎵 Música & Audio</span><span class="en-text">🎵 Music & Audio</span></button>
-            <button class="cat-btn" onclick="selectSocialCat('redes', this)"><span class="es-text">📱 Redes Sociales</span><span class="en-text">📱 Social Media</span></button>
-            <button class="cat-btn" onclick="selectSocialCat('video', this)"><span class="es-text">📺 Video & Streaming</span><span class="en-text">📺 Video & Stream</span></button>
-            <button class="cat-btn" onclick="selectSocialCat('mensajeria', this)"><span class="es-text">💬 Mensajería</span><span class="en-text">💬 Messaging</span></button>
-        </div>
-    </div>
-
-    <div class="products-grid" id="socialContainer"></div>
-</div>
-
-<!-- ======================================================== -->
-<!-- SUBPÁGINA 3: LOS MEJORES JUEGOS DEL 2027 EN TENDENCIA    -->
-<!-- ======================================================== -->
-<div id="pageGamesView" class="page-view">
-    <div class="hero-section" style="border-color: rgba(255, 0, 85, 0.45); background: radial-gradient(circle, rgba(255, 0, 85, 0.12) 0%, rgba(10, 18, 36, 0.95) 100%);">
-        <div class="hero-brand-title">
-            <span class="brand-ahorra">TOP GAMING</span> <span class="brand-chic" style="background: linear-gradient(135deg, #ff0055 0%, #ff9900 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2027</span>
-        </div>
-        
-        <div class="hero-badge" style="border-color: #ff9900; background: rgba(255, 153, 0, 0.15);">
-            <span class="es-text">🏆 TENDENCIAS & MEJORES VIDEOJUEGOS 2027</span>
-            <span class="en-text">🏆 TOP TRENDING VIDEO GAMES OF 2027</span>
-        </div>
-        
-        <h1 class="hero-title">
-            <span class="es-text">Los Títulos Más Esperados & <span class="accent-green">Titanes de Nueva Generación</span></span>
-            <span class="en-text">Most Anticipated Blockbusters & <span class="accent-green">Next-Gen Titans</span></span>
-        </h1>
-        <p class="hero-subtitle">
-            <span class="es-text">Selección definitiva en tendencia de los videojuegos más aclamados y revolucionarios del 2027. Mundos hiperrealistas, gráficos en Unreal Engine 5 y las mayores franquicias del planeta con enlaces directos a sus portales oficiales.</span>
-            <span class="en-text">Definitive trending selection of 2027's most awaited masterpieces. Photorealistic open worlds, Unreal Engine 5 blockbusters and legendary gaming franchises with direct official links.</span>
-        </p>
-        <div class="trust-pills">
-            <div class="trust-pill">👑 <strong><span class="es-text">GTA VI • The Witcher 4</span><span class="en-text">GTA VI • Witcher 4</span></strong></div>
-            <div class="trust-pill">🎮 <strong><span class="es-text">PC / PS5 Pro / Xbox / Switch 2</span><span class="en-text">Next-Gen Ready</span></strong></div>
-            <div class="trust-pill">⭐ <strong><span class="es-text">Enlaces Oficiales Verificados</span><span class="en-text">Official Verified Links</span></strong></div>
-        </div>
-    </div>
-
-    <div class="notice-bar" style="border-color: #ff0055;">
-        <div class="notice-left">
-            <span>🎮 <span class="es-text">Accede a las páginas oficiales, trailers y tiendas verificadas de cada lanzamiento</span><span class="en-text">Direct access to verified official game pages, trailers and launch portals</span></span>
-        </div>
-        <div class="notice-right">
-            <span class="es-text" style="color: #ff9900;">✓ 12 TITULARES EN TENDENCIA 2027</span>
-            <span class="en-text" style="color: #ff9900;">✓ 12 TOP TRENDING TITLES 2027</span>
-        </div>
-    </div>
-
-    <div class="controls-card">
-        <div class="search-input-wrap">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="gamesSearch" placeholder="Busca un juego (ej. gta 6, the witcher, wolverine, doom, elder scrolls)..." oninput="handleGamesSearch()">
-        </div>
-
-        <div class="category-tabs">
-            <button class="cat-btn active" onclick="selectGamesCat('all', this)"><span class="es-text">🔥 Todos los Juegos</span><span class="en-text">🔥 All Games</span></button>
-            <button class="cat-btn" onclick="selectGamesCat('mundo-abierto', this)"><span class="es-text">🌆 Mundo Abierto</span><span class="en-text">🌆 Open World</span></button>
-            <button class="cat-btn" onclick="selectGamesCat('rpg', this)"><span class="es-text">⚔️ RPG Épico</span><span class="en-text">⚔️ Epic RPG</span></button>
-            <button class="cat-btn" onclick="selectGamesCat('accion', this)"><span class="es-text">⚡ Acción & Héroes</span><span class="en-text">⚡ Action & Heroes</span></button>
-            <button class="cat-btn" onclick="selectGamesCat('shooter', this)"><span class="es-text">💥 Shooter & Co-op</span><span class="en-text">💥 Shooter & Co-op</span></button>
-            <button class="cat-btn" onclick="selectGamesCat('terror', this)"><span class="es-text">🕯️ Terror & Supervivencia</span><span class="en-text">🕯️ Horror & Survival</span></button>
-        </div>
-    </div>
-
-    <div class="products-grid" id="gamesContainer"></div>
-</div>
-
-<!-- SECCIÓN LEGAL COMPARTIDA -->
-<div class="legal-box" id="legal">
-    <h3 class="legal-title"><span class="es-text">Información Legal & Transparencia</span><span class="en-text">Legal Disclosures & Transparency</span></h3>
-    <div class="legal-grid">
-        <details class="legal-card">
-            <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
-            <div class="legal-card-body">
-                <span class="es-text">AhorraTodo Chic participa en Travelpayouts, Temu Affiliate Program, eBay Partner Network, en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music) y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
-                <span class="en-text">SaveEverything Chic participates in Travelpayouts, Temu Affiliate Program, eBay Partner Network, Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music) and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
-            </div>
-        </details>
-        <details class="legal-card">
-            <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
-            <div class="legal-card-body">
-                <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, compras de videojuegos, suscripciones de streaming y cuentas son gestionados exclusivamente por las plataformas oficiales (Steam, PlayStation, Xbox, Nintendo, Rockstar Games, Amazon, Temu, eBay, etc.) bajo sus propios términos y condiciones.</span>
-                <span class="en-text">We are not a direct retailer. All orders, video game purchases, streaming subscriptions and user accounts are handled exclusively by official partner platforms.</span>
-            </div>
-        </details>
-        <details class="legal-card">
-            <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy & Cookies</span></summary>
-            <div class="legal-card-body">
-                <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma y navegación. Cumplimiento GDPR / CCPA.</span>
-                <span class="en-text">We do not sell personal data. Only your language and navigation preferences are stored locally. GDPR / CCPA compliant.</span>
-            </div>
-        </details>
-        <details class="legal-card">
-            <summary><span class="es-text">📍 Contacto & Soporte</span><span class="en-text">📍 Contact & Support</span></summary>
-            <div class="legal-card-body">
-                <span class="es-text">AhorraTodo Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
-                <span class="en-text">SaveEverything Chic • Miami, Florida, USA.<br>Email: ahorratodochic@gmail.com<br>WhatsApp: +1 (305) 491-1906</span>
-            </div>
-        </details>
-    </div>
-</div>
 </div>
 
 <footer class="footer">
@@ -1123,251 +934,245 @@
 <script>
 let currentLang = 'es';
 let activeCategory = 'all';
-let activeSocialCategory = 'all';
-let activeGamesCategory = 'all';
 
-/* ================= NAVEGACIÓN ENTRE 3 SUBPÁGINAS ================= */
-function switchPageView(view) {
-    const pageStores = document.getElementById('pageStoresView');
-    const pageSocial = document.getElementById('pageSocialView');
-    const pageGames = document.getElementById('pageGamesView');
-    const btnStores = document.getElementById('btnNavStores');
-    const btnSocial = document.getElementById('btnNavSocial');
-    const btnGames = document.getElementById('btnNavGames');
-
-    pageStores.classList.remove('active-view');
-    pageSocial.classList.remove('active-view');
-    pageGames.classList.remove('active-view');
-    btnStores.classList.remove('active');
-    btnSocial.classList.remove('active');
-    btnGames.classList.remove('active');
-
-    if (view === 'social') {
-        pageSocial.classList.add('active-view');
-        btnSocial.classList.add('active');
-        renderSocial();
-    } else if (view === 'games') {
-        pageGames.classList.add('active-view');
-        btnGames.classList.add('active');
-        renderGames();
-    } else {
-        pageStores.classList.add('active-view');
-        btnStores.classList.add('active');
-        renderStores();
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-/* ================= BASE DE DATOS DE JUEGOS EN TENDENCIA 2027 ================= */
-const GAMES_DATABASE = [
+/* ================= BASE DE DATOS DE TIENDAS OFICIALES ================= */
+const STORES_DATABASE = [
     {
-        id: "game-gta6",
-        cat: "mundo-abierto",
-        hub: "ROCKSTAR GAMES",
-        name_es: "Grand Theft Auto VI (GTA 6)",
-        name_en: "Grand Theft Auto VI (GTA 6)",
-        desc_es: "El videojuego más esperado de toda la historia. Regresa a Vice City y el estado de Leonida con un nivel de realismo, física y vida jamás visto.",
-        desc_en: "The most anticipated video game in history. Return to neon-soaked Vice City and Leonida with groundbreaking open-world realism and emergent AI.",
-        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
-        badge_es: "👑 Coloso 2027",
-        badge_en: "👑 2027 Titan",
-        feature_es: "Mundo Abierto Masivo • PS5 Pro / Xbox / PC",
-        feature_en: "Massive Open World • Next-Gen",
-        url: "https://www.rockstargames.com/VI"
-    },
-    {
-        id: "game-witcher-4",
-        cat: "rpg",
-        hub: "CD PROJEKT RED",
-        name_es: "The Witcher 4: Polaris",
-        name_en: "The Witcher 4: Polaris",
-        desc_es: "Comienza una nueva y épica saga de The Witcher desarrollada en Unreal Engine 5. Explora nuevas tierras, monstruos ancestrales y magia oscura.",
-        desc_en: "The beginning of a new epic trilogy in The Witcher universe, powered by Unreal Engine 5 with deep narrative RPG mechanics.",
-        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Saga Legendaria",
-        badge_en: "Legendary Saga",
-        feature_es: "RPG de Fantasía Oscura • Unreal Engine 5",
-        feature_en: "Dark Fantasy RPG • Unreal Engine 5",
-        url: "https://www.thewitcher.com/"
-    },
-    {
-        id: "game-ghost-of-yotei",
-        cat: "accion",
-        hub: "SUCKER PUNCH / SONY",
-        name_es: "Ghost of Yōtei",
-        name_en: "Ghost of Yōtei",
-        desc_es: "La aclamada secuela de Ghost of Tsushima. Explora el Japón feudal de 1603 cerca del monte Yōtei con una nueva guerrera y combate visceral.",
-        desc_en: "The anticipated successor to Ghost of Tsushima. Set in 1603 Japan surrounding Mount Yōtei with cinematic samurai swordplay.",
-        img: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Samurái Épico",
-        badge_en: "Samurai Epic",
-        feature_es: "Acción Samurái • Exclusivo PS5 / PS5 Pro",
-        feature_en: "Open-World Samurai • PS5 Exclusive",
-        url: "https://www.playstation.com/games/ghost-of-yotei/"
-    },
-    {
-        id: "game-wolverine",
-        cat: "accion",
-        hub: "INSOMNIAC / SONY",
-        name_es: "Marvel's Wolverine",
-        name_en: "Marvel's Wolverine",
-        desc_es: "La esperada aventura en solitario de Logan. Combate cuerpo a cuerpo salvaje, garras de adamantium y una historia madura y sangrienta.",
-        desc_en: "Logan's standalone blockbuster by Insomniac Games. Brutal claw-to-claw combat, regenerative healing and mature storytelling.",
-        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Marvel Exclusivo",
-        badge_en: "Marvel Exclusive",
-        feature_es: "Acción Visceral • PS5 / PS5 Pro",
-        feature_en: "Visceral Action • PS5 / PS5 Pro",
-        url: "https://insomniac.games/game/marvels-wolverine/"
-    },
-    {
-        id: "game-elder-scrolls-6",
-        cat: "rpg",
-        hub: "BETHESDA",
-        name_es: "The Elder Scrolls VI",
-        name_en: "The Elder Scrolls VI",
-        desc_es: "El regreso triunfal de la saga de rol más legendaria de la historia. Libertad absoluta en Tamriel, magia arcana y mundos gigantescos.",
-        desc_en: "The triumphant return of Bethesda's crown jewel fantasy series. Complete freedom, deep magic systems and an epic continent.",
-        img: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Monumento RPG",
-        badge_en: "RPG Monument",
-        feature_es: "Rol Total • Xbox / PC / Cloud",
-        feature_en: "Next-Gen Fantasy • Xbox / PC",
-        url: "https://bethesda.net/game/the-elder-scrolls-vi"
-    },
-    {
-        id: "game-clockwork-revolution",
-        cat: "rpg",
-        hub: "INXILE / XBOX",
-        name_es: "Clockwork Revolution",
-        name_en: "Clockwork Revolution",
-        desc_es: "El fascinante RPG steampunk de acción en primera persona donde viajarás en el tiempo alterando el destino y la historia de Avalon.",
-        desc_en: "The mind-bending first-person steampunk action RPG where your time-travel choices reshape the Victorian city of Avalon.",
-        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Viajes Temporales",
-        badge_en: "Time Travel RPG",
-        feature_es: "Steampunk RPG • Xbox / PC",
-        feature_en: "Steampunk First-Person RPG • Xbox / PC",
-        url: "https://store.steampowered.com/app/2439770/Clockwork_Revolution/"
-    },
-    {
-        id: "game-doom-dark-ages",
-        cat: "shooter",
-        hub: "ID SOFTWARE / BETHESDA",
-        name_es: "DOOM: The Dark Ages",
-        name_en: "DOOM: The Dark Ages",
-        desc_es: "La precuela medieval del Doom Slayer. Extermina demonios con el escudo sierra dentado y un arsenal pesado en batallas colosales.",
-        desc_en: "The medieval prequel origin story of the Doom Slayer. Rip and tear demon legions with the Shield Saw and heavy firepower.",
-        img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Shooter Supremo",
-        badge_en: "Top Shooter",
-        feature_es: "Acción Frenética • PC / PS5 / Xbox",
-        feature_en: "Fast FPS Combat • Multiplatform",
-        url: "https://store.steampowered.com/app/3017860/DOOM_The_Dark_Ages/"
-    },
-    {
-        id: "game-death-stranding-2",
-        cat: "mundo-abierto",
-        hub: "KOJIMA PRODUCTIONS",
-        name_es: "Death Stranding 2: On the Beach",
-        name_en: "Death Stranding 2: On the Beach",
-        desc_es: "Hideo Kojima presenta su nueva odisea cinematográfica. Explora nuevos territorios, conduce mechas y vehículos todoterreno y reconecta a la humanidad.",
-        desc_en: "Hideo Kojima returns with an unmatched cinematic journey. Explore uncharted territories, traverse new continents and connect humanity.",
-        img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Cine & Autor",
-        badge_en: "Cinematic Epic",
-        feature_es: "Aventura Cinematográfica • PS5",
-        feature_en: "Cinematic Sci-Fi • PS5",
-        url: "https://www.kojimaproductions.jp/en/death-stranding-2"
-    },
-    {
-        id: "game-resident-evil-9",
-        cat: "terror",
-        hub: "CAPCOM",
-        name_es: "Resident Evil 9 (Next-Gen)",
-        name_en: "Resident Evil 9 (Next-Gen)",
-        desc_es: "La nueva entrega cumbre del survival horror de Capcom con motor RE Engine potenciado, entornos abiertos y tensión psicológica máxima.",
-        desc_en: "Capcom's next flagship survival horror experience powered by an upgraded RE Engine with expansive, atmospheric terror.",
-        img: "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Terror Cumbre",
-        badge_en: "Apex Horror",
-        feature_es: "Survival Horror • PC / PS5 / Xbox",
-        feature_en: "Survival Horror • Next-Gen",
-        url: "https://www.residentevil.com/"
-    },
-    {
-        id: "game-fable",
-        cat: "rpg",
-        hub: "PLAYGROUND / XBOX",
-        name_es: "Fable",
-        name_en: "Fable",
-        desc_es: "El esperado renacimiento de Albion con humor británico característico, elecciones morales legendarias y un mundo de cuento de hadas hiperdetallado.",
-        desc_en: "A fresh beginning for the legendary franchise. Explore Albion with witty British humor, deep reputation systems, and heroic choices.",
-        img: "https://images.unsplash.com/photo-1612287233207-6b45d2e05fd5?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Fantasía Mágica",
-        badge_en: "Fairy Tale RPG",
-        feature_es: "Rol & Humor • Xbox / PC",
-        feature_en: "Action RPG • Xbox Game Pass / PC",
-        url: "https://www.xbox.com/games/fable"
-    },
-    {
-        id: "game-tomb-raider",
-        cat: "accion",
-        hub: "CRYSTAL DYNAMICS / AMAZON",
-        name_es: "Tomb Raider: Legacy of Atlantis",
-        name_en: "Tomb Raider: Legacy of Atlantis",
-        desc_es: "La gran aventura de Lara Croft en Unreal Engine 5. Puzles intrincados, tumbas colosales, exploración acrobática y gráficos de última generación.",
-        desc_en: "Lara Croft's next blockbuster powered by Unreal Engine 5 with intricate environmental puzzles, tombs and acrobatic traversal.",
+        id: "store-travelpayouts-klook",
+        cat: "viajes",
+        hub: "TRAVELPAYOUTS / KLOOK",
+        name_es: "Klook Travel - Hoteles, Atracciones, Tours & Experiencias",
+        name_en: "Klook Travel - Hotels, Top Attractions, Tours & Activities",
+        desc_es: "Reserva entradas a parques temáticos, tours mundiales, hoteles, trenes y traslados con los mejores precios y confirmación inmediata.",
+        desc_en: "Book attraction tickets, world tours, hotels, high-speed rail and airport transfers at the best rates with instant confirmation.",
         img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Aventura Global",
-        badge_en: "Global Adventure",
-        feature_es: "Exploración & Tumbas • PC / Consolas",
-        feature_en: "Action Adventure • Multiplatform",
-        url: "https://www.tombraider.com/"
+        badge_es: "Viajes & Tours",
+        badge_en: "Travel & Tours",
+        feature_es: "Mejor Precio • Confirmación Inmediata",
+        feature_en: "Best Price Guarantee • Instant Booking",
+        url: "https://klook.tpx.lt/LKyeG1Fo"
     },
     {
-        id: "game-alien-isolation-2",
-        cat: "terror",
-        hub: "CREATIVE ASSEMBLY / SEGA",
-        name_es: "Alien: Isolation 2",
-        name_en: "Alien: Isolation 2",
-        desc_es: "La secuela oficial del survival horror más aterrador del espacio. Una inteligencia artificial del Xenomorfo aún más letal y atmósfera opresiva.",
-        desc_en: "The official sequel to the terrifying sci-fi masterpiece with smarter adaptive Xenomorph AI and heart-stopping survival horror.",
-        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Survival Espacial",
-        badge_en: "Sci-Fi Horror",
-        feature_es: "Terror Inmersivo • PC / PS5 / Xbox",
-        feature_en: "Immersive Survival Horror • Next-Gen",
-        url: "https://store.steampowered.com/app/214490/Alien_Isolation/"
+        id: "store-temu-official",
+        cat: "global",
+        hub: "TEMU OFICIAL",
+        name_es: "Temu - Millones de Ofertas, Moda, Hogar & Tecnología",
+        name_en: "Temu - Shop Like a Billionaire, Huge Savings & Top Deals",
+        desc_es: "Explora miles de productos a precios increíbles con cupones exclusivos de bienvenida, envíos rápidos y ofertas relámpago todos los días.",
+        desc_en: "Explore thousands of products at unbeatable factory prices with welcome coupon bundles, fast shipping and daily flash sales.",
+        img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Súper Precios",
+        badge_en: "Mega Savings",
+        feature_es: "Cupones de Bienvenida • Envíos Protegidos",
+        feature_en: "Welcome Coupons • Buyer Protection",
+        url: "https://temu.to/k/p3t3h4hf35v"
+    },
+    {
+        id: "store-amazon-ebt",
+        cat: "ebt",
+        hub: "AMAZON EBT / SNAP",
+        name_es: "Amazon Prime con 50% de Descuento (EBT / SNAP / Medicaid)",
+        name_en: "Amazon Prime at 50% Off with EBT / SNAP / Medicaid",
+        desc_es: "Disfruta de todos los beneficios de Amazon Prime al 50% de descuento registrando tu tarjeta EBT o asistencia válida. Envíos gratis y compras de despensa.",
+        desc_en: "Get all Amazon Prime benefits at 50% off with a valid EBT or qualifying government assistance card. Free delivery & grocery savings.",
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "EBT / SNAP 50%",
+        badge_en: "EBT / SNAP 50%",
+        feature_es: "50% Descuento Prime • Envío Gratis",
+        feature_en: "50% Off Prime • Free Fast Shipping",
+        url: "https://link.amazon/B0iARAsyg"
+    },
+    {
+        id: "store-prime-video",
+        cat: "streaming",
+        hub: "PRIME VIDEO",
+        name_es: "Prime Video - Películas, Series Exclusivas & Deportes en Vivo",
+        name_en: "Prime Video - Movies, Exclusive Originals & Live Sports",
+        desc_es: "Accede a miles de películas taquilleras, series galardonadas de Amazon Originals, canales en vivo y deportes con calidad 4K HDR.",
+        desc_en: "Watch thousands of blockbuster movies, award-winning Amazon Originals, live TV channels, and sports in stunning 4K HDR.",
+        img: "https://m.media-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light_on_dark.png",
+        badge_es: "Streaming 4K",
+        badge_en: "4K Streaming",
+        feature_es: "Amazon Originals • Calidad 4K HDR",
+        feature_en: "Amazon Originals • 4K HDR Ultra",
+        url: "https://link.amazon/B05E3UAdD"
+    },
+    {
+        id: "store-amazon-music",
+        cat: "streaming",
+        hub: "AMAZON MUSIC",
+        name_es: "Amazon Music Unlimited - Millones de Canciones y Podcasts",
+        name_en: "Amazon Music Unlimited - 100M+ Songs & Top Podcasts",
+        desc_es: "Escucha más de 100 millones de canciones en audio de alta definición (HD/Ultra HD), sin anuncios publicitarios, modo sin conexión y saltos ilimitados.",
+        desc_en: "Stream over 100 million songs in lossless HD and Ultra HD audio, ad-free listening, offline downloads, and unlimited skips.",
+        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Streaming HD",
+        badge_en: "HD Streaming",
+        feature_es: "Audio Espacial HD • Sin Anuncios",
+        feature_en: "Spatial Audio HD • Ad-Free",
+        url: "https://link.amazon/A02OYdgFc"
+    },
+    {
+        id: "store-ebay-official",
+        cat: "global",
+        hub: "EBAY OFICIAL",
+        name_es: "eBay - Marketplace Global, Subastas & Ofertas Exclusivas",
+        name_en: "eBay - Global Marketplace, Auctions & Top Deals",
+        desc_es: "Subastas y compras verificadas en electrónica, moda, motor, coleccionables y ofertas con garantía de devolución de eBay.",
+        desc_en: "Auctions & verified purchases in tech, fashion, auto, collectibles and top daily deals with eBay Money Back Guarantee.",
+        img: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Marketplace",
+        badge_en: "Marketplace",
+        feature_es: "Garantía al Cliente eBay • Subastas",
+        feature_en: "eBay Guarantee • Auctions & Deals",
+        url: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1"
+    },
+    {
+        id: "store-amazon-global",
+        cat: "global",
+        hub: "AMAZON OFICIAL",
+        name_es: "Amazon.com - Catálogo Global Oficial & Ofertas",
+        name_en: "Amazon.com - Official Global Store & Daily Deals",
+        desc_es: "Millones de productos con garantía de la A a la Z, envíos rápidos Prime, ofertas relámpago y el catálogo más grande del mundo.",
+        desc_en: "Millions of products with A-to-Z guarantee, fast Prime shipping, lightning deals and the world's largest catalog.",
+        img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Catálogo Global",
+        badge_en: "Global Catalog",
+        feature_es: "Garantía de la A a la Z • Envío Prime",
+        feature_en: "A-to-Z Shield • Prime Delivery",
+        url: "https://www.amazon.com/?tag=ahorratodochi-20"
+    },
+    {
+        id: "store-promeed",
+        cat: "hogar",
+        hub: "PROMEED",
+        name_es: "Promeed Silk - Ropa de Cama y Accesorios de Seda 100% Pura",
+        name_en: "Promeed Silk - 100% Pure Mulberry Silk Bedding & Loungewear",
+        desc_es: "Fundas de almohada, sábanas y pijamas de seda Mulberry grado 6A. Protege la piel, reduce arrugas y cuida el cabello al dormir.",
+        desc_en: "Grade 6A Mulberry silk pillowcases, bedding and loungewear. Anti-aging, skin-friendly, and hair-protecting luxury.",
+        img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Seda Pura",
+        badge_en: "Pure Silk",
+        feature_es: "100% Seda Mulberry • Grado 6A",
+        feature_en: "100% Mulberry Silk • Grade 6A",
+        url: "https://promeed.sjv.io/oNKaMe"
+    },
+    {
+        id: "store-flikeze",
+        cat: "hogar",
+        hub: "FLIKEZE",
+        name_es: "FliKEZE - Innovación, Organización y Accesorios para el Hogar",
+        name_en: "FliKEZE - Smart Living & Ergonomic Home Solutions",
+        desc_es: "Artículos ergonómicos y gadgets para el hogar y la oficina diseñados para simplificar la vida diaria con máxima calidad y estilo.",
+        desc_en: "Smart ergonomic accessories and innovative home products crafted to enhance everyday comfort and living spaces.",
+        img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Hogar Inteligente",
+        badge_en: "Smart Home",
+        feature_es: "Diseño ergonómico • Calidad premium",
+        feature_en: "Ergonomic Design • Premium Quality",
+        url: "https://hkbrightstartlimited.sjv.io/WOeP5O"
+    },
+    {
+        id: "store-aliexpress",
+        cat: "global",
+        hub: "ALIEXPRESS",
+        name_es: "AliExpress Oficial - Millones de Productos a Precios de Fábrica",
+        name_en: "AliExpress Official - Direct Factory Deals & Super Value",
+        desc_es: "Electrónica, repuestos, moda, accesorios y herramientas con súper descuentos, cupones de bienvenida y envíos directos internacionales.",
+        desc_en: "Electronics, automotive parts, clothing and tools with mega discounts, global shipping and buyer protection.",
+        img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Super Ofertas",
+        badge_en: "Super Deals",
+        feature_es: "Precios de fábrica • Cupones globales",
+        feature_en: "Factory Direct • Global Coupons",
+        url: "https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/"
+    },
+    {
+        id: "store-alibaba",
+        cat: "global",
+        hub: "ALIBABA",
+        name_es: "Alibaba.com - Portal Mayorista B2B y Fabricantes Directos",
+        name_en: "Alibaba.com - Global B2B Wholesale & Manufacturer Hub",
+        desc_es: "La plataforma líder de comercio al por mayor. Importa productos, maquinaria y materias primas directamente de fabricantes certificados.",
+        desc_en: "Leading B2B wholesale platform. Source manufactured goods, machinery and supplies directly from certified suppliers.",
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mayorista B2B",
+        badge_en: "B2B Wholesale",
+        feature_es: "Precios por volumen • Trade Assurance",
+        feature_en: "Bulk Pricing • Trade Assurance",
+        url: "https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/"
+    },
+    {
+        id: "store-vevor",
+        cat: "herramientas",
+        hub: "VEVOR CA",
+        name_es: "VEVOR CA - Maquinaria, Equipos de Taller y Herramientas Robustas",
+        name_en: "VEVOR CA - Tough Equipment & Industrial Tools at Best Prices",
+        desc_es: "Especialistas en herramientas eléctricas, refrigeración, gastronomía, soldadoras, tornos y equipos pesados con máxima calidad.",
+        desc_en: "Tough tools, industrial equipment, refrigeration, kitchen gear, and welding machines at unbeatable value.",
+        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Uso Rudo",
+        badge_en: "Tough Tools",
+        feature_es: "Calidad industrial • Garantía VEVOR",
+        feature_en: "Industrial Quality • VEVOR Guarantee",
+        url: "https://vevorca.pxf.io/2R6B7O"
+    },
+    {
+        id: "store-fitory",
+        cat: "moda",
+        hub: "FITORY",
+        name_es: "Fitory Footwear - Sandalias Ergonómicas y Calzado Ultra Cómodo",
+        name_en: "Fitory Footwear - Ergonomic Comfort Slides & Sandals",
+        desc_es: "Pantuflas y sandalias con soporte para el arco plantar, suelas acolchadas y materiales duraderos para descansar los pies todo el día.",
+        desc_en: "Arch support slide sandals and casual comfort footwear designed for all-day relaxation and support.",
+        img: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Ergonómico",
+        badge_en: "Ergonomic",
+        feature_es: "Soporte de arco • Suela suave",
+        feature_en: "Arch Support • Soft Cushioning",
+        url: "https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb"
+    },
+    {
+        id: "store-wooeye",
+        cat: "belleza",
+        hub: "WOOEYE",
+        name_es: "WOOEYE - Lentes de Contacto Cosméticos de Color de Alta Calidad",
+        name_en: "WOOEYE - Premium Cosmetic Colored Contact Lenses",
+        desc_es: "Lentillas cosméticas seguras, naturales y de cosplay, de alta hidratación, transpirables y certificadas para transformar tu mirada.",
+        desc_en: "Natural and cosplay colored contact lenses. Certified, breathable and moisturizing to enhance your eyes.",
+        img: "https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Cosmético",
+        badge_en: "Cosmetic",
+        feature_es: "Certificados • Alta hidratación",
+        feature_en: "Certified Safe • High Moisture",
+        url: "https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q"
     }
 ];
 
-function renderGames() {
-    const container = document.getElementById('gamesContainer');
-    const searchEl = document.getElementById('gamesSearch');
-    if (!container || !searchEl) return;
-    const query = searchEl.value.toLowerCase().trim();
+function renderStores() {
+    const container = document.getElementById('dealsContainer');
+    const query = document.getElementById('dealSearch').value.toLowerCase().trim();
     container.innerHTML = '';
-
+    
     let matches = 0;
-    GAMES_DATABASE.forEach(item => {
-        if (activeGamesCategory !== 'all' && item.cat !== activeGamesCategory) return;
-
+    STORES_DATABASE.forEach(item => {
+        if (activeCategory !== 'all' && item.cat !== activeCategory) return;
+        
         const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
         const desc = (currentLang === 'es' ? item.desc_es : item.desc_en).toLowerCase();
         const hub = item.hub.toLowerCase();
         if (query && !title.includes(query) && !desc.includes(query) && !hub.includes(query)) return;
-
+        
         matches++;
-        const btnText = currentLang === 'es' ? 'VER EN PORTAL OFICIAL →' : 'VIEW ON OFFICIAL PORTAL →';
+        const btnText = currentLang === 'es' ? 'IR A LA TIENDA OFICIAL →' : 'GO TO OFFICIAL STORE →';
 
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
             <div class="card-top">
                 <div class="card-badges">
-                    <span class="amazon-tag" style="border-color: #ff9900; color: #ffb74d;">${item.hub}</span>
-                    <span class="verified-badge" style="border-color: #ff0055; color: #ff0055;">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+                    <span class="amazon-tag">${item.hub}</span>
+                    <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
                 </div>
                 <div class="product-img-wrap">
                     <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
@@ -1376,10 +1181,10 @@ function renderGames() {
                 <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
             </div>
             <div>
-                <div class="product-features" style="color: #ffb74d; border-color: rgba(255, 153, 0, 0.3);">
-                    <span>🎮 ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
+                <div class="product-features">
+                    <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
                 </div>
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy" style="background: linear-gradient(135deg, #ff0055 0%, #ff9900 100%);">
+                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy">
                     ${btnText}
                 </a>
             </div>
@@ -1389,36 +1194,22 @@ function renderGames() {
 
     if (matches === 0) {
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--text-muted); border: 1px dashed rgba(255,0,85,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
-                <p style="font-size: 0.95em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron juegos con esa búsqueda.' : 'No games matched your query.'}</p>
+            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--text-muted); border: 1px dashed rgba(0,240,255,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
+                <p style="font-size: 0.95em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron tiendas con esa búsqueda.' : 'No partner stores matched your query.'}</p>
             </div>
         `;
     }
 }
 
-function handleSearch() { renderStores(); }
-function handleSocialSearch() { renderSocial(); }
-function handleGamesSearch() { renderGames(); }
-
-function selectCat(cat, btn) {
-    activeCategory = cat;
-    document.querySelectorAll('#pageStoresView .cat-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+function handleSearch() {
     renderStores();
 }
 
-function selectSocialCat(cat, btn) {
-    activeSocialCategory = cat;
-    document.querySelectorAll('#pageSocialView .cat-btn').forEach(b => b.classList.remove('active'));
+function selectCat(cat, btn) {
+    activeCategory = cat;
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderSocial();
-}
-
-function selectGamesCat(cat, btn) {
-    activeGamesCategory = cat;
-    document.querySelectorAll('#pageGamesView .cat-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGames();
+    renderStores();
 }
 
 function toggleLanguage() {
@@ -1432,24 +1223,7 @@ function toggleLanguage() {
             ? "Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..."
             : "Search a store (e.g. klook, travel, temu, ebt, ebay)...";
     }
-
-    const socialInput = document.getElementById('socialSearch');
-    if (socialInput) {
-        socialInput.placeholder = currentLang === 'es'
-            ? "Busca una plataforma (ej. spotify, tiktok, youtube, instagram)..."
-            : "Search a platform (e.g. spotify, tiktok, youtube, instagram)...";
-    }
-
-    const gamesInput = document.getElementById('gamesSearch');
-    if (gamesInput) {
-        gamesInput.placeholder = currentLang === 'es'
-            ? "Busca un juego (ej. gta 6, the witcher, wolverine, doom, elder scrolls)..."
-            : "Search a game (e.g. gta 6, the witcher, wolverine, doom, elder scrolls)...";
-    }
-
     renderStores();
-    renderSocial();
-    renderGames();
 }
 
 function updateRadar() {
@@ -1473,8 +1247,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elYear) elYear.textContent = today.getFullYear();
     
     renderStores();
-    renderSocial();
-    renderGames();
     updateRadar();
     setInterval(updateRadar, 6000);
 });
