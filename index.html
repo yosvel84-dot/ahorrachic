@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Klook Viajes, Temu, Amazon Prime EBT, eBay, Amazon, Prime Video, Amazon Music, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
-    <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas, plataformas globales y Hub de Redes Sociales y Música 2026.">
+    <title>AhorraTodo Chic | Tiendas Oficiales, Redes & Música 2026</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -106,6 +106,45 @@
             filter: drop-shadow(0 0 6px var(--neon-cyan));
         }
 
+        /* NAVEGACIÓN PRINCIPAL / SUBPÁGINAS */
+        .nav-sections {
+            display: inline-flex;
+            gap: 6px;
+            background: rgba(8, 16, 34, 0.85);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 8px;
+            padding: 3px;
+        }
+        .nav-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.76em;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .nav-btn:hover {
+            color: #ffffff;
+        }
+        .nav-btn.active {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .partner-status-badge {
             display: inline-flex;
             align-items: center;
@@ -152,6 +191,14 @@
             max-width: 1240px;
             margin: 0 auto;
             padding: 10px 14px 35px;
+        }
+
+        /* SECCIONES CONDICIONALES */
+        .page-view {
+            display: none;
+        }
+        .page-view.active-view {
+            display: block;
         }
 
         /* HERO MATRIX REDUCIDO Y LEGIBLE */
@@ -204,7 +251,7 @@
         .hero-subtitle {
             font-size: 0.86em;
             color: var(--text-muted);
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto 10px;
             line-height: 1.4;
         }
@@ -324,7 +371,7 @@
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
 
-        /* GRID DE TIENDAS COMPACTA */
+        /* GRID DE TIENDAS Y DE REDES */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -379,7 +426,7 @@
             border: 1px solid var(--neon-magenta);
         }
 
-        /* FOTO DE TIENDA COMPACTA (85px) */
+        /* FOTO DE TIENDA / RED SOCIAL (85px) */
         .product-img-wrap {
             width: 100%;
             height: 85px;
@@ -627,6 +674,7 @@
         }
         @media(max-width: 640px) {
             .top-bar {justify-content: center; gap: 8px;}
+            .nav-sections {order: 3; width: 100%; justify-content: center; margin-top: 4px;}
             .category-tabs {
                 gap: 4px;
                 padding-bottom: 4px;
@@ -654,239 +702,321 @@
     <span class="en-text">As an affiliate participant (Travelpayouts/Klook, Temu, eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
-<!-- TOP BAR -->
+<!-- TOP BAR CON SELECTOR DE SUBPÁGINA -->
 <div class="top-bar">
-    <a href="#" class="brand-logo-top">
+    <a href="#" class="brand-logo-top" onclick="switchPageView('stores')">
         <span class="logo-ahorra">AHORRATODO</span>
         <span class="logo-chic">CHIC</span>
     </a>
+
+    <!-- SELECTOR DE SUBPÁGINAS -->
+    <nav class="nav-sections">
+        <button class="nav-btn active" id="btnNavStores" onclick="switchPageView('stores')">
+            <span>🛍️</span>
+            <span class="es-text">Tiendas Oficiales</span>
+            <span class="en-text">Partner Stores</span>
+        </button>
+        <button class="nav-btn" id="btnNavSocial" onclick="switchPageView('social')">
+            <span>🌐</span>
+            <span class="es-text">Redes & Música 2026</span>
+            <span class="en-text">Social & Music 2026</span>
+        </button>
+    </nav>
     
-    <div class="partner-status-badge">
-        <span class="live-dot"></span>
-        <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
-        <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
+    <div class="header-actions">
+        <div class="partner-status-badge">
+            <span class="live-dot"></span>
+            <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
+            <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
+        </div>
+        
+        <button class="lang-btn" onclick="toggleLanguage()">
+            <span class="es-text">🌐 ENGLISH</span>
+            <span class="en-text">🌐 ESPAÑOL</span>
+        </button>
     </div>
-    
-    <button class="lang-btn" onclick="toggleLanguage()">
-        <span class="es-text">🌐 ENGLISH</span>
-        <span class="en-text">🌐 ESPAÑOL</span>
-    </button>
 </div>
 
 <div class="main-wrapper">
-    <!-- HERO COMPACTO -->
-    <div class="hero-section">
-        <div class="hero-brand-title">
-            <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
-        </div>
-        
-        <div class="hero-badge"><span class="es-text">⚡ DIRECTORIO OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL DIRECTORY 2026</span></div>
-        
-        <h1 class="hero-title">
-            <span class="es-text">Tiendas Oficiales & <span class="accent-green">Afiliados Globales</span></span>
-            <span class="en-text">Official Partner Stores & <span class="accent-green">Global Affiliates</span></span>
-        </h1>
-        <p class="hero-subtitle">
-            <span class="es-text">Acceso directo a las plataformas comerciales y de viajes más importantes del mundo con enlaces y promociones oficiales verificadas.</span>
-            <span class="en-text">Direct access to the world's top shopping and travel platforms with verified official links and promotions.</span>
-        </p>
-        <div class="trust-pills">
-            <div class="trust-pill">🛡️ <strong><span class="es-text">Enlaces Verificados</span><span class="en-text">Verified Links</span></strong></div>
-            <div class="trust-pill">⚡ <strong><span class="es-text">Compras Protegidas</span><span class="en-text">Buyer Protection</span></strong></div>
-            <div class="trust-pill">📦 <strong><span class="es-text">Cobertura Mundial</span><span class="en-text">Worldwide Coverage</span></strong></div>
-        </div>
-    </div>
 
-    <!-- NOTICE BAR COMPACTA -->
-    <div class="notice-bar">
-        <div class="notice-left">
-            <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
-        </div>
-        <div class="notice-right">
-            <span class="es-text">✓ 14 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
-            <span class="en-text">✓ 14 OFFICIAL INTEGRATED STORES & SERVICES</span>
-        </div>
-    </div>
-
-    <!-- MAIN GRID -->
-    <div class="content-grid">
-        <div class="main-content-col">
-            <!-- CONTROLS -->
-            <div class="controls-card">
-                <div class="search-input-wrap">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..." oninput="handleSearch()">
-                </div>
-
-                <div class="category-tabs">
-                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
-                    <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
-                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
-                    <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
-                    <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
-                    <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
-                    <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
-                    <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
-                    <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
-                </div>
+    <!-- ======================================================== -->
+    <!-- PÁGINA 1: TIENDAS & AFILIADOS (DIRECTORIO PRINCIPAL) -->
+    <!-- ======================================================== -->
+    <div id="pageStoresView" class="page-view active-view">
+        <!-- HERO COMPACTO -->
+        <div class="hero-section">
+            <div class="hero-brand-title">
+                <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
             </div>
-
-            <!-- CONTENEDOR DE TIENDAS -->
-            <div class="products-grid" id="dealsContainer"></div>
-        </div>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
             
-            <!-- ACCESOS RÁPIDOS A TIENDAS ALIADAS -->
-            <div class="partner-stores-box">
-                <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
-                <div class="partner-stores-list">
-                    <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
-                        <div>
-                            <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
-                            <div class="store-tagline"><span class="es-text">Hoteles, tours y atracciones</span><span class="en-text">Hotels, tours & attractions</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
+            <div class="hero-badge"><span class="es-text">⚡ DIRECTORIO OFICIAL 2026</span><span class="en-text">⚡ OFFICIAL DIRECTORY 2026</span></div>
+            
+            <h1 class="hero-title">
+                <span class="es-text">Tiendas Oficiales & <span class="accent-green">Afiliados Globales</span></span>
+                <span class="en-text">Official Partner Stores & <span class="accent-green">Global Affiliates</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="es-text">Acceso directo a las plataformas comerciales y de viajes más importantes del mundo con enlaces y promociones oficiales verificadas.</span>
+                <span class="en-text">Direct access to the world's top shopping and travel platforms with verified official links and promotions.</span>
+            </p>
+            <div class="trust-pills">
+                <div class="trust-pill">🛡️ <strong><span class="es-text">Enlaces Verificados</span><span class="en-text">Verified Links</span></strong></div>
+                <div class="trust-pill">⚡ <strong><span class="es-text">Compras Protegidas</span><span class="en-text">Buyer Protection</span></strong></div>
+                <div class="trust-pill">📦 <strong><span class="es-text">Cobertura Mundial</span><span class="en-text">Worldwide Coverage</span></strong></div>
+            </div>
+        </div>
 
-                    <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff5722;">
-                        <div>
-                            <div class="store-name" style="color: #ff9800;">🧡 Temu Oficial</div>
-                            <div class="store-tagline"><span class="es-text">Súper ofertas y cupones</span><span class="en-text">Hot deals & coupons</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
+        <!-- NOTICE BAR COMPACTA -->
+        <div class="notice-bar">
+            <div class="notice-left">
+                <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
+            </div>
+            <div class="notice-right">
+                <span class="es-text">✓ 14 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
+                <span class="en-text">✓ 14 OFFICIAL INTEGRATED STORES & SERVICES</span>
+            </div>
+        </div>
 
-                    <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
-                        <div>
-                            <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
-                            <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
+        <!-- MAIN GRID TIENDAS -->
+        <div class="content-grid">
+            <div class="main-content-col">
+                <!-- CONTROLS -->
+                <div class="controls-card">
+                    <div class="search-input-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..." oninput="handleSearch()">
+                    </div>
 
-                    <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🎬 Prime Video</div>
-                            <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🎧 Amazon Music</div>
-                            <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🏷️ eBay Oficial</div>
-                            <div class="store-tagline"><span class="es-text">Subastas y marketplace</span><span class="en-text">Auctions & marketplace</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">📦 Amazon Oficial</div>
-                            <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🛍️ AliExpress</div>
-                            <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory direct</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">📦 Alibaba</div>
-                            <div class="store-tagline"><span class="es-text">Compras al por mayor</span><span class="en-text">Wholesale & bulk</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://vevorca.pxf.io/2R6B7O" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🔧 VEVOR CA</div>
-                            <div class="store-tagline"><span class="es-text">Equipos industriales</span><span class="en-text">Tough machinery</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://promeed.sjv.io/oNKaMe" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🛏️ Promeed Silk</div>
-                            <div class="store-tagline"><span class="es-text">Seda Mulberry 100% pura</span><span class="en-text">100% Pure Mulberry silk</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://hkbrightstartlimited.sjv.io/WOeP5O" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🏠 FliKEZE</div>
-                            <div class="store-tagline"><span class="es-text">Accesorios y hogar inteligente</span><span class="en-text">Smart home accessories</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">👡 Fitory Footwear</div>
-                            <div class="store-tagline"><span class="es-text">Calzado ergonómico</span><span class="en-text">Comfort sandals</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">👁️ WooEye Contacts</div>
-                            <div class="store-tagline"><span class="es-text">Lentes cosméticos de color</span><span class="en-text">Color contact lenses</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
+                    <div class="category-tabs">
+                        <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
+                        <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
+                        <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
+                        <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
+                        <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
+                        <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
+                        <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
+                        <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
+                        <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
+                    </div>
                 </div>
+
+                <!-- CONTENEDOR DE TIENDAS -->
+                <div class="products-grid" id="dealsContainer"></div>
             </div>
 
-            <!-- YRT SOLUTIONS -->
-            <div class="yrt-widget">
-                <span class="yrt-badge">⭐ Patrocinador Oficial</span>
-                <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
-                <p class="yrt-desc">
-                    <span class="es-text">Servicio de Aire Acondicionado en Miami y Sur de Florida 24/7.</span>
-                    <span class="en-text">AC Installation & Repair in Miami & South Florida 24/7.</span>
-                </p>
-                <a href="tel:+13054911906" class="yrt-tel">📞 305-491-1906</a>
-                <div class="yrt-buttons">
-                    <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20necesito%20una%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
-                    <a href="tel:+13054911906" class="btn-call">Llamar</a>
-                </div>
-            </div>
+            <!-- SIDEBAR TIENDAS -->
+            <aside class="sidebar">
+                <!-- ACCESOS RÁPIDOS A TIENDAS ALIADAS -->
+                <div class="partner-stores-box">
+                    <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
+                    <div class="partner-stores-list">
+                        <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
+                            <div>
+                                <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
+                                <div class="store-tagline"><span class="es-text">Hoteles, tours y atracciones</span><span class="en-text">Hotels, tours & attractions</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
 
-            <!-- ACTIVIDAD RADAR -->
-            <div class="stats-widget">
-                <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
-                <div class="stats-users">
-                    <span class="live-dot"></span>
-                    <span id="activeUsers">26</span>
+                        <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff5722;">
+                            <div>
+                                <div class="store-name" style="color: #ff9800;">🧡 Temu Oficial</div>
+                                <div class="store-tagline"><span class="es-text">Súper ofertas y cupones</span><span class="en-text">Hot deals & coupons</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
+                            <div>
+                                <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
+                                <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🎬 Prime Video</div>
+                                <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🎧 Amazon Music</div>
+                                <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🏷️ eBay Oficial</div>
+                                <div class="store-tagline"><span class="es-text">Subastas y marketplace</span><span class="en-text">Auctions & marketplace</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">📦 Amazon Oficial</div>
+                                <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://rzekl.com/g/1e8d114494aacdd4579716525dc3e8/" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🛍️ AliExpress</div>
+                                <div class="store-tagline"><span class="es-text">Precios de fábrica</span><span class="en-text">Factory direct</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://rzekl.com/g/pm1aev55claacdd45797219aa26f6f/" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">📦 Alibaba</div>
+                                <div class="store-tagline"><span class="es-text">Compras al por mayor</span><span class="en-text">Wholesale & bulk</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://vevorca.pxf.io/2R6B7O" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🔧 VEVOR CA</div>
+                                <div class="store-tagline"><span class="es-text">Equipos industriales</span><span class="en-text">Tough machinery</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://promeed.sjv.io/oNKaMe" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🛏️ Promeed Silk</div>
+                                <div class="store-tagline"><span class="es-text">Seda Mulberry 100% pura</span><span class="en-text">100% Pure Mulberry silk</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://hkbrightstartlimited.sjv.io/WOeP5O" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">🏠 FliKEZE</div>
+                                <div class="store-tagline"><span class="es-text">Accesorios y hogar inteligente</span><span class="en-text">Smart home accessories</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://jinyuinternationaltradingcolimited.sjv.io/5k1eAb" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">👡 Fitory Footwear</div>
+                                <div class="store-tagline"><span class="es-text">Calzado ergonómico</span><span class="en-text">Comfort sandals</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+
+                        <a href="https://jingjiangzhizaoeyewearindustryshenzhencoltd.sjv.io/enaa7Q" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                            <div>
+                                <div class="store-name">👁️ WooEye Contacts</div>
+                                <div class="store-tagline"><span class="es-text">Lentes cosméticos de color</span><span class="en-text">Color contact lenses</span></div>
+                            </div>
+                            <span class="store-arrow">→</span>
+                        </a>
+                    </div>
                 </div>
-                <div style="font-size: 0.74em; color: var(--text-muted); margin-top: 4px;">
-                    <span class="es-text">visitando tiendas aliadas en tiempo real</span>
-                    <span class="en-text">browsing partner stores right now</span>
+
+                <!-- YRT SOLUTIONS -->
+                <div class="yrt-widget">
+                    <span class="yrt-badge">⭐ Patrocinador Oficial</span>
+                    <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
+                    <p class="yrt-desc">
+                        <span class="es-text">Servicio de Aire Acondicionado en Miami y Sur de Florida 24/7.</span>
+                        <span class="en-text">AC Installation & Repair in Miami & South Florida 24/7.</span>
+                    </p>
+                    <a href="tel:+13054911906" class="yrt-tel">📞 305-491-1906</a>
+                    <div class="yrt-buttons">
+                        <a href="https://wa.me/13054911906?text=Hola%20YRT%20Solutions,%20necesito%20una%20cotizacion%20de%20aire%20acondicionado" target="_blank" class="btn-wa">WhatsApp</a>
+                        <a href="tel:+13054911906" class="btn-call">Llamar</a>
+                    </div>
                 </div>
-            </div>
-        </aside>
+
+                <!-- ACTIVIDAD RADAR -->
+                <div class="stats-widget">
+                    <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
+                    <div class="stats-users">
+                        <span class="live-dot"></span>
+                        <span id="activeUsers">26</span>
+                    </div>
+                    <div style="font-size: 0.74em; color: var(--text-muted); margin-top: 4px;">
+                        <span class="es-text">visitando tiendas aliadas en tiempo real</span>
+                        <span class="en-text">browsing partner stores right now</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
 
-    <!-- SECCIÓN LEGAL -->
+    <!-- ======================================================== -->
+    <!-- PÁGINA 2: SUBPÁGINA REDES SOCIALES & MÚSICA 2026 -->
+    <!-- ======================================================== -->
+    <div id="pageSocialView" class="page-view">
+        <!-- HERO SUBPÁGINA -->
+        <div class="hero-section" style="border-color: rgba(139, 92, 246, 0.45); background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(10, 18, 36, 0.95) 100%);">
+            <div class="hero-brand-title">
+                <span class="brand-ahorra">HUB DIGITAL</span> <span class="brand-chic" style="background: linear-gradient(135deg, #a855f7 0%, var(--neon-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2026</span>
+            </div>
+            
+            <div class="hero-badge" style="border-color: var(--neon-cyan); background: rgba(0, 240, 255, 0.15);">
+                <span class="es-text">⚡ REDES SOCIALES & STREAMING DE MÚSICA</span>
+                <span class="en-text">⚡ SOCIAL NETWORKS & MUSIC STREAMING</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="es-text">Accesos Directos a las <span class="accent-green">Plataformas Más Importantes</span></span>
+                <span class="en-text">Direct Access to the <span class="accent-green">World's Top Platforms</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="es-text">Conéctate al instante con las redes sociales más utilizadas del 2026, plataformas de streaming de música HD, podcasts y canales de video globales.</span>
+                <span class="en-text">Instant direct access to the most popular 2026 social media hubs, lossless HD music streaming, podcasts and global video networks.</span>
+            </p>
+            <div class="trust-pills">
+                <div class="trust-pill">🎵 <strong><span class="es-text">Audio HD & Podcasts</span><span class="en-text">HD Audio & Podcasts</span></strong></div>
+                <div class="trust-pill">📱 <strong><span class="es-text">Redes Globales</span><span class="en-text">Global Networks</span></strong></div>
+                <div class="trust-pill">⚡ <strong><span class="es-text">Acceso Oficial Seguro</span><span class="en-text">Secure Official Access</span></strong></div>
+            </div>
+        </div>
+
+        <!-- NOTICE BAR SUBPÁGINA -->
+        <div class="notice-bar" style="border-color: var(--neon-purple);">
+            <div class="notice-left">
+                <span>🎧 <span class="es-text">Escucha tus artistas favoritos y conéctate con tus comunidades al instante</span><span class="en-text">Stream your favorite artists and connect with your communities instantly</span></span>
+            </div>
+            <div class="notice-right">
+                <span class="es-text" style="color: var(--neon-cyan);">✓ 18 PLATAFORMAS OFICIALES 2026</span>
+                <span class="en-text" style="color: var(--neon-cyan);">✓ 18 OFFICIAL 2026 PLATFORMS</span>
+            </div>
+        </div>
+
+        <!-- CONTROLS REDES & MÚSICA -->
+        <div class="controls-card">
+            <div class="search-input-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="socialSearch" placeholder="Busca una plataforma (ej. spotify, tiktok, youtube, instagram)..." oninput="handleSocialSearch()">
+            </div>
+
+            <div class="category-tabs">
+                <button class="cat-btn active" onclick="selectSocialCat('all', this)"><span class="es-text">🔥 Todas</span><span class="en-text">🔥 All</span></button>
+                <button class="cat-btn" onclick="selectSocialCat('musica', this)"><span class="es-text">🎵 Música & Audio</span><span class="en-text">🎵 Music & Audio</span></button>
+                <button class="cat-btn" onclick="selectSocialCat('redes', this)"><span class="es-text">📱 Redes Sociales</span><span class="en-text">📱 Social Media</span></button>
+                <button class="cat-btn" onclick="selectSocialCat('video', this)"><span class="es-text">📺 Video & Streaming</span><span class="en-text">📺 Video & Stream</span></button>
+                <button class="cat-btn" onclick="selectSocialCat('mensajeria', this)"><span class="es-text">💬 Mensajería</span><span class="en-text">💬 Messaging</span></button>
+            </div>
+        </div>
+
+        <!-- GRID DE REDES Y MÚSICA -->
+        <div class="products-grid" id="socialContainer"></div>
+    </div>
+
+    <!-- SECCIÓN LEGAL COMPARTIDA -->
     <div class="legal-box" id="legal">
         <h3 class="legal-title"><span class="es-text">Información Legal & Transparencia</span><span class="en-text">Legal Disclosures & Transparency</span></h3>
         <div class="legal-grid">
@@ -900,15 +1030,15 @@
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Klook, Travelpayouts, Temu, eBay, Amazon, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
-                    <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, payments, shipping and guarantees are handled exclusively by official partner platforms.</span>
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, cuentas de redes sociales, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Klook, Travelpayouts, Temu, eBay, Amazon, AliExpress, Spotify, Apple, Meta, ByteDance, etc.) bajo sus propios términos.</span>
+                    <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, social media accounts, payments and streaming services are handled exclusively by official partner platforms.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy & Cookies</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma. Cumplimiento GDPR / CCPA.</span>
-                    <span class="en-text">We do not sell personal data. Only your language preference is saved locally. GDPR / CCPA compliant.</span>
+                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma y vista de pantalla. Cumplimiento GDPR / CCPA.</span>
+                    <span class="en-text">We do not sell personal data. Only your language preference and active view are saved locally. GDPR / CCPA compliant.</span>
                 </div>
             </details>
             <details class="legal-card">
@@ -934,6 +1064,30 @@
 <script>
 let currentLang = 'es';
 let activeCategory = 'all';
+let activeSocialCategory = 'all';
+
+/* ================= NAVEGACIÓN ENTRE SUBPÁGINAS ================= */
+function switchPageView(view) {
+    const pageStores = document.getElementById('pageStoresView');
+    const pageSocial = document.getElementById('pageSocialView');
+    const btnStores = document.getElementById('btnNavStores');
+    const btnSocial = document.getElementById('btnNavSocial');
+
+    if (view === 'social') {
+        pageStores.classList.remove('active-view');
+        pageSocial.classList.add('active-view');
+        btnStores.classList.remove('active');
+        btnSocial.classList.add('active');
+        renderSocial();
+    } else {
+        pageSocial.classList.remove('active-view');
+        pageStores.classList.add('active-view');
+        btnSocial.classList.remove('active');
+        btnStores.classList.add('active');
+        renderStores();
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 /* ================= BASE DE DATOS DE TIENDAS OFICIALES ================= */
 const STORES_DATABASE = [
@@ -1149,9 +1303,321 @@ const STORES_DATABASE = [
     }
 ];
 
+/* ================= BASE DE DATOS DE REDES SOCIALES & MÚSICA 2026 ================= */
+const SOCIAL_DATABASE = [
+    /* --- MÚSICA Y AUDIO --- */
+    {
+        id: "platform-amazon-music",
+        cat: "musica",
+        hub: "AMAZON MUSIC",
+        name_es: "Amazon Music Unlimited",
+        name_en: "Amazon Music Unlimited",
+        desc_es: "100 millones de canciones en calidad Ultra HD, audio espacial Dolby Atmos y podcasts exclusivos sin publicidad.",
+        desc_en: "100M+ songs in Ultra HD, lossless spatial audio with Dolby Atmos, and top ad-free podcasts.",
+        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Música HD",
+        badge_en: "HD Music",
+        feature_es: "100M Canciones • Sin Anuncios",
+        feature_en: "100M Songs • Ad-Free",
+        url: "https://link.amazon/A02OYdgFc"
+    },
+    {
+        id: "platform-spotify",
+        cat: "musica",
+        hub: "SPOTIFY",
+        name_es: "Spotify Web Player",
+        name_en: "Spotify Web Player",
+        desc_es: "La plataforma de música y podcasts líder mundial con listas personalizadas, Discover Weekly y letras sincronizadas.",
+        desc_en: "The world's leading music and podcast streaming service with curated playlists and daily discovery.",
+        img: "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Streaming",
+        badge_en: "Streaming",
+        feature_es: "Playlists • Podcasts Globales",
+        feature_en: "Curated Playlists • Global Podcasts",
+        url: "https://open.spotify.com/"
+    },
+    {
+        id: "platform-apple-music",
+        cat: "musica",
+        hub: "APPLE MUSIC",
+        name_es: "Apple Music",
+        name_en: "Apple Music",
+        desc_es: "Audio sin pérdida (Lossless), audio espacial con seguimiento dinámico de la cabeza y estaciones de radio en directo 24/7.",
+        desc_en: "Lossless audio quality, spatial audio with dynamic head tracking, and 24/7 global live radio stations.",
+        img: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Audio Lossless",
+        badge_en: "Lossless Audio",
+        feature_es: "Audio Espacial • Calidad Máxima",
+        feature_en: "Spatial Audio • Studio Quality",
+        url: "https://music.apple.com/"
+    },
+    {
+        id: "platform-youtube-music",
+        cat: "musica",
+        hub: "YT MUSIC",
+        name_es: "YouTube Music",
+        name_en: "YouTube Music",
+        desc_es: "Álbumes oficiales, sencillos, remixes, presentaciones en vivo y videos musicales integrados en una sola plataforma.",
+        desc_en: "Official releases, singles, remixes, live performances and music videos powered by YouTube.",
+        img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Música & Video",
+        badge_en: "Music & Video",
+        feature_es: "Remixes • Presentaciones en Vivo",
+        feature_en: "Live Shows • Video Integration",
+        url: "https://music.youtube.com/"
+    },
+    {
+        id: "platform-soundcloud",
+        cat: "musica",
+        hub: "SOUNDCLOUD",
+        name_es: "SoundCloud",
+        name_en: "SoundCloud",
+        desc_es: "Comunidad global de creadores, DJs independientes, pistas exclusivas, remixes y descubrimientos musicales emergentes.",
+        desc_en: "Global artist community, independent DJs, exclusive bootlegs, DJ sets and emerging music discovery.",
+        img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Creadores & DJ",
+        badge_en: "Creators & DJs",
+        feature_es: "DJs • Lanzamientos Exclusivos",
+        feature_en: "DJ Sets • Raw Music Discovery",
+        url: "https://soundcloud.com/"
+    },
+    {
+        id: "platform-tidal",
+        cat: "musica",
+        hub: "TIDAL",
+        name_es: "TIDAL HiFi",
+        name_en: "TIDAL HiFi",
+        desc_es: "Audio para audiófilos en Master Quality HiRes FLAC, sonido puro de estudio y pagos justos para artistas.",
+        desc_en: "Audiophile-grade Master Quality HiRes FLAC audio, pure studio clarity, and artist-first payouts.",
+        img: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80",
+        badge_es: "HiRes FLAC",
+        badge_en: "HiRes FLAC",
+        feature_es: "Calidad Master • Sonido Puro",
+        feature_en: "Master Audio • Studio Sound",
+        url: "https://tidal.com/"
+    },
+
+    /* --- REDES SOCIALES PRINCIPALES --- */
+    {
+        id: "platform-tiktok",
+        cat: "redes",
+        hub: "TIKTOK",
+        name_es: "TikTok Oficial",
+        name_en: "TikTok Official",
+        desc_es: "La plataforma de videos cortos, tendencias globales, música viral y transmisiones en vivo más popular del mundo.",
+        desc_en: "The world's leading short-form video platform, viral trends, music culture and live streaming.",
+        img: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Video Corto",
+        badge_en: "Short Video",
+        feature_es: "Tendencias • Creatividad Viral",
+        feature_en: "Viral Trends • Global Feed",
+        url: "https://www.tiktok.com/"
+    },
+    {
+        id: "platform-instagram",
+        cat: "redes",
+        hub: "INSTAGRAM",
+        name_es: "Instagram",
+        name_en: "Instagram",
+        desc_es: "Comparte fotos, Reels, historias diarias y explora contenido de creadores, moda, arte y amigos de todo el planeta.",
+        desc_en: "Connect with friends, share reels, photos and stories, and discover top creators and brands worldwide.",
+        img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Social & Reels",
+        badge_en: "Social & Reels",
+        feature_es: "Reels • Historias • Creadores",
+        feature_en: "Reels • Stories • Visual Hub",
+        url: "https://www.instagram.com/"
+    },
+    {
+        id: "platform-youtube",
+        cat: "video",
+        hub: "YOUTUBE",
+        name_es: "YouTube",
+        name_en: "YouTube",
+        desc_es: "Videos de larga duración, documentales, podcasts, tutoriales, Shorts y transmisiones en vivo en hasta 4K 60fps.",
+        desc_en: "The global video home for tutorials, podcasts, documentaries, live events, Shorts and creator content.",
+        img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Video Global",
+        badge_en: "Global Video",
+        feature_es: "Hasta 4K • Podcasts & Shorts",
+        feature_en: "Up to 4K • Podcasts & Shorts",
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: "platform-x",
+        cat: "redes",
+        hub: "X / TWITTER",
+        name_es: "X (Antes Twitter)",
+        name_en: "X (Formerly Twitter)",
+        desc_es: "La plaza pública global para noticias al minuto, debates en vivo, Spaces de audio, tecnología y tendencias.",
+        desc_en: "The global digital town square for breaking news, real-time debate, audio Spaces, and tech updates.",
+        img: "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Noticias en Vivo",
+        badge_en: "Live News",
+        feature_es: "Última Hora • Audio Spaces",
+        feature_en: "Breaking News • Audio Spaces",
+        url: "https://x.com/"
+    },
+    {
+        id: "platform-facebook",
+        cat: "redes",
+        hub: "FACEBOOK",
+        name_es: "Facebook",
+        name_en: "Facebook",
+        desc_es: "Conecta con familiares y amigos, únete a grupos especializados, Marketplace local y páginas oficiales.",
+        desc_en: "Connect with communities, buy and sell on Marketplace, and stay close to family and interest groups.",
+        img: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Comunidad",
+        badge_en: "Community",
+        feature_es: "Grupos • Marketplace • Familia",
+        feature_en: "Groups • Marketplace • Friends",
+        url: "https://www.facebook.com/"
+    },
+    {
+        id: "platform-threads",
+        cat: "redes",
+        hub: "THREADS",
+        name_es: "Threads by Meta",
+        name_en: "Threads by Meta",
+        desc_es: "Conversaciones de texto abiertas, ideas rápidas e integración con la comunidad de creadores de Instagram.",
+        desc_en: "Meta's text-based discussion app connected directly with your Instagram community and interests.",
+        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Conversaciones",
+        badge_en: "Discussions",
+        feature_es: "Charlas de Texto • Instagram Link",
+        feature_en: "Text Feed • Fast Updates",
+        url: "https://www.threads.net/"
+    },
+    {
+        id: "platform-pinterest",
+        cat: "redes",
+        hub: "PINTEREST",
+        name_es: "Pinterest",
+        name_en: "Pinterest",
+        desc_es: "Motor de inspiración visual para ideas de moda, decoración, recetas, diseño gráfico y proyectos personales.",
+        desc_en: "Visual discovery engine for finding lifestyle inspiration, home decor, outfit ideas and recipes.",
+        img: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Inspiración",
+        badge_en: "Inspiration",
+        feature_es: "Tableros • Ideas de Moda & Hogar",
+        feature_en: "Moodboards • Creative Ideas",
+        url: "https://www.pinterest.com/"
+    },
+    {
+        id: "platform-reddit",
+        cat: "redes",
+        hub: "REDDIT",
+        name_es: "Reddit - Comunidades",
+        name_en: "Reddit - Communities",
+        desc_es: "Miles de foros y comunidades para debatir sobre tecnología, ofertas, videojuegos, opiniones y ayuda en tiempo real.",
+        desc_en: "The front page of the internet. Dive into millions of community subreddits on every topic imaginable.",
+        img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Foros & Debate",
+        badge_en: "Forums & Debate",
+        feature_es: "Comunidades • Discusión Real",
+        feature_en: "Subreddits • Real Advice",
+        url: "https://www.reddit.com/"
+    },
+    {
+        id: "platform-bluesky",
+        cat: "redes",
+        hub: "BLUESKY",
+        name_es: "Bluesky Social",
+        name_en: "Bluesky Social",
+        desc_es: "Red social descentralizada y abierta basada en el protocolo AT, con feeds personalizados y sin algoritmos forzados.",
+        desc_en: "Open decentralized social network built on the AT Protocol with custom algorithms and user freedom.",
+        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Descentralizada",
+        badge_en: "Decentralized",
+        feature_es: "Protocolo Abierto • Feeds Libres",
+        feature_en: "Open Protocol • Custom Feeds",
+        url: "https://bsky.app/"
+    },
+    {
+        id: "platform-linkedin",
+        cat: "redes",
+        hub: "LINKEDIN",
+        name_es: "LinkedIn",
+        name_en: "LinkedIn",
+        desc_es: "La mayor red profesional del mundo para conectar con empresas, oportunidades de empleo, negocios y líderes de industria.",
+        desc_en: "The world's premier professional network for careers, industry networking, B2B and business updates.",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Profesional",
+        badge_en: "Professional",
+        feature_es: "Empleo • Negocios • Networking",
+        feature_en: "Careers • B2B • Industry News",
+        url: "https://www.linkedin.com/"
+    },
+    {
+        id: "platform-twitch",
+        cat: "video",
+        hub: "TWITCH",
+        name_es: "Twitch",
+        name_en: "Twitch",
+        desc_es: "Transmisiones en directo de videojuegos, música en vivo, charlas creativas y eventos especiales con chat interactivo.",
+        desc_en: "Live streaming platform for gaming, live concerts, esports, and interactive community broadcasts.",
+        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "En Vivo",
+        badge_en: "Live Streaming",
+        feature_es: "Gaming • Charlas en Directo",
+        feature_en: "Gaming • Live Broadcasts",
+        url: "https://www.twitch.tv/"
+    },
+
+    /* --- MENSAJERÍA --- */
+    {
+        id: "platform-whatsapp",
+        cat: "mensajeria",
+        hub: "WHATSAPP",
+        name_es: "WhatsApp Web",
+        name_en: "WhatsApp Web",
+        desc_es: "Mensajería instantánea cifrada de extremo a extremo, llamadas, estados y canales desde cualquier navegador.",
+        desc_en: "End-to-end encrypted messaging, voice calls, community channels and file transfers on the web.",
+        img: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mensajería",
+        badge_en: "Messaging",
+        feature_es: "Cifrado Total • Canales & Chats",
+        feature_en: "End-to-End Encrypted • Chats",
+        url: "https://web.whatsapp.com/"
+    },
+    {
+        id: "platform-telegram",
+        cat: "mensajeria",
+        hub: "TELEGRAM",
+        name_es: "Telegram Web",
+        name_en: "Telegram Web",
+        desc_es: "Canales de noticias masivos, grupos ultrarrápidos, bots inteligentes y almacenamiento ilimitado en la nube.",
+        desc_en: "Fast and secure cloud-based messaging, high-capacity channels, bots and multi-device sync.",
+        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Nube Rápida",
+        badge_en: "Fast Cloud",
+        feature_es: "Canales • Bots • Archivos Grandes",
+        feature_en: "Channels • Bots • Unlimited Cloud",
+        url: "https://web.telegram.org/"
+    },
+    {
+        id: "platform-discord",
+        cat: "mensajeria",
+        hub: "DISCORD",
+        name_es: "Discord",
+        name_en: "Discord",
+        desc_es: "Espacio para hablar, jugar y compartir mediante canales de voz con baja latencia, foros y comunidades privadas.",
+        desc_en: "Voice, video and text communication service for gaming groups, friends and creator communities.",
+        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Voz & Chat",
+        badge_en: "Voice & Chat",
+        feature_es: "Canales de Voz • Comunidades",
+        feature_en: "Low Latency Voice • Servers",
+        url: "https://discord.com/"
+    }
+];
+
+/* ================= RENDERIZADO DE TIENDAS ================= */
 function renderStores() {
     const container = document.getElementById('dealsContainer');
-    const query = document.getElementById('dealSearch').value.toLowerCase().trim();
+    const searchEl = document.getElementById('dealSearch');
+    if (!container || !searchEl) return;
+    const query = searchEl.value.toLowerCase().trim();
     container.innerHTML = '';
     
     let matches = 0;
@@ -1201,15 +1667,81 @@ function renderStores() {
     }
 }
 
+/* ================= RENDERIZADO DE REDES Y MÚSICA ================= */
+function renderSocial() {
+    const container = document.getElementById('socialContainer');
+    const searchEl = document.getElementById('socialSearch');
+    if (!container || !searchEl) return;
+    const query = searchEl.value.toLowerCase().trim();
+    container.innerHTML = '';
+
+    let matches = 0;
+    SOCIAL_DATABASE.forEach(item => {
+        if (activeSocialCategory !== 'all' && item.cat !== activeSocialCategory) return;
+
+        const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
+        const desc = (currentLang === 'es' ? item.desc_es : item.desc_en).toLowerCase();
+        const hub = item.hub.toLowerCase();
+        if (query && !title.includes(query) && !desc.includes(query) && !hub.includes(query)) return;
+
+        matches++;
+        const btnText = currentLang === 'es' ? 'ABRIR PLATAFORMA →' : 'OPEN PLATFORM →';
+
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="card-top">
+                <div class="card-badges">
+                    <span class="amazon-tag" style="border-color: var(--neon-purple); color: #c084fc;">${item.hub}</span>
+                    <span class="verified-badge" style="border-color: var(--neon-cyan); color: var(--neon-cyan);">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+                </div>
+                <div class="product-img-wrap">
+                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
+                </div>
+                <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
+                <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
+            </div>
+            <div>
+                <div class="product-features" style="color: #a78bfa; border-color: rgba(167, 139, 250, 0.3);">
+                    <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
+                </div>
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);">
+                    ${btnText}
+                </a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (matches === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--text-muted); border: 1px dashed rgba(139,92,246,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
+                <p style="font-size: 0.95em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron plataformas con esa búsqueda.' : 'No social or music platforms matched your query.'}</p>
+            </div>
+        `;
+    }
+}
+
 function handleSearch() {
     renderStores();
 }
 
+function handleSocialSearch() {
+    renderSocial();
+}
+
 function selectCat(cat, btn) {
     activeCategory = cat;
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#pageStoresView .cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderStores();
+}
+
+function selectSocialCat(cat, btn) {
+    activeSocialCategory = cat;
+    document.querySelectorAll('#pageSocialView .cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderSocial();
 }
 
 function toggleLanguage() {
@@ -1223,7 +1755,16 @@ function toggleLanguage() {
             ? "Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..."
             : "Search a store (e.g. klook, travel, temu, ebt, ebay)...";
     }
+
+    const socialInput = document.getElementById('socialSearch');
+    if (socialInput) {
+        socialInput.placeholder = currentLang === 'es'
+            ? "Busca una plataforma (ej. spotify, tiktok, youtube, instagram)..."
+            : "Search a platform (e.g. spotify, tiktok, youtube, instagram)...";
+    }
+
     renderStores();
+    renderSocial();
 }
 
 function updateRadar() {
@@ -1247,6 +1788,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elYear) elYear.textContent = today.getFullYear();
     
     renderStores();
+    renderSocial();
     updateRadar();
     setInterval(updateRadar, 6000);
 });
