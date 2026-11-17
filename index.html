@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas, plataformas globales y Hub de Redes Sociales y Música 2026.">
-    <title>AhorraTodo Chic | Tiendas Oficiales, Redes & Música 2026</title>
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas, plataformas de redes, música y los mejores videojuegos del 2024.">
+    <title>AhorraTodo Chic | Tiendas Oficiales, Redes, Música & Juegos 2024</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
@@ -106,25 +106,26 @@
             filter: drop-shadow(0 0 6px var(--neon-cyan));
         }
 
-        /* NAVEGACIÓN PRINCIPAL / SUBPÁGINAS */
+        /* NAVEGACIÓN PRINCIPAL ENTRE 3 SUBPÁGINAS */
         .nav-sections {
             display: inline-flex;
-            gap: 6px;
+            gap: 4px;
             background: rgba(8, 16, 34, 0.85);
             border: 1px solid rgba(0, 240, 255, 0.35);
             border-radius: 8px;
             padding: 3px;
+            flex-wrap: wrap;
         }
         .nav-btn {
             background: transparent;
             color: var(--text-muted);
             border: none;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 6px;
             cursor: pointer;
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 0.76em;
+            font-size: 0.74em;
             transition: all 0.2s;
             display: inline-flex;
             align-items: center;
@@ -193,7 +194,7 @@
             padding: 10px 14px 35px;
         }
 
-        /* SECCIONES CONDICIONALES */
+        /* VISTAS */
         .page-view {
             display: none;
         }
@@ -201,7 +202,7 @@
             display: block;
         }
 
-        /* HERO MATRIX REDUCIDO Y LEGIBLE */
+        /* HERO MATRIX REDUCIDO */
         .hero-section {
             text-align: center;
             margin: 10px auto 16px;
@@ -371,7 +372,7 @@
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
 
-        /* GRID DE TIENDAS Y DE REDES */
+        /* GRID DE TARJETAS */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -407,6 +408,7 @@
             align-items: center;
             gap: 4px;
             margin-bottom: 6px;
+            flex-wrap: wrap;
         }
         .amazon-tag, .verified-badge {
             font-size: 0.62em;
@@ -426,7 +428,7 @@
             border: 1px solid var(--neon-magenta);
         }
 
-        /* FOTO DE TIENDA / RED SOCIAL (85px) */
+        /* FOTO / LOGO DE TIENDA O JUEGO */
         .product-img-wrap {
             width: 100%;
             height: 85px;
@@ -444,6 +446,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+        }
+        /* CLASE ESPECIAL PARA LOGOS DE MARCA */
+        .logo-mode {
+            object-fit: contain !important;
+            padding: 10px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(3,7,18,0.95) 100%);
         }
         .product-card:hover .product-img {
             transform: scale(1.04);
@@ -675,6 +683,7 @@
         @media(max-width: 640px) {
             .top-bar {justify-content: center; gap: 8px;}
             .nav-sections {order: 3; width: 100%; justify-content: center; margin-top: 4px;}
+            .nav-btn {padding: 5px 8px; font-size: 0.7em;}
             .category-tabs {
                 gap: 4px;
                 padding-bottom: 4px;
@@ -702,24 +711,29 @@
     <span class="en-text">As an affiliate participant (Travelpayouts/Klook, Temu, eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
-<!-- TOP BAR CON SELECTOR DE SUBPÁGINA -->
+<!-- TOP BAR CON NAVEGADOR DE 3 SUBPÁGINAS -->
 <div class="top-bar">
     <a href="#" class="brand-logo-top" onclick="switchPageView('stores')">
         <span class="logo-ahorra">AHORRATODO</span>
         <span class="logo-chic">CHIC</span>
     </a>
 
-    <!-- SELECTOR DE SUBPÁGINAS -->
+    <!-- NAVEGADOR DE SUBPÁGINAS -->
     <nav class="nav-sections">
         <button class="nav-btn active" id="btnNavStores" onclick="switchPageView('stores')">
             <span>🛍️</span>
-            <span class="es-text">Tiendas Oficiales</span>
-            <span class="en-text">Partner Stores</span>
+            <span class="es-text">Tiendas</span>
+            <span class="en-text">Stores</span>
         </button>
         <button class="nav-btn" id="btnNavSocial" onclick="switchPageView('social')">
             <span>🌐</span>
-            <span class="es-text">Redes & Música 2026</span>
-            <span class="en-text">Social & Music 2026</span>
+            <span class="es-text">Redes & Música</span>
+            <span class="en-text">Social & Music</span>
+        </button>
+        <button class="nav-btn" id="btnNavGames" onclick="switchPageView('games')">
+            <span>🎮</span>
+            <span class="es-text">Juegos 2024</span>
+            <span class="en-text">Top Games 2024</span>
         </button>
     </nav>
     
@@ -740,10 +754,9 @@
 <div class="main-wrapper">
 
     <!-- ======================================================== -->
-    <!-- PÁGINA 1: TIENDAS & AFILIADOS (DIRECTORIO PRINCIPAL) -->
+    <!-- SUBPÁGINA 1: TIENDAS & AFILIADOS (DIRECTORIO PRINCIPAL) -->
     <!-- ======================================================== -->
     <div id="pageStoresView" class="page-view active-view">
-        <!-- HERO COMPACTO -->
         <div class="hero-section">
             <div class="hero-brand-title">
                 <span class="brand-ahorra">AHORRATODO</span> <span class="brand-chic">CHIC</span>
@@ -766,7 +779,6 @@
             </div>
         </div>
 
-        <!-- NOTICE BAR COMPACTA -->
         <div class="notice-bar">
             <div class="notice-left">
                 <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
@@ -777,10 +789,8 @@
             </div>
         </div>
 
-        <!-- MAIN GRID TIENDAS -->
         <div class="content-grid">
             <div class="main-content-col">
-                <!-- CONTROLS -->
                 <div class="controls-card">
                     <div class="search-input-wrap">
                         <span class="search-icon">🔍</span>
@@ -800,13 +810,11 @@
                     </div>
                 </div>
 
-                <!-- CONTENEDOR DE TIENDAS -->
                 <div class="products-grid" id="dealsContainer"></div>
             </div>
 
             <!-- SIDEBAR TIENDAS -->
             <aside class="sidebar">
-                <!-- ACCESOS RÁPIDOS A TIENDAS ALIADAS -->
                 <div class="partner-stores-box">
                     <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
                     <div class="partner-stores-list">
@@ -924,7 +932,6 @@
                     </div>
                 </div>
 
-                <!-- YRT SOLUTIONS -->
                 <div class="yrt-widget">
                     <span class="yrt-badge">⭐ Patrocinador Oficial</span>
                     <h3 class="yrt-title">❄️ YRT Solutions LLC</h3>
@@ -939,7 +946,6 @@
                     </div>
                 </div>
 
-                <!-- ACTIVIDAD RADAR -->
                 <div class="stats-widget">
                     <div class="stats-title"><span class="es-text">Actividad en Vivo</span><span class="en-text">Live Activity</span></div>
                     <div class="stats-users">
@@ -956,10 +962,9 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- PÁGINA 2: SUBPÁGINA REDES SOCIALES & MÚSICA 2026 -->
+    <!-- SUBPÁGINA 2: REDES SOCIALES & MÚSICA CON LOGOS OFICIALES -->
     <!-- ======================================================== -->
     <div id="pageSocialView" class="page-view">
-        <!-- HERO SUBPÁGINA -->
         <div class="hero-section" style="border-color: rgba(139, 92, 246, 0.45); background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(10, 18, 36, 0.95) 100%);">
             <div class="hero-brand-title">
                 <span class="brand-ahorra">HUB DIGITAL</span> <span class="brand-chic" style="background: linear-gradient(135deg, #a855f7 0%, var(--neon-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2026</span>
@@ -971,24 +976,23 @@
             </div>
             
             <h1 class="hero-title">
-                <span class="es-text">Accesos Directos a las <span class="accent-green">Plataformas Más Importantes</span></span>
-                <span class="en-text">Direct Access to the <span class="accent-green">World's Top Platforms</span></span>
+                <span class="es-text">Accesos Directos a las <span class="accent-green">Plataformas Oficiales</span></span>
+                <span class="en-text">Direct Access to <span class="accent-green">Official Platforms</span></span>
             </h1>
             <p class="hero-subtitle">
-                <span class="es-text">Conéctate al instante con las redes sociales más utilizadas del 2026, plataformas de streaming de música HD, podcasts y canales de video globales.</span>
-                <span class="en-text">Instant direct access to the most popular 2026 social media hubs, lossless HD music streaming, podcasts and global video networks.</span>
+                <span class="es-text">Conéctate al instante con las redes sociales más utilizadas, plataformas de streaming de música HD con logos oficiales y canales globales.</span>
+                <span class="en-text">Instant direct access to popular social networks, lossless HD music platforms with official logos and global channels.</span>
             </p>
             <div class="trust-pills">
                 <div class="trust-pill">🎵 <strong><span class="es-text">Audio HD & Podcasts</span><span class="en-text">HD Audio & Podcasts</span></strong></div>
                 <div class="trust-pill">📱 <strong><span class="es-text">Redes Globales</span><span class="en-text">Global Networks</span></strong></div>
-                <div class="trust-pill">⚡ <strong><span class="es-text">Acceso Oficial Seguro</span><span class="en-text">Secure Official Access</span></strong></div>
+                <div class="trust-pill">⚡ <strong><span class="es-text">Logos Oficiales</span><span class="en-text">Official Logos</span></strong></div>
             </div>
         </div>
 
-        <!-- NOTICE BAR SUBPÁGINA -->
         <div class="notice-bar" style="border-color: var(--neon-purple);">
             <div class="notice-left">
-                <span>🎧 <span class="es-text">Escucha tus artistas favoritos y conéctate con tus comunidades al instante</span><span class="en-text">Stream your favorite artists and connect with your communities instantly</span></span>
+                <span>🎧 <span class="es-text">Música, comunidades y contenido oficial al alcance de un clic</span><span class="en-text">Official music, communities and video streaming at your fingertips</span></span>
             </div>
             <div class="notice-right">
                 <span class="es-text" style="color: var(--neon-cyan);">✓ 18 PLATAFORMAS OFICIALES 2026</span>
@@ -996,7 +1000,6 @@
             </div>
         </div>
 
-        <!-- CONTROLS REDES & MÚSICA -->
         <div class="controls-card">
             <div class="search-input-wrap">
                 <span class="search-icon">🔍</span>
@@ -1012,8 +1015,65 @@
             </div>
         </div>
 
-        <!-- GRID DE REDES Y MÚSICA -->
         <div class="products-grid" id="socialContainer"></div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SUBPÁGINA 3: LOS MEJORES JUEGOS DEL 2024 (NUEVA)         -->
+    <!-- ======================================================== -->
+    <div id="pageGamesView" class="page-view">
+        <div class="hero-section" style="border-color: rgba(255, 0, 85, 0.45); background: radial-gradient(circle, rgba(255, 0, 85, 0.12) 0%, rgba(10, 18, 36, 0.95) 100%);">
+            <div class="hero-brand-title">
+                <span class="brand-ahorra">TOP GAMING</span> <span class="brand-chic" style="background: linear-gradient(135deg, #ff0055 0%, #ff9900 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2024</span>
+            </div>
+            
+            <div class="hero-badge" style="border-color: #ff9900; background: rgba(255, 153, 0, 0.15);">
+                <span class="es-text">🏆 LOS MEJORES VIDEOJUEGOS DEL 2024</span>
+                <span class="en-text">🏆 THE BEST VIDEO GAMES OF 2024</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="es-text">Las Grandes Obras Maestras & <span class="accent-green">Ganadores del Año</span></span>
+                <span class="en-text">Masterpieces & <span class="accent-green">Game of the Year Winners</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="es-text">Selección definitiva de los videojuegos más aclamados, premiados y jugados del 2024. Descubre sus detalles, géneros y plataformas con enlaces directos oficiales.</span>
+                <span class="en-text">Definitive collection of 2024's most awarded, played and celebrated video games. Discover platforms, reviews and official store access.</span>
+            </p>
+            <div class="trust-pills">
+                <div class="trust-pill">🏆 <strong><span class="es-text">Ganador GOTY 2024</span><span class="en-text">GOTY 2024 Winner</span></strong></div>
+                <div class="trust-pill">🎮 <strong><span class="es-text">PC / PS5 / Xbox / Switch</span><span class="en-text">All Platforms</span></strong></div>
+                <div class="trust-pill">⭐ <strong><span class="es-text">Críticas Sobresalientes</span><span class="en-text">Top Rated</span></strong></div>
+            </div>
+        </div>
+
+        <div class="notice-bar" style="border-color: #ff0055;">
+            <div class="notice-left">
+                <span>🎮 <span class="es-text">Descubre los títulos que definieron el 2024 y juégalos en tus plataformas oficiales</span><span class="en-text">Explore the games that defined 2024 and play them on your favorite platforms</span></span>
+            </div>
+            <div class="notice-right">
+                <span class="es-text" style="color: #ff9900;">✓ 12 TÍTULOS DESTACADOS 2024</span>
+                <span class="en-text" style="color: #ff9900;">✓ 12 TOP 2024 TITLES</span>
+            </div>
+        </div>
+
+        <div class="controls-card">
+            <div class="search-input-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="gamesSearch" placeholder="Busca un juego (ej. astro bot, wukong, balatro, final fantasy)..." oninput="handleGamesSearch()">
+            </div>
+
+            <div class="category-tabs">
+                <button class="cat-btn active" onclick="selectGamesCat('all', this)"><span class="es-text">🔥 Todos los Juegos</span><span class="en-text">🔥 All Games</span></button>
+                <button class="cat-btn" onclick="selectGamesCat('accion', this)"><span class="es-text">⚔️ Acción & RPG</span><span class="en-text">⚔️ Action & RPG</span></button>
+                <button class="cat-btn" onclick="selectGamesCat('aventura', this)"><span class="es-text">🌟 Plataformas & Aventura</span><span class="en-text">🌟 Platform & Adventure</span></button>
+                <button class="cat-btn" onclick="selectGamesCat('indie', this)"><span class="es-text">🃏 Indie & Roguelike</span><span class="en-text">🃏 Indie & Roguelike</span></button>
+                <button class="cat-btn" onclick="selectGamesCat('coop', this)"><span class="es-text">👥 Multijugador & Co-op</span><span class="en-text">👥 Multiplayer & Co-op</span></button>
+                <button class="cat-btn" onclick="selectGamesCat('terror', this)"><span class="es-text">🕯️ Terror & Lucha</span><span class="en-text">🕯️ Horror & Fighting</span></button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="gamesContainer"></div>
     </div>
 
     <!-- SECCIÓN LEGAL COMPARTIDA -->
@@ -1030,15 +1090,15 @@
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, cuentas de redes sociales, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Klook, Travelpayouts, Temu, eBay, Amazon, AliExpress, Spotify, Apple, Meta, ByteDance, etc.) bajo sus propios términos.</span>
-                    <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, social media accounts, payments and streaming services are handled exclusively by official partner platforms.</span>
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, compras de videojuegos, suscripciones de streaming y cuentas son gestionados exclusivamente por las plataformas oficiales (Steam, PlayStation, Xbox, Amazon, Temu, eBay, Spotify, Apple, etc.) bajo sus propios términos y condiciones.</span>
+                    <span class="en-text">We are not a direct retailer. All orders, video game purchases, streaming subscriptions and user accounts are handled exclusively by official partner platforms.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🔒 Privacidad y Cookies</span><span class="en-text">🔒 Privacy & Cookies</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma y vista de pantalla. Cumplimiento GDPR / CCPA.</span>
-                    <span class="en-text">We do not sell personal data. Only your language preference and active view are saved locally. GDPR / CCPA compliant.</span>
+                    <span class="es-text">No recopilamos ni vendemos información personal. Solo se almacena localmente tu preferencia de idioma y navegación. Cumplimiento GDPR / CCPA.</span>
+                    <span class="en-text">We do not sell personal data. Only your language and navigation preferences are stored locally. GDPR / CCPA compliant.</span>
                 </div>
             </details>
             <details class="legal-card">
@@ -1065,24 +1125,34 @@
 let currentLang = 'es';
 let activeCategory = 'all';
 let activeSocialCategory = 'all';
+let activeGamesCategory = 'all';
 
-/* ================= NAVEGACIÓN ENTRE SUBPÁGINAS ================= */
+/* ================= NAVEGACIÓN ENTRE 3 SUBPÁGINAS ================= */
 function switchPageView(view) {
     const pageStores = document.getElementById('pageStoresView');
     const pageSocial = document.getElementById('pageSocialView');
+    const pageGames = document.getElementById('pageGamesView');
     const btnStores = document.getElementById('btnNavStores');
     const btnSocial = document.getElementById('btnNavSocial');
+    const btnGames = document.getElementById('btnNavGames');
+
+    pageStores.classList.remove('active-view');
+    pageSocial.classList.remove('active-view');
+    pageGames.classList.remove('active-view');
+    btnStores.classList.remove('active');
+    btnSocial.classList.remove('active');
+    btnGames.classList.remove('active');
 
     if (view === 'social') {
-        pageStores.classList.remove('active-view');
         pageSocial.classList.add('active-view');
-        btnStores.classList.remove('active');
         btnSocial.classList.add('active');
         renderSocial();
+    } else if (view === 'games') {
+        pageGames.classList.add('active-view');
+        btnGames.classList.add('active');
+        renderGames();
     } else {
-        pageSocial.classList.remove('active-view');
         pageStores.classList.add('active-view');
-        btnSocial.classList.remove('active');
         btnStores.classList.add('active');
         renderStores();
     }
@@ -1159,7 +1229,7 @@ const STORES_DATABASE = [
         name_en: "Amazon Music Unlimited - 100M+ Songs & Top Podcasts",
         desc_es: "Escucha más de 100 millones de canciones en audio de alta definición (HD/Ultra HD), sin anuncios publicitarios, modo sin conexión y saltos ilimitados.",
         desc_en: "Stream over 100 million songs in lossless HD and Ultra HD audio, ad-free listening, offline downloads, and unlimited skips.",
-        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Amazon_Music_logo.svg/512px-Amazon_Music_logo.svg.png",
         badge_es: "Streaming HD",
         badge_en: "HD Streaming",
         feature_es: "Audio Espacial HD • Sin Anuncios",
@@ -1303,37 +1373,21 @@ const STORES_DATABASE = [
     }
 ];
 
-/* ================= BASE DE DATOS DE REDES SOCIALES & MÚSICA 2026 ================= */
+/* ================= BASE DE DATOS DE REDES & MÚSICA CON LOGOS OFICIALES ================= */
 const SOCIAL_DATABASE = [
-    /* --- MÚSICA Y AUDIO --- */
-    {
-        id: "platform-amazon-music",
-        cat: "musica",
-        hub: "AMAZON MUSIC",
-        name_es: "Amazon Music Unlimited",
-        name_en: "Amazon Music Unlimited",
-        desc_es: "100 millones de canciones en calidad Ultra HD, audio espacial Dolby Atmos y podcasts exclusivos sin publicidad.",
-        desc_en: "100M+ songs in Ultra HD, lossless spatial audio with Dolby Atmos, and top ad-free podcasts.",
-        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Música HD",
-        badge_en: "HD Music",
-        feature_es: "100M Canciones • Sin Anuncios",
-        feature_en: "100M Songs • Ad-Free",
-        url: "https://link.amazon/A02OYdgFc"
-    },
     {
         id: "platform-spotify",
         cat: "musica",
         hub: "SPOTIFY",
-        name_es: "Spotify Web Player",
-        name_en: "Spotify Web Player",
-        desc_es: "La plataforma de música y podcasts líder mundial con listas personalizadas, Discover Weekly y letras sincronizadas.",
-        desc_en: "The world's leading music and podcast streaming service with curated playlists and daily discovery.",
-        img: "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Streaming",
-        badge_en: "Streaming",
-        feature_es: "Playlists • Podcasts Globales",
-        feature_en: "Curated Playlists • Global Podcasts",
+        name_es: "Spotify",
+        name_en: "Spotify",
+        desc_es: "La mayor plataforma de streaming de música y podcasts del mundo con listas inteligentes y letras en tiempo real.",
+        desc_en: "World-leading streaming service with personalized playlists, podcasts and synchronized real-time lyrics.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/512px-Spotify_logo_without_text.svg.png",
+        badge_es: "Líder Global",
+        badge_en: "Global Leader",
+        feature_es: "Playlists • Podcasts • Discovery",
+        feature_en: "Playlists • Podcasts • Discovery",
         url: "https://open.spotify.com/"
     },
     {
@@ -1342,14 +1396,29 @@ const SOCIAL_DATABASE = [
         hub: "APPLE MUSIC",
         name_es: "Apple Music",
         name_en: "Apple Music",
-        desc_es: "Audio sin pérdida (Lossless), audio espacial con seguimiento dinámico de la cabeza y estaciones de radio en directo 24/7.",
-        desc_en: "Lossless audio quality, spatial audio with dynamic head tracking, and 24/7 global live radio stations.",
-        img: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Audio Lossless",
+        desc_es: "Sonido de estudio Lossless (sin pérdida), audio espacial Dolby Atmos y estaciones de radio exclusivas 24/7.",
+        desc_en: "Lossless studio sound, spatial audio with Dolby Atmos, and exclusive 24/7 worldwide radio stations.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/512px-Apple_Music_icon.svg.png",
+        badge_es: "Lossless Audio",
         badge_en: "Lossless Audio",
-        feature_es: "Audio Espacial • Calidad Máxima",
-        feature_en: "Spatial Audio • Studio Quality",
+        feature_es: "Audio Espacial • Calidad Hi-Res",
+        feature_en: "Spatial Audio • Hi-Res Studio",
         url: "https://music.apple.com/"
+    },
+    {
+        id: "platform-amazon-music",
+        cat: "musica",
+        hub: "AMAZON MUSIC",
+        name_es: "Amazon Music Unlimited",
+        name_en: "Amazon Music Unlimited",
+        desc_es: "Más de 100 millones de canciones en calidad Ultra HD, podcasts sin anuncios y saltos de pista ilimitados.",
+        desc_en: "Over 100 million songs in Ultra HD, ad-free listening, offline playback, and unlimited skips.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Amazon_Music_logo.svg/512px-Amazon_Music_logo.svg.png",
+        badge_es: "Ultra HD",
+        badge_en: "Ultra HD",
+        feature_es: "100M Canciones • Sin Anuncios",
+        feature_en: "100M Songs • Ad-Free",
+        url: "https://link.amazon/A02OYdgFc"
     },
     {
         id: "platform-youtube-music",
@@ -1357,13 +1426,13 @@ const SOCIAL_DATABASE = [
         hub: "YT MUSIC",
         name_es: "YouTube Music",
         name_en: "YouTube Music",
-        desc_es: "Álbumes oficiales, sencillos, remixes, presentaciones en vivo y videos musicales integrados en una sola plataforma.",
-        desc_en: "Official releases, singles, remixes, live performances and music videos powered by YouTube.",
-        img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Catálogo completo de música, videoclips oficiales, presentaciones en vivo, rarezas y covers de todo el mundo.",
+        desc_en: "Complete music catalog, official music videos, live performances, covers and remixes powered by YouTube.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Youtube_Music_icon.svg/512px-Youtube_Music_icon.svg.png",
         badge_es: "Música & Video",
         badge_en: "Music & Video",
-        feature_es: "Remixes • Presentaciones en Vivo",
-        feature_en: "Live Shows • Video Integration",
+        feature_es: "Videos Oficiales • En Vivo",
+        feature_en: "Official Videos • Live Shows",
         url: "https://music.youtube.com/"
     },
     {
@@ -1372,13 +1441,13 @@ const SOCIAL_DATABASE = [
         hub: "SOUNDCLOUD",
         name_es: "SoundCloud",
         name_en: "SoundCloud",
-        desc_es: "Comunidad global de creadores, DJs independientes, pistas exclusivas, remixes y descubrimientos musicales emergentes.",
-        desc_en: "Global artist community, independent DJs, exclusive bootlegs, DJ sets and emerging music discovery.",
-        img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Creadores & DJ",
-        badge_en: "Creators & DJs",
-        feature_es: "DJs • Lanzamientos Exclusivos",
-        feature_en: "DJ Sets • Raw Music Discovery",
+        desc_es: "Comunidad internacional de artistas independientes, productores, sesiones exclusivas de DJs y música emergente.",
+        desc_en: "Global hub for independent artists, producers, exclusive DJ sets, bootlegs and underground tracks.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Antu_soundcloud.svg/512px-Antu_soundcloud.svg.png",
+        badge_es: "DJs & Indie",
+        badge_en: "DJs & Indie",
+        feature_es: "Sesiones DJ • Nuevos Artistas",
+        feature_en: "DJ Sets • Emerging Artists",
         url: "https://soundcloud.com/"
     },
     {
@@ -1387,30 +1456,28 @@ const SOCIAL_DATABASE = [
         hub: "TIDAL",
         name_es: "TIDAL HiFi",
         name_en: "TIDAL HiFi",
-        desc_es: "Audio para audiófilos en Master Quality HiRes FLAC, sonido puro de estudio y pagos justos para artistas.",
-        desc_en: "Audiophile-grade Master Quality HiRes FLAC audio, pure studio clarity, and artist-first payouts.",
-        img: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80",
-        badge_es: "HiRes FLAC",
-        badge_en: "HiRes FLAC",
-        feature_es: "Calidad Master • Sonido Puro",
-        feature_en: "Master Audio • Studio Sound",
+        desc_es: "Fidelidad pura Master HiRes FLAC pensada para amantes de la alta definición sonora y apoyo directo a músicos.",
+        desc_en: "Master Quality HiRes FLAC audio for true audiophiles with direct artist revenue sharing.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Tidal_logo.svg/512px-Tidal_logo.svg.png",
+        badge_es: "HiRes Master",
+        badge_en: "HiRes Master",
+        feature_es: "Sonido Máximo • HiFi Puro",
+        feature_en: "Maximum Fidelity • Pure HiFi",
         url: "https://tidal.com/"
     },
-
-    /* --- REDES SOCIALES PRINCIPALES --- */
     {
         id: "platform-tiktok",
         cat: "redes",
         hub: "TIKTOK",
-        name_es: "TikTok Oficial",
-        name_en: "TikTok Official",
-        desc_es: "La plataforma de videos cortos, tendencias globales, música viral y transmisiones en vivo más popular del mundo.",
-        desc_en: "The world's leading short-form video platform, viral trends, music culture and live streaming.",
-        img: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Video Corto",
-        badge_en: "Short Video",
+        name_es: "TikTok",
+        name_en: "TikTok",
+        desc_es: "El epicentro global del video corto, sonidos virales, creadores, humor y tendencias de entretenimiento 2026.",
+        desc_en: "The global home for viral short-form video, trending sounds, live entertainment and creator culture.",
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/512px-TikTok_logo.svg.png",
+        badge_es: "Viral & Video",
+        badge_en: "Viral & Video",
         feature_es: "Tendencias • Creatividad Viral",
-        feature_en: "Viral Trends • Global Feed",
+        feature_en: "Trending Feeds • Live Creators",
         url: "https://www.tiktok.com/"
     },
     {
@@ -1419,11 +1486,11 @@ const SOCIAL_DATABASE = [
         hub: "INSTAGRAM",
         name_es: "Instagram",
         name_en: "Instagram",
-        desc_es: "Comparte fotos, Reels, historias diarias y explora contenido de creadores, moda, arte y amigos de todo el planeta.",
-        desc_en: "Connect with friends, share reels, photos and stories, and discover top creators and brands worldwide.",
-        img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Social & Reels",
-        badge_en: "Social & Reels",
+        desc_es: "Comparte tus fotos, Reels, historias y conecta con creadores, amigos y marcas visuales de todo el planeta.",
+        desc_en: "Connect with friends, share reels, photos and stories, and discover top visual creators worldwide.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/512px-Instagram_icon.png",
+        badge_es: "Fotos & Reels",
+        badge_en: "Photos & Reels",
         feature_es: "Reels • Historias • Creadores",
         feature_en: "Reels • Stories • Visual Hub",
         url: "https://www.instagram.com/"
@@ -1434,28 +1501,28 @@ const SOCIAL_DATABASE = [
         hub: "YOUTUBE",
         name_es: "YouTube",
         name_en: "YouTube",
-        desc_es: "Videos de larga duración, documentales, podcasts, tutoriales, Shorts y transmisiones en vivo en hasta 4K 60fps.",
-        desc_en: "The global video home for tutorials, podcasts, documentaries, live events, Shorts and creator content.",
-        img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80",
+        desc_es: "La mayor biblioteca de video del mundo: tutoriales, podcasts, eventos en vivo, Shorts y creadores en hasta 4K.",
+        desc_en: "The world's leading video library: tutorials, podcasts, 4K streams, live events and creator channels.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/512px-YouTube_full-color_icon_%282017%29.svg.png",
         badge_es: "Video Global",
         badge_en: "Global Video",
-        feature_es: "Hasta 4K • Podcasts & Shorts",
-        feature_en: "Up to 4K • Podcasts & Shorts",
+        feature_es: "Hasta 4K • Shorts & En Vivo",
+        feature_en: "Up to 4K • Shorts & Live",
         url: "https://www.youtube.com/"
     },
     {
         id: "platform-x",
         cat: "redes",
         hub: "X / TWITTER",
-        name_es: "X (Antes Twitter)",
-        name_en: "X (Formerly Twitter)",
-        desc_es: "La plaza pública global para noticias al minuto, debates en vivo, Spaces de audio, tecnología y tendencias.",
-        desc_en: "The global digital town square for breaking news, real-time debate, audio Spaces, and tech updates.",
-        img: "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=600&q=80",
+        name_es: "X (Twitter)",
+        name_en: "X (Twitter)",
+        desc_es: "La plaza digital en tiempo real para noticias de última hora, debates globales, tecnología y salas de audio.",
+        desc_en: "Real-time digital town square for breaking news, global conversation, audio Spaces, and tech updates.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/X_logo_2023_original.svg/512px-X_logo_2023_original.svg.png",
         badge_es: "Noticias en Vivo",
         badge_en: "Live News",
-        feature_es: "Última Hora • Audio Spaces",
-        feature_en: "Breaking News • Audio Spaces",
+        feature_es: "Última Hora • Debate en Vivo",
+        feature_en: "Breaking News • Global Voices",
         url: "https://x.com/"
     },
     {
@@ -1464,11 +1531,11 @@ const SOCIAL_DATABASE = [
         hub: "FACEBOOK",
         name_es: "Facebook",
         name_en: "Facebook",
-        desc_es: "Conecta con familiares y amigos, únete a grupos especializados, Marketplace local y páginas oficiales.",
-        desc_en: "Connect with communities, buy and sell on Marketplace, and stay close to family and interest groups.",
-        img: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Comunidad",
-        badge_en: "Community",
+        desc_es: "Conecta con amigos y familiares, participa en grupos temáticos y compra y vende en Marketplace.",
+        desc_en: "Stay connected with family, join niche interest groups, and buy or sell locally on Marketplace.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/512px-2021_Facebook_icon.svg.png",
+        badge_es: "Comunidades",
+        badge_en: "Communities",
         feature_es: "Grupos • Marketplace • Familia",
         feature_en: "Groups • Marketplace • Friends",
         url: "https://www.facebook.com/"
@@ -1477,15 +1544,15 @@ const SOCIAL_DATABASE = [
         id: "platform-threads",
         cat: "redes",
         hub: "THREADS",
-        name_es: "Threads by Meta",
-        name_en: "Threads by Meta",
-        desc_es: "Conversaciones de texto abiertas, ideas rápidas e integración con la comunidad de creadores de Instagram.",
-        desc_en: "Meta's text-based discussion app connected directly with your Instagram community and interests.",
-        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Conversaciones",
-        badge_en: "Discussions",
-        feature_es: "Charlas de Texto • Instagram Link",
-        feature_en: "Text Feed • Fast Updates",
+        name_es: "Threads",
+        name_en: "Threads",
+        desc_es: "La aplicación de conversaciones en texto de Meta conectada de forma directa con tu perfil de Instagram.",
+        desc_en: "Meta's text-first social platform connected directly to your Instagram profile and favorite creators.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Threads_%28app%29_logo.svg/512px-Threads_%28app%29_logo.svg.png",
+        badge_es: "Texto Social",
+        badge_en: "Social Text",
+        feature_es: "Debates Rápidos • Meta Link",
+        feature_en: "Fast Discussions • Meta Link",
         url: "https://www.threads.net/"
     },
     {
@@ -1494,28 +1561,28 @@ const SOCIAL_DATABASE = [
         hub: "PINTEREST",
         name_es: "Pinterest",
         name_en: "Pinterest",
-        desc_es: "Motor de inspiración visual para ideas de moda, decoración, recetas, diseño gráfico y proyectos personales.",
-        desc_en: "Visual discovery engine for finding lifestyle inspiration, home decor, outfit ideas and recipes.",
-        img: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Descubre ideas de moda, decoración del hogar, recetas de cocina, manualidades y diseño visual.",
+        desc_en: "Visual discovery board for outfit inspiration, home decor, creative design, and cooking recipes.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pinterest-logo.png/512px-Pinterest-logo.png",
         badge_es: "Inspiración",
         badge_en: "Inspiration",
-        feature_es: "Tableros • Ideas de Moda & Hogar",
-        feature_en: "Moodboards • Creative Ideas",
+        feature_es: "Tableros • Moda & Decoración",
+        feature_en: "Boards • Home & Fashion Ideas",
         url: "https://www.pinterest.com/"
     },
     {
         id: "platform-reddit",
         cat: "redes",
         hub: "REDDIT",
-        name_es: "Reddit - Comunidades",
-        name_en: "Reddit - Communities",
-        desc_es: "Miles de foros y comunidades para debatir sobre tecnología, ofertas, videojuegos, opiniones y ayuda en tiempo real.",
-        desc_en: "The front page of the internet. Dive into millions of community subreddits on every topic imaginable.",
-        img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+        name_es: "Reddit",
+        name_en: "Reddit",
+        desc_es: "La portada de internet con foros comunitarios sobre cualquier afición, tecnología, gaming y debates reales.",
+        desc_en: "The front page of the internet. Millions of subreddits dedicated to news, hobbies, tech and games.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Reddit_logo.svg/512px-Reddit_logo.svg.png",
         badge_es: "Foros & Debate",
         badge_en: "Forums & Debate",
-        feature_es: "Comunidades • Discusión Real",
-        feature_en: "Subreddits • Real Advice",
+        feature_es: "Subreddits • Respuestas Reales",
+        feature_en: "Subreddits • Real Discussions",
         url: "https://www.reddit.com/"
     },
     {
@@ -1524,12 +1591,12 @@ const SOCIAL_DATABASE = [
         hub: "BLUESKY",
         name_es: "Bluesky Social",
         name_en: "Bluesky Social",
-        desc_es: "Red social descentralizada y abierta basada en el protocolo AT, con feeds personalizados y sin algoritmos forzados.",
-        desc_en: "Open decentralized social network built on the AT Protocol with custom algorithms and user freedom.",
-        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Red social abierta, descentralizada y libre de algoritmos forzados creada sobre el protocolo abierto AT.",
+        desc_en: "Open, decentralized social feed built on the open AT Protocol with personalized algorithm choices.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/512px-Bluesky_Logo.svg.png",
         badge_es: "Descentralizada",
         badge_en: "Decentralized",
-        feature_es: "Protocolo Abierto • Feeds Libres",
+        feature_es: "Protocolo Abierto • Feeds Limpios",
         feature_en: "Open Protocol • Custom Feeds",
         url: "https://bsky.app/"
     },
@@ -1539,13 +1606,13 @@ const SOCIAL_DATABASE = [
         hub: "LINKEDIN",
         name_es: "LinkedIn",
         name_en: "LinkedIn",
-        desc_es: "La mayor red profesional del mundo para conectar con empresas, oportunidades de empleo, negocios y líderes de industria.",
-        desc_en: "The world's premier professional network for careers, industry networking, B2B and business updates.",
-        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+        desc_es: "La mayor red profesional del mundo para conectar con empresas, oportunidades de empleo, negocios y líderes.",
+        desc_en: "World's largest professional network for careers, job opportunities, business connections and industry news.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/512px-LinkedIn_icon.svg.png",
         badge_es: "Profesional",
         badge_en: "Professional",
         feature_es: "Empleo • Negocios • Networking",
-        feature_en: "Careers • B2B • Industry News",
+        feature_en: "Careers • B2B • Professional Hub",
         url: "https://www.linkedin.com/"
     },
     {
@@ -1554,30 +1621,28 @@ const SOCIAL_DATABASE = [
         hub: "TWITCH",
         name_es: "Twitch",
         name_en: "Twitch",
-        desc_es: "Transmisiones en directo de videojuegos, música en vivo, charlas creativas y eventos especiales con chat interactivo.",
-        desc_en: "Live streaming platform for gaming, live concerts, esports, and interactive community broadcasts.",
-        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
-        badge_es: "En Vivo",
+        desc_es: "Transmisiones en vivo de videojuegos, esports, charlas con creadores y eventos musicales con chat interactivo.",
+        desc_en: "Live interactive broadcasting for esports, gaming, IRL talk shows and creative events.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/512px-Twitch_Glitch_Logo_Purple.svg.png",
+        badge_es: "En Directo",
         badge_en: "Live Streaming",
-        feature_es: "Gaming • Charlas en Directo",
+        feature_es: "Gaming • Chat Interactivo",
         feature_en: "Gaming • Live Broadcasts",
         url: "https://www.twitch.tv/"
     },
-
-    /* --- MENSAJERÍA --- */
     {
         id: "platform-whatsapp",
         cat: "mensajeria",
         hub: "WHATSAPP",
         name_es: "WhatsApp Web",
         name_en: "WhatsApp Web",
-        desc_es: "Mensajería instantánea cifrada de extremo a extremo, llamadas, estados y canales desde cualquier navegador.",
-        desc_en: "End-to-end encrypted messaging, voice calls, community channels and file transfers on the web.",
-        img: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Mensajería instantánea cifrada de extremo a extremo, llamadas de voz y video, grupos y canales oficiales.",
+        desc_en: "End-to-end encrypted messaging, calls, channels, voice notes and secure file sharing.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png",
         badge_es: "Mensajería",
         badge_en: "Messaging",
         feature_es: "Cifrado Total • Canales & Chats",
-        feature_en: "End-to-End Encrypted • Chats",
+        feature_en: "Encrypted • Web & Mobile Sync",
         url: "https://web.whatsapp.com/"
     },
     {
@@ -1586,13 +1651,13 @@ const SOCIAL_DATABASE = [
         hub: "TELEGRAM",
         name_es: "Telegram Web",
         name_en: "Telegram Web",
-        desc_es: "Canales de noticias masivos, grupos ultrarrápidos, bots inteligentes y almacenamiento ilimitado en la nube.",
-        desc_en: "Fast and secure cloud-based messaging, high-capacity channels, bots and multi-device sync.",
-        img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Mensajería ultrarrápida en la nube, canales masivos de noticias, bots interactivos y archivos de hasta 2GB.",
+        desc_en: "Lightning fast cloud messaging, unlimited storage, high-capacity channels and bots.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png",
         badge_es: "Nube Rápida",
         badge_en: "Fast Cloud",
-        feature_es: "Canales • Bots • Archivos Grandes",
-        feature_en: "Channels • Bots • Unlimited Cloud",
+        feature_es: "Canales Masivos • Bots • Nube",
+        feature_en: "Massive Channels • Bots • Cloud",
         url: "https://web.telegram.org/"
     },
     {
@@ -1601,18 +1666,202 @@ const SOCIAL_DATABASE = [
         hub: "DISCORD",
         name_es: "Discord",
         name_en: "Discord",
-        desc_es: "Espacio para hablar, jugar y compartir mediante canales de voz con baja latencia, foros y comunidades privadas.",
-        desc_en: "Voice, video and text communication service for gaming groups, friends and creator communities.",
-        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        desc_es: "Salas de voz de baja latencia, canales de texto, comunidades de videojuegos y grupos de amigos privados.",
+        desc_en: "Low-latency voice and video channels, creator servers, gaming squads and private chat groups.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Discord_Color_Icon.svg/512px-Discord_Color_Icon.svg.png",
         badge_es: "Voz & Chat",
         badge_en: "Voice & Chat",
-        feature_es: "Canales de Voz • Comunidades",
-        feature_en: "Low Latency Voice • Servers",
+        feature_es: "Canales de Voz • Servidores",
+        feature_en: "Voice Rooms • Gaming Servers",
         url: "https://discord.com/"
     }
 ];
 
-/* ================= RENDERIZADO DE TIENDAS ================= */
+/* ================= BASE DE DATOS DE LOS MEJORES JUEGOS DEL 2024 ================= */
+const GAMES_DATABASE = [
+    {
+        id: "game-astro-bot",
+        cat: "aventura",
+        hub: "PLAYSTATION",
+        name_es: "Astro Bot (Ganador GOTY 2024)",
+        name_en: "Astro Bot (Game of the Year 2024)",
+        desc_es: "El aclamado ganador del Juego del Año (GOTY). Más de 50 planetas llenos de pura diversión, creatividad y magia del DualSense.",
+        desc_en: "The Game of the Year (GOTY) winner. Over 50 planets of pure joy, inventive level design and DualSense haptic magic.",
+        img: "https://images.unsplash.com/photo-1612287233207-6b45d2e05fd5?auto=format&fit=crop&w=600&q=80",
+        badge_es: "🏆 Ganador GOTY",
+        badge_en: "🏆 GOTY Winner",
+        feature_es: "Plataformas 3D • Exclusivo PS5",
+        feature_en: "3D Platformer • PS5 Exclusive",
+        url: "https://www.playstation.com/es-es/games/astro-bot/"
+    },
+    {
+        id: "game-wukong",
+        cat: "accion",
+        hub: "GAME SCIENCE",
+        name_es: "Black Myth: Wukong",
+        name_en: "Black Myth: Wukong",
+        desc_es: "El fenómeno de acción y RPG mitológico basado en la leyenda del Rey Mono. Combates colosales y gráficos en Unreal Engine 5.",
+        desc_en: "The worldwide action RPG phenomenon rooted in Chinese mythology. Spectacular bosses and Unreal Engine 5 visuals.",
+        img: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Éxito Mundial",
+        badge_en: "Global Hit",
+        feature_es: "Acción RPG • PC / PS5",
+        feature_en: "Action RPG • PC / PS5",
+        url: "https://store.steampowered.com/app/2358720/Black_Myth_Wukong/"
+    },
+    {
+        id: "game-ff7-rebirth",
+        cat: "accion",
+        hub: "SQUARE ENIX",
+        name_es: "Final Fantasy VII Rebirth",
+        name_en: "Final Fantasy VII Rebirth",
+        desc_es: "La inolvidable continuación del viaje de Cloud y sus amigos más allá de Midgar con un mundo abierto vibrante y combate estratégico.",
+        desc_en: "The acclaimed next chapter of the FFVII saga exploring the vast world beyond Midgar with real-time strategic combat.",
+        img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mejor RPG",
+        badge_en: "Top RPG",
+        feature_es: "RPG Épico • Exclusivo PS5",
+        feature_en: "Epic JRPG • PS5",
+        url: "https://www.square-enix-games.com/games/final-fantasy-vii-rebirth"
+    },
+    {
+        id: "game-helldivers-2",
+        cat: "coop",
+        hub: "ARROWHEAD / SONY",
+        name_es: "Helldivers 2",
+        name_en: "Helldivers 2",
+        desc_es: "El shooter cooperativo galáctico del año. Únete a escuadrones de 4 soldados para expandir la democracia gestionada con pura adrenalina.",
+        desc_en: "The multiplayer co-op sensation of the year. Team up with 3 friends for chaotic galactic warfare and Managed Democracy.",
+        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mejor Co-op",
+        badge_en: "Best Co-op",
+        feature_es: "Shooter Cooperativo • PC / PS5",
+        feature_en: "Co-op Shooter • PC / PS5",
+        url: "https://store.steampowered.com/app/553850/HELLDIVERS_2/"
+    },
+    {
+        id: "game-metaphor",
+        cat: "accion",
+        hub: "ATLUS / SEGA",
+        name_es: "Metaphor: ReFantazio",
+        name_en: "Metaphor: ReFantazio",
+        desc_es: "La nueva obra maestra de los creadores de Persona 3, 4 y 5. Una aventura de fantasía única con combate por turnos y narrativa magistral.",
+        desc_en: "The acclaimed fantasy RPG from the minds behind Persona 3, 4 and 5. Turn-based tactical brilliance and royal tournament intrigue.",
+        img: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Aclamado",
+        badge_en: "Must-Play",
+        feature_es: "JRPG de Élite • PC / PS5 / Xbox",
+        feature_en: "Elite JRPG • Multiplatform",
+        url: "https://store.steampowered.com/app/2627440/Metaphor_ReFantazio/"
+    },
+    {
+        id: "game-balatro",
+        cat: "indie",
+        hub: "LOCALTHUNK",
+        name_es: "Balatro",
+        name_en: "Balatro",
+        desc_es: "El fenómeno indie más adictivo de 2024. Combina manos ilegales de póker, comodines joker que alteran las reglas y combos infinitos.",
+        desc_en: "The hypnotically addictive poker roguelike sensation. Break traditional card rules with game-changing Joker combos.",
+        img: "https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mejor Indie",
+        badge_en: "Best Indie",
+        feature_es: "Roguelike de Póker • Todas Plataformas",
+        feature_en: "Poker Roguelike • All Platforms",
+        url: "https://store.steampowered.com/app/2379780/Balatro/"
+    },
+    {
+        id: "game-shadow-erdtree",
+        cat: "accion",
+        hub: "FROMSOFTWARE",
+        name_es: "Elden Ring: Shadow of the Erdtree",
+        name_en: "Elden Ring: Shadow of the Erdtree",
+        desc_es: "La monumental expansión de Elden Ring. Adéntrate en la Tierra de las Sombras con nuevos jefes legendarios, armas y secretos oscuros.",
+        desc_en: "The colossal expansion to Elden Ring. Journey into the Land of Shadow with formidable bosses and deep lore.",
+        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Obra Maestra",
+        badge_en: "Masterpiece",
+        feature_es: "Soulslike Épico • PC / PS5 / Xbox",
+        feature_en: "Epic Soulslike • Multiplatform",
+        url: "https://store.steampowered.com/app/2778580/ELDEN_RING_Shadow_of_the_Erdtree/"
+    },
+    {
+        id: "game-silent-hill-2",
+        cat: "terror",
+        hub: "KONAMI / BLOOBER",
+        name_es: "Silent Hill 2 (Remake 2024)",
+        name_en: "Silent Hill 2 (2024 Remake)",
+        desc_es: "La cumbre del terror psicológico rehecha desde cero con gráficos fotorrealistas y audio 3D aterrador en la misteriosa niebla.",
+        desc_en: "The psychological horror classic rebuilt from the ground up with stunning visuals, tense over-the-shoulder combat and fog.",
+        img: "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Terror del Año",
+        badge_en: "Horror of 2024",
+        feature_es: "Terror Psicológico • PC / PS5",
+        feature_en: "Psychological Horror • PC / PS5",
+        url: "https://store.steampowered.com/app/2124490/SILENT_HILL_2/"
+    },
+    {
+        id: "game-dragons-dogma-2",
+        cat: "accion",
+        hub: "CAPCOM",
+        name_es: "Dragon's Dogma 2",
+        name_en: "Dragon's Dogma 2",
+        desc_es: "Un colosal mundo de fantasía medieval y acción RPG donde escalar monstruos gigantescos y liderar peones aliados inteligentes.",
+        desc_en: "An expansive single-player narrative RPG where you climb massive beasts alongside intelligent Pawn companions.",
+        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Mundo Abierto",
+        badge_en: "Open World",
+        feature_es: "Acción & Peones • PC / PS5 / Xbox",
+        feature_en: "Action RPG • Multiplatform",
+        url: "https://store.steampowered.com/app/2054970/Dragons_Dogma_2/"
+    },
+    {
+        id: "game-space-marine-2",
+        cat: "coop",
+        hub: "FOCUS / SABER",
+        name_es: "Warhammer 40,000: Space Marine 2",
+        name_en: "Warhammer 40,000: Space Marine 2",
+        desc_es: "Encarna al guerrero supremo Titus y extermina enjambres interminables de Tiránidos en una campaña visceral y cooperativa.",
+        desc_en: "Embody the superhuman fury of Space Marine Titus and purge relentless Tyranid swarms in epic 3-player co-op.",
+        img: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Acción Visceral",
+        badge_en: "Pure Action",
+        feature_es: "Campaña Co-op • PC / PS5 / Xbox",
+        feature_en: "Co-op Campaign • PC / Consoles",
+        url: "https://store.steampowered.com/app/2183900/Warhammer_40000_Space_Marine_2/"
+    },
+    {
+        id: "game-tekken-8",
+        cat: "terror",
+        hub: "BANDAI NAMCO",
+        name_es: "Tekken 8",
+        name_en: "Tekken 8",
+        desc_es: "El rey de la lucha en 3D regresa con el nuevo sistema Heat agresivo, gráficos hiperdetallados y combates espectaculares.",
+        desc_en: "The heavyweight king of 3D fighting games introduces the aggressive new Heat System and stunning Unreal Engine visuals.",
+        img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Lucha Élite",
+        badge_en: "Top Fighting",
+        feature_es: "Lucha 3D • PC / PS5 / Xbox",
+        feature_en: "3D Fighter • PC / Consoles",
+        url: "https://store.steampowered.com/app/1778820/TEKKEN_8/"
+    },
+    {
+        id: "game-prince-of-persia",
+        cat: "aventura",
+        hub: "UBISOFT",
+        name_es: "Prince of Persia: The Lost Crown",
+        name_en: "Prince of Persia: The Lost Crown",
+        desc_es: "Aclamado juego de acción y plataformas estilo metroidvania en el Monte Qaf con acrobacias y poderes de manipulación temporal.",
+        desc_en: "Fast-paced, acrobatic metroidvania set in mythological Persia with rewarding combat and temporal manipulation powers.",
+        img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Metroidvania",
+        badge_en: "Metroidvania",
+        feature_es: "Acrobacias & Combate • Multiplataforma",
+        feature_en: "Action Platformer • All Consoles & PC",
+        url: "https://store.steampowered.com/app/2751000/Prince_of_Persia_The_Lost_Crown/"
+    }
+];
+
+/* ================= FUNCIONES DE RENDER ================= */
 function renderStores() {
     const container = document.getElementById('dealsContainer');
     const searchEl = document.getElementById('dealSearch');
@@ -1667,7 +1916,6 @@ function renderStores() {
     }
 }
 
-/* ================= RENDERIZADO DE REDES Y MÚSICA ================= */
 function renderSocial() {
     const container = document.getElementById('socialContainer');
     const searchEl = document.getElementById('socialSearch');
@@ -1696,7 +1944,7 @@ function renderSocial() {
                     <span class="verified-badge" style="border-color: var(--neon-cyan); color: var(--neon-cyan);">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
                 </div>
                 <div class="product-img-wrap">
-                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
+                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img logo-mode" loading="lazy">
                 </div>
                 <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
                 <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
@@ -1722,13 +1970,63 @@ function renderSocial() {
     }
 }
 
-function handleSearch() {
-    renderStores();
+function renderGames() {
+    const container = document.getElementById('gamesContainer');
+    const searchEl = document.getElementById('gamesSearch');
+    if (!container || !searchEl) return;
+    const query = searchEl.value.toLowerCase().trim();
+    container.innerHTML = '';
+
+    let matches = 0;
+    GAMES_DATABASE.forEach(item => {
+        if (activeGamesCategory !== 'all' && item.cat !== activeGamesCategory) return;
+
+        const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
+        const desc = (currentLang === 'es' ? item.desc_es : item.desc_en).toLowerCase();
+        const hub = item.hub.toLowerCase();
+        if (query && !title.includes(query) && !desc.includes(query) && !hub.includes(query)) return;
+
+        matches++;
+        const btnText = currentLang === 'es' ? 'VER EN TIENDA OFICIAL →' : 'VIEW IN OFFICIAL STORE →';
+
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="card-top">
+                <div class="card-badges">
+                    <span class="amazon-tag" style="border-color: #ff9900; color: #ffb74d;">${item.hub}</span>
+                    <span class="verified-badge" style="border-color: #ff0055; color: #ff0055;">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+                </div>
+                <div class="product-img-wrap">
+                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
+                </div>
+                <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
+                <p class="product-desc">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
+            </div>
+            <div>
+                <div class="product-features" style="color: #ffb74d; border-color: rgba(255, 153, 0, 0.3);">
+                    <span>🎮 ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
+                </div>
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn-amazon-buy" style="background: linear-gradient(135deg, #ff0055 0%, #ff9900 100%);">
+                    ${btnText}
+                </a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (matches === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--text-muted); border: 1px dashed rgba(255,0,85,0.3); border-radius: 8px; background: rgba(8,14,28,0.5);">
+                <p style="font-size: 0.95em; color: #e2e8f0;">⚡ ${currentLang === 'es' ? 'No se encontraron juegos con esa búsqueda.' : 'No games matched your query.'}</p>
+            </div>
+        `;
+    }
 }
 
-function handleSocialSearch() {
-    renderSocial();
-}
+function handleSearch() { renderStores(); }
+function handleSocialSearch() { renderSocial(); }
+function handleGamesSearch() { renderGames(); }
 
 function selectCat(cat, btn) {
     activeCategory = cat;
@@ -1742,6 +2040,13 @@ function selectSocialCat(cat, btn) {
     document.querySelectorAll('#pageSocialView .cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderSocial();
+}
+
+function selectGamesCat(cat, btn) {
+    activeGamesCategory = cat;
+    document.querySelectorAll('#pageGamesView .cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGames();
 }
 
 function toggleLanguage() {
@@ -1763,8 +2068,16 @@ function toggleLanguage() {
             : "Search a platform (e.g. spotify, tiktok, youtube, instagram)...";
     }
 
+    const gamesInput = document.getElementById('gamesSearch');
+    if (gamesInput) {
+        gamesInput.placeholder = currentLang === 'es'
+            ? "Busca un juego (ej. astro bot, wukong, balatro, final fantasy)..."
+            : "Search a game (e.g. astro bot, wukong, balatro, final fantasy)...";
+    }
+
     renderStores();
     renderSocial();
+    renderGames();
 }
 
 function updateRadar() {
@@ -1789,6 +2102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     renderStores();
     renderSocial();
+    renderGames();
     updateRadar();
     setInterval(updateRadar, 6000);
 });
