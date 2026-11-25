@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Klook Viajes, Temu, Amazon Prime EBT, eBay, Amazon, Prime Video, Amazon Music, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Amazon Oficial, Klook Viajes, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
     <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
@@ -84,7 +84,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         
@@ -104,6 +104,33 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 6px var(--neon-cyan));
+        }
+
+        .top-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn-subpage-nav {
+            background: rgba(255, 153, 0, 0.15);
+            color: #ff9900;
+            border: 1px solid #ff9900;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.74em;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-subpage-nav:hover {
+            background: #ff9900;
+            color: #000;
+            box-shadow: 0 0 14px rgba(255, 153, 0, 0.6);
         }
 
         .partner-status-badge {
@@ -154,7 +181,7 @@
             padding: 10px 14px 35px;
         }
 
-        /* HERO MATRIX REDUCIDO Y LEGIBLE */
+        /* HERO MATRIX */
         .hero-section {
             text-align: center;
             margin: 10px auto 16px;
@@ -323,6 +350,15 @@
             font-weight: 700;
             box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
+        .cat-btn.amazon-highlight {
+            border-color: #ff9900;
+            color: #ffb74d;
+        }
+        .cat-btn.amazon-highlight.active {
+            background: linear-gradient(135deg, #ff9900 0%, #ff5722 100%);
+            color: #000;
+            font-weight: 800;
+        }
 
         /* GRID DE TIENDAS COMPACTA */
         .products-grid {
@@ -351,6 +387,17 @@
             border-color: var(--neon-cyan);
             box-shadow: 0 6px 18px rgba(0, 240, 255, 0.25);
             transform: translateY(-3px);
+        }
+
+        /* DESTACADO ESPECIAL PARA AMAZON OFICIAL */
+        .product-card.amazon-featured {
+            border: 2px solid #ff9900;
+            background: radial-gradient(circle at top, rgba(255, 153, 0, 0.12) 0%, rgba(13, 23, 44, 0.95) 100%);
+            box-shadow: 0 4px 20px rgba(255, 153, 0, 0.25);
+        }
+        .product-card.amazon-featured:hover {
+            border-color: #ffb74d;
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
         }
 
         .card-top {margin-bottom: 6px;}
@@ -461,6 +508,121 @@
             box-shadow: 0 0 14px #ffffff;
         }
 
+        .btn-amazon-buy.gold-btn {
+            background: linear-gradient(135deg, #ff9900 0%, #ff5722 100%);
+            color: #000;
+            font-weight: 800;
+        }
+        .btn-amazon-buy.gold-btn:hover {
+            background: #ffffff;
+            color: #000;
+            box-shadow: 0 0 14px #ff9900;
+        }
+
+        .btn-subpage-link-card {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.68em;
+            color: #ff9900;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* ================= SUBPÁGINA DEDICADA DE SERVICIOS AMAZON ================= */
+        .subpage-container {
+            display: none;
+            margin-bottom: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .subpage-header-box {
+            background: radial-gradient(circle, rgba(255, 153, 0, 0.15) 0%, rgba(10, 18, 36, 0.98) 100%);
+            border: 2px solid #ff9900;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .subpage-title-wrap h2 {
+            font-size: 1.25em;
+            color: #ff9900;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subpage-title-wrap p {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .btn-back-main {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.76em;
+            transition: all 0.2s;
+        }
+        .btn-back-main:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 12px var(--neon-cyan);
+        }
+
+        .subpage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+        }
+
+        .subpage-card {
+            background: var(--card-surface);
+            border: 1px solid #ff9900;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .subpage-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(255, 153, 0, 0.3);
+        }
+        .subpage-card-img-wrap {
+            width: 100%;
+            height: 110px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .subpage-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* SIDEBAR HUD COMPACTO */
         .sidebar {display: flex; flex-direction: column; gap: 12px;}
         
@@ -473,7 +635,6 @@
             backdrop-filter: blur(8px);
         }
 
-        /* TIENDAS AFILIADAS COMPACTAS EN SIDEBAR */
         .partner-stores-box {
             border-color: rgba(0, 240, 255, 0.45);
             background: radial-gradient(circle at top, rgba(0, 240, 255, 0.1) 0%, rgba(8, 16, 36, 0.95) 100%);
@@ -538,7 +699,7 @@
             margin-bottom: 5px;
         }
         .yrt-title {font-size: 0.92em; font-weight: 700; color: #ffffff; margin-bottom: 4px;}
-        .yrt-desc {font-size: 0.74em; color: #bae6fd; margin-bottom: 8px; line-height: 1.35;}
+        .yrt-desc {font-size: 0.74em; color: #bae6fd; margin-bottom: 8px; line-height: 1.35;}\
         .yrt-tel {
             display: block;
             font-size: 0.95em;
@@ -650,27 +811,33 @@
 <!-- COMPLIANCE BANNER GLOBAL AFILIADOS -->
 <div class="compliance-banner">
     <strong><span class="es-text">⚡ PROTOCOLO OFICIAL DE AFILIADOS:</span><span class="en-text">⚡ OFFICIAL AFFILIATE DISCLOSURE:</span></strong>
-    <span class="es-text">Como participante de programas de afiliados (Travelpayouts/Klook, Temu, eBay Partner Network, Amazon Associates, Impact, Admitad y otros), generamos comisiones por compras, viajes y suscripciones elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
-    <span class="en-text">As an affiliate participant (Travelpayouts/Klook, Temu, eBay Partner Network, Amazon Associates, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
+    <span class="es-text">Como participante de programas de afiliados (Amazon Associates, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad y otros), generamos comisiones por compras, viajes y suscripciones elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
+    <span class="en-text">As an affiliate participant (Amazon Associates, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
-    <a href="#" class="brand-logo-top">
+    <a href="#" class="brand-logo-top" onclick="showMainPage(); return false;">
         <span class="logo-ahorra">AHORRATODO</span>
         <span class="logo-chic">CHIC</span>
     </a>
     
-    <div class="partner-status-badge">
-        <span class="live-dot"></span>
-        <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
-        <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
+    <div class="top-nav-links">
+        <button class="btn-subpage-nav" onclick="showSubpage()">
+            📦 <span class="es-text">Suscripciones Amazon</span><span class="en-text">Amazon Services</span> →
+        </button>
+        
+        <div class="partner-status-badge">
+            <span class="live-dot"></span>
+            <span class="es-text">TERMINAL // <span id="todayDateEs"></span></span>
+            <span class="en-text">TERMINAL // <span id="todayDateEn"></span></span>
+        </div>
+        
+        <button class="lang-btn" onclick="toggleLanguage()">
+            <span class="es-text">🌐 ENGLISH</span>
+            <span class="en-text">🌐 ESPAÑOL</span>
+        </button>
     </div>
-    
-    <button class="lang-btn" onclick="toggleLanguage()">
-        <span class="es-text">🌐 ENGLISH</span>
-        <span class="en-text">🌐 ESPAÑOL</span>
-    </button>
 </div>
 
 <div class="main-wrapper">
@@ -703,36 +870,55 @@
             <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">✓ 14 TIENDAS & SERVICIOS OFICIALES INTEGRADAS</span>
-            <span class="en-text">✓ 14 OFFICIAL INTEGRATED STORES & SERVICES</span>
+            <span class="es-text">✓ AMAZON OFICIAL #1 + PLATAFORMAS GLOBALES</span>
+            <span class="en-text">✓ AMAZON OFFICIAL #1 + GLOBAL PLATFORMS</span>
         </div>
     </div>
 
     <!-- MAIN GRID -->
     <div class="content-grid">
         <div class="main-content-col">
-            <!-- CONTROLS -->
-            <div class="controls-card">
-                <div class="search-input-wrap">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..." oninput="handleSearch()">
+            
+            <!-- VISTA 1: PÁGINA PRINCIPAL DE TIENDAS -->
+            <div id="mainCatalogView">
+                <!-- CONTROLS -->
+                <div class="controls-card">
+                    <div class="search-input-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. amazon, klook, temu, ebay)..." oninput="handleSearch()">
+                    </div>
+
+                    <div class="category-tabs">
+                        <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
+                        <button class="cat-btn amazon-highlight" onclick="showSubpage()"><span class="es-text">⭐ Suscripciones Amazon</span><span class="en-text">⭐ Amazon Services</span></button>
+                        <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
+                        <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
+                        <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
+                        <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
+                        <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
+                        <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
+                    </div>
                 </div>
 
-                <div class="category-tabs">
-                    <button class="cat-btn active" onclick="selectCat('all', this)"><span class="es-text">🔥 Todas las Tiendas</span><span class="en-text">🔥 All Stores</span></button>
-                    <button class="cat-btn" onclick="selectCat('viajes', this)"><span class="es-text">✈️ Viajes & Tours</span><span class="en-text">✈️ Travel & Tours</span></button>
-                    <button class="cat-btn" onclick="selectCat('global', this)"><span class="es-text">🌐 Tiendas Globales</span><span class="en-text">🌐 Global Retail</span></button>
-                    <button class="cat-btn" onclick="selectCat('ebt', this)"><span class="es-text">💳 EBT & Ahorro</span><span class="en-text">💳 EBT & Savings</span></button>
-                    <button class="cat-btn" onclick="selectCat('streaming', this)"><span class="es-text">🎬 Streaming & Audio</span><span class="en-text">🎬 Streaming & Audio</span></button>
-                    <button class="cat-btn" onclick="selectCat('hogar', this)"><span class="es-text">🛏️ Hogar & Seda</span><span class="en-text">🛏️ Home & Silk</span></button>
-                    <button class="cat-btn" onclick="selectCat('moda', this)"><span class="es-text">👟 Calzado & Moda</span><span class="en-text">👟 Footwear & Fashion</span></button>
-                    <button class="cat-btn" onclick="selectCat('belleza', this)"><span class="es-text">👁️ Belleza</span><span class="en-text">👁️ Beauty</span></button>
-                    <button class="cat-btn" onclick="selectCat('herramientas', this)"><span class="es-text">🔧 Maquinaria & Taller</span><span class="en-text">🔧 Tools & Hardware</span></button>
-                </div>
+                <!-- CONTENEDOR DE TIENDAS PRINCIPALES (AMAZON DE PRIMERO) -->
+                <div class="products-grid" id="dealsContainer"></div>
             </div>
 
-            <!-- CONTENEDOR DE TIENDAS -->
-            <div class="products-grid" id="dealsContainer"></div>
+            <!-- VISTA 2: SUBPÁGINA EXCLUSIVA DE SERVICIOS AMAZON -->
+            <div class="subpage-container" id="amazonSubpageView">
+                <div class="subpage-header-box">
+                    <div class="subpage-title-wrap">
+                        <h2>📦 <span class="es-text">Amazon Services & Suscripciones</span><span class="en-text">Amazon Services & Subscriptions</span></h2>
+                        <p><span class="es-text">Organizadas en un solo lugar: Prime Video, Prime con EBT y Amazon Music.</span><span class="en-text">Organized in one place: Prime Video, Prime with EBT and Amazon Music.</span></p>
+                    </div>
+                    <button class="btn-back-main" onclick="showMainPage()">
+                        ← <span class="es-text">Volver a Tiendas Principales</span><span class="en-text">Back to Main Stores</span>
+                    </button>
+                </div>
+
+                <div class="subpage-grid" id="amazonServicesContainer"></div>
+            </div>
+
         </div>
 
         <!-- SIDEBAR -->
@@ -742,6 +928,25 @@
             <div class="partner-stores-box">
                 <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
                 <div class="partner-stores-list">
+                    
+                    <!-- AMAZON OFICIAL DESTACADO EN PRIMER LUGAR -->
+                    <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff9900; background: rgba(255, 153, 0, 0.1);">
+                        <div>
+                            <div class="store-name" style="color: #ff9900;">⭐ 📦 Amazon Oficial</div>
+                            <div class="store-tagline"><span class="es-text">Catálogo completo mundial #1</span><span class="en-text">#1 Full global catalog</span></div>
+                        </div>
+                        <span class="store-arrow" style="color: #ff9900;">→</span>
+                    </a>
+
+                    <!-- BOTÓN A LA SUBPÁGINA DE AMAZON -->
+                    <a href="javascript:void(0)" onclick="showSubpage()" class="partner-store-item" style="border-color: #ff9900;">
+                        <div>
+                            <div class="store-name" style="color: #ffb74d;">🎬 Prime, EBT & Music</div>
+                            <div class="store-tagline"><span class="es-text">Subpágina de suscripciones</span><span class="en-text">Subscriptions subpage</span></div>
+                        </div>
+                        <span class="store-arrow" style="color: #ffb74d;">↗</span>
+                    </a>
+
                     <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
                         <div>
                             <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
@@ -758,42 +963,10 @@
                         <span class="store-arrow">→</span>
                     </a>
 
-                    <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan);">
-                        <div>
-                            <div class="store-name" style="color: var(--neon-cyan);">💳 Prime con EBT / SNAP</div>
-                            <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🎬 Prime Video</div>
-                            <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">🎧 Amazon Music</div>
-                            <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
                     <a href="https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1" target="_blank" rel="sponsored noopener" class="partner-store-item">
                         <div>
                             <div class="store-name">🏷️ eBay Oficial</div>
                             <div class="store-tagline"><span class="es-text">Subastas y marketplace</span><span class="en-text">Auctions & marketplace</span></div>
-                        </div>
-                        <span class="store-arrow">→</span>
-                    </a>
-
-                    <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item">
-                        <div>
-                            <div class="store-name">📦 Amazon Oficial</div>
-                            <div class="store-tagline"><span class="es-text">Catálogo completo mundial</span><span class="en-text">Full global catalog</span></div>
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
@@ -893,14 +1066,14 @@
             <details class="legal-card">
                 <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en Travelpayouts, Temu Affiliate Program, eBay Partner Network, en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music) y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
-                    <span class="en-text">SaveEverything Chic participates in Travelpayouts, Temu Affiliate Program, eBay Partner Network, Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music) and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music), Travelpayouts, Temu Affiliate Program, eBay Partner Network y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic participates in Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music), Travelpayouts, Temu Affiliate Program, eBay Partner Network and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Klook, Travelpayouts, Temu, eBay, Amazon, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Amazon, Klook, Travelpayouts, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
                     <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, payments, shipping and guarantees are handled exclusively by official partner platforms.</span>
                 </div>
             </details>
@@ -935,8 +1108,24 @@
 let currentLang = 'es';
 let activeCategory = 'all';
 
-/* ================= BASE DE DATOS DE TIENDAS OFICIALES ================= */
-const STORES_DATABASE = [
+/* ================= 1. TIENDAS PRINCIPALES (AMAZON COMO OPCIÓN #1) ================= */
+const MAIN_STORES_DATABASE = [
+    {
+        id: "store-amazon-global",
+        cat: "global",
+        hub: "AMAZON OFICIAL #1",
+        featured: true,
+        name_es: "Amazon.com - Catálogo Global Oficial & Ofertas",
+        name_en: "Amazon.com - Official Global Store & Daily Deals",
+        desc_es: "Portal principal de compras con millones de productos, garantía de la A a la Z, envíos Prime y las mejores ofertas del mundo.",
+        desc_en: "Main shopping portal featuring millions of products, A-to-Z guarantee, fast Prime shipping and daily worldwide deals.",
+        img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+        badge_es: "⭐ Opción Principal",
+        badge_en: "⭐ Top Choice",
+        feature_es: "Garantía de la A a la Z • Envío Prime",
+        feature_en: "A-to-Z Shield • Prime Delivery",
+        url: "https://www.amazon.com/?tag=ahorratodochi-20"
+    },
     {
         id: "store-travelpayouts-klook",
         cat: "viajes",
@@ -968,51 +1157,6 @@ const STORES_DATABASE = [
         url: "https://temu.to/k/p3t3h4hf35v"
     },
     {
-        id: "store-amazon-ebt",
-        cat: "ebt",
-        hub: "AMAZON EBT / SNAP",
-        name_es: "Amazon Prime con 50% de Descuento (EBT / SNAP / Medicaid)",
-        name_en: "Amazon Prime at 50% Off with EBT / SNAP / Medicaid",
-        desc_es: "Disfruta de todos los beneficios de Amazon Prime al 50% de descuento registrando tu tarjeta EBT o asistencia válida. Envíos gratis y compras de despensa.",
-        desc_en: "Get all Amazon Prime benefits at 50% off with a valid EBT or qualifying government assistance card. Free delivery & grocery savings.",
-        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
-        badge_es: "EBT / SNAP 50%",
-        badge_en: "EBT / SNAP 50%",
-        feature_es: "50% Descuento Prime • Envío Gratis",
-        feature_en: "50% Off Prime • Free Fast Shipping",
-        url: "https://link.amazon/B0iARAsyg"
-    },
-    {
-        id: "store-prime-video",
-        cat: "streaming",
-        hub: "PRIME VIDEO",
-        name_es: "Prime Video - Películas, Series Exclusivas & Deportes en Vivo",
-        name_en: "Prime Video - Movies, Exclusive Originals & Live Sports",
-        desc_es: "Accede a miles de películas taquilleras, series galardonadas de Amazon Originals, canales en vivo y deportes con calidad 4K HDR.",
-        desc_en: "Watch thousands of blockbuster movies, award-winning Amazon Originals, live TV channels, and sports in stunning 4K HDR.",
-        img: "https://m.media-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light_on_dark.png",
-        badge_es: "Streaming 4K",
-        badge_en: "4K Streaming",
-        feature_es: "Amazon Originals • Calidad 4K HDR",
-        feature_en: "Amazon Originals • 4K HDR Ultra",
-        url: "https://link.amazon/B05E3UAdD"
-    },
-    {
-        id: "store-amazon-music",
-        cat: "streaming",
-        hub: "AMAZON MUSIC",
-        name_es: "Amazon Music Unlimited - Millones de Canciones y Podcasts",
-        name_en: "Amazon Music Unlimited - 100M+ Songs & Top Podcasts",
-        desc_es: "Escucha más de 100 millones de canciones en audio de alta definición (HD/Ultra HD), sin anuncios publicitarios, modo sin conexión y saltos ilimitados.",
-        desc_en: "Stream over 100 million songs in lossless HD and Ultra HD audio, ad-free listening, offline downloads, and unlimited skips.",
-        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Streaming HD",
-        badge_en: "HD Streaming",
-        feature_es: "Audio Espacial HD • Sin Anuncios",
-        feature_en: "Spatial Audio HD • Ad-Free",
-        url: "https://link.amazon/A02OYdgFc"
-    },
-    {
         id: "store-ebay-official",
         cat: "global",
         hub: "EBAY OFICIAL",
@@ -1026,21 +1170,6 @@ const STORES_DATABASE = [
         feature_es: "Garantía al Cliente eBay • Subastas",
         feature_en: "eBay Guarantee • Auctions & Deals",
         url: "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339158162&customid=AhorraTodoChic&toolid=10001&mkevt=1"
-    },
-    {
-        id: "store-amazon-global",
-        cat: "global",
-        hub: "AMAZON OFICIAL",
-        name_es: "Amazon.com - Catálogo Global Oficial & Ofertas",
-        name_en: "Amazon.com - Official Global Store & Daily Deals",
-        desc_es: "Millones de productos con garantía de la A a la Z, envíos rápidos Prime, ofertas relámpago y el catálogo más grande del mundo.",
-        desc_en: "Millions of products with A-to-Z guarantee, fast Prime shipping, lightning deals and the world's largest catalog.",
-        img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
-        badge_es: "Catálogo Global",
-        badge_en: "Global Catalog",
-        feature_es: "Garantía de la A a la Z • Envío Prime",
-        feature_en: "A-to-Z Shield • Prime Delivery",
-        url: "https://www.amazon.com/?tag=ahorratodochi-20"
     },
     {
         id: "store-promeed",
@@ -1149,13 +1278,60 @@ const STORES_DATABASE = [
     }
 ];
 
-function renderStores() {
+/* ================= 2. SUBPÁGINA EXCLUSIVA (PRIME VIDEO, PRIME EBT, AMAZON MUSIC) ================= */
+const AMAZON_SUBPAGE_SERVICES = [
+    {
+        id: "sub-prime-video",
+        hub: "PRIME VIDEO",
+        name_es: "Prime Video - Películas, Series Exclusivas & Deportes",
+        name_en: "Prime Video - Movies, Originals & Live Sports",
+        desc_es: "Accede a miles de películas taquilleras, series galardonadas de Amazon Originals, canales en vivo y deportes con calidad 4K HDR.",
+        desc_en: "Watch thousands of blockbuster movies, award-winning Amazon Originals, live TV channels, and sports in stunning 4K HDR.",
+        img: "https://m.media-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light_on_dark.png",
+        badge_es: "Streaming 4K HDR",
+        badge_en: "4K HDR Streaming",
+        feature_es: "Series Originals • Canales en Vivo",
+        feature_en: "Amazon Originals • Live Channels",
+        url: "https://link.amazon/B05E3UAdD"
+    },
+    {
+        id: "sub-amazon-ebt",
+        hub: "PRIME CON EBT / SNAP",
+        name_es: "Amazon Prime al 50% de Descuento (EBT / Medicaid)",
+        name_en: "Amazon Prime 50% Off (EBT / SNAP / Medicaid)",
+        desc_es: "Disfruta de todos los beneficios de Amazon Prime al 50% de descuento registrando tu tarjeta EBT o asistencia válida. Envíos gratis y ahorro en despensa.",
+        desc_en: "Get all Amazon Prime benefits at 50% off with a valid EBT or qualifying government assistance card. Free delivery & grocery savings.",
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Beneficio Social 50%",
+        badge_en: "Social Benefit 50%",
+        feature_es: "50% Descuento Prime • Envíos Gratis",
+        feature_en: "50% Off Prime • Free Fast Shipping",
+        url: "https://link.amazon/B0iARAsyg"
+    },
+    {
+        id: "sub-amazon-music",
+        hub: "AMAZON MUSIC UNLIMITED",
+        name_es: "Amazon Music Unlimited - 100M+ Canciones & Podcasts",
+        name_en: "Amazon Music Unlimited - 100M+ Songs & Podcasts",
+        desc_es: "Escucha más de 100 millones de canciones en audio de alta definición (HD/Ultra HD), sin anuncios publicitarios, modo sin conexión y saltos ilimitados.",
+        desc_en: "Stream over 100 million songs in lossless HD and Ultra HD audio, ad-free listening, offline downloads, and unlimited skips.",
+        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+        badge_es: "Audio Espacial HD",
+        badge_en: "Spatial Audio HD",
+        feature_es: "Sin Anuncios • Calidad HD Ilimitada",
+        feature_en: "Ad-Free • Unlimited HD Quality",
+        url: "https://link.amazon/A02OYdgFc"
+    }
+];
+
+/* RENDER DE LA PÁGINA PRINCIPAL */
+function renderMainStores() {
     const container = document.getElementById('dealsContainer');
     const query = document.getElementById('dealSearch').value.toLowerCase().trim();
     container.innerHTML = '';
     
     let matches = 0;
-    STORES_DATABASE.forEach(item => {
+    MAIN_STORES_DATABASE.forEach(item => {
         if (activeCategory !== 'all' && item.cat !== activeCategory) return;
         
         const title = (currentLang === 'es' ? item.name_es : item.name_en).toLowerCase();
@@ -1167,14 +1343,24 @@ function renderStores() {
         const btnText = currentLang === 'es' ? 'IR A LA TIENDA OFICIAL →' : 'GO TO OFFICIAL STORE →';
 
         const card = document.createElement('div');
-        card.className = 'product-card';
+        card.className = `product-card ${item.featured ? 'amazon-featured' : ''}`;
+        
+        let extraSubpageLink = '';
+        if (item.featured) {
+            extraSubpageLink = `
+                <a href="javascript:void(0)" onclick="showSubpage()" class="btn-subpage-link-card">
+                    ${currentLang === 'es' ? '📦 Ver Prime Video, Prime EBT & Music →' : '📦 View Prime Video, Prime EBT & Music →'}
+                </a>
+            `;
+        }
+
         card.innerHTML = `
             <div class="card-top">
                 <div class="card-badges">
-                    <span class="amazon-tag">${item.hub}</span>
+                    <span class="amazon-tag" ${item.featured ? 'style="border-color:#ff9900; color:#ff9900;"' : ''}>${item.hub}</span>
                     <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
                 </div>
-                <div class="product-img-wrap">
+                <div class="product-img-wrap" ${item.featured ? 'style="border-color: rgba(255,153,0,0.5);"' : ''}>
                     <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
                 </div>
                 <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
@@ -1184,9 +1370,10 @@ function renderStores() {
                 <div class="product-features">
                     <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
                 </div>
-                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy">
+                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy ${item.featured ? 'gold-btn' : ''}">
                     ${btnText}
                 </a>
+                ${extraSubpageLink}
             </div>
         `;
         container.appendChild(card);
@@ -1201,15 +1388,66 @@ function renderStores() {
     }
 }
 
+/* RENDER DE LA SUBPÁGINA DEDICADA DE SERVICIOS */
+function renderSubpageServices() {
+    const container = document.getElementById('amazonServicesContainer');
+    container.innerHTML = '';
+    
+    AMAZON_SUBPAGE_SERVICES.forEach(item => {
+        const btnText = currentLang === 'es' ? 'OBTENER SUSCRIPCIÓN OFICIAL →' : 'GET OFFICIAL SUBSCRIPTION →';
+
+        const card = document.createElement('div');
+        card.className = 'subpage-card';
+        card.innerHTML = `
+            <div class="card-top">
+                <div class="card-badges">
+                    <span class="amazon-tag" style="border-color: #ff9900; color: #ff9900;">${item.hub}</span>
+                    <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
+                </div>
+                <div class="subpage-card-img-wrap">
+                    <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" loading="lazy">
+                </div>
+                <h3 class="product-title" style="font-size: 0.95em; color: #ffffff;">${currentLang === 'es' ? item.name_es : item.name_en}</h3>
+                <p class="product-desc" style="min-height: auto; margin-bottom: 10px;">${currentLang === 'es' ? item.desc_es : item.desc_en}</p>
+            </div>
+            <div>
+                <div class="product-features" style="border-color: rgba(255, 153, 0, 0.4); color: #ffb74d;">
+                    <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
+                </div>
+                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy gold-btn">
+                    ${btnText}
+                </a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+/* NAVEGACIÓN ENTRE PÁGINA PRINCIPAL Y SUBPÁGINA */
+function showSubpage() {
+    document.getElementById('mainCatalogView').style.display = 'none';
+    document.getElementById('amazonSubpageView').style.display = 'block';
+    renderSubpageServices();
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+}
+
+function showMainPage() {
+    document.getElementById('amazonSubpageView').style.display = 'none';
+    document.getElementById('mainCatalogView').style.display = 'block';
+    renderMainStores();
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+}
+
 function handleSearch() {
-    renderStores();
+    renderMainStores();
 }
 
 function selectCat(cat, btn) {
+    showMainPage();
     activeCategory = cat;
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderStores();
+    renderMainStores();
 }
 
 function toggleLanguage() {
@@ -1220,10 +1458,11 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca una tienda (ej. klook, viajes, temu, ebt, ebay)..."
-            : "Search a store (e.g. klook, travel, temu, ebt, ebay)...";
+            ? "Busca una tienda (ej. amazon, klook, temu, ebay)..."
+            : "Search a store (e.g. amazon, klook, temu, ebay)...";
     }
-    renderStores();
+    renderMainStores();
+    renderSubpageServices();
 }
 
 function updateRadar() {
@@ -1246,7 +1485,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elDateEn) elDateEn.textContent = today.toLocaleDateString('en-US', optionsEn).toUpperCase();
     if (elYear) elYear.textContent = today.getFullYear();
     
-    renderStores();
+    renderMainStores();
+    renderSubpageServices();
     updateRadar();
     setInterval(updateRadar, 6000);
 });
