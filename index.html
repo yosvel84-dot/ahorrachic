@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Amazon Oficial, Klook Viajes, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
+    <meta name="description" content="AhorraTodo Chic - Directorio oficial de tiendas aliadas y plataformas globales: Amazon Oficial, Tienda Mis Gemelos, Klook Viajes, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WOOEYE, Promeed y FliKEZE.">
     <title>AhorraTodo Chic | Tiendas Oficiales & Afiliados Globales</title>
     <link rel="manifest" href='data:application/json,{"name":"AhorraTodo Chic","short_name":"AhorraTodo","start_url":"/","display":"standalone","background_color":"#020408","theme_color":"#00f0ff","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3081/3081559.png","sizes":"192x192","type":"image/png"}]}'>
     <meta name="theme-color" content="#00f0ff">
@@ -389,7 +389,7 @@
             transform: translateY(-3px);
         }
 
-        /* DESTACADO ESPECIAL PARA AMAZON OFICIAL */
+        /* DESTACADO ESPECIAL PARA AMAZON OFICIAL (#1) */
         .product-card.amazon-featured {
             border: 2px solid #ff9900;
             background: radial-gradient(circle at top, rgba(255, 153, 0, 0.12) 0%, rgba(13, 23, 44, 0.95) 100%);
@@ -398,6 +398,17 @@
         .product-card.amazon-featured:hover {
             border-color: #ffb74d;
             box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
+        }
+
+        /* DESTACADO ESPECIAL PARA MIS GEMELOS (#2) */
+        .product-card.gemelos-featured {
+            border: 2px solid var(--neon-cyan);
+            background: radial-gradient(circle at top, rgba(0, 240, 255, 0.14) 0%, rgba(13, 23, 44, 0.95) 100%);
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.25);
+        }
+        .product-card.gemelos-featured:hover {
+            border-color: #ffffff;
+            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.45);
         }
 
         .card-top {margin-bottom: 6px;}
@@ -683,6 +694,16 @@
             font-size: 0.85em;
         }
 
+        .sidebar-section-divider {
+            border-top: 1px dashed rgba(255, 153, 0, 0.35);
+            margin: 6px 0 2px;
+            padding-top: 4px;
+            font-size: 0.66em;
+            color: #ffb74d;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
         .yrt-widget {
             background: radial-gradient(circle at center, rgba(139, 92, 246, 0.14) 0%, rgba(6, 14, 32, 0.95) 100%);
             border-color: var(--neon-magenta);
@@ -699,7 +720,7 @@
             margin-bottom: 5px;
         }
         .yrt-title {font-size: 0.92em; font-weight: 700; color: #ffffff; margin-bottom: 4px;}
-        .yrt-desc {font-size: 0.74em; color: #bae6fd; margin-bottom: 8px; line-height: 1.35;}\
+        .yrt-desc {font-size: 0.74em; color: #bae6fd; margin-bottom: 8px; line-height: 1.35;}
         .yrt-tel {
             display: block;
             font-size: 0.95em;
@@ -811,8 +832,8 @@
 <!-- COMPLIANCE BANNER GLOBAL AFILIADOS -->
 <div class="compliance-banner">
     <strong><span class="es-text">⚡ PROTOCOLO OFICIAL DE AFILIADOS:</span><span class="en-text">⚡ OFFICIAL AFFILIATE DISCLOSURE:</span></strong>
-    <span class="es-text">Como participante de programas de afiliados (Amazon Associates, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad y otros), generamos comisiones por compras, viajes y suscripciones elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
-    <span class="en-text">As an affiliate participant (Amazon Associates, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
+    <span class="es-text">Como participante de programas de afiliados (Amazon Associates, Tienda Mis Gemelos, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad y otros), generamos comisiones por compras, viajes y suscripciones elegibles realizadas a través de nuestros enlaces oficiales, sin costo adicional para usted.</span>
+    <span class="en-text">As an affiliate participant (Amazon Associates, Tienda Mis Gemelos, Travelpayouts/Klook, Temu, eBay Partner Network, Impact, Admitad & others), we earn from qualifying purchases, travel bookings and subscriptions through our official links at no extra cost to you.</span>
 </div>
 
 <!-- TOP BAR -->
@@ -870,8 +891,8 @@
             <span>🛡️ <span class="es-text">Precios, cupones y ofertas vigentes al acceder a cada portal</span><span class="en-text">Live prices, coupons and deals active on each portal</span></span>
         </div>
         <div class="notice-right">
-            <span class="es-text">✓ AMAZON OFICIAL #1 + PLATAFORMAS GLOBALES</span>
-            <span class="en-text">✓ AMAZON OFFICIAL #1 + GLOBAL PLATFORMS</span>
+            <span class="es-text">✓ 1. AMAZON OFICIAL • 2. TIENDA MIS GEMELOS</span>
+            <span class="en-text">✓ 1. AMAZON OFFICIAL • 2. TIENDA MIS GEMELOS</span>
         </div>
     </div>
 
@@ -885,7 +906,7 @@
                 <div class="controls-card">
                     <div class="search-input-wrap">
                         <span class="search-icon">🔍</span>
-                        <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. amazon, klook, temu, ebay)..." oninput="handleSearch()">
+                        <input type="text" class="search-input" id="dealSearch" placeholder="Busca una tienda (ej. amazon, mis gemelos, klook, temu)..." oninput="handleSearch()">
                     </div>
 
                     <div class="category-tabs">
@@ -900,7 +921,7 @@
                     </div>
                 </div>
 
-                <!-- CONTENEDOR DE TIENDAS PRINCIPALES (AMAZON DE PRIMERO) -->
+                <!-- CONTENEDOR DE TIENDAS PRINCIPALES -->
                 <div class="products-grid" id="dealsContainer"></div>
             </div>
 
@@ -929,33 +950,34 @@
                 <h3 class="partner-stores-title">🌐 <span class="es-text">Accesos Rápidos</span><span class="en-text">Quick Links</span></h3>
                 <div class="partner-stores-list">
                     
-                    <!-- AMAZON OFICIAL DESTACADO EN PRIMER LUGAR -->
+                    <!-- 1. AMAZON OFICIAL (OPCIÓN #1) -->
                     <a href="https://www.amazon.com/?tag=ahorratodochi-20" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff9900; background: rgba(255, 153, 0, 0.1);">
                         <div>
-                            <div class="store-name" style="color: #ff9900;">⭐ 📦 Amazon Oficial</div>
+                            <div class="store-name" style="color: #ff9900;">⭐ 1. Amazon Oficial</div>
                             <div class="store-tagline"><span class="es-text">Catálogo completo mundial #1</span><span class="en-text">#1 Full global catalog</span></div>
                         </div>
                         <span class="store-arrow" style="color: #ff9900;">→</span>
                     </a>
 
-                    <!-- BOTÓN A LA SUBPÁGINA DE AMAZON -->
-                    <a href="javascript:void(0)" onclick="showSubpage()" class="partner-store-item" style="border-color: #ff9900;">
+                    <!-- 2. TIENDA MIS GEMELOS (OPCIÓN #2) -->
+                    <a href="https://muse.ai/s/pagina-web-de-la-tienda-mis-gemelos-xhn6xxxbxw4o1fv/2IoKTO2Ir-BNgAi8ndKcXUbN7aoaJcIITHjNSZ85guU" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: var(--neon-cyan); background: rgba(0, 240, 255, 0.1);">
                         <div>
-                            <div class="store-name" style="color: #ffb74d;">🎬 Prime, EBT & Music</div>
-                            <div class="store-tagline"><span class="es-text">Subpágina de suscripciones</span><span class="en-text">Subscriptions subpage</span></div>
+                            <div class="store-name" style="color: var(--neon-cyan);">🛍️ 2. Tienda Mis Gemelos</div>
+                            <div class="store-tagline"><span class="es-text">Portal oficial y catálogo exclusivo</span><span class="en-text">Official store & exclusive deals</span></div>
                         </div>
-                        <span class="store-arrow" style="color: #ffb74d;">↗</span>
+                        <span class="store-arrow" style="color: var(--neon-cyan);">→</span>
                     </a>
 
-                    <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #00f0ff;">
+                    <!-- RESTO DE TIENDAS GLOBALES -->
+                    <a href="https://klook.tpx.lt/LKyeG1Fo" target="_blank" rel="sponsored noopener" class="partner-store-item">
                         <div>
-                            <div class="store-name" style="color: #00f0ff;">✈️ Klook Viajes</div>
+                            <div class="store-name">✈️ Klook Viajes</div>
                             <div class="store-tagline"><span class="es-text">Hoteles, tours y atracciones</span><span class="en-text">Hotels, tours & attractions</span></div>
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
 
-                    <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item" style="border-color: #ff5722;">
+                    <a href="https://temu.to/k/p3t3h4hf35v" target="_blank" rel="sponsored noopener" class="partner-store-item">
                         <div>
                             <div class="store-name" style="color: #ff9800;">🧡 Temu Oficial</div>
                             <div class="store-tagline"><span class="es-text">Súper ofertas y cupones</span><span class="en-text">Hot deals & coupons</span></div>
@@ -1026,6 +1048,37 @@
                         </div>
                         <span class="store-arrow">→</span>
                     </a>
+
+                    <!-- SECCIÓN FINAL: SERVICIOS Y SUSCRIPCIONES AMAZON PASADOS PARA LO ÚLTIMO -->
+                    <div class="sidebar-section-divider">
+                        <span class="es-text">📦 SERVICIOS & SUSCRIPCIONES:</span>
+                        <span class="en-text">📦 SUBSCRIPTION SERVICES:</span>
+                    </div>
+
+                    <a href="https://link.amazon/B0iARAsyg" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name" style="color: #38bdf8;">💳 Prime con EBT / SNAP</div>
+                            <div class="store-tagline"><span class="es-text">50% desc. en membresía Prime</span><span class="en-text">50% off Prime membership</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
+                    <a href="https://link.amazon/B05E3UAdD" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name" style="color: #38bdf8;">🎬 Prime Video</div>
+                            <div class="store-tagline"><span class="es-text">Películas, series y Originals</span><span class="en-text">Movies, series & Originals</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
+                    <a href="https://link.amazon/A02OYdgFc" target="_blank" rel="sponsored noopener" class="partner-store-item">
+                        <div>
+                            <div class="store-name" style="color: #38bdf8;">🎧 Amazon Music</div>
+                            <div class="store-tagline"><span class="es-text">Streaming & podcasts sin anuncios</span><span class="en-text">Ad-free streaming & podcasts</span></div>
+                        </div>
+                        <span class="store-arrow">→</span>
+                    </a>
+
                 </div>
             </div>
 
@@ -1066,14 +1119,14 @@
             <details class="legal-card">
                 <summary><span class="es-text">📦 Divulgación de Afiliados (FTC)</span><span class="en-text">📦 Affiliate Disclosure (FTC)</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music), Travelpayouts, Temu Affiliate Program, eBay Partner Network y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
-                    <span class="en-text">SaveEverything Chic participates in Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music), Travelpayouts, Temu Affiliate Program, eBay Partner Network and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
+                    <span class="es-text">AhorraTodo Chic participa en el Programa de Afiliados de Amazon Services LLC (incluyendo Prime Access EBT, Prime Video y Amazon Music), Tienda Mis Gemelos, Travelpayouts, Temu Affiliate Program, eBay Partner Network y en redes globales como Impact y Admitad. Recibimos comisiones por compras, reservas de viajes y suscripciones referidas a través de nuestros enlaces oficiales sin costo adicional para usted. Cumplimiento FTC 16 CFR 255.</span>
+                    <span class="en-text">SaveEverything Chic participates in Amazon Services LLC Associates Program (including Prime Access EBT, Prime Video & Amazon Music), Tienda Mis Gemelos, Travelpayouts, Temu Affiliate Program, eBay Partner Network and global networks (Impact, Admitad). We earn referral fees at zero extra cost to you. Fully compliant with FTC 16 CFR 255.</span>
                 </div>
             </details>
             <details class="legal-card">
                 <summary><span class="es-text">🛡️ Descargo de Responsabilidad</span><span class="en-text">🛡️ Disclaimer</span></summary>
                 <div class="legal-card-body">
-                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Amazon, Klook, Travelpayouts, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
+                    <span class="es-text">No somos tienda directa ni procesamos pagos. Los pedidos, reservas de viajes, suscripciones, envíos, garantías y cancelaciones son gestionados exclusivamente por las plataformas oficiales (Amazon, Tienda Mis Gemelos, Klook, Travelpayouts, Temu, eBay, AliExpress, Alibaba, VEVOR, Fitory, WooEye, Promeed, FliKEZE) bajo sus propios términos.</span>
                     <span class="en-text">We are not a direct retailer. All orders, travel bookings, subscriptions, payments, shipping and guarantees are handled exclusively by official partner platforms.</span>
                 </div>
             </details>
@@ -1108,23 +1161,39 @@
 let currentLang = 'es';
 let activeCategory = 'all';
 
-/* ================= 1. TIENDAS PRINCIPALES (AMAZON COMO OPCIÓN #1) ================= */
+/* ================= 1. TIENDAS PRINCIPALES ================= */
 const MAIN_STORES_DATABASE = [
     {
         id: "store-amazon-global",
         cat: "global",
         hub: "AMAZON OFICIAL #1",
-        featured: true,
+        featured: "amazon",
         name_es: "Amazon.com - Catálogo Global Oficial & Ofertas",
         name_en: "Amazon.com - Official Global Store & Daily Deals",
         desc_es: "Portal principal de compras con millones de productos, garantía de la A a la Z, envíos Prime y las mejores ofertas del mundo.",
         desc_en: "Main shopping portal featuring millions of products, A-to-Z guarantee, fast Prime shipping and daily worldwide deals.",
         img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
-        badge_es: "⭐ Opción Principal",
-        badge_en: "⭐ Top Choice",
+        badge_es: "⭐ Opción #1",
+        badge_en: "⭐ Choice #1",
         feature_es: "Garantía de la A a la Z • Envío Prime",
         feature_en: "A-to-Z Shield • Prime Delivery",
         url: "https://www.amazon.com/?tag=ahorratodochi-20"
+    },
+    {
+        id: "store-mis-gemelos",
+        cat: "global",
+        hub: "MIS GEMELOS #2",
+        featured: "gemelos",
+        name_es: "Tienda Mis Gemelos - Catálogo Oficial & Ofertas",
+        name_en: "Tienda Mis Gemelos - Official Store & Exclusive Deals",
+        desc_es: "Acceso directo a la tienda en línea oficial de Mis Gemelos con promociones destacadas, productos seleccionados y atención garantizada.",
+        desc_en: "Direct access to the official Mis Gemelos online store featuring top picks, special promotions, and verified quality.",
+        img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=600&q=80",
+        badge_es: "⭐ Opción #2",
+        badge_en: "⭐ Choice #2",
+        feature_es: "Tienda Oficial • Acceso Exclusivo",
+        feature_en: "Official Store • Exclusive Access",
+        url: "https://muse.ai/s/pagina-web-de-la-tienda-mis-gemelos-xhn6xxxbxw4o1fv/2IoKTO2Ir-BNgAi8ndKcXUbN7aoaJcIITHjNSZ85guU"
     },
     {
         id: "store-travelpayouts-klook",
@@ -1278,7 +1347,7 @@ const MAIN_STORES_DATABASE = [
     }
 ];
 
-/* ================= 2. SUBPÁGINA EXCLUSIVA (PRIME VIDEO, PRIME EBT, AMAZON MUSIC) ================= */
+/* ================= 2. SUBPÁGINA EXCLUSIVA DE SUSCRIPCIONES ================= */
 const AMAZON_SUBPAGE_SERVICES = [
     {
         id: "sub-prime-video",
@@ -1343,10 +1412,14 @@ function renderMainStores() {
         const btnText = currentLang === 'es' ? 'IR A LA TIENDA OFICIAL →' : 'GO TO OFFICIAL STORE →';
 
         const card = document.createElement('div');
-        card.className = `product-card ${item.featured ? 'amazon-featured' : ''}`;
+        let cardSpecialClass = '';
+        if (item.featured === 'amazon') cardSpecialClass = 'amazon-featured';
+        if (item.featured === 'gemelos') cardSpecialClass = 'gemelos-featured';
+
+        card.className = `product-card ${cardSpecialClass}`;
         
         let extraSubpageLink = '';
-        if (item.featured) {
+        if (item.featured === 'amazon') {
             extraSubpageLink = `
                 <a href="javascript:void(0)" onclick="showSubpage()" class="btn-subpage-link-card">
                     ${currentLang === 'es' ? '📦 Ver Prime Video, Prime EBT & Music →' : '📦 View Prime Video, Prime EBT & Music →'}
@@ -1357,10 +1430,10 @@ function renderMainStores() {
         card.innerHTML = `
             <div class="card-top">
                 <div class="card-badges">
-                    <span class="amazon-tag" ${item.featured ? 'style="border-color:#ff9900; color:#ff9900;"' : ''}>${item.hub}</span>
+                    <span class="amazon-tag" ${item.featured === 'amazon' ? 'style="border-color:#ff9900; color:#ff9900;"' : ''}>${item.hub}</span>
                     <span class="verified-badge">${currentLang === 'es' ? item.badge_es : item.badge_en}</span>
                 </div>
-                <div class="product-img-wrap" ${item.featured ? 'style="border-color: rgba(255,153,0,0.5);"' : ''}>
+                <div class="product-img-wrap" ${item.featured === 'amazon' ? 'style="border-color: rgba(255,153,0,0.5);"' : (item.featured === 'gemelos' ? 'style="border-color: rgba(0,240,255,0.6);"' : '')}>
                     <img src="${item.img}" alt="${currentLang === 'es' ? item.name_es : item.name_en}" class="product-img" loading="lazy">
                 </div>
                 <h4 class="product-title">${currentLang === 'es' ? item.name_es : item.name_en}</h4>
@@ -1370,7 +1443,7 @@ function renderMainStores() {
                 <div class="product-features">
                     <span>⚡ ${currentLang === 'es' ? item.feature_es : item.feature_en}</span>
                 </div>
-                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy ${item.featured ? 'gold-btn' : ''}">
+                <a href="${item.url}" target="_blank" rel="sponsored noopener" class="btn-amazon-buy ${item.featured === 'amazon' ? 'gold-btn' : ''}">
                     ${btnText}
                 </a>
                 ${extraSubpageLink}
@@ -1458,8 +1531,8 @@ function toggleLanguage() {
     const searchInput = document.getElementById('dealSearch');
     if (searchInput) {
         searchInput.placeholder = currentLang === 'es' 
-            ? "Busca una tienda (ej. amazon, klook, temu, ebay)..."
-            : "Search a store (e.g. amazon, klook, temu, ebay)...";
+            ? "Busca una tienda (ej. amazon, mis gemelos, klook, temu)..."
+            : "Search a store (e.g. amazon, mis gemelos, klook, temu)...";
     }
     renderMainStores();
     renderSubpageServices();
